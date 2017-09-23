@@ -20,17 +20,17 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
-        private void abtnMinimize_Click(object sender, EventArgs e)
+        private void MinimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void abtnMaximize_Click(object sender, EventArgs e)
+        private void MaximizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
         }
 
-        private void abtnClose_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Any unsaved work will not be saved.");
             this.Close();

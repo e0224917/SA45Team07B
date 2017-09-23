@@ -315,7 +315,7 @@
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 3;
             this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.abtnMinimize_Click);
+            this.btnMinimize.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // btnClose
             // 
@@ -330,7 +330,7 @@
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.abtnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // btnMaximize
             // 
