@@ -15,9 +15,15 @@ namespace SA45Team07B
     public partial class IssueTrans
     {
         public long TransactionID { get; set; }
-        public int MemberID { get; set; }
+        public string RFID { get; set; }
+        public long MemberID { get; set; }
         public System.DateTime DateIssued { get; set; }
         public System.DateTime DateDue { get; set; }
-        public short BorrowedQty { get; set; }
+        public Nullable<System.DateTime> DateActualReturned { get; set; }
+        public string Status { get; set; }
+        public string Remarks { get; set; }
+    
+        public virtual Members Members { get; set; }
+        public virtual RFIDs RFIDs { get; set; }
     }
 }

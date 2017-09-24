@@ -13,10 +13,10 @@ namespace SA45Team07B
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LibraryEntities : DbContext
+    public partial class SA45Team07B_LibraryEntities : DbContext
     {
-        public LibraryEntities()
-            : base("name=LibraryEntities")
+        public SA45Team07B_LibraryEntities()
+            : base("name=SA45Team07B_LibraryEntities")
         {
         }
     
@@ -27,13 +27,13 @@ namespace SA45Team07B
     
         public DbSet<Books> Books { get; set; }
         public DbSet<BookSubjects> BookSubjects { get; set; }
+        public DbSet<Faculties> Faculties { get; set; }
         public DbSet<IssueTrans> IssueTrans { get; set; }
         public DbSet<MemberCategories> MemberCategories { get; set; }
         public DbSet<Members> Members { get; set; }
         public DbSet<Publishers> Publishers { get; set; }
-        public DbSet<Schools> Schools { get; set; }
+        public DbSet<RFIDs> RFIDs { get; set; }
         public DbSet<StockAdjustments> StockAdjustments { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public DbSet<TransDetails> TransDetails { get; set; }
     }
 }

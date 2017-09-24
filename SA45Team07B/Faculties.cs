@@ -12,12 +12,16 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class TransDetails
+    public partial class Faculties
     {
-        public long TransactionID { get; set; }
-        public long BookID { get; set; }
-        public System.DateTime DateReturned { get; set; }
-        public string ReturnedStatus { get; set; }
-        public string Remarks { get; set; }
+        public Faculties()
+        {
+            this.Members = new HashSet<Members>();
+        }
+    
+        public string FacultyCode { get; set; }
+        public string FacultyName { get; set; }
+    
+        public virtual ICollection<Members> Members { get; set; }
     }
 }

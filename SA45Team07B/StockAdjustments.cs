@@ -14,9 +14,11 @@ namespace SA45Team07B
     
     public partial class StockAdjustments
     {
-        public long BookID { get; set; }
-        public System.DateTime DateAjusted { get; set; }
+        public string RFID { get; set; }
+        public System.DateTime DateAdjusted { get; set; }
         public short QtyAdjusted { get; set; }
         public string Remarks { get; set; }
+    
+        public virtual RFIDs RFIDs { get; set; }
     }
 }

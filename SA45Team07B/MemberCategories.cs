@@ -14,10 +14,17 @@ namespace SA45Team07B
     
     public partial class MemberCategories
     {
+        public MemberCategories()
+        {
+            this.Members = new HashSet<Members>();
+        }
+    
         public string MemberType { get; set; }
         public string CategoryName { get; set; }
         public short LoanEntitlement { get; set; }
         public short LoanPeriod { get; set; }
         public decimal FinePerDay { get; set; }
+    
+        public virtual ICollection<Members> Members { get; set; }
     }
 }

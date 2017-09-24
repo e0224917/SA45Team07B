@@ -14,6 +14,11 @@ namespace SA45Team07B
     
     public partial class Books
     {
+        public Books()
+        {
+            this.RFIDs = new HashSet<RFIDs>();
+        }
+    
         public long BookID { get; set; }
         public string ISBN { get; set; }
         public string BookTitle { get; set; }
@@ -23,8 +28,11 @@ namespace SA45Team07B
         public string PublisherID { get; set; }
         public decimal Price { get; set; }
         public short TotalCopy { get; set; }
-        public short NumberBorrowed { get; set; }
         public string PublishedYear { get; set; }
         public string Edition { get; set; }
+    
+        public virtual BookSubjects BookSubjects { get; set; }
+        public virtual Publishers Publishers { get; set; }
+        public virtual ICollection<RFIDs> RFIDs { get; set; }
     }
 }

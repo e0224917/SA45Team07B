@@ -14,7 +14,14 @@ namespace SA45Team07B
     
     public partial class BookSubjects
     {
+        public BookSubjects()
+        {
+            this.Books = new HashSet<Books>();
+        }
+    
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
+    
+        public virtual ICollection<Books> Books { get; set; }
     }
 }

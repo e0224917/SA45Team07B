@@ -14,8 +14,15 @@ namespace SA45Team07B
     
     public partial class Publishers
     {
+        public Publishers()
+        {
+            this.Books = new HashSet<Books>();
+        }
+    
         public string PublisherID { get; set; }
         public string PublisherName { get; set; }
         public string Country { get; set; }
+    
+        public virtual ICollection<Books> Books { get; set; }
     }
 }

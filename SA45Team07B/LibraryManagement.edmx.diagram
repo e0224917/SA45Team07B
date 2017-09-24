@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea04a554af70462abc619e4e7dd7d6f1" Name="Diagram1">
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.Books" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.BookSubjects" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.Faculties" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.IssueTrans" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.MemberCategories" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.Members" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.Publishers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.RFIDs" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.StockAdjustments" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_Books_BookSubjects" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_Books_Publishers" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_RFIDs_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_Members_Schools" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_IssueTrans_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_IssueTrans_RFIDs" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_Members_MemberCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="SA45Team07B_LibraryModel.FK_StockAdjustments_RFIDs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -12,25 +12,22 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class Members
+    public partial class RFIDs
     {
-        public Members()
+        public RFIDs()
         {
             this.IssueTrans = new HashSet<IssueTrans>();
+            this.StockAdjustments = new HashSet<StockAdjustments>();
         }
     
-        public long MemberID { get; set; }
-        public string MemberName { get; set; }
-        public string MemberType { get; set; }
-        public string FacultyCode { get; set; }
-        public string SchoolID { get; set; }
-        public string ContactNumber { get; set; }
-        public string Email { get; set; }
+        public string RFID { get; set; }
+        public long BookID { get; set; }
         public string Discontinued { get; set; }
-        public short LoanedQty { get; set; }
+        public Nullable<long> LastTransactionID { get; set; }
+        public string Availability { get; set; }
     
-        public virtual Faculties Faculties { get; set; }
+        public virtual Books Books { get; set; }
         public virtual ICollection<IssueTrans> IssueTrans { get; set; }
-        public virtual MemberCategories MemberCategories { get; set; }
+        public virtual ICollection<StockAdjustments> StockAdjustments { get; set; }
     }
 }
