@@ -68,6 +68,9 @@
             this.toolStripButtonReturn = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.publisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifiyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -155,7 +158,7 @@
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(265, 52);
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(297, 52);
             this.bookToolStripMenuItem.Text = "Book";
             // 
             // memberToolStripMenuItem
@@ -164,7 +167,7 @@
             this.informationToolStripMenuItem1,
             this.transactionToolStripMenuItem2});
             this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(265, 52);
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(297, 52);
             this.memberToolStripMenuItem.Text = "Member";
             // 
             // informationToolStripMenuItem1
@@ -183,7 +186,8 @@
             // 
             this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bookToolStripMenuItem1,
-            this.memberToolStripMenuItem1});
+            this.memberToolStripMenuItem1,
+            this.publisherToolStripMenuItem});
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             this.manageToolStripMenuItem.Size = new System.Drawing.Size(160, 52);
             this.manageToolStripMenuItem.Text = "Manage";
@@ -194,7 +198,7 @@
             this.addNewToolStripMenuItem,
             this.modifyInformationToolStripMenuItem});
             this.bookToolStripMenuItem1.Name = "bookToolStripMenuItem1";
-            this.bookToolStripMenuItem1.Size = new System.Drawing.Size(265, 52);
+            this.bookToolStripMenuItem1.Size = new System.Drawing.Size(297, 52);
             this.bookToolStripMenuItem1.Text = "Book";
             // 
             // addNewToolStripMenuItem
@@ -215,7 +219,7 @@
             this.addNewToolStripMenuItem1,
             this.modifyInformationToolStripMenuItem1});
             this.memberToolStripMenuItem1.Name = "memberToolStripMenuItem1";
-            this.memberToolStripMenuItem1.Size = new System.Drawing.Size(265, 52);
+            this.memberToolStripMenuItem1.Size = new System.Drawing.Size(297, 52);
             this.memberToolStripMenuItem1.Text = "Member";
             // 
             // addNewToolStripMenuItem1
@@ -371,6 +375,27 @@
             this.label1.Text = "Welcome to our library system. \r\nSelect a menu button to proceed.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // publisherToolStripMenuItem
+            // 
+            this.publisherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewToolStripMenuItem2,
+            this.modifiyInformationToolStripMenuItem});
+            this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
+            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(297, 52);
+            this.publisherToolStripMenuItem.Text = "Publisher";
+            // 
+            // addNewToolStripMenuItem2
+            // 
+            this.addNewToolStripMenuItem2.Name = "addNewToolStripMenuItem2";
+            this.addNewToolStripMenuItem2.Size = new System.Drawing.Size(446, 52);
+            this.addNewToolStripMenuItem2.Text = "Add New";
+            // 
+            // modifiyInformationToolStripMenuItem
+            // 
+            this.modifiyInformationToolStripMenuItem.Name = "modifiyInformationToolStripMenuItem";
+            this.modifiyInformationToolStripMenuItem.Size = new System.Drawing.Size(446, 52);
+            this.modifiyInformationToolStripMenuItem.Text = "Modifiy Information";
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
@@ -440,6 +465,9 @@
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem publisherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem modifiyInformationToolStripMenuItem;
     }
 }
 
