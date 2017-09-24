@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -62,11 +63,11 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="Books.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookSubject.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="BookSubjects.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
@@ -74,43 +75,46 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Faculty.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="IssueTrans.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
-    <Compile Include="IssueTran.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="MemberCategories.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
-    <Compile Include="Member.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MemberCategory.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="Members.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publisher.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="Publishers.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
-    <Compile Include="RFID.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SA45Team07BLibraryModel.Context.cs">
+    <Compile Include="SA45Team07B_Library.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA45Team07BLibraryModel.Context.tt</DependentUpon>
+      <DependentUpon>SA45Team07B_Library.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SA45Team07BLibraryModel.cs">
+    <Compile Include="SA45Team07B_Library.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
-    <Compile Include="SA45Team07BLibraryModel.Designer.cs">
+    <Compile Include="SA45Team07B_Library.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SA45Team07BLibraryModel.edmx</DependentUpon>
+      <DependentUpon>SA45Team07B_Library.edmx</DependentUpon>
     </Compile>
-    <Compile Include="StockAdjustment.cs">
-      <DependentUpon>SA45Team07BLibraryModel.tt</DependentUpon>
+    <Compile Include="Schools.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjustments.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransDetails.cs">
+      <DependentUpon>SA45Team07B_Library.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -138,31 +142,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="SA45Team07BLibraryModel.edmx">
+    <EntityDeploy Include="SA45Team07B_Library.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SA45Team07BLibraryModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SA45Team07B_Library.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SA45Team07BLibraryModel.edmx.diagram">
-      <DependentUpon>SA45Team07BLibraryModel.edmx</DependentUpon>
+    <None Include="SA45Team07B_Library.edmx.diagram">
+      <DependentUpon>SA45Team07B_Library.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SA45Team07BLibraryModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SA45Team07BLibraryModel.edmx</DependentUpon>
-      <LastGenOutput>SA45Team07BLibraryModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SA45Team07BLibraryModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SA45Team07BLibraryModel.edmx</DependentUpon>
-      <LastGenOutput>SA45Team07BLibraryModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="SA45Team07B_Library.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SA45Team07B_Library.edmx</DependentUpon>
+      <LastGenOutput>SA45Team07B_Library.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SA45Team07B_Library.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SA45Team07B_Library.edmx</DependentUpon>
+      <LastGenOutput>SA45Team07B_Library.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

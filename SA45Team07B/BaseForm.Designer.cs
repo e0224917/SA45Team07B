@@ -403,12 +403,11 @@
             // 
             // toolStripButtonReturn
             // 
-            this.toolStripButtonReturn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonReturn.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReturn.Image")));
             this.toolStripButtonReturn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonReturn.Name = "toolStripButtonReturn";
-            this.toolStripButtonReturn.Size = new System.Drawing.Size(24, 52);
-            this.toolStripButtonReturn.Text = "toolStripButton2";
+            this.toolStripButtonReturn.Size = new System.Drawing.Size(149, 52);
+            this.toolStripButtonReturn.Text = "Return";
             // 
             // toolStripSplitButtonFind
             // 
