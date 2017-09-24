@@ -64,5 +64,27 @@ namespace SA45Team07B
         protected virtual void MainForm_Load(object sender, EventArgs e)
         {
         }
+
+        private void toolStripButtonBorrow_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+            private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+        
+
+
     }
 }

@@ -41,7 +41,8 @@
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.transactionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,22 +62,13 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.notifyIconForClose = new System.Windows.Forms.NotifyIcon(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonBorrow = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonReturn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSplitButtonFind = new System.Windows.Forms.ToolStripSplitButton();
-            this.bookToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.memberToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSplitButtonAdd = new System.Windows.Forms.ToolStripSplitButton();
-            this.bookToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.memberToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,15 +77,15 @@
             this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 38);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 8);
+            this.panel1.Size = new System.Drawing.Size(1506, 9);
             this.panel1.TabIndex = 0;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.PapayaWhip;
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -105,8 +97,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1280, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1506, 58);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
@@ -120,65 +112,73 @@
             this.recordLossToolStripMenuItem,
             this.adjustStockToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(122, 32);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(211, 52);
             this.managementToolStripMenuItem.Text = "Transaction";
             // 
             // borrowToolStripMenuItem
             // 
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(199, 32);
+            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(408, 52);
             this.borrowToolStripMenuItem.Text = "Borrow";
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(199, 32);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(408, 52);
             this.returnToolStripMenuItem.Text = "Return";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(405, 6);
             // 
             // recordLossToolStripMenuItem
             // 
             this.recordLossToolStripMenuItem.Name = "recordLossToolStripMenuItem";
-            this.recordLossToolStripMenuItem.Size = new System.Drawing.Size(199, 32);
-            this.recordLossToolStripMenuItem.Text = "Record Loss";
+            this.recordLossToolStripMenuItem.Size = new System.Drawing.Size(408, 52);
+            this.recordLossToolStripMenuItem.Text = "Record Lost Book";
             // 
             // adjustStockToolStripMenuItem
             // 
             this.adjustStockToolStripMenuItem.Name = "adjustStockToolStripMenuItem";
-            this.adjustStockToolStripMenuItem.Size = new System.Drawing.Size(199, 32);
+            this.adjustStockToolStripMenuItem.Size = new System.Drawing.Size(408, 52);
             this.adjustStockToolStripMenuItem.Text = "Adjust Stock";
             // 
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bookToolStripMenuItem,
-            this.memberToolStripMenuItem,
-            this.transactionToolStripMenuItem});
+            this.memberToolStripMenuItem});
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(62, 32);
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(100, 52);
             this.findToolStripMenuItem.Text = "Find";
             // 
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(265, 52);
             this.bookToolStripMenuItem.Text = "Book";
             // 
             // memberToolStripMenuItem
             // 
+            this.memberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informationToolStripMenuItem1,
+            this.transactionToolStripMenuItem2});
             this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(265, 52);
             this.memberToolStripMenuItem.Text = "Member";
             // 
-            // transactionToolStripMenuItem
+            // informationToolStripMenuItem1
             // 
-            this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
-            this.transactionToolStripMenuItem.Text = "Transaction";
+            this.informationToolStripMenuItem1.Name = "informationToolStripMenuItem1";
+            this.informationToolStripMenuItem1.Size = new System.Drawing.Size(316, 52);
+            this.informationToolStripMenuItem1.Text = "Information";
+            // 
+            // transactionToolStripMenuItem2
+            // 
+            this.transactionToolStripMenuItem2.Name = "transactionToolStripMenuItem2";
+            this.transactionToolStripMenuItem2.Size = new System.Drawing.Size(316, 52);
+            this.transactionToolStripMenuItem2.Text = "Transaction";
             // 
             // manageToolStripMenuItem
             // 
@@ -186,7 +186,7 @@
             this.bookToolStripMenuItem1,
             this.memberToolStripMenuItem1});
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
-            this.manageToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
+            this.manageToolStripMenuItem.Size = new System.Drawing.Size(160, 52);
             this.manageToolStripMenuItem.Text = "Manage";
             // 
             // bookToolStripMenuItem1
@@ -195,19 +195,19 @@
             this.addNewToolStripMenuItem,
             this.modifyInformationToolStripMenuItem});
             this.bookToolStripMenuItem1.Name = "bookToolStripMenuItem1";
-            this.bookToolStripMenuItem1.Size = new System.Drawing.Size(164, 32);
+            this.bookToolStripMenuItem1.Size = new System.Drawing.Size(265, 52);
             this.bookToolStripMenuItem1.Text = "Book";
             // 
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(261, 32);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(437, 52);
             this.addNewToolStripMenuItem.Text = "Add New";
             // 
             // modifyInformationToolStripMenuItem
             // 
             this.modifyInformationToolStripMenuItem.Name = "modifyInformationToolStripMenuItem";
-            this.modifyInformationToolStripMenuItem.Size = new System.Drawing.Size(261, 32);
+            this.modifyInformationToolStripMenuItem.Size = new System.Drawing.Size(437, 52);
             this.modifyInformationToolStripMenuItem.Text = "Modify Information";
             // 
             // memberToolStripMenuItem1
@@ -216,19 +216,19 @@
             this.addNewToolStripMenuItem1,
             this.modifyInformationToolStripMenuItem1});
             this.memberToolStripMenuItem1.Name = "memberToolStripMenuItem1";
-            this.memberToolStripMenuItem1.Size = new System.Drawing.Size(164, 32);
+            this.memberToolStripMenuItem1.Size = new System.Drawing.Size(265, 52);
             this.memberToolStripMenuItem1.Text = "Member";
             // 
             // addNewToolStripMenuItem1
             // 
             this.addNewToolStripMenuItem1.Name = "addNewToolStripMenuItem1";
-            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(261, 32);
+            this.addNewToolStripMenuItem1.Size = new System.Drawing.Size(437, 52);
             this.addNewToolStripMenuItem1.Text = "Add New";
             // 
             // modifyInformationToolStripMenuItem1
             // 
             this.modifyInformationToolStripMenuItem1.Name = "modifyInformationToolStripMenuItem1";
-            this.modifyInformationToolStripMenuItem1.Size = new System.Drawing.Size(261, 32);
+            this.modifyInformationToolStripMenuItem1.Size = new System.Drawing.Size(437, 52);
             this.modifyInformationToolStripMenuItem1.Text = "Modify Information";
             // 
             // reportToolStripMenuItem
@@ -241,42 +241,42 @@
             this.crosstabReportToolStripMenuItem,
             this.chartReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(139, 52);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // bookListToolStripMenuItem
             // 
             this.bookListToolStripMenuItem.Name = "bookListToolStripMenuItem";
-            this.bookListToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
+            this.bookListToolStripMenuItem.Size = new System.Drawing.Size(407, 52);
             this.bookListToolStripMenuItem.Text = "Book List";
             // 
             // memberListToolStripMenuItem
             // 
             this.memberListToolStripMenuItem.Name = "memberListToolStripMenuItem";
-            this.memberListToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
+            this.memberListToolStripMenuItem.Size = new System.Drawing.Size(407, 52);
             this.memberListToolStripMenuItem.Text = "Member List";
             // 
             // transactionListToolStripMenuItem
             // 
             this.transactionListToolStripMenuItem.Name = "transactionListToolStripMenuItem";
-            this.transactionListToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
+            this.transactionListToolStripMenuItem.Size = new System.Drawing.Size(407, 52);
             this.transactionListToolStripMenuItem.Text = "Transaction List";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(240, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(404, 6);
             // 
             // crosstabReportToolStripMenuItem
             // 
             this.crosstabReportToolStripMenuItem.Name = "crosstabReportToolStripMenuItem";
-            this.crosstabReportToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
+            this.crosstabReportToolStripMenuItem.Size = new System.Drawing.Size(407, 52);
             this.crosstabReportToolStripMenuItem.Text = "[cross-tab report]";
             // 
             // chartReportToolStripMenuItem
             // 
             this.chartReportToolStripMenuItem.Name = "chartReportToolStripMenuItem";
-            this.chartReportToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
+            this.chartReportToolStripMenuItem.Size = new System.Drawing.Size(407, 52);
             this.chartReportToolStripMenuItem.Text = "[chart report]";
             // 
             // helpToolStripMenuItem
@@ -287,89 +287,31 @@
             this.aboutToolStripMenuItem,
             this.creditsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(107, 52);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // shortcutKeysToolStripMenuItem
             // 
             this.shortcutKeysToolStripMenuItem.Name = "shortcutKeysToolStripMenuItem";
-            this.shortcutKeysToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.shortcutKeysToolStripMenuItem.Size = new System.Drawing.Size(346, 52);
             this.shortcutKeysToolStripMenuItem.Text = "Shortcut Keys";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(343, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(346, 52);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // creditsToolStripMenuItem
             // 
             this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(346, 52);
             this.creditsToolStripMenuItem.Text = "Credits";
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinimize.BackgroundImage")));
-            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Location = new System.Drawing.Point(6, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.MinimizeButton_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(74, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMaximize.BackgroundImage")));
-            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaximize.Enabled = false;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.Location = new System.Drawing.Point(40, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(30, 30);
-            this.btnMaximize.TabIndex = 6;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnMaximize);
-            this.panel2.Controls.Add(this.btnMinimize);
-            this.panel2.Location = new System.Drawing.Point(1173, -3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(107, 40);
-            this.panel2.TabIndex = 7;
             // 
             // notifyIconForClose
             // 
@@ -385,11 +327,10 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonBorrow,
             this.toolStripButtonReturn,
-            this.toolStripSplitButtonFind,
-            this.toolStripSplitButtonAdd});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 46);
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 67);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 35);
+            this.toolStrip1.Size = new System.Drawing.Size(1506, 55);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -398,86 +339,60 @@
             this.toolStripButtonBorrow.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBorrow.Image")));
             this.toolStripButtonBorrow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonBorrow.Name = "toolStripButtonBorrow";
-            this.toolStripButtonBorrow.Size = new System.Drawing.Size(99, 32);
+            this.toolStripButtonBorrow.Size = new System.Drawing.Size(159, 52);
             this.toolStripButtonBorrow.Text = "Borrow";
+            this.toolStripButtonBorrow.Click += new System.EventHandler(this.toolStripButtonBorrow_Click);
             // 
             // toolStripButtonReturn
             // 
             this.toolStripButtonReturn.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReturn.Image")));
             this.toolStripButtonReturn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonReturn.Name = "toolStripButtonReturn";
-            this.toolStripButtonReturn.Size = new System.Drawing.Size(93, 32);
+            this.toolStripButtonReturn.Size = new System.Drawing.Size(149, 52);
             this.toolStripButtonReturn.Text = "Return";
             // 
-            // toolStripSplitButtonFind
+            // toolStripButton1
             // 
-            this.toolStripSplitButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButtonFind.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookToolStripMenuItem2,
-            this.memberToolStripMenuItem2});
-            this.toolStripSplitButtonFind.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButtonFind.Image")));
-            this.toolStripSplitButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButtonFind.Name = "toolStripSplitButtonFind";
-            this.toolStripSplitButtonFind.Size = new System.Drawing.Size(39, 32);
-            this.toolStripSplitButtonFind.Text = "toolStripSplitButton1";
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(203, 52);
+            this.toolStripButton1.Text = "Find Book";
             // 
-            // bookToolStripMenuItem2
+            // label1
             // 
-            this.bookToolStripMenuItem2.Name = "bookToolStripMenuItem2";
-            this.bookToolStripMenuItem2.Size = new System.Drawing.Size(164, 32);
-            this.bookToolStripMenuItem2.Text = "Book";
-            // 
-            // memberToolStripMenuItem2
-            // 
-            this.memberToolStripMenuItem2.Name = "memberToolStripMenuItem2";
-            this.memberToolStripMenuItem2.Size = new System.Drawing.Size(164, 32);
-            this.memberToolStripMenuItem2.Text = "Member";
-            // 
-            // toolStripSplitButtonAdd
-            // 
-            this.toolStripSplitButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButtonAdd.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bookToolStripMenuItem3,
-            this.memberToolStripMenuItem3});
-            this.toolStripSplitButtonAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButtonAdd.Image")));
-            this.toolStripSplitButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButtonAdd.Name = "toolStripSplitButtonAdd";
-            this.toolStripSplitButtonAdd.Size = new System.Drawing.Size(39, 32);
-            this.toolStripSplitButtonAdd.Text = "toolStripSplitButton2";
-            // 
-            // bookToolStripMenuItem3
-            // 
-            this.bookToolStripMenuItem3.Name = "bookToolStripMenuItem3";
-            this.bookToolStripMenuItem3.Size = new System.Drawing.Size(164, 32);
-            this.bookToolStripMenuItem3.Text = "Book";
-            // 
-            // memberToolStripMenuItem3
-            // 
-            this.memberToolStripMenuItem3.Name = "memberToolStripMenuItem3";
-            this.memberToolStripMenuItem3.Size = new System.Drawing.Size(164, 32);
-            this.memberToolStripMenuItem3.Text = "Member";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(769, 681);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(732, 130);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Welcome to our library system. \r\nSelect a menu button to proceed.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BaseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1506, 823);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Library Management System - SA45Team07B";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -498,7 +413,6 @@
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem;
@@ -518,20 +432,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnMaximize;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NotifyIcon notifyIconForClose;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrow;
         private System.Windows.Forms.ToolStripButton toolStripButtonReturn;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonFind;
-        private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonAdd;
-        private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
