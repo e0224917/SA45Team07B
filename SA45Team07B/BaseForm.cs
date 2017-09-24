@@ -31,11 +31,11 @@ namespace SA45Team07B
             this.WindowState = FormWindowState.Normal;
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);
-            this.Close();
-        }
+        //private void CloseButton_Click(object sender, EventArgs e)
+        //{
+        //    this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);
+        //    this.Close();
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
