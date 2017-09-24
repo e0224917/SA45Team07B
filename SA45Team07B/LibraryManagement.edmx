@@ -516,14 +516,6 @@
             <End Role="StockAdjustments" EntitySet="StockAdjustments" />
           </AssociationSet>
           </EntityContainer>
-        <EntityType Name="AcademicStaff" BaseType="SA45Team07B_LibraryModel.Members">
-        </EntityType>
-        <EntityType Name="AdminStaff" BaseType="SA45Team07B_LibraryModel.Members">
-        </EntityType>
-        <EntityType Name="UndergraduateStudent" BaseType="SA45Team07B_LibraryModel.Members">
-          </EntityType>
-        <EntityType Name="GraduateStudent" BaseType="SA45Team07B_LibraryModel.Members">
-          </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -585,13 +577,13 @@
                 <ScalarProperty Name="LoanPeriod" ColumnName="LoanPeriod" />
                 <ScalarProperty Name="LoanEntitlement" ColumnName="LoanEntitlement" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <Condition ColumnName="MemberType" Value="&quot;STA-ACA&quot;" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Members">
-            <EntityTypeMapping TypeName="IsTypeOf(SA45Team07B_LibraryModel.Members)">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Members">
               <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="MemberType" ColumnName="MemberType" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="LoanedQty" ColumnName="LoanedQty" />
                 <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
@@ -600,30 +592,6 @@
                 <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
                 <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
                 <ScalarProperty Name="MemberName" ColumnName="MemberName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(SA45Team07B_LibraryModel.AcademicStaff)">
-              <MappingFragment StoreEntitySet="Members">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <Condition ColumnName="MemberType" Value="&quot;STF-ACA&quot;" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(SA45Team07B_LibraryModel.AdminStaff)">
-              <MappingFragment StoreEntitySet="Members">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <Condition ColumnName="MemberType" Value="&quot;STF-ADM&quot;" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(SA45Team07B_LibraryModel.UndergraduateStudent)">
-              <MappingFragment StoreEntitySet="Members">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <Condition ColumnName="MemberType" Value="&quot;STU-UND&quot;" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(SA45Team07B_LibraryModel.GraduateStudent)">
-              <MappingFragment StoreEntitySet="Members">
-                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
-                <Condition ColumnName="MemberType" Value="&quot;STU-GRA&quot;" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -57,12 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademicStaff.cs">
-      <DependentUpon>LibraryManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AdminStaff.cs">
-      <DependentUpon>LibraryManagement.tt</DependentUpon>
-    </Compile>
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,9 +76,6 @@
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Faculties.cs">
-      <DependentUpon>LibraryManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GraduateStudent.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="IssueTrans.cs">
@@ -125,9 +116,6 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="UndergraduateStudent.cs">
-      <DependentUpon>LibraryManagement.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,7 +151,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

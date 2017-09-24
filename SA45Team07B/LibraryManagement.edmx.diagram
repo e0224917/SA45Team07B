@@ -23,15 +23,6 @@
         <AssociationConnector Association="SA45Team07B_LibraryModel.FK_IssueTrans_RFIDs" ManuallyRouted="false" />
         <AssociationConnector Association="SA45Team07B_LibraryModel.FK_Members_MemberCategories" ManuallyRouted="false" />
         <AssociationConnector Association="SA45Team07B_LibraryModel.FK_StockAdjustments_RFIDs" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.AcademicStaff" Width="1.5" PointX="5" PointY="9.5" IsExpanded="true" />
-        <InheritanceConnector EntityType="SA45Team07B_LibraryModel.AcademicStaff" />
-        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.AdminStaff" Width="1.5" PointX="10.125" PointY="6.125" />
-        <InheritanceConnector EntityType="SA45Team07B_LibraryModel.AdminStaff" />
-        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.UndergraduateStudent" Width="1.5" PointX="8.375" PointY="7.125" />
-        <InheritanceConnector EntityType="SA45Team07B_LibraryModel.UndergraduateStudent" />
-        <EntityTypeShape EntityType="SA45Team07B_LibraryModel.GraduateStudent" Width="1.5" PointX="7.375" PointY="8.875" />
-        <InheritanceConnector EntityType="SA45Team07B_LibraryModel.GraduateStudent" ManuallyRouted="false" >
-        </InheritanceConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
