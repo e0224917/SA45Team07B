@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademicStaff.cs">
+      <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminStaff.cs">
+      <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Faculties.cs">
+      <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GraduateStudent.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="IssueTrans.cs">
@@ -114,6 +123,9 @@
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
+      <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UndergraduateStudent.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
