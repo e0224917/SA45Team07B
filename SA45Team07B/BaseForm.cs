@@ -22,6 +22,7 @@ namespace SA45Team07B
 
         private void MinimizeButton_Click(object sender, EventArgs e)
         {
+            //this.notifyIconForMinimize.ShowBalloonTip(200, "", "Library Management is still running.", ToolTipIcon.None);
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -32,7 +33,7 @@ namespace SA45Team07B
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Any unsaved work will not be saved.");
+            this.notifyIconForMinimize.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);
             this.Close();
         }
 
