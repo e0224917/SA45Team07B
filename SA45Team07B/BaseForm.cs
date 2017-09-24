@@ -42,6 +42,7 @@ namespace SA45Team07B
             this.WindowState = FormWindowState.Maximized;
         }
 
+        /*
         #region DO NOT REMOVE: Drag Borderless Form from Title bar
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -60,10 +61,7 @@ namespace SA45Team07B
             }
         }
         #endregion
-
-        protected virtual void MainForm_Load(object sender, EventArgs e)
-        {
-        }
+        */
 
         private void toolStripButtonBorrow_Click(object sender, EventArgs e)
         {
@@ -83,8 +81,15 @@ namespace SA45Team07B
         private void button1_Click(object sender, EventArgs e)
         {
         }
-        
 
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);          
+        }
     }
 }

@@ -60,11 +60,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewBook.Designer.cs">
+      <DependentUpon>AddNewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewMember.Designer.cs">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPublisher.Designer.cs">
+      <DependentUpon>AddNewPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdjustStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdjustStock.Designer.cs">
+      <DependentUpon>AdjustStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookInfo.Designer.cs">
+      <DependentUpon>BookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookPopUpSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookPopUpSearch.Designer.cs">
+      <DependentUpon>BookPopUpSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Books.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
@@ -80,6 +116,12 @@
     </Compile>
     <Compile Include="Faculties.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IssueTrans.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
@@ -102,13 +144,61 @@
     <Compile Include="MemberCategories.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="MemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberInfo.Designer.cs">
+      <DependentUpon>MemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPopUpSearchcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberPopUpSearchcs.Designer.cs">
+      <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberTrans.Designer.cs">
+      <DependentUpon>MemberTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyBook.Designer.cs">
+      <DependentUpon>ModifyBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyMember.Designer.cs">
+      <DependentUpon>ModifyMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPublisher.Designer.cs">
+      <DependentUpon>ModifyPublisher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publishers.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordLost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecordLost.Designer.cs">
+      <DependentUpon>RecordLost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnForm.Designer.cs">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RFIDs.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
@@ -123,8 +213,17 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookPopUpSearch.resx">
+      <DependentUpon>BookPopUpSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowForm.resx">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberPopUpSearchcs.resx">
+      <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
