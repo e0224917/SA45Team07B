@@ -12,12 +12,17 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Publisher
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Publisher()
+        {
+            this.Books = new HashSet<Book>();
+        }
+    
+        public string PublisherID { get; set; }
+        public string PublisherName { get; set; }
+        public string Country { get; set; }
+    
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

@@ -12,11 +12,11 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class Books
+    public partial class Book
     {
-        public Books()
+        public Book()
         {
-            this.RFIDs = new HashSet<RFIDs>();
+            this.RFIDs = new HashSet<RFIDTag>();
         }
     
         public long BookID { get; set; }
@@ -31,8 +31,8 @@ namespace SA45Team07B
         public string PublishedYear { get; set; }
         public string Edition { get; set; }
     
-        public virtual BookSubjects BookSubjects { get; set; }
-        public virtual Publishers Publishers { get; set; }
-        public virtual ICollection<RFIDs> RFIDs { get; set; }
+        public virtual BookSubject BookSubjects { get; set; }
+        public virtual Publisher Publishers { get; set; }
+        public virtual ICollection<RFIDTag> RFIDs { get; set; }
     }
 }

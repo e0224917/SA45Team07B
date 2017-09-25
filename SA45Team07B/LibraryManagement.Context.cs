@@ -25,15 +25,14 @@ namespace SA45Team07B
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Books> Books { get; set; }
-        public DbSet<BookSubjects> BookSubjects { get; set; }
-        public DbSet<Faculties> Faculties { get; set; }
-        public DbSet<IssueTrans> IssueTrans { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<BookSubject> BookSubjects { get; set; }
+        public DbSet<Faculty> Faculties { get; set; }
+        public DbSet<IssueTran> IssueTrans { get; set; }
         public DbSet<MemberCategories> MemberCategories { get; set; }
-        public DbSet<Members> Members { get; set; }
-        public DbSet<Publishers> Publishers { get; set; }
-        public DbSet<RFIDs> RFIDs { get; set; }
-        public DbSet<StockAdjustments> StockAdjustments { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<RFIDTag> RFIDs { get; set; }
+        public DbSet<StockAdjustment> StockAdjustments { get; set; }
     }
 }

@@ -12,16 +12,13 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class Faculties
+    public partial class StockAdjustment
     {
-        public Faculties()
-        {
-            this.Members = new HashSet<Members>();
-        }
+        public string RFID { get; set; }
+        public System.DateTime DateAdjusted { get; set; }
+        public short QtyAdjusted { get; set; }
+        public string Remarks { get; set; }
     
-        public string FacultyCode { get; set; }
-        public string FacultyName { get; set; }
-    
-        public virtual ICollection<Members> Members { get; set; }
+        public virtual RFIDTag RFIDs { get; set; }
     }
 }

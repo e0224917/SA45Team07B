@@ -16,7 +16,7 @@ namespace SA45Team07B
     {
         public MemberCategories()
         {
-            this.Members = new HashSet<Members>();
+            this.Members = new HashSet<Member>();
         }
     
         public string MemberType { get; set; }
@@ -25,6 +25,6 @@ namespace SA45Team07B
         public short LoanPeriod { get; set; }
         public decimal FinePerDay { get; set; }
     
-        public virtual ICollection<Members> Members { get; set; }
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

@@ -12,17 +12,16 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class Publishers
+    public partial class Faculty
     {
-        public Publishers()
+        public Faculty()
         {
-            this.Books = new HashSet<Books>();
+            this.Members = new HashSet<Member>();
         }
     
-        public string PublisherID { get; set; }
-        public string PublisherName { get; set; }
-        public string Country { get; set; }
+        public string FacultyCode { get; set; }
+        public string FacultyName { get; set; }
     
-        public virtual ICollection<Books> Books { get; set; }
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

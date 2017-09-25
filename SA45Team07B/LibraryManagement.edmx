@@ -100,16 +100,6 @@
           <Property Name="QtyAdjusted" Type="smallint" Nullable="false" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <Association Name="FK_Books_BookSubjects">
           <End Role="BookSubjects" Type="Self.BookSubjects" Multiplicity="1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
@@ -216,7 +206,6 @@
           <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RFIDs" EntityType="Self.RFIDs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StockAdjustments" EntityType="Self.StockAdjustments" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Books_BookSubjects" Association="Self.FK_Books_BookSubjects">
             <End Role="BookSubjects" EntitySet="BookSubjects" />
             <End Role="Books" EntitySet="Books" />
@@ -255,7 +244,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SA45Team07B_LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Books">
+        <EntityType Name="Book">
           <Key>
             <PropertyRef Name="BookID" />
           </Key>
@@ -274,7 +263,7 @@
           <NavigationProperty Name="Publishers" Relationship="Self.FK_Books_Publishers" FromRole="Books" ToRole="Publishers" />
           <NavigationProperty Name="RFIDs" Relationship="Self.FK_RFIDs_Books" FromRole="Books" ToRole="RFIDs" />
         </EntityType>
-        <EntityType Name="BookSubjects">
+        <EntityType Name="BookSubject">
           <Key>
             <PropertyRef Name="SubjectCode" />
           </Key>
@@ -282,7 +271,7 @@
           <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_BookSubjects" FromRole="BookSubjects" ToRole="Books" />
         </EntityType>
-        <EntityType Name="Faculties">
+        <EntityType Name="Faculty">
           <Key>
             <PropertyRef Name="FacultyCode" />
           </Key>
@@ -290,7 +279,7 @@
           <Property Name="FacultyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Members" Relationship="Self.FK_Members_Schools" FromRole="Faculties" ToRole="Members" />
         </EntityType>
-        <EntityType Name="IssueTrans">
+        <EntityType Name="IssueTran">
           <Key>
             <PropertyRef Name="TransactionID" />
           </Key>
@@ -316,7 +305,7 @@
           <Property Name="FinePerDay" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
           <NavigationProperty Name="Members" Relationship="Self.FK_Members_MemberCategories" FromRole="MemberCategories" ToRole="Members" />
         </EntityType>
-        <EntityType Name="Members">
+        <EntityType Name="Member">
           <Key>
             <PropertyRef Name="MemberID" />
           </Key>
@@ -333,7 +322,7 @@
           <NavigationProperty Name="IssueTrans" Relationship="Self.FK_IssueTrans_Members" FromRole="Members" ToRole="IssueTrans" />
           <NavigationProperty Name="MemberCategories" Relationship="Self.FK_Members_MemberCategories" FromRole="Members" ToRole="MemberCategories" />
         </EntityType>
-        <EntityType Name="Publishers">
+        <EntityType Name="Publisher">
           <Key>
             <PropertyRef Name="PublisherID" />
           </Key>
@@ -342,7 +331,7 @@
           <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Publishers" FromRole="Publishers" ToRole="Books" />
         </EntityType>
-        <EntityType Name="RFIDs">
+        <EntityType Name="RFIDTag">
           <Key>
             <PropertyRef Name="RFID" />
           </Key>
@@ -355,7 +344,7 @@
           <NavigationProperty Name="IssueTrans" Relationship="Self.FK_IssueTrans_RFIDs" FromRole="RFIDs" ToRole="IssueTrans" />
           <NavigationProperty Name="StockAdjustments" Relationship="Self.FK_StockAdjustments_RFIDs" FromRole="RFIDs" ToRole="StockAdjustments" />
         </EntityType>
-        <EntityType Name="StockAdjustments">
+        <EntityType Name="StockAdjustment">
           <Key>
             <PropertyRef Name="RFID" />
             <PropertyRef Name="DateAdjusted" />
@@ -366,19 +355,9 @@
           <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RFIDs" Relationship="Self.FK_StockAdjustments_RFIDs" FromRole="StockAdjustments" ToRole="RFIDs" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <Association Name="FK_Books_BookSubjects">
-          <End Role="BookSubjects" Type="Self.BookSubjects" Multiplicity="1" />
-          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <End Role="BookSubjects" Type="SA45Team07B_LibraryModel.BookSubject" Multiplicity="1" />
+          <End Role="Books" Type="SA45Team07B_LibraryModel.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BookSubjects">
               <PropertyRef Name="SubjectCode" />
@@ -389,8 +368,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Books_Publishers">
-          <End Role="Publishers" Type="Self.Publishers" Multiplicity="1" />
-          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <End Role="Publishers" Type="SA45Team07B_LibraryModel.Publisher" Multiplicity="1" />
+          <End Role="Books" Type="SA45Team07B_LibraryModel.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Publishers">
               <PropertyRef Name="PublisherID" />
@@ -401,8 +380,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RFIDs_Books">
-          <End Role="Books" Type="Self.Books" Multiplicity="1" />
-          <End Role="RFIDs" Type="Self.RFIDs" Multiplicity="*" />
+          <End Role="Books" Type="SA45Team07B_LibraryModel.Book" Multiplicity="1" />
+          <End Role="RFIDs" Type="SA45Team07B_LibraryModel.RFIDTag" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="BookID" />
@@ -413,8 +392,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Members_Schools">
-          <End Role="Faculties" Type="Self.Faculties" Multiplicity="1" />
-          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <End Role="Faculties" Type="SA45Team07B_LibraryModel.Faculty" Multiplicity="1" />
+          <End Role="Members" Type="SA45Team07B_LibraryModel.Member" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Faculties">
               <PropertyRef Name="FacultyCode" />
@@ -425,8 +404,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IssueTrans_Members">
-          <End Role="Members" Type="Self.Members" Multiplicity="1" />
-          <End Role="IssueTrans" Type="Self.IssueTrans" Multiplicity="*" />
+          <End Role="Members" Type="SA45Team07B_LibraryModel.Member" Multiplicity="1" />
+          <End Role="IssueTrans" Type="SA45Team07B_LibraryModel.IssueTran" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Members">
               <PropertyRef Name="MemberID" />
@@ -437,8 +416,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IssueTrans_RFIDs">
-          <End Role="RFIDs" Type="Self.RFIDs" Multiplicity="1" />
-          <End Role="IssueTrans" Type="Self.IssueTrans" Multiplicity="*" />
+          <End Role="RFIDs" Type="SA45Team07B_LibraryModel.RFIDTag" Multiplicity="1" />
+          <End Role="IssueTrans" Type="SA45Team07B_LibraryModel.IssueTran" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RFIDs">
               <PropertyRef Name="RFID" />
@@ -450,7 +429,7 @@
         </Association>
         <Association Name="FK_Members_MemberCategories">
           <End Role="MemberCategories" Type="Self.MemberCategories" Multiplicity="1" />
-          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <End Role="Members" Type="SA45Team07B_LibraryModel.Member" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MemberCategories">
               <PropertyRef Name="MemberType" />
@@ -461,8 +440,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StockAdjustments_RFIDs">
-          <End Role="RFIDs" Type="Self.RFIDs" Multiplicity="1" />
-          <End Role="StockAdjustments" Type="Self.StockAdjustments" Multiplicity="*" />
+          <End Role="RFIDs" Type="SA45Team07B_LibraryModel.RFIDTag" Multiplicity="1" />
+          <End Role="StockAdjustments" Type="SA45Team07B_LibraryModel.StockAdjustment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RFIDs">
               <PropertyRef Name="RFID" />
@@ -473,16 +452,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SA45Team07B_LibraryEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Books" EntityType="Self.Books" />
-          <EntitySet Name="BookSubjects" EntityType="Self.BookSubjects" />
-          <EntitySet Name="Faculties" EntityType="Self.Faculties" />
-          <EntitySet Name="IssueTrans" EntityType="Self.IssueTrans" />
+          <EntitySet Name="Books" EntityType="SA45Team07B_LibraryModel.Book" />
+          <EntitySet Name="BookSubjects" EntityType="SA45Team07B_LibraryModel.BookSubject" />
+          <EntitySet Name="Faculties" EntityType="SA45Team07B_LibraryModel.Faculty" />
+          <EntitySet Name="IssueTrans" EntityType="SA45Team07B_LibraryModel.IssueTran" />
           <EntitySet Name="MemberCategories" EntityType="Self.MemberCategories" />
-          <EntitySet Name="Members" EntityType="Self.Members" />
-          <EntitySet Name="Publishers" EntityType="Self.Publishers" />
-          <EntitySet Name="RFIDs" EntityType="Self.RFIDs" />
-          <EntitySet Name="StockAdjustments" EntityType="Self.StockAdjustments" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Members" EntityType="SA45Team07B_LibraryModel.Member" />
+          <EntitySet Name="Publishers" EntityType="SA45Team07B_LibraryModel.Publisher" />
+          <EntitySet Name="RFIDs" EntityType="SA45Team07B_LibraryModel.RFIDTag" />
+          <EntitySet Name="StockAdjustments" EntityType="SA45Team07B_LibraryModel.StockAdjustment" />
           <AssociationSet Name="FK_Books_BookSubjects" Association="Self.FK_Books_BookSubjects">
             <End Role="BookSubjects" EntitySet="BookSubjects" />
             <End Role="Books" EntitySet="Books" />
@@ -523,7 +501,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SA45Team07B_LibraryModelStoreContainer" CdmEntityContainer="SA45Team07B_LibraryEntities">
           <EntitySetMapping Name="Books">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Books">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Book">
               <MappingFragment StoreEntitySet="Books">
                 <ScalarProperty Name="BookID" ColumnName="BookID" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
@@ -540,7 +518,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BookSubjects">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.BookSubjects">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.BookSubject">
               <MappingFragment StoreEntitySet="BookSubjects">
                 <ScalarProperty Name="SubjectCode" ColumnName="SubjectCode" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
@@ -548,7 +526,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Faculties">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Faculties">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Faculty">
               <MappingFragment StoreEntitySet="Faculties">
                 <ScalarProperty Name="FacultyCode" ColumnName="FacultyCode" />
                 <ScalarProperty Name="FacultyName" ColumnName="FacultyName" />
@@ -556,7 +534,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="IssueTrans">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.IssueTrans">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.IssueTran">
               <MappingFragment StoreEntitySet="IssueTrans">
                 <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
                 <ScalarProperty Name="RFID" ColumnName="RFID" />
@@ -581,7 +559,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Members">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Members">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Member">
               <MappingFragment StoreEntitySet="Members">
                 <ScalarProperty Name="MemberType" ColumnName="MemberType" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
@@ -596,7 +574,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Publishers">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Publishers">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.Publisher">
               <MappingFragment StoreEntitySet="Publishers">
                 <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
                 <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
@@ -605,7 +583,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RFIDs">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.RFIDs">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.RFIDTag">
               <MappingFragment StoreEntitySet="RFIDs">
                 <ScalarProperty Name="RFID" ColumnName="RFID" />
                 <ScalarProperty Name="BookID" ColumnName="BookID" />
@@ -616,23 +594,12 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StockAdjustments">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.StockAdjustments">
+            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.StockAdjustment">
               <MappingFragment StoreEntitySet="StockAdjustments">
                 <ScalarProperty Name="RFID" ColumnName="RFID" />
                 <ScalarProperty Name="DateAdjusted" ColumnName="DateAdjusted" />
                 <ScalarProperty Name="QtyAdjusted" ColumnName="QtyAdjusted" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SA45Team07B_LibraryModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

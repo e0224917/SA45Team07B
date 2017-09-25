@@ -12,11 +12,11 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class Members
+    public partial class Member
     {
-        public Members()
+        public Member()
         {
-            this.IssueTrans = new HashSet<IssueTrans>();
+            this.IssueTrans = new HashSet<IssueTran>();
         }
     
         public long MemberID { get; set; }
@@ -29,8 +29,8 @@ namespace SA45Team07B
         public string Discontinued { get; set; }
         public short LoanedQty { get; set; }
     
-        public virtual Faculties Faculties { get; set; }
-        public virtual ICollection<IssueTrans> IssueTrans { get; set; }
+        public virtual Faculty Faculties { get; set; }
+        public virtual ICollection<IssueTran> IssueTrans { get; set; }
         public virtual MemberCategories MemberCategories { get; set; }
     }
 }

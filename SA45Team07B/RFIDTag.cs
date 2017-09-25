@@ -12,12 +12,12 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class RFIDs
+    public partial class RFIDTag
     {
-        public RFIDs()
+        public RFIDTag()
         {
-            this.IssueTrans = new HashSet<IssueTrans>();
-            this.StockAdjustments = new HashSet<StockAdjustments>();
+            this.IssueTrans = new HashSet<IssueTran>();
+            this.StockAdjustments = new HashSet<StockAdjustment>();
         }
     
         public string RFID { get; set; }
@@ -26,8 +26,8 @@ namespace SA45Team07B
         public Nullable<long> LastTransactionID { get; set; }
         public string Availability { get; set; }
     
-        public virtual Books Books { get; set; }
-        public virtual ICollection<IssueTrans> IssueTrans { get; set; }
-        public virtual ICollection<StockAdjustments> StockAdjustments { get; set; }
+        public virtual Book Books { get; set; }
+        public virtual ICollection<IssueTran> IssueTrans { get; set; }
+        public virtual ICollection<StockAdjustment> StockAdjustments { get; set; }
     }
 }

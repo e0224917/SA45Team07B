@@ -32,8 +32,9 @@
             // 
             // BorrowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
-            this.ClientSize = new System.Drawing.Size(1506, 823);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.ClientSize = new System.Drawing.Size(1043, 565);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "BorrowForm";
             this.Text = "Borrow - Library Management System SA45Team07B";
             this.ResumeLayout(false);

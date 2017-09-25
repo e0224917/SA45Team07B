@@ -12,16 +12,16 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class BookSubjects
+    public partial class BookSubject
     {
-        public BookSubjects()
+        public BookSubject()
         {
-            this.Books = new HashSet<Books>();
+            this.Books = new HashSet<Book>();
         }
     
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
     
-        public virtual ICollection<Books> Books { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

@@ -12,13 +12,18 @@ namespace SA45Team07B
     using System;
     using System.Collections.Generic;
     
-    public partial class StockAdjustments
+    public partial class IssueTran
     {
+        public long TransactionID { get; set; }
         public string RFID { get; set; }
-        public System.DateTime DateAdjusted { get; set; }
-        public short QtyAdjusted { get; set; }
+        public long MemberID { get; set; }
+        public System.DateTime DateIssued { get; set; }
+        public System.DateTime DateDue { get; set; }
+        public Nullable<System.DateTime> DateActualReturned { get; set; }
+        public string Status { get; set; }
         public string Remarks { get; set; }
     
-        public virtual RFIDs RFIDs { get; set; }
+        public virtual Member Members { get; set; }
+        public virtual RFIDTag RFIDs { get; set; }
     }
 }
