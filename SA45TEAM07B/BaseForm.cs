@@ -91,5 +91,19 @@ namespace SA45Team07B
         {
             this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);          
         }
+
+        private void addNewToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if(this is AddNewBook)
+            {
+                AddNewPublisher form = new AddNewPublisher();
+                form.ShowDialog();
+                if (DialogResult == DialogResult.OK)
+                {
+                    ((AddNewBook)this).LoadPublisherList();
+                }
+            }
+            
+        }
     }
 }
