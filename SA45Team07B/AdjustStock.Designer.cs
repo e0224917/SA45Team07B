@@ -35,15 +35,15 @@
             this.txtbBookTitle = new System.Windows.Forms.TextBox();
             this.txtbRemarks = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.lblDiscontinue = new System.Windows.Forms.Label();
-            this.rbYes = new System.Windows.Forms.RadioButton();
-            this.rbNo = new System.Windows.Forms.RadioButton();
+            this.rbRemove = new System.Windows.Forms.RadioButton();
+            this.rbRestore = new System.Windows.Forms.RadioButton();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.epRFID = new System.Windows.Forms.ErrorProvider(this.components);
             this.cboxReason = new System.Windows.Forms.ComboBox();
             this.btnMoreRFID = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.lblAction = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.epRFID)).BeginInit();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             this.lblRFID.AutoSize = true;
             this.lblRFID.BackColor = System.Drawing.Color.Transparent;
-            this.lblRFID.Location = new System.Drawing.Point(15, 25);
+            this.lblRFID.Location = new System.Drawing.Point(6, 59);
             this.lblRFID.Name = "lblRFID";
             this.lblRFID.Size = new System.Drawing.Size(43, 21);
             this.lblRFID.TabIndex = 10;
@@ -60,7 +60,7 @@
             // 
             // txtRFID
             // 
-            this.txtRFID.Location = new System.Drawing.Point(113, 22);
+            this.txtRFID.Location = new System.Drawing.Point(104, 56);
             this.txtRFID.MaxLength = 10;
             this.txtRFID.Name = "txtRFID";
             this.txtRFID.Size = new System.Drawing.Size(100, 29);
@@ -72,7 +72,7 @@
             // 
             this.lblBookTitle.AutoSize = true;
             this.lblBookTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookTitle.Location = new System.Drawing.Point(15, 66);
+            this.lblBookTitle.Location = new System.Drawing.Point(6, 101);
             this.lblBookTitle.Name = "lblBookTitle";
             this.lblBookTitle.Size = new System.Drawing.Size(78, 21);
             this.lblBookTitle.TabIndex = 12;
@@ -80,7 +80,7 @@
             // 
             // txtbBookTitle
             // 
-            this.txtbBookTitle.Location = new System.Drawing.Point(113, 63);
+            this.txtbBookTitle.Location = new System.Drawing.Point(104, 98);
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.ReadOnly = true;
             this.txtbBookTitle.Size = new System.Drawing.Size(238, 29);
@@ -89,7 +89,7 @@
             // txtbRemarks
             // 
             this.txtbRemarks.Enabled = false;
-            this.txtbRemarks.Location = new System.Drawing.Point(113, 171);
+            this.txtbRemarks.Location = new System.Drawing.Point(104, 184);
             this.txtbRemarks.MaxLength = 255;
             this.txtbRemarks.Multiline = true;
             this.txtbRemarks.Name = "txtbRemarks";
@@ -100,52 +100,41 @@
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.BackColor = System.Drawing.Color.Transparent;
-            this.lblNotes.Location = new System.Drawing.Point(15, 137);
+            this.lblNotes.Location = new System.Drawing.Point(6, 141);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(61, 21);
             this.lblNotes.TabIndex = 15;
             this.lblNotes.Text = "Reason";
             // 
-            // lblDiscontinue
+            // rbRemove
             // 
-            this.lblDiscontinue.AutoSize = true;
-            this.lblDiscontinue.BackColor = System.Drawing.Color.Transparent;
-            this.lblDiscontinue.Location = new System.Drawing.Point(15, 104);
-            this.lblDiscontinue.Name = "lblDiscontinue";
-            this.lblDiscontinue.Size = new System.Drawing.Size(99, 21);
-            this.lblDiscontinue.TabIndex = 16;
-            this.lblDiscontinue.Text = "Discontinue?";
+            this.rbRemove.AutoSize = true;
+            this.rbRemove.BackColor = System.Drawing.Color.Transparent;
+            this.rbRemove.Checked = true;
+            this.rbRemove.Location = new System.Drawing.Point(106, 21);
+            this.rbRemove.Name = "rbRemove";
+            this.rbRemove.Size = new System.Drawing.Size(85, 25);
+            this.rbRemove.TabIndex = 17;
+            this.rbRemove.TabStop = true;
+            this.rbRemove.Text = "Remove";
+            this.rbRemove.UseVisualStyleBackColor = false;
+            this.rbRemove.CheckedChanged += new System.EventHandler(this.rbRemove_CheckedChanged);
             // 
-            // rbYes
+            // rbRestore
             // 
-            this.rbYes.AutoSize = true;
-            this.rbYes.BackColor = System.Drawing.Color.Transparent;
-            this.rbYes.Enabled = false;
-            this.rbYes.Location = new System.Drawing.Point(113, 104);
-            this.rbYes.Name = "rbYes";
-            this.rbYes.Size = new System.Drawing.Size(51, 25);
-            this.rbYes.TabIndex = 17;
-            this.rbYes.TabStop = true;
-            this.rbYes.Text = "Yes";
-            this.rbYes.UseVisualStyleBackColor = false;
-            // 
-            // rbNo
-            // 
-            this.rbNo.AutoSize = true;
-            this.rbNo.BackColor = System.Drawing.Color.Transparent;
-            this.rbNo.Enabled = false;
-            this.rbNo.Location = new System.Drawing.Point(170, 104);
-            this.rbNo.Name = "rbNo";
-            this.rbNo.Size = new System.Drawing.Size(49, 25);
-            this.rbNo.TabIndex = 18;
-            this.rbNo.TabStop = true;
-            this.rbNo.Text = "No";
-            this.rbNo.UseVisualStyleBackColor = false;
+            this.rbRestore.AutoSize = true;
+            this.rbRestore.BackColor = System.Drawing.Color.Transparent;
+            this.rbRestore.Location = new System.Drawing.Point(221, 21);
+            this.rbRestore.Name = "rbRestore";
+            this.rbRestore.Size = new System.Drawing.Size(81, 25);
+            this.rbRestore.TabIndex = 18;
+            this.rbRestore.Text = "Restore";
+            this.rbRestore.UseVisualStyleBackColor = false;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(98, 295);
+            this.btnSubmit.Location = new System.Drawing.Point(102, 313);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(78, 34);
             this.btnSubmit.TabIndex = 19;
@@ -155,7 +144,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(205, 296);
+            this.btnCancel.Location = new System.Drawing.Point(209, 314);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 20;
@@ -177,7 +166,7 @@
             "Lost",
             "Damaged",
             "Other"});
-            this.cboxReason.Location = new System.Drawing.Point(113, 136);
+            this.cboxReason.Location = new System.Drawing.Point(104, 140);
             this.cboxReason.Name = "cboxReason";
             this.cboxReason.Size = new System.Drawing.Size(100, 29);
             this.cboxReason.TabIndex = 21;
@@ -186,7 +175,7 @@
             // btnMoreRFID
             // 
             this.btnMoreRFID.CausesValidation = false;
-            this.btnMoreRFID.Location = new System.Drawing.Point(322, 22);
+            this.btnMoreRFID.Location = new System.Drawing.Point(313, 56);
             this.btnMoreRFID.Name = "btnMoreRFID";
             this.btnMoreRFID.Size = new System.Drawing.Size(29, 29);
             this.btnMoreRFID.TabIndex = 22;
@@ -196,6 +185,7 @@
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.lblAction);
             this.groupBox.Controls.Add(this.lblRFID);
             this.groupBox.Controls.Add(this.cboxReason);
             this.groupBox.Controls.Add(this.btnMoreRFID);
@@ -203,23 +193,30 @@
             this.groupBox.Controls.Add(this.txtRFID);
             this.groupBox.Controls.Add(this.lblBookTitle);
             this.groupBox.Controls.Add(this.lblNotes);
-            this.groupBox.Controls.Add(this.rbNo);
+            this.groupBox.Controls.Add(this.rbRestore);
             this.groupBox.Controls.Add(this.txtbBookTitle);
-            this.groupBox.Controls.Add(this.rbYes);
-            this.groupBox.Controls.Add(this.lblDiscontinue);
+            this.groupBox.Controls.Add(this.rbRemove);
             this.groupBox.Location = new System.Drawing.Point(12, 12);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(366, 277);
+            this.groupBox.Size = new System.Drawing.Size(366, 295);
             this.groupBox.TabIndex = 23;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Input";
             // 
+            // lblAction
+            // 
+            this.lblAction.AutoSize = true;
+            this.lblAction.Location = new System.Drawing.Point(6, 25);
+            this.lblAction.Name = "lblAction";
+            this.lblAction.Size = new System.Drawing.Size(54, 21);
+            this.lblAction.TabIndex = 23;
+            this.lblAction.Text = "Action";
+            // 
             // AdjustStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(388, 337);
+            this.ClientSize = new System.Drawing.Size(394, 359);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
@@ -241,14 +238,14 @@
         private System.Windows.Forms.TextBox txtbBookTitle;
         private System.Windows.Forms.TextBox txtbRemarks;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.Label lblDiscontinue;
-        private System.Windows.Forms.RadioButton rbYes;
-        private System.Windows.Forms.RadioButton rbNo;
+        private System.Windows.Forms.RadioButton rbRemove;
+        private System.Windows.Forms.RadioButton rbRestore;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider epRFID;
         private System.Windows.Forms.ComboBox cboxReason;
         private System.Windows.Forms.Button btnMoreRFID;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.Label lblAction;
     }
 }

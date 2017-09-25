@@ -11,6 +11,9 @@ namespace SA45Team07B
 {
     public partial class AdjustStock : SA45Team07B.BaseModalForm
     {
+        static string[] REMOVE_REASON_LIST = new string[] { "Lost", "Damaged", "Other" };
+        static string[] RESTORE_REASON_LIST = new string[] { "Found", "Replace", "Other" };
+
         Book mBook;
         bool discontinued;
         string mRFID;
@@ -24,21 +27,15 @@ namespace SA45Team07B
         {
             InitializeComponent();
             mBook = null;
+            cboxReason.DataSource = REMOVE_REASON_LIST;
         }
 
         private void txtRFID_TextChanged(object sender, EventArgs e)
         {
             if (ValidateRFID())
             {
-                txtbBookTitle.Text = mBook.BookTitle;
-                discontinued = DataService.GetRFIDDiscontinueStatus(txtRFID.Text);
-                AllowEdit(true);
+                txtbBookTitle.Text = mBook.BookTitle;                         
             }
-            else
-            {
-                AllowEdit(false);
-            }
-
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -46,7 +43,7 @@ namespace SA45Team07B
 
             if (!ValidateRFID()) return;
 
-            if (discontinued == rbYes.Checked)
+            if (discontinued == rbRemove.Checked)
             {
                 MessageBox.Show("No changes");
                 DialogResult = DialogResult.Cancel;
@@ -98,6 +95,8 @@ namespace SA45Team07B
 
         private bool ValidateRFID()
         {
+            AllowEdit(false);
+
             if (txtRFID.Text.Length < 9)
             {
                 epRFID.SetError(txtRFID, "Wrong RFID");
@@ -105,14 +104,22 @@ namespace SA45Team07B
             }
 
             mBook = DataService.GetBookFromRFID(txtRFID.Text);
-
             if (mBook == null)
             {
                 epRFID.SetError(txtRFID, "No record");
                 return false;
             }
 
+            discontinued = DataService.GetRFIDDiscontinueStatus(txtRFID.Text);
+            // if book status and action type not match
+            if (discontinued == rbRemove.Checked)
+            {
+                epRFID.SetError(txtRFID, string.Format("Already {0}", rbRemove.Checked ? "removed" : "restored"));
+                return false;
+            }
+
             epRFID.SetError(txtRFID, "");
+            AllowEdit(true);
             return true;
         }
 
@@ -120,22 +127,22 @@ namespace SA45Team07B
         {
             if (allowed)
             {
-                rbYes.Enabled = true;
-                rbNo.Enabled = true;
                 cboxReason.Enabled = true;
-                rbYes.Checked = discontinued;
-                rbNo.Checked = !discontinued;
                 btnSubmit.Enabled = true;
             }
             else
             {
                 txtbBookTitle.Text = "";
-                rbYes.Enabled = false;
-                rbNo.Enabled = false;
                 cboxReason.Enabled = false;
                 txtbRemarks.Enabled = false;
                 btnSubmit.Enabled = false;
             }
+        }
+
+        private void rbRemove_CheckedChanged(object sender, EventArgs e)
+        {
+            ValidateRFID();
+            cboxReason.DataSource = rbRemove.Checked ? REMOVE_REASON_LIST : RESTORE_REASON_LIST;
         }
     }
 }
