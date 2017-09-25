@@ -28,7 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Visible = false;
+            // 
+            // AddNewMember
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.ClientSize = new System.Drawing.Size(1506, 823);
+            this.Name = "AddNewMember";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

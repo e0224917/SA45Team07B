@@ -203,6 +203,9 @@
     <Compile Include="StockAdjustment.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewMember.resx">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
