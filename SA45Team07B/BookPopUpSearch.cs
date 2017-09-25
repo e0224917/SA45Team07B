@@ -49,7 +49,27 @@ namespace SA45Team07B
 
                 cbSubject.DataSource = subjectNameList;
 
-                SearchAndDisplayBook();
+                // Lazy loading - load the first 25 rows to datagridview
+                var displayList = (from x in context.RFIDs
+                                  orderby x.Books.BookID, x.Availability descending
+                                  select new
+                                  {
+                                      x.Books.BookID,
+                                      x.Books.BookTitle,
+                                      x.Availability,
+                                      x.Books.Edition,
+                                      x.Books.Author,
+                                      x.Books.ISBN,
+                                      x.Books.CallNumber,
+                                      x.RFID,
+                                      x.Books.BookSubjects.SubjectName,
+                                      x.Books.Publishers.PublisherName,
+                                      x.Books.PublishedYear,
+                                      x.Books.Price,
+                                      x.Discontinued,
+                                  }).Take(25);
+
+                dataGridViewBookList.DataSource = displayList.ToList();
             }
         }
 
@@ -165,9 +185,6 @@ namespace SA45Team07B
 
                 this.bookFound = tagFound.Books;
             }
-
-
-            MessageBox.Show(tagFound.RFID.ToString() + " " + bookFound.BookID.ToString());
            
             this.DialogResult = DialogResult.OK;
         }
@@ -194,6 +211,22 @@ namespace SA45Team07B
                 string selectedName = dataGridViewBookList.CurrentRow.Cells["BookTitleColumn"].Value.ToString();
 
                 toolStripStatusLblSelectedBook.Text = $"<<{selectedName}>> is selected.";
+            }
+        }
+
+        private void dataGridViewBookList_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            {
+                if (dataGridViewBookList.RowCount == 25)
+                {
+                    if(e.NewValue > 9)
+                    {
+                        SearchAndDisplayBook();
+                        // remove this event handler
+                        this.dataGridViewBookList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
+                    }
+                }
             }
         }
     }

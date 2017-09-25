@@ -45,6 +45,13 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.lblSelectBook = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnDiscontinued = new System.Windows.Forms.RadioButton();
+            this.rbtnAvailable = new System.Windows.Forms.RadioButton();
+            this.rbtnOnLoan = new System.Windows.Forms.RadioButton();
+            this.rbtnAll = new System.Windows.Forms.RadioButton();
+            this.cbSubject = new System.Windows.Forms.ComboBox();
+            this.lblAvailibility = new System.Windows.Forms.Label();
+            this.lblSubject = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblISBN = new System.Windows.Forms.Label();
@@ -53,16 +60,9 @@
             this.txtbAuthor = new System.Windows.Forms.TextBox();
             this.txtbBookTitle = new System.Windows.Forms.TextBox();
             this.txtbISBN = new System.Windows.Forms.TextBox();
-            this.lblSubject = new System.Windows.Forms.Label();
-            this.lblAvailibility = new System.Windows.Forms.Label();
-            this.cbSubject = new System.Windows.Forms.ComboBox();
-            this.rbtnAll = new System.Windows.Forms.RadioButton();
-            this.rbtnOnLoan = new System.Windows.Forms.RadioButton();
-            this.rbtnAvailable = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLblSelectedBook = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridViewBookList = new System.Windows.Forms.DataGridView();
-            this.rbtnDiscontinued = new System.Windows.Forms.RadioButton();
             this.BookIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookTitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RFIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,6 +154,89 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
+            // 
+            // rbtnDiscontinued
+            // 
+            this.rbtnDiscontinued.AutoSize = true;
+            this.rbtnDiscontinued.Location = new System.Drawing.Point(562, 245);
+            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnDiscontinued.Name = "rbtnDiscontinued";
+            this.rbtnDiscontinued.Size = new System.Drawing.Size(148, 32);
+            this.rbtnDiscontinued.TabIndex = 8;
+            this.rbtnDiscontinued.Text = "Discontinued";
+            this.rbtnDiscontinued.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAvailable
+            // 
+            this.rbtnAvailable.AutoSize = true;
+            this.rbtnAvailable.Location = new System.Drawing.Point(291, 245);
+            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnAvailable.Name = "rbtnAvailable";
+            this.rbtnAvailable.Size = new System.Drawing.Size(113, 32);
+            this.rbtnAvailable.TabIndex = 6;
+            this.rbtnAvailable.Text = "Available";
+            this.rbtnAvailable.UseVisualStyleBackColor = true;
+            // 
+            // rbtnOnLoan
+            // 
+            this.rbtnOnLoan.AutoSize = true;
+            this.rbtnOnLoan.Location = new System.Drawing.Point(432, 245);
+            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnOnLoan.Name = "rbtnOnLoan";
+            this.rbtnOnLoan.Size = new System.Drawing.Size(102, 32);
+            this.rbtnOnLoan.TabIndex = 7;
+            this.rbtnOnLoan.Text = "On loan";
+            this.rbtnOnLoan.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAll
+            // 
+            this.rbtnAll.AutoSize = true;
+            this.rbtnAll.Checked = true;
+            this.rbtnAll.Location = new System.Drawing.Point(207, 245);
+            this.rbtnAll.Margin = new System.Windows.Forms.Padding(8);
+            this.rbtnAll.Name = "rbtnAll";
+            this.rbtnAll.Size = new System.Drawing.Size(56, 32);
+            this.rbtnAll.TabIndex = 5;
+            this.rbtnAll.TabStop = true;
+            this.rbtnAll.Text = "All";
+            this.rbtnAll.UseVisualStyleBackColor = true;
+            // 
+            // cbSubject
+            // 
+            this.cbSubject.BackColor = System.Drawing.Color.White;
+            this.cbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbSubject.FormattingEnabled = true;
+            this.cbSubject.IntegralHeight = false;
+            this.cbSubject.Location = new System.Drawing.Point(208, 192);
+            this.cbSubject.Margin = new System.Windows.Forms.Padding(8);
+            this.cbSubject.Name = "cbSubject";
+            this.cbSubject.Size = new System.Drawing.Size(503, 36);
+            this.cbSubject.TabIndex = 4;
+            // 
+            // lblAvailibility
+            // 
+            this.lblAvailibility.AutoSize = true;
+            this.lblAvailibility.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailibility.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvailibility.Location = new System.Drawing.Point(45, 245);
+            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(8);
+            this.lblAvailibility.Name = "lblAvailibility";
+            this.lblAvailibility.Size = new System.Drawing.Size(113, 28);
+            this.lblAvailibility.TabIndex = 25;
+            this.lblAvailibility.Text = "Availability:";
+            // 
+            // lblSubject
+            // 
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubject.Location = new System.Drawing.Point(45, 195);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(8);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(81, 28);
+            this.lblSubject.TabIndex = 23;
+            this.lblSubject.Text = "Subject:";
             // 
             // lblTitle
             // 
@@ -254,78 +337,6 @@
             this.txtbISBN.Size = new System.Drawing.Size(503, 34);
             this.txtbISBN.TabIndex = 2;
             // 
-            // lblSubject
-            // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(45, 195);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(8);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(81, 28);
-            this.lblSubject.TabIndex = 23;
-            this.lblSubject.Text = "Subject:";
-            // 
-            // lblAvailibility
-            // 
-            this.lblAvailibility.AutoSize = true;
-            this.lblAvailibility.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvailibility.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailibility.Location = new System.Drawing.Point(45, 245);
-            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(8);
-            this.lblAvailibility.Name = "lblAvailibility";
-            this.lblAvailibility.Size = new System.Drawing.Size(113, 28);
-            this.lblAvailibility.TabIndex = 25;
-            this.lblAvailibility.Text = "Availability:";
-            // 
-            // cbSubject
-            // 
-            this.cbSubject.BackColor = System.Drawing.Color.White;
-            this.cbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbSubject.FormattingEnabled = true;
-            this.cbSubject.IntegralHeight = false;
-            this.cbSubject.Location = new System.Drawing.Point(208, 192);
-            this.cbSubject.Margin = new System.Windows.Forms.Padding(8);
-            this.cbSubject.Name = "cbSubject";
-            this.cbSubject.Size = new System.Drawing.Size(503, 36);
-            this.cbSubject.TabIndex = 4;
-            // 
-            // rbtnAll
-            // 
-            this.rbtnAll.AutoSize = true;
-            this.rbtnAll.Checked = true;
-            this.rbtnAll.Location = new System.Drawing.Point(207, 245);
-            this.rbtnAll.Margin = new System.Windows.Forms.Padding(8);
-            this.rbtnAll.Name = "rbtnAll";
-            this.rbtnAll.Size = new System.Drawing.Size(56, 32);
-            this.rbtnAll.TabIndex = 5;
-            this.rbtnAll.TabStop = true;
-            this.rbtnAll.Text = "All";
-            this.rbtnAll.UseVisualStyleBackColor = true;
-            // 
-            // rbtnOnLoan
-            // 
-            this.rbtnOnLoan.AutoSize = true;
-            this.rbtnOnLoan.Location = new System.Drawing.Point(432, 245);
-            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
-            this.rbtnOnLoan.Name = "rbtnOnLoan";
-            this.rbtnOnLoan.Size = new System.Drawing.Size(102, 32);
-            this.rbtnOnLoan.TabIndex = 7;
-            this.rbtnOnLoan.Text = "On loan";
-            this.rbtnOnLoan.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAvailable
-            // 
-            this.rbtnAvailable.AutoSize = true;
-            this.rbtnAvailable.Location = new System.Drawing.Point(291, 245);
-            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
-            this.rbtnAvailable.Name = "rbtnAvailable";
-            this.rbtnAvailable.Size = new System.Drawing.Size(113, 32);
-            this.rbtnAvailable.TabIndex = 6;
-            this.rbtnAvailable.Text = "Available";
-            this.rbtnAvailable.UseVisualStyleBackColor = true;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -408,18 +419,9 @@
             this.dataGridViewBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBookList.Size = new System.Drawing.Size(966, 447);
             this.dataGridViewBookList.TabIndex = 13;
+            this.dataGridViewBookList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
             this.dataGridViewBookList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
-            // 
-            // rbtnDiscontinued
-            // 
-            this.rbtnDiscontinued.AutoSize = true;
-            this.rbtnDiscontinued.Location = new System.Drawing.Point(562, 245);
-            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
-            this.rbtnDiscontinued.Name = "rbtnDiscontinued";
-            this.rbtnDiscontinued.Size = new System.Drawing.Size(148, 32);
-            this.rbtnDiscontinued.TabIndex = 8;
-            this.rbtnDiscontinued.Text = "Discontinued";
-            this.rbtnDiscontinued.UseVisualStyleBackColor = true;
+            this.dataGridViewBookList.DoubleClick += new System.EventHandler(this.btnOK_Click);
             // 
             // BookIDColumn
             // 
@@ -544,6 +546,7 @@
             // 
             // BookPopUpSearch
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

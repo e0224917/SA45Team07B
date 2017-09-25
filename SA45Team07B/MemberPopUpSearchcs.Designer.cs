@@ -42,6 +42,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberPopUpSearch));
             this.lblSelectMember = new System.Windows.Forms.Label();
             this.dataGridViewMemberList = new System.Windows.Forms.DataGridView();
+            this.MemberIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SchoolIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FacultyCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoanedQtyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
@@ -55,14 +63,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLblSelectedMember = new System.Windows.Forms.ToolStripStatusLabel();
-            this.MemberIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MemberNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SchoolIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MemberTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FacultyCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContactNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoanedQtyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -138,7 +138,87 @@
             this.dataGridViewMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMemberList.Size = new System.Drawing.Size(874, 515);
             this.dataGridViewMemberList.TabIndex = 8;
+            this.dataGridViewMemberList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewMemberList_Scroll);
             this.dataGridViewMemberList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
+            this.dataGridViewMemberList.DoubleClick += new System.EventHandler(this.btnOK_Click);
+            // 
+            // MemberIDColumn
+            // 
+            this.MemberIDColumn.DataPropertyName = "MemberID";
+            this.MemberIDColumn.HeaderText = "ID";
+            this.MemberIDColumn.Name = "MemberIDColumn";
+            this.MemberIDColumn.ReadOnly = true;
+            this.MemberIDColumn.Width = 79;
+            // 
+            // MemberNameColumn
+            // 
+            this.MemberNameColumn.DataPropertyName = "MemberName";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.MemberNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MemberNameColumn.HeaderText = "Name";
+            this.MemberNameColumn.Name = "MemberNameColumn";
+            this.MemberNameColumn.ReadOnly = true;
+            this.MemberNameColumn.Width = 112;
+            // 
+            // SchoolIDColumn
+            // 
+            this.SchoolIDColumn.DataPropertyName = "SchoolID";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SchoolIDColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SchoolIDColumn.HeaderText = "School ID";
+            this.SchoolIDColumn.Name = "SchoolIDColumn";
+            this.SchoolIDColumn.ReadOnly = true;
+            this.SchoolIDColumn.Width = 144;
+            // 
+            // MemberTypeColumn
+            // 
+            this.MemberTypeColumn.DataPropertyName = "MemberType";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MemberTypeColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.MemberTypeColumn.HeaderText = "Category";
+            this.MemberTypeColumn.Name = "MemberTypeColumn";
+            this.MemberTypeColumn.ReadOnly = true;
+            this.MemberTypeColumn.Width = 140;
+            // 
+            // FacultyCodeColumn
+            // 
+            this.FacultyCodeColumn.DataPropertyName = "FacultyCode";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FacultyCodeColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.FacultyCodeColumn.HeaderText = "Faculty";
+            this.FacultyCodeColumn.Name = "FacultyCodeColumn";
+            this.FacultyCodeColumn.ReadOnly = true;
+            this.FacultyCodeColumn.Width = 121;
+            // 
+            // ContactNumberColumn
+            // 
+            this.ContactNumberColumn.DataPropertyName = "ContactNumber";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ContactNumberColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ContactNumberColumn.HeaderText = "Contact No.";
+            this.ContactNumberColumn.Name = "ContactNumberColumn";
+            this.ContactNumberColumn.ReadOnly = true;
+            this.ContactNumberColumn.Width = 164;
+            // 
+            // EmailAddressColumn
+            // 
+            this.EmailAddressColumn.DataPropertyName = "Email";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.EmailAddressColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.EmailAddressColumn.HeaderText = "Email";
+            this.EmailAddressColumn.Name = "EmailAddressColumn";
+            this.EmailAddressColumn.ReadOnly = true;
+            this.EmailAddressColumn.Width = 107;
+            // 
+            // LoanedQtyColumn
+            // 
+            this.LoanedQtyColumn.DataPropertyName = "LoanedQty";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LoanedQtyColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.LoanedQtyColumn.HeaderText = "Loaned Quantity";
+            this.LoanedQtyColumn.Name = "LoanedQtyColumn";
+            this.LoanedQtyColumn.ReadOnly = true;
+            this.LoanedQtyColumn.Width = 205;
             // 
             // btnOK
             // 
@@ -314,86 +394,9 @@
             this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(199, 28);
             this.toolStripStatusLblSelectedMember.Text = "toolStripStatusLabel1";
             // 
-            // MemberIDColumn
-            // 
-            this.MemberIDColumn.DataPropertyName = "MemberID";
-            this.MemberIDColumn.HeaderText = "ID";
-            this.MemberIDColumn.Name = "MemberIDColumn";
-            this.MemberIDColumn.ReadOnly = true;
-            this.MemberIDColumn.Width = 79;
-            // 
-            // MemberNameColumn
-            // 
-            this.MemberNameColumn.DataPropertyName = "MemberName";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.MemberNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.MemberNameColumn.HeaderText = "Name";
-            this.MemberNameColumn.Name = "MemberNameColumn";
-            this.MemberNameColumn.ReadOnly = true;
-            this.MemberNameColumn.Width = 112;
-            // 
-            // SchoolIDColumn
-            // 
-            this.SchoolIDColumn.DataPropertyName = "SchoolID";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SchoolIDColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SchoolIDColumn.HeaderText = "School ID";
-            this.SchoolIDColumn.Name = "SchoolIDColumn";
-            this.SchoolIDColumn.ReadOnly = true;
-            this.SchoolIDColumn.Width = 144;
-            // 
-            // MemberTypeColumn
-            // 
-            this.MemberTypeColumn.DataPropertyName = "MemberType";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MemberTypeColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.MemberTypeColumn.HeaderText = "Category";
-            this.MemberTypeColumn.Name = "MemberTypeColumn";
-            this.MemberTypeColumn.ReadOnly = true;
-            this.MemberTypeColumn.Width = 140;
-            // 
-            // FacultyCodeColumn
-            // 
-            this.FacultyCodeColumn.DataPropertyName = "FacultyCode";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FacultyCodeColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.FacultyCodeColumn.HeaderText = "Faculty";
-            this.FacultyCodeColumn.Name = "FacultyCodeColumn";
-            this.FacultyCodeColumn.ReadOnly = true;
-            this.FacultyCodeColumn.Width = 121;
-            // 
-            // ContactNumberColumn
-            // 
-            this.ContactNumberColumn.DataPropertyName = "ContactNumber";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ContactNumberColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ContactNumberColumn.HeaderText = "Contact No.";
-            this.ContactNumberColumn.Name = "ContactNumberColumn";
-            this.ContactNumberColumn.ReadOnly = true;
-            this.ContactNumberColumn.Width = 164;
-            // 
-            // EmailAddressColumn
-            // 
-            this.EmailAddressColumn.DataPropertyName = "Email";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.EmailAddressColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.EmailAddressColumn.HeaderText = "Email";
-            this.EmailAddressColumn.Name = "EmailAddressColumn";
-            this.EmailAddressColumn.ReadOnly = true;
-            this.EmailAddressColumn.Width = 107;
-            // 
-            // LoanedQtyColumn
-            // 
-            this.LoanedQtyColumn.DataPropertyName = "LoanedQty";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.LoanedQtyColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.LoanedQtyColumn.HeaderText = "Loaned Quantity";
-            this.LoanedQtyColumn.Name = "LoanedQtyColumn";
-            this.LoanedQtyColumn.ReadOnly = true;
-            this.LoanedQtyColumn.Width = 205;
-            // 
             // MemberPopUpSearch
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -409,7 +412,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MemberPopUpSearch";
             this.Text = "Member Search";
-            this.Load += new System.EventHandler(this.btnClear_Click);
+            this.Load += new System.EventHandler(this.MemberPopUpSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
