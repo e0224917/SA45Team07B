@@ -122,7 +122,7 @@
             this.lblSelectBook.AutoSize = true;
             this.lblSelectBook.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectBook.Location = new System.Drawing.Point(24, 343);
+            this.lblSelectBook.Location = new System.Drawing.Point(24, 336);
             this.lblSelectBook.Name = "lblSelectBook";
             this.lblSelectBook.Size = new System.Drawing.Size(211, 28);
             this.lblSelectBook.TabIndex = 15;
@@ -158,7 +158,7 @@
             // rbtnDiscontinued
             // 
             this.rbtnDiscontinued.AutoSize = true;
-            this.rbtnDiscontinued.Location = new System.Drawing.Point(562, 245);
+            this.rbtnDiscontinued.Location = new System.Drawing.Point(568, 245);
             this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
             this.rbtnDiscontinued.Name = "rbtnDiscontinued";
             this.rbtnDiscontinued.Size = new System.Drawing.Size(148, 32);
@@ -169,7 +169,7 @@
             // rbtnAvailable
             // 
             this.rbtnAvailable.AutoSize = true;
-            this.rbtnAvailable.Location = new System.Drawing.Point(291, 245);
+            this.rbtnAvailable.Location = new System.Drawing.Point(297, 245);
             this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
             this.rbtnAvailable.Name = "rbtnAvailable";
             this.rbtnAvailable.Size = new System.Drawing.Size(113, 32);
@@ -180,7 +180,7 @@
             // rbtnOnLoan
             // 
             this.rbtnOnLoan.AutoSize = true;
-            this.rbtnOnLoan.Location = new System.Drawing.Point(432, 245);
+            this.rbtnOnLoan.Location = new System.Drawing.Point(438, 245);
             this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
             this.rbtnOnLoan.Name = "rbtnOnLoan";
             this.rbtnOnLoan.Size = new System.Drawing.Size(102, 32);
@@ -192,7 +192,7 @@
             // 
             this.rbtnAll.AutoSize = true;
             this.rbtnAll.Checked = true;
-            this.rbtnAll.Location = new System.Drawing.Point(207, 245);
+            this.rbtnAll.Location = new System.Drawing.Point(213, 245);
             this.rbtnAll.Margin = new System.Windows.Forms.Padding(8);
             this.rbtnAll.Name = "rbtnAll";
             this.rbtnAll.Size = new System.Drawing.Size(56, 32);
@@ -400,7 +400,7 @@
             this.dataGridViewBookList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewBookList.EnableHeadersVisualStyles = false;
             this.dataGridViewBookList.GridColor = System.Drawing.Color.White;
-            this.dataGridViewBookList.Location = new System.Drawing.Point(18, 378);
+            this.dataGridViewBookList.Location = new System.Drawing.Point(18, 370);
             this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(25);
             this.dataGridViewBookList.MultiSelect = false;
             this.dataGridViewBookList.Name = "dataGridViewBookList";
@@ -417,7 +417,7 @@
             this.dataGridViewBookList.RowHeadersWidth = 5;
             this.dataGridViewBookList.RowTemplate.Height = 24;
             this.dataGridViewBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBookList.Size = new System.Drawing.Size(966, 447);
+            this.dataGridViewBookList.Size = new System.Drawing.Size(966, 455);
             this.dataGridViewBookList.TabIndex = 13;
             this.dataGridViewBookList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
             this.dataGridViewBookList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
@@ -547,8 +547,8 @@
             // BookPopUpSearch
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 977);

@@ -168,6 +168,7 @@ namespace SA45Team07B
             txtbAuthor.Text = string.Empty;
             txtbISBN.Text = string.Empty;
             cbSubject.Text = "";
+            rbtnAll.Checked = true;
             SearchAndDisplayBook();
         }
 

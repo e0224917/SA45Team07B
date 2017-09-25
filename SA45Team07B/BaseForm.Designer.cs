@@ -340,7 +340,7 @@
             // notifyIconForClose
             // 
             this.notifyIconForClose.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconForClose.Icon")));
-            this.notifyIconForClose.Text = "notifyIconForMinimize";
+            this.notifyIconForClose.Text = "Library Management";
             this.notifyIconForClose.Visible = true;
             // 
             // toolStrip1
