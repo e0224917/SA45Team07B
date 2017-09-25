@@ -65,7 +65,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notifyIconForClose = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIconLibraryManagement = new System.Windows.Forms.NotifyIcon(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonBorrow = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonReturn = new System.Windows.Forms.ToolStripButton();
@@ -337,11 +337,12 @@
             this.creditsToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.creditsToolStripMenuItem.Text = "Credits";
             // 
-            // notifyIconForClose
+            // notifyIconLibraryManagement
             // 
-            this.notifyIconForClose.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconForClose.Icon")));
-            this.notifyIconForClose.Text = "Library Management";
-            this.notifyIconForClose.Visible = true;
+            this.notifyIconLibraryManagement.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconLibraryManagement.Icon")));
+            this.notifyIconLibraryManagement.Text = "Library Management";
+            this.notifyIconLibraryManagement.Visible = true;
+            this.notifyIconLibraryManagement.DoubleClick += new System.EventHandler(this.notifyIconLibraryManagement_DoubleClick);
             // 
             // toolStrip1
             // 
@@ -457,7 +458,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
-        private System.Windows.Forms.NotifyIcon notifyIconForClose;
+        private System.Windows.Forms.NotifyIcon notifyIconLibraryManagement;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrow;
         private System.Windows.Forms.ToolStripButton toolStripButtonReturn;

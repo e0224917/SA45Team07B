@@ -16,6 +16,9 @@ namespace SA45Team07B
 
         private Book bookFound;
         private RFIDTag tagFound;
+        private List<RFIDTag> tagsOfBookFound;
+        private BookSubject subjectOfBookFound;
+        private Publisher publisherOfBookFound;
         
         public Book BookFound
         {
@@ -30,6 +33,30 @@ namespace SA45Team07B
             get
             {
                 return tagFound;
+            }
+        }
+
+        public List<RFIDTag> RFIDsOfBookFound
+        {
+            get
+            {
+                return tagsOfBookFound;
+            }
+        }
+
+        public BookSubject SubjectOfBookFound
+        {
+            get
+            {
+                return subjectOfBookFound;
+            }
+        }
+
+        public Publisher PublisherOfBookFound
+        {
+            get
+            {
+                return publisherOfBookFound;
             }
         }
 
@@ -184,7 +211,10 @@ namespace SA45Team07B
                             where x.RFID == selectedRFID
                             select x).First();
 
-                this.bookFound = tagFound.Books;
+                this.bookFound = RFIDFound.Books;
+                this.tagsOfBookFound = BookFound.RFIDs.ToList();
+                this.subjectOfBookFound = BookFound.BookSubjects;
+                this.publisherOfBookFound = BookFound.Publishers;
             }
            
             this.DialogResult = DialogResult.OK;

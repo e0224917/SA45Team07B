@@ -84,16 +84,17 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(526, 862);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancel.Location = new System.Drawing.Point(421, 690);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(115, 50);
+            this.btnCancel.Size = new System.Drawing.Size(92, 40);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -108,10 +109,10 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(383, 862);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnOK.Location = new System.Drawing.Point(306, 690);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(115, 50);
+            this.btnOK.Size = new System.Drawing.Size(92, 40);
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -122,9 +123,10 @@
             this.lblSelectBook.AutoSize = true;
             this.lblSelectBook.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectBook.Location = new System.Drawing.Point(24, 336);
+            this.lblSelectBook.Location = new System.Drawing.Point(19, 269);
+            this.lblSelectBook.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectBook.Name = "lblSelectBook";
-            this.lblSelectBook.Size = new System.Drawing.Size(211, 28);
+            this.lblSelectBook.Size = new System.Drawing.Size(167, 21);
             this.lblSelectBook.TabIndex = 15;
             this.lblSelectBook.Text = "Select a book from list:";
             // 
@@ -147,10 +149,11 @@
             this.groupBox1.Controls.Add(this.txtbBookTitle);
             this.groupBox1.Controls.Add(this.txtbISBN);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(25);
+            this.groupBox1.Location = new System.Drawing.Point(15, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(965, 301);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(772, 241);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
@@ -158,10 +161,10 @@
             // rbtnDiscontinued
             // 
             this.rbtnDiscontinued.AutoSize = true;
-            this.rbtnDiscontinued.Location = new System.Drawing.Point(568, 245);
-            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnDiscontinued.Location = new System.Drawing.Point(454, 196);
+            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
             this.rbtnDiscontinued.Name = "rbtnDiscontinued";
-            this.rbtnDiscontinued.Size = new System.Drawing.Size(148, 32);
+            this.rbtnDiscontinued.Size = new System.Drawing.Size(119, 25);
             this.rbtnDiscontinued.TabIndex = 8;
             this.rbtnDiscontinued.Text = "Discontinued";
             this.rbtnDiscontinued.UseVisualStyleBackColor = true;
@@ -169,10 +172,10 @@
             // rbtnAvailable
             // 
             this.rbtnAvailable.AutoSize = true;
-            this.rbtnAvailable.Location = new System.Drawing.Point(297, 245);
-            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnAvailable.Location = new System.Drawing.Point(238, 196);
+            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
             this.rbtnAvailable.Name = "rbtnAvailable";
-            this.rbtnAvailable.Size = new System.Drawing.Size(113, 32);
+            this.rbtnAvailable.Size = new System.Drawing.Size(91, 25);
             this.rbtnAvailable.TabIndex = 6;
             this.rbtnAvailable.Text = "Available";
             this.rbtnAvailable.UseVisualStyleBackColor = true;
@@ -180,10 +183,10 @@
             // rbtnOnLoan
             // 
             this.rbtnOnLoan.AutoSize = true;
-            this.rbtnOnLoan.Location = new System.Drawing.Point(438, 245);
-            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(20, 8, 8, 8);
+            this.rbtnOnLoan.Location = new System.Drawing.Point(350, 196);
+            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
             this.rbtnOnLoan.Name = "rbtnOnLoan";
-            this.rbtnOnLoan.Size = new System.Drawing.Size(102, 32);
+            this.rbtnOnLoan.Size = new System.Drawing.Size(83, 25);
             this.rbtnOnLoan.TabIndex = 7;
             this.rbtnOnLoan.Text = "On loan";
             this.rbtnOnLoan.UseVisualStyleBackColor = true;
@@ -192,10 +195,10 @@
             // 
             this.rbtnAll.AutoSize = true;
             this.rbtnAll.Checked = true;
-            this.rbtnAll.Location = new System.Drawing.Point(213, 245);
-            this.rbtnAll.Margin = new System.Windows.Forms.Padding(8);
+            this.rbtnAll.Location = new System.Drawing.Point(170, 196);
+            this.rbtnAll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbtnAll.Name = "rbtnAll";
-            this.rbtnAll.Size = new System.Drawing.Size(56, 32);
+            this.rbtnAll.Size = new System.Drawing.Size(46, 25);
             this.rbtnAll.TabIndex = 5;
             this.rbtnAll.TabStop = true;
             this.rbtnAll.Text = "All";
@@ -208,10 +211,10 @@
             this.cbSubject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.IntegralHeight = false;
-            this.cbSubject.Location = new System.Drawing.Point(208, 192);
-            this.cbSubject.Margin = new System.Windows.Forms.Padding(8);
+            this.cbSubject.Location = new System.Drawing.Point(166, 154);
+            this.cbSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbSubject.Name = "cbSubject";
-            this.cbSubject.Size = new System.Drawing.Size(503, 36);
+            this.cbSubject.Size = new System.Drawing.Size(403, 29);
             this.cbSubject.TabIndex = 4;
             // 
             // lblAvailibility
@@ -219,10 +222,10 @@
             this.lblAvailibility.AutoSize = true;
             this.lblAvailibility.BackColor = System.Drawing.Color.Transparent;
             this.lblAvailibility.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailibility.Location = new System.Drawing.Point(45, 245);
-            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(8);
+            this.lblAvailibility.Location = new System.Drawing.Point(36, 196);
+            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblAvailibility.Name = "lblAvailibility";
-            this.lblAvailibility.Size = new System.Drawing.Size(113, 28);
+            this.lblAvailibility.Size = new System.Drawing.Size(89, 21);
             this.lblAvailibility.TabIndex = 25;
             this.lblAvailibility.Text = "Availability:";
             // 
@@ -231,10 +234,10 @@
             this.lblSubject.AutoSize = true;
             this.lblSubject.BackColor = System.Drawing.Color.Transparent;
             this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(45, 195);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(8);
+            this.lblSubject.Location = new System.Drawing.Point(36, 156);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(81, 28);
+            this.lblSubject.Size = new System.Drawing.Size(64, 21);
             this.lblSubject.TabIndex = 23;
             this.lblSubject.Text = "Subject:";
             // 
@@ -243,10 +246,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(45, 43);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(8);
+            this.lblTitle.Location = new System.Drawing.Point(36, 34);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(103, 28);
+            this.lblTitle.Size = new System.Drawing.Size(81, 21);
             this.lblTitle.TabIndex = 15;
             this.lblTitle.Text = "Book Title:";
             // 
@@ -259,10 +262,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(779, 131);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(8);
+            this.btnClear.Location = new System.Drawing.Point(623, 105);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 50);
+            this.btnClear.Size = new System.Drawing.Size(92, 40);
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -273,10 +276,10 @@
             this.lblISBN.AutoSize = true;
             this.lblISBN.BackColor = System.Drawing.Color.Transparent;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(45, 93);
-            this.lblISBN.Margin = new System.Windows.Forms.Padding(8);
+            this.lblISBN.Location = new System.Drawing.Point(36, 74);
+            this.lblISBN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(58, 28);
+            this.lblISBN.Size = new System.Drawing.Size(47, 21);
             this.lblISBN.TabIndex = 16;
             this.lblISBN.Text = "ISBN:";
             // 
@@ -289,10 +292,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(779, 65);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(8);
+            this.btnSearch.Location = new System.Drawing.Point(623, 52);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(115, 50);
+            this.btnSearch.Size = new System.Drawing.Size(92, 40);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -303,38 +306,38 @@
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.BackColor = System.Drawing.Color.Transparent;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(45, 143);
-            this.lblAuthor.Margin = new System.Windows.Forms.Padding(8);
+            this.lblAuthor.Location = new System.Drawing.Point(36, 114);
+            this.lblAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(77, 28);
+            this.lblAuthor.Size = new System.Drawing.Size(61, 21);
             this.lblAuthor.TabIndex = 17;
             this.lblAuthor.Text = "Author:";
             // 
             // txtbAuthor
             // 
             this.txtbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbAuthor.Location = new System.Drawing.Point(208, 140);
-            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(8);
+            this.txtbAuthor.Location = new System.Drawing.Point(166, 112);
+            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtbAuthor.Name = "txtbAuthor";
-            this.txtbAuthor.Size = new System.Drawing.Size(503, 34);
+            this.txtbAuthor.Size = new System.Drawing.Size(403, 29);
             this.txtbAuthor.TabIndex = 3;
             // 
             // txtbBookTitle
             // 
             this.txtbBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbBookTitle.Location = new System.Drawing.Point(208, 40);
-            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(8);
+            this.txtbBookTitle.Location = new System.Drawing.Point(166, 32);
+            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtbBookTitle.Name = "txtbBookTitle";
-            this.txtbBookTitle.Size = new System.Drawing.Size(503, 34);
+            this.txtbBookTitle.Size = new System.Drawing.Size(403, 29);
             this.txtbBookTitle.TabIndex = 1;
             // 
             // txtbISBN
             // 
             this.txtbISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbISBN.Location = new System.Drawing.Point(208, 90);
-            this.txtbISBN.Margin = new System.Windows.Forms.Padding(8);
+            this.txtbISBN.Location = new System.Drawing.Point(166, 72);
+            this.txtbISBN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtbISBN.Name = "txtbISBN";
-            this.txtbISBN.Size = new System.Drawing.Size(503, 34);
+            this.txtbISBN.Size = new System.Drawing.Size(403, 29);
             this.txtbISBN.TabIndex = 2;
             // 
             // statusStrip1
@@ -342,9 +345,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLblSelectedBook});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 944);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 756);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1006, 33);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(805, 26);
             this.statusStrip1.TabIndex = 25;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -352,7 +356,7 @@
             // 
             this.toolStripStatusLblSelectedBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLblSelectedBook.Name = "toolStripStatusLblSelectedBook";
-            this.toolStripStatusLblSelectedBook.Size = new System.Drawing.Size(199, 28);
+            this.toolStripStatusLblSelectedBook.Size = new System.Drawing.Size(157, 21);
             this.toolStripStatusLblSelectedBook.Text = "toolStripStatusLabel1";
             // 
             // dataGridViewBookList
@@ -400,8 +404,8 @@
             this.dataGridViewBookList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewBookList.EnableHeadersVisualStyles = false;
             this.dataGridViewBookList.GridColor = System.Drawing.Color.White;
-            this.dataGridViewBookList.Location = new System.Drawing.Point(18, 370);
-            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(25);
+            this.dataGridViewBookList.Location = new System.Drawing.Point(14, 296);
+            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
             this.dataGridViewBookList.MultiSelect = false;
             this.dataGridViewBookList.Name = "dataGridViewBookList";
             this.dataGridViewBookList.ReadOnly = true;
@@ -417,7 +421,7 @@
             this.dataGridViewBookList.RowHeadersWidth = 5;
             this.dataGridViewBookList.RowTemplate.Height = 24;
             this.dataGridViewBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBookList.Size = new System.Drawing.Size(966, 455);
+            this.dataGridViewBookList.Size = new System.Drawing.Size(773, 364);
             this.dataGridViewBookList.TabIndex = 13;
             this.dataGridViewBookList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
             this.dataGridViewBookList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
@@ -429,7 +433,7 @@
             this.BookIDColumn.HeaderText = "ID";
             this.BookIDColumn.Name = "BookIDColumn";
             this.BookIDColumn.ReadOnly = true;
-            this.BookIDColumn.Width = 79;
+            this.BookIDColumn.Width = 69;
             // 
             // BookTitleColumn
             // 
@@ -439,7 +443,7 @@
             this.BookTitleColumn.HeaderText = "Title";
             this.BookTitleColumn.Name = "BookTitleColumn";
             this.BookTitleColumn.ReadOnly = true;
-            this.BookTitleColumn.Width = 97;
+            this.BookTitleColumn.Width = 83;
             // 
             // RFIDColumn
             // 
@@ -447,7 +451,7 @@
             this.RFIDColumn.HeaderText = "RFID";
             this.RFIDColumn.Name = "RFIDColumn";
             this.RFIDColumn.ReadOnly = true;
-            this.RFIDColumn.Width = 101;
+            this.RFIDColumn.Width = 87;
             // 
             // AvailabilityColumn
             // 
@@ -455,7 +459,7 @@
             this.AvailabilityColumn.HeaderText = "Availability";
             this.AvailabilityColumn.Name = "AvailabilityColumn";
             this.AvailabilityColumn.ReadOnly = true;
-            this.AvailabilityColumn.Width = 157;
+            this.AvailabilityColumn.Width = 130;
             // 
             // EditionColumn
             // 
@@ -463,7 +467,7 @@
             this.EditionColumn.HeaderText = "Edition";
             this.EditionColumn.Name = "EditionColumn";
             this.EditionColumn.ReadOnly = true;
-            this.EditionColumn.Width = 122;
+            this.EditionColumn.Width = 102;
             // 
             // AuthorColumn
             // 
@@ -473,7 +477,7 @@
             this.AuthorColumn.HeaderText = "Author";
             this.AuthorColumn.Name = "AuthorColumn";
             this.AuthorColumn.ReadOnly = true;
-            this.AuthorColumn.Width = 121;
+            this.AuthorColumn.Width = 102;
             // 
             // ISBNColumn
             // 
@@ -483,7 +487,7 @@
             this.ISBNColumn.HeaderText = "ISBN";
             this.ISBNColumn.Name = "ISBNColumn";
             this.ISBNColumn.ReadOnly = true;
-            this.ISBNColumn.Width = 102;
+            this.ISBNColumn.Width = 88;
             // 
             // CallNumberColumn
             // 
@@ -493,7 +497,7 @@
             this.CallNumberColumn.HeaderText = "Call No.";
             this.CallNumberColumn.Name = "CallNumberColumn";
             this.CallNumberColumn.ReadOnly = true;
-            this.CallNumberColumn.Width = 128;
+            this.CallNumberColumn.Width = 108;
             // 
             // SubjectNameColumn
             // 
@@ -503,7 +507,7 @@
             this.SubjectNameColumn.HeaderText = "Subject";
             this.SubjectNameColumn.Name = "SubjectNameColumn";
             this.SubjectNameColumn.ReadOnly = true;
-            this.SubjectNameColumn.Width = 125;
+            this.SubjectNameColumn.Width = 105;
             // 
             // PublisherNameColumn
             // 
@@ -513,7 +517,7 @@
             this.PublisherNameColumn.HeaderText = "Publisher";
             this.PublisherNameColumn.Name = "PublisherNameColumn";
             this.PublisherNameColumn.ReadOnly = true;
-            this.PublisherNameColumn.Width = 140;
+            this.PublisherNameColumn.Width = 119;
             // 
             // PublishedYearColumn
             // 
@@ -523,7 +527,7 @@
             this.PublishedYearColumn.HeaderText = "Published Year";
             this.PublishedYearColumn.Name = "PublishedYearColumn";
             this.PublishedYearColumn.ReadOnly = true;
-            this.PublishedYearColumn.Width = 186;
+            this.PublishedYearColumn.Width = 156;
             // 
             // PriceColumn
             // 
@@ -534,7 +538,7 @@
             this.PriceColumn.HeaderText = "Price";
             this.PriceColumn.Name = "PriceColumn";
             this.PriceColumn.ReadOnly = true;
-            this.PriceColumn.Width = 102;
+            this.PriceColumn.Width = 88;
             // 
             // DiscontinuedColumn
             // 
@@ -542,16 +546,17 @@
             this.DiscontinuedColumn.HeaderText = "Discontinued";
             this.DiscontinuedColumn.Name = "DiscontinuedColumn";
             this.DiscontinuedColumn.ReadOnly = true;
-            this.DiscontinuedColumn.Width = 175;
+            this.DiscontinuedColumn.Width = 145;
             // 
             // BookPopUpSearch
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1006, 977);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(805, 782);
             this.Controls.Add(this.dataGridViewBookList);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);

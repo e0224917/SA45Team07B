@@ -14,12 +14,30 @@ namespace SA45Team07B
     {
 
         private Member memberFound;
+        private Faculty facultyofMemberFound;
+        private MemberCategories memberTypeOfMemberFound;
 
         public Member MemberFound
         {
             get
             {
                 return memberFound;
+            }
+        }
+
+        public Faculty FacultyofMemberFound
+        {
+            get
+            {
+                return facultyofMemberFound;
+            }
+        }
+
+        public MemberCategories MemberTypeOfMemberFound
+        {
+            get
+            {
+                return memberTypeOfMemberFound;
             }
         }
 
@@ -93,9 +111,12 @@ namespace SA45Team07B
             {
                 if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells["MemberIDColumn"].Value.ToString(), out memberID))
                 {
-                    memberFound = (from m in context.Members
-                                   where m.MemberID == memberID
-                                   select m).First();
+                    this.memberFound = (from m in context.Members
+                                        where m.MemberID == memberID
+                                        select m).First();
+
+                    this.facultyofMemberFound = memberFound.Faculties;
+                    this.memberTypeOfMemberFound = memberFound.MemberCategories;
                 }
                 else
                 {
