@@ -23,13 +23,13 @@ namespace SA45Team07B
     public partial class MemberPopUpSearch : Form
     {
 
-        private Member member;
+        private Member memberFound;
 
         public Member MemberFound
         {
             get
             {
-                return member;
+                return memberFound;
             }
         }
 
@@ -86,9 +86,9 @@ namespace SA45Team07B
 
                 using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
                 {
-                    if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells["MemberID"].Value.ToString(), out memberID))
+                    if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells["MemberIDColumn"].Value.ToString(), out memberID))
                     {
-                        member = (from m in context.Members
+                        memberFound = (from m in context.Members
                                   where m.MemberID == memberID
                                   select m).First();
                     }
@@ -99,7 +99,6 @@ namespace SA45Team07B
                     }
                 }
 
-            MessageBox.Show(member.MemberName.ToString());
             this.DialogResult = DialogResult.OK;
         }
 
@@ -121,7 +120,7 @@ namespace SA45Team07B
                 btnOK.Enabled = true;
                 btnOK.BackColor = Color.White;
 
-                string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberName"].Value.ToString();
+                string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberNameColumn"].Value.ToString();
 
                 toolStripStatusLblSelectedMember.Text = $"{selectedName} is selected.";
             }
