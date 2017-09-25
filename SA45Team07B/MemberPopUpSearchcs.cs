@@ -84,8 +84,6 @@ namespace SA45Team07B
         {
             long memberID;
 
-            if(dataGridViewMemberList.SelectedRows.Count != 0)
-            {
                 using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
                 {
                     if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells["MemberID"].Value.ToString(), out memberID))
@@ -100,8 +98,8 @@ namespace SA45Team07B
                         throw new Exception("No member is selected");
                     }
                 }
-            }
 
+            MessageBox.Show(member.MemberName.ToString());
             this.DialogResult = DialogResult.OK;
         }
 
@@ -115,10 +113,17 @@ namespace SA45Team07B
             if (dataGridViewMemberList.SelectedRows.Count == 0)
             {
                 btnOK.Enabled = false;
+                btnOK.BackColor = Color.LightGray;
+                toolStripStatusLblSelectedMember.Text = "No record is found.";
             }
             else
             {
                 btnOK.Enabled = true;
+                btnOK.BackColor = Color.White;
+
+                string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberName"].Value.ToString();
+
+                toolStripStatusLblSelectedMember.Text = $"{selectedName} is selected.";
             }
         }
     }

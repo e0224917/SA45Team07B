@@ -61,8 +61,11 @@
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoanedQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLblSelectedMember = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSelectMember
@@ -70,7 +73,7 @@
             this.lblSelectMember.AutoSize = true;
             this.lblSelectMember.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectMember.Location = new System.Drawing.Point(42, 244);
+            this.lblSelectMember.Location = new System.Drawing.Point(42, 226);
             this.lblSelectMember.Name = "lblSelectMember";
             this.lblSelectMember.Size = new System.Drawing.Size(234, 28);
             this.lblSelectMember.TabIndex = 1;
@@ -116,7 +119,7 @@
             this.dataGridViewMemberList.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewMemberList.EnableHeadersVisualStyles = false;
             this.dataGridViewMemberList.GridColor = System.Drawing.Color.White;
-            this.dataGridViewMemberList.Location = new System.Drawing.Point(34, 280);
+            this.dataGridViewMemberList.Location = new System.Drawing.Point(34, 262);
             this.dataGridViewMemberList.Margin = new System.Windows.Forms.Padding(25);
             this.dataGridViewMemberList.MultiSelect = false;
             this.dataGridViewMemberList.Name = "dataGridViewMemberList";
@@ -133,7 +136,7 @@
             this.dataGridViewMemberList.RowHeadersWidth = 5;
             this.dataGridViewMemberList.RowTemplate.Height = 24;
             this.dataGridViewMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMemberList.Size = new System.Drawing.Size(874, 528);
+            this.dataGridViewMemberList.Size = new System.Drawing.Size(874, 515);
             this.dataGridViewMemberList.TabIndex = 12;
             this.dataGridViewMemberList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
             // 
@@ -147,7 +150,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(359, 837);
+            this.btnOK.Location = new System.Drawing.Point(359, 805);
             this.btnOK.Margin = new System.Windows.Forms.Padding(12);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(115, 50);
@@ -166,7 +169,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(498, 837);
+            this.btnCancel.Location = new System.Drawing.Point(498, 805);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(115, 50);
@@ -286,7 +289,7 @@
             this.groupBox1.Controls.Add(this.txtbMemberName);
             this.groupBox1.Controls.Add(this.txtbSchoolID);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(35, 21);
+            this.groupBox1.Location = new System.Drawing.Point(35, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(873, 196);
             this.groupBox1.TabIndex = 23;
@@ -371,6 +374,24 @@
             this.LoanedQty.ReadOnly = true;
             this.LoanedQty.Width = 205;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLblSelectedMember});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 880);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(942, 33);
+            this.statusStrip1.TabIndex = 24;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLblSelectedMember
+            // 
+            this.toolStripStatusLblSelectedMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLblSelectedMember.Name = "toolStripStatusLblSelectedMember";
+            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(199, 28);
+            this.toolStripStatusLblSelectedMember.Text = "toolStripStatusLabel1";
+            // 
             // MemberPopUpSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,6 +399,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(942, 913);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dataGridViewMemberList);
@@ -391,6 +413,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +443,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoanedQty;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblSelectedMember;
     }
 }
