@@ -117,7 +117,6 @@
     <Compile Include="BorrowForm.Designer.cs">
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataService.cs" />
     <Compile Include="Faculty.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
@@ -204,8 +203,8 @@
     <Compile Include="StockAdjustment.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdjustStock.resx">
-      <DependentUpon>AdjustStock.cs</DependentUpon>
+    <EmbeddedResource Include="AddNewMember.resx">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

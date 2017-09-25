@@ -22,11 +22,10 @@ namespace SA45Team07B
     /// 
     public partial class MemberPopUpSearch : Form
     {
-        private SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
 
         private Member member;
 
-        public Member Member
+        public Member MemberFound
         {
             get
             {
@@ -39,24 +38,68 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
-        private void MemberPopUpSearch_Load(object sender, EventArgs e)
+        private void SearchAndDisplayMember()
         {
-            dataGridViewMemberList.DataSource = context.Members.ToList();
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                List<Member> searchResult = new List<Member>();
+                searchResult = context.Members.ToList();
+
+                searchResult = CriteriaSeach(searchResult, txtbMemberName, "MemberName");
+                searchResult = CriteriaSeach(searchResult, txtbSchoolID, "SchoolID");
+                searchResult = CriteriaSeach(searchResult, txtbEmail, "Email");
+
+                var query = from m in searchResult
+                            select new { m.MemberID, m.MemberName, m.MemberType, m.FacultyCode, m.SchoolID, m.ContactNumber, m.Email, m.LoanedQty };
+
+                dataGridViewMemberList.DataSource = query.ToList();
+            }
+        }
+
+        private List<Member> CriteriaSeach(List<Member> list, TextBox tb, string propertyName)
+        {
+            if (tb.Text != string.Empty)
+            {
+                list = (from x in list
+                        where (x.GetType().GetProperty(propertyName).GetValue(x).ToString().ToLower().Contains(tb.Text.ToString().ToLower().Trim()))
+                        select x).ToList();
+            }
+            return list;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchAndDisplayMember();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtbMemberName.Text = string.Empty;
+            txtbSchoolID.Text = string.Empty;
+            txtbEmail.Text = string.Empty;
+            SearchAndDisplayMember();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            // TODO - change 0 to MemberID after set the column name for datagirdview
             long memberID;
 
-            if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells[0].Value.ToString(), out memberID))
-            {
-                member = (from m in context.Members
-                          where m.MemberID == memberID
-                          select m).First();
-            }
+                using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+                {
+                    if (Int64.TryParse(dataGridViewMemberList.CurrentRow.Cells["MemberID"].Value.ToString(), out memberID))
+                    {
+                        member = (from m in context.Members
+                                  where m.MemberID == memberID
+                                  select m).First();
+                    }
+                    else
+                    {
+                        // should no happen
+                        throw new Exception("No member is selected");
+                    }
+                }
 
-            //MessageBox.Show(Member.MemberName.ToString());
+            MessageBox.Show(member.MemberName.ToString());
             this.DialogResult = DialogResult.OK;
         }
 
@@ -64,5 +107,26 @@ namespace SA45Team07B
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void dataGridViewMemberList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewMemberList.SelectedRows.Count == 0)
+            {
+                btnOK.Enabled = false;
+                btnOK.BackColor = Color.LightGray;
+                toolStripStatusLblSelectedMember.Text = "No record is found.";
+            }
+            else
+            {
+                btnOK.Enabled = true;
+                btnOK.BackColor = Color.White;
+
+                string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberName"].Value.ToString();
+
+                toolStripStatusLblSelectedMember.Text = $"{selectedName} is selected.";
+            }
+        }
     }
 }
+
+
