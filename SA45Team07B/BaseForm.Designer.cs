@@ -65,7 +65,7 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notifyIconForClose = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIconLibraryManagement = new System.Windows.Forms.NotifyIcon(this.components);
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonBorrow = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonReturn = new System.Windows.Forms.ToolStripButton();
@@ -337,11 +337,10 @@
             this.creditsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.creditsToolStripMenuItem.Text = "Credits";
             // 
-            // notifyIconForClose
+            // notifyIconLibraryManagement
             // 
-            this.notifyIconForClose.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconForClose.Icon")));
-            this.notifyIconForClose.Text = "Library Management";
-            this.notifyIconForClose.Visible = true;
+            this.notifyIconLibraryManagement.Text = "Library Management";
+            this.notifyIconLibraryManagement.Visible = true;
             // 
             // toolStrip
             // 
@@ -365,7 +364,6 @@
             this.toolStripButtonBorrow.Name = "toolStripButtonBorrow";
             this.toolStripButtonBorrow.Size = new System.Drawing.Size(85, 25);
             this.toolStripButtonBorrow.Text = "Borrow";
-            this.toolStripButtonBorrow.Click += new System.EventHandler(this.toolStripButtonBorrow_Click);
             // 
             // toolStripButtonReturn
             // 
@@ -415,7 +413,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main - Library Management System SA45Team07B";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BaseForm_FormClosed);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -457,7 +454,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
-        private System.Windows.Forms.NotifyIcon notifyIconForClose;
+        private System.Windows.Forms.NotifyIcon notifyIconLibraryManagement;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonBorrow;
         private System.Windows.Forms.ToolStripButton toolStripButtonReturn;
