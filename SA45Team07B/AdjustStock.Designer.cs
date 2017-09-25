@@ -41,14 +41,18 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.epRFID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cboxReason = new System.Windows.Forms.ComboBox();
+            this.btnMoreRFID = new System.Windows.Forms.Button();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.epRFID)).BeginInit();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRFID
             // 
             this.lblRFID.AutoSize = true;
             this.lblRFID.BackColor = System.Drawing.Color.Transparent;
-            this.lblRFID.Location = new System.Drawing.Point(133, 146);
+            this.lblRFID.Location = new System.Drawing.Point(15, 25);
             this.lblRFID.Name = "lblRFID";
             this.lblRFID.Size = new System.Drawing.Size(43, 21);
             this.lblRFID.TabIndex = 10;
@@ -56,7 +60,7 @@
             // 
             // txtRFID
             // 
-            this.txtRFID.Location = new System.Drawing.Point(231, 143);
+            this.txtRFID.Location = new System.Drawing.Point(113, 22);
             this.txtRFID.MaxLength = 10;
             this.txtRFID.Name = "txtRFID";
             this.txtRFID.Size = new System.Drawing.Size(100, 29);
@@ -68,7 +72,7 @@
             // 
             this.lblBookTitle.AutoSize = true;
             this.lblBookTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblBookTitle.Location = new System.Drawing.Point(133, 185);
+            this.lblBookTitle.Location = new System.Drawing.Point(15, 66);
             this.lblBookTitle.Name = "lblBookTitle";
             this.lblBookTitle.Size = new System.Drawing.Size(78, 21);
             this.lblBookTitle.TabIndex = 12;
@@ -76,36 +80,37 @@
             // 
             // txtbBookTitle
             // 
-            this.txtbBookTitle.Location = new System.Drawing.Point(231, 182);
+            this.txtbBookTitle.Location = new System.Drawing.Point(113, 63);
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.ReadOnly = true;
-            this.txtbBookTitle.Size = new System.Drawing.Size(321, 29);
+            this.txtbBookTitle.Size = new System.Drawing.Size(238, 29);
             this.txtbBookTitle.TabIndex = 13;
             // 
             // txtbRemarks
             // 
-            this.txtbRemarks.Location = new System.Drawing.Point(231, 262);
+            this.txtbRemarks.Enabled = false;
+            this.txtbRemarks.Location = new System.Drawing.Point(113, 171);
             this.txtbRemarks.MaxLength = 255;
             this.txtbRemarks.Multiline = true;
             this.txtbRemarks.Name = "txtbRemarks";
-            this.txtbRemarks.Size = new System.Drawing.Size(440, 230);
+            this.txtbRemarks.Size = new System.Drawing.Size(238, 86);
             this.txtbRemarks.TabIndex = 14;
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.BackColor = System.Drawing.Color.Transparent;
-            this.lblNotes.Location = new System.Drawing.Point(133, 262);
+            this.lblNotes.Location = new System.Drawing.Point(15, 137);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(51, 21);
+            this.lblNotes.Size = new System.Drawing.Size(61, 21);
             this.lblNotes.TabIndex = 15;
-            this.lblNotes.Text = "Notes";
+            this.lblNotes.Text = "Reason";
             // 
             // lblDiscontinue
             // 
             this.lblDiscontinue.AutoSize = true;
             this.lblDiscontinue.BackColor = System.Drawing.Color.Transparent;
-            this.lblDiscontinue.Location = new System.Drawing.Point(133, 220);
+            this.lblDiscontinue.Location = new System.Drawing.Point(15, 104);
             this.lblDiscontinue.Name = "lblDiscontinue";
             this.lblDiscontinue.Size = new System.Drawing.Size(99, 21);
             this.lblDiscontinue.TabIndex = 16;
@@ -115,7 +120,8 @@
             // 
             this.rbYes.AutoSize = true;
             this.rbYes.BackColor = System.Drawing.Color.Transparent;
-            this.rbYes.Location = new System.Drawing.Point(231, 220);
+            this.rbYes.Enabled = false;
+            this.rbYes.Location = new System.Drawing.Point(113, 104);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(51, 25);
             this.rbYes.TabIndex = 17;
@@ -127,7 +133,8 @@
             // 
             this.rbNo.AutoSize = true;
             this.rbNo.BackColor = System.Drawing.Color.Transparent;
-            this.rbNo.Location = new System.Drawing.Point(288, 220);
+            this.rbNo.Enabled = false;
+            this.rbNo.Location = new System.Drawing.Point(170, 104);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(49, 25);
             this.rbNo.TabIndex = 18;
@@ -137,7 +144,8 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(231, 525);
+            this.btnSubmit.Enabled = false;
+            this.btnSubmit.Location = new System.Drawing.Point(98, 295);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(78, 34);
             this.btnSubmit.TabIndex = 19;
@@ -147,7 +155,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(332, 526);
+            this.btnCancel.Location = new System.Drawing.Point(205, 296);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 20;
@@ -159,37 +167,69 @@
             // 
             this.epRFID.ContainerControl = this;
             // 
+            // cboxReason
+            // 
+            this.cboxReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxReason.Enabled = false;
+            this.cboxReason.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboxReason.FormattingEnabled = true;
+            this.cboxReason.Items.AddRange(new object[] {
+            "Lost",
+            "Damaged",
+            "Other"});
+            this.cboxReason.Location = new System.Drawing.Point(113, 136);
+            this.cboxReason.Name = "cboxReason";
+            this.cboxReason.Size = new System.Drawing.Size(100, 29);
+            this.cboxReason.TabIndex = 21;
+            this.cboxReason.SelectedIndexChanged += new System.EventHandler(this.cboxReason_SelectedIndexChanged);
+            // 
+            // btnMoreRFID
+            // 
+            this.btnMoreRFID.CausesValidation = false;
+            this.btnMoreRFID.Location = new System.Drawing.Point(322, 22);
+            this.btnMoreRFID.Name = "btnMoreRFID";
+            this.btnMoreRFID.Size = new System.Drawing.Size(29, 29);
+            this.btnMoreRFID.TabIndex = 22;
+            this.btnMoreRFID.Text = "...";
+            this.btnMoreRFID.UseVisualStyleBackColor = true;
+            this.btnMoreRFID.Click += new System.EventHandler(this.btnMoreRFID_Click);
+            // 
+            // groupBox
+            // 
+            this.groupBox.Controls.Add(this.lblRFID);
+            this.groupBox.Controls.Add(this.cboxReason);
+            this.groupBox.Controls.Add(this.btnMoreRFID);
+            this.groupBox.Controls.Add(this.txtbRemarks);
+            this.groupBox.Controls.Add(this.txtRFID);
+            this.groupBox.Controls.Add(this.lblBookTitle);
+            this.groupBox.Controls.Add(this.lblNotes);
+            this.groupBox.Controls.Add(this.rbNo);
+            this.groupBox.Controls.Add(this.txtbBookTitle);
+            this.groupBox.Controls.Add(this.rbYes);
+            this.groupBox.Controls.Add(this.lblDiscontinue);
+            this.groupBox.Location = new System.Drawing.Point(12, 12);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(366, 277);
+            this.groupBox.TabIndex = 23;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Input";
+            // 
             // AdjustStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1436, 823);
+            this.ClientSize = new System.Drawing.Size(388, 337);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.rbNo);
-            this.Controls.Add(this.rbYes);
-            this.Controls.Add(this.lblDiscontinue);
-            this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.txtbRemarks);
-            this.Controls.Add(this.txtbBookTitle);
-            this.Controls.Add(this.lblBookTitle);
-            this.Controls.Add(this.txtRFID);
-            this.Controls.Add(this.lblRFID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdjustStock";
-            this.Controls.SetChildIndex(this.lblRFID, 0);
-            this.Controls.SetChildIndex(this.txtRFID, 0);
-            this.Controls.SetChildIndex(this.lblBookTitle, 0);
-            this.Controls.SetChildIndex(this.txtbBookTitle, 0);
-            this.Controls.SetChildIndex(this.txtbRemarks, 0);
-            this.Controls.SetChildIndex(this.lblNotes, 0);
-            this.Controls.SetChildIndex(this.lblDiscontinue, 0);
-            this.Controls.SetChildIndex(this.rbYes, 0);
-            this.Controls.SetChildIndex(this.rbNo, 0);
-            this.Controls.SetChildIndex(this.btnSubmit, 0);
-            this.Controls.SetChildIndex(this.btnCancel, 0);
+            this.Text = "Stock Adjustment";
             ((System.ComponentModel.ISupportInitialize)(this.epRFID)).EndInit();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -207,5 +247,8 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider epRFID;
+        private System.Windows.Forms.ComboBox cboxReason;
+        private System.Windows.Forms.Button btnMoreRFID;
+        private System.Windows.Forms.GroupBox groupBox;
     }
 }
