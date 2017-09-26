@@ -176,7 +176,7 @@
             this.buttonSaveChanges.Enabled = false;
             this.buttonSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveChanges.Location = new System.Drawing.Point(355, 681);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(355, 661);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(262, 91);
             this.buttonSaveChanges.TabIndex = 24;
@@ -190,7 +190,7 @@
             this.buttonCancel.CausesValidation = false;
             this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Location = new System.Drawing.Point(655, 681);
+            this.buttonCancel.Location = new System.Drawing.Point(655, 661);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 91);
             this.buttonCancel.TabIndex = 25;
