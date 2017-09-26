@@ -382,6 +382,7 @@
             // 
             this.dataGridViewTransactionRecords.AllowUserToAddRows = false;
             this.dataGridViewTransactionRecords.AllowUserToDeleteRows = false;
+            this.dataGridViewTransactionRecords.AllowUserToOrderColumns = true;
             this.dataGridViewTransactionRecords.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridViewTransactionRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -435,7 +436,7 @@
             this.dataGridViewTransactionRecords.RowHeadersVisible = false;
             this.dataGridViewTransactionRecords.RowHeadersWidth = 5;
             this.dataGridViewTransactionRecords.RowTemplate.Height = 24;
-            this.dataGridViewTransactionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTransactionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewTransactionRecords.Size = new System.Drawing.Size(773, 278);
             this.dataGridViewTransactionRecords.TabIndex = 35;
             this.dataGridViewTransactionRecords.DataSourceChanged += new System.EventHandler(this.dataGridViewTransactionRecords_DataSourceChanged);
@@ -585,7 +586,7 @@
             this.groupBox1.Controls.Add(this.txtbRemarksOfSelectedTransaction);
             this.groupBox1.Location = new System.Drawing.Point(22, 694);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(722, 182);
+            this.groupBox1.Size = new System.Drawing.Size(725, 182);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Remarks of selected transaction";
@@ -613,9 +614,9 @@
             this.btnSaveChanges.Location = new System.Drawing.Point(770, 729);
             this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(94, 57);
+            this.btnSaveChanges.Size = new System.Drawing.Size(94, 76);
             this.btnSaveChanges.TabIndex = 6;
-            this.btnSaveChanges.Text = "Save";
+            this.btnSaveChanges.Text = "Submit Remarks";
             this.btnSaveChanges.UseVisualStyleBackColor = false;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
@@ -629,10 +630,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(770, 801);
+            this.btnClose.Location = new System.Drawing.Point(770, 817);
             this.btnClose.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 57);
+            this.btnClose.Size = new System.Drawing.Size(94, 41);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;

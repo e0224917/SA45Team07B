@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace SA45Team07B
@@ -16,7 +17,6 @@ namespace SA45Team07B
         private Faculty facultyOfMemberFound;
         private List<IssueTran> onLoanTransactionRecords;
         private List<IssueTran> returnedTransactionRecords;
-        private IssueTran selectedTransaction = null;
 
         public MemberTrans()
         {
@@ -71,7 +71,7 @@ namespace SA45Team07B
                                                     select x).ToList();
 
                         var displayList = (from x in onLoanTransactionRecords
-                                           orderby x.DateIssued descending
+                                           orderby x.DateIssued ascending
                                            select new
                                            {
                                                x.DateIssued,
@@ -98,7 +98,7 @@ namespace SA45Team07B
 
 
                         var displayList = (from x in returnedTransactionRecords
-                                           orderby x.DateIssued descending
+                                           orderby x.DateIssued ascending
                                            select new
                                            {
                                                x.DateIssued,
@@ -125,7 +125,38 @@ namespace SA45Team07B
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            // TODO - to save remarks change
+
+            IssueTran selectedTransaction = null;
+
+            if (dataGridViewTransactionRecords.RowCount != 0)
+            {
+                long transactionID = Int64.Parse(dataGridViewTransactionRecords.CurrentRow.Cells["TransactionIDColumn"].Value.ToString());
+
+                using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+                {
+                    selectedTransaction = (from x in context.IssueTrans
+                                           where x.TransactionID == transactionID
+                                           select x).First();
+
+                    if (selectedTransaction != null)
+                    {
+                        using (TransactionScope ts = new TransactionScope())
+                        {
+                            selectedTransaction.Remarks = txtbRemarksOfSelectedTransaction.Text.ToString();
+                            int i = context.SaveChanges();                        
+                            ts.Complete();
+
+                            if (i > 0)
+                            {
+                                toolStripStatusLblRecordFound.Text = "Remarks has been submited.";
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            DisplayDGVData();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -189,8 +220,10 @@ namespace SA45Team07B
             }
         }
 
-        private void FindSelectedTransaction()
+        private IssueTran FindSelectedTransaction()
         {
+            IssueTran selectedTransaction = null;
+
             if (dataGridViewTransactionRecords.RowCount != 0)
             {
                 long transactionID = Int64.Parse(dataGridViewTransactionRecords.CurrentRow.Cells["TransactionIDColumn"].Value.ToString());
@@ -202,6 +235,8 @@ namespace SA45Team07B
                                            select x).First();
                 }
             }
+
+            return selectedTransaction;
         }
 
         private void CalculateFine()
@@ -240,10 +275,12 @@ namespace SA45Team07B
 
                 if (fine > 0)
                 {
+                    txtbUnpaidFine.BackColor = SystemColors.Control;
                     txtbUnpaidFine.ForeColor = Color.Red;
                 }
                 else
                 {
+                    txtbUnpaidFine.BackColor = SystemColors.Control;
                     txtbUnpaidFine.ForeColor = SystemColors.WindowText;
                 }
 
