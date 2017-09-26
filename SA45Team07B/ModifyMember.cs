@@ -28,7 +28,7 @@ namespace SA45Team07B
             {
                 if (mps.ShowDialog() == DialogResult.OK)
                 {
-                    mem = mps.Member;
+                    mem = mps.MemberFound;
                     textBoxMemberName.Text = mem.MemberName;
                     maskedTextBoxSchoolID.Text = mem.SchoolID;
                     SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
