@@ -152,16 +152,14 @@ namespace SA45Team07B
                 newMember.Discontinued = "N";
                 newMember.LoanedQty = 0;
 
-
-
                 DialogResult dr = MessageBox.Show("Confirm add new member", "Confirmation", MessageBoxButtons.YesNoCancel);
                 if (dr == DialogResult.Yes)
                 {
                     context2.Members.Add(newMember);
                     context2.SaveChanges();
                     Close();
-                    MemberPopUpSearch ds = new MemberPopUpSearch();
-                    ds.Show();
+                    MemberPopUpSearch mps = new MemberPopUpSearch();
+                    mps.Show();
 
                 }
                 else if (dr == DialogResult.No)
@@ -173,6 +171,12 @@ namespace SA45Team07B
                     DialogResult = 0;
                 }
         }
-  
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+            BaseForm bf = new BaseForm();
+            bf.Show();
+        }
     }
 }

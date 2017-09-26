@@ -16,7 +16,7 @@ namespace SA45Team07B
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddNewBook());
+            Application.Run(new ModifyMember());
         }
     }
 }

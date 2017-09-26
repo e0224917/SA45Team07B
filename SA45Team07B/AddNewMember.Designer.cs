@@ -186,7 +186,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(450, 965);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(326, 141);
-            this.buttonAdd.TabIndex = 31;
+            this.buttonAdd.TabIndex = 18;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -197,9 +197,10 @@
             this.buttonCancel.Location = new System.Drawing.Point(890, 965);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(326, 141);
-            this.buttonCancel.TabIndex = 32;
+            this.buttonCancel.TabIndex = 19;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // statusStrip1
             // 

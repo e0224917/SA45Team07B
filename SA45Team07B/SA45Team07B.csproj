@@ -222,6 +222,9 @@
     <EmbeddedResource Include="MemberPopUpSearchcs.resx">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifyMember.resx">
+      <DependentUpon>ModifyMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
