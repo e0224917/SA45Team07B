@@ -14,5 +14,25 @@ namespace SA45Team07B
         {
             InitializeComponent();
         }
+
+        private void textBoxPublisherID_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void textBoxPublisherName_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBoexes_Validated(object sender, EventArgs e)
+        {
+
+        }
     }
 }

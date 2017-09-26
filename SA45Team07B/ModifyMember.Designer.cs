@@ -132,6 +132,7 @@
             this.maskedTextBoxSchoolID.ReadOnly = true;
             this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(400, 55);
             this.maskedTextBoxSchoolID.TabIndex = 17;
+            this.maskedTextBoxSchoolID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.maskedTextBoxSchoolID.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBoxSchoolID_Validating);
             this.maskedTextBoxSchoolID.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -151,6 +152,7 @@
             this.textBoxMemberName.Name = "textBoxMemberName";
             this.textBoxMemberName.Size = new System.Drawing.Size(600, 55);
             this.textBoxMemberName.TabIndex = 19;
+            this.textBoxMemberName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxMemberName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxMemberName_Validating);
             this.textBoxMemberName.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -202,6 +204,7 @@
             this.textBoxContactNumber.Name = "textBoxContactNumber";
             this.textBoxContactNumber.Size = new System.Drawing.Size(500, 55);
             this.textBoxContactNumber.TabIndex = 22;
+            this.textBoxContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxContactNumber_Validating);
             this.textBoxContactNumber.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -211,6 +214,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(800, 55);
             this.textBoxEmail.TabIndex = 23;
+            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxEmail_Validating);
             this.textBoxEmail.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 

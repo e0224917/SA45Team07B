@@ -55,10 +55,14 @@
             this.labelStar = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.errorProviderMemberType = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFacultyName = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyName)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +110,7 @@
             this.textBoxMemberName.Name = "textBoxMemberName";
             this.textBoxMemberName.Size = new System.Drawing.Size(600, 55);
             this.textBoxMemberName.TabIndex = 12;
+            this.textBoxMemberName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxMemberName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxMemberName_Validating);
             this.textBoxMemberName.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -181,6 +186,7 @@
             this.textBoxContactNumber.Name = "textBoxContactNumber";
             this.textBoxContactNumber.Size = new System.Drawing.Size(500, 55);
             this.textBoxContactNumber.TabIndex = 15;
+            this.textBoxContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxContactNumber_Validating);
             this.textBoxContactNumber.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -191,6 +197,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(800, 55);
             this.textBoxEmail.TabIndex = 16;
+            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxEmail_Validating);
             this.textBoxEmail.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -210,6 +217,7 @@
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.White;
+            this.buttonCancel.CausesValidation = false;
             this.buttonCancel.Location = new System.Drawing.Point(700, 734);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
@@ -238,6 +246,7 @@
             this.comboBoxMemberType.Name = "comboBoxMemberType";
             this.comboBoxMemberType.Size = new System.Drawing.Size(500, 56);
             this.comboBoxMemberType.TabIndex = 13;
+            this.comboBoxMemberType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             // 
             // maskedTextBoxSchoolID
             // 
@@ -248,6 +257,7 @@
             this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(502, 55);
             this.maskedTextBoxSchoolID.TabIndex = 11;
             this.maskedTextBoxSchoolID.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.maskedTextBoxSchoolID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.maskedTextBoxSchoolID.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBoxSchoolID_Validating);
             this.maskedTextBoxSchoolID.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
@@ -272,6 +282,7 @@
             // 
             // errorProviderEmail
             // 
+            this.errorProviderEmail.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderEmail.ContainerControl = this;
             // 
             // errorProviderSchoolID
@@ -344,6 +355,16 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "*";
             // 
+            // errorProviderMemberType
+            // 
+            this.errorProviderMemberType.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderMemberType.ContainerControl = this;
+            // 
+            // errorProviderFacultyName
+            // 
+            this.errorProviderFacultyName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderFacultyName.ContainerControl = this;
+            // 
             // AddNewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
@@ -401,6 +422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,5 +457,7 @@
         private System.Windows.Forms.Label labelStar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProviderMemberType;
+        private System.Windows.Forms.ErrorProvider errorProviderFacultyName;
     }
 }

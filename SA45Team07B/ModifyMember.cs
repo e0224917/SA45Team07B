@@ -50,6 +50,11 @@ namespace SA45Team07B
             }
         }
 
+        #region Validation
+        private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validate();
+        }
         private void maskedTextBoxSchoolID_Validating(object sender, CancelEventArgs e)
         {
             if ((maskedTextBoxSchoolID.Text == ""))
@@ -73,6 +78,10 @@ namespace SA45Team07B
             else if (textBoxMemberName.Text == "")
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
+            }
+            else if (textBoxMemberName.Text.Length > 50)
+            {
+                errorProviderMemberName.SetError(textBoxMemberName, "Too many characters. Maximum number of characters = 50.");
             }
             else
             {
@@ -143,6 +152,7 @@ namespace SA45Team07B
                 buttonSaveChanges.Enabled = false;
             }
         }
+        #endregion
 
         private void buttonSaveChanges_Click(object sender, EventArgs e)
         {
@@ -176,6 +186,7 @@ namespace SA45Team07B
 
             }
         }
+        
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -183,6 +194,5 @@ namespace SA45Team07B
             MemberPopUpSearch mpus = new MemberPopUpSearch();
             mpus.Show();
         }
-      
     }
 }

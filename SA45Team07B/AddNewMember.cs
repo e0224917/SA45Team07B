@@ -24,6 +24,11 @@ namespace SA45Team07B
             textBoxMemberID.Text = Convert.ToString(k);
         }
 
+        #region Validation
+        private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validate();
+        }
         private void maskedTextBoxSchoolID_Validating(object sender, CancelEventArgs e)
         {
             SA45Team07B_LibraryEntities context1 = new SA45Team07B_LibraryEntities();
@@ -49,6 +54,10 @@ namespace SA45Team07B
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
 
+            }
+            else if (textBoxMemberName.Text.Length > 50)
+            {
+                errorProviderMemberName.SetError(textBoxMemberName, "Too many characters. Maximum number of characters = 50.");
             }
             else
             {
@@ -114,6 +123,7 @@ namespace SA45Team07B
                 buttonAdd.Enabled = false;
             }
         }
+        #endregion
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
