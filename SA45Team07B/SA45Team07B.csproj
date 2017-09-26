@@ -243,6 +243,9 @@
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MemberInfo.resx">
+      <DependentUpon>MemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MemberPopUpSearchcs.resx">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
     </EmbeddedResource>

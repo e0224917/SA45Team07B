@@ -155,8 +155,7 @@ namespace SA45Team07B
             newbook.SubjectNameValidation(cbxSubjectName, epAddBk);
         }
 
-                
-        }
+    }
 
     }
 
