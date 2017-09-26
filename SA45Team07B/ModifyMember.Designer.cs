@@ -41,15 +41,19 @@
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBoxFacultyName = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxContactNumber = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 913);
             // 
             // labelMemberName
             // 
             this.labelMemberName.AutoSize = true;
             this.labelMemberName.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberName.Location = new System.Drawing.Point(65, 332);
+            this.labelMemberName.Location = new System.Drawing.Point(62, 276);
             this.labelMemberName.Name = "labelMemberName";
             this.labelMemberName.Size = new System.Drawing.Size(268, 48);
             this.labelMemberName.TabIndex = 11;
@@ -59,7 +63,7 @@
             // 
             this.labelSchoolID.AutoSize = true;
             this.labelSchoolID.BackColor = System.Drawing.Color.Transparent;
-            this.labelSchoolID.Location = new System.Drawing.Point(163, 255);
+            this.labelSchoolID.Location = new System.Drawing.Point(150, 200);
             this.labelSchoolID.Name = "labelSchoolID";
             this.labelSchoolID.Size = new System.Drawing.Size(180, 48);
             this.labelSchoolID.TabIndex = 12;
@@ -69,7 +73,7 @@
             // 
             this.labelMemberType.AutoSize = true;
             this.labelMemberType.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberType.Location = new System.Drawing.Point(86, 400);
+            this.labelMemberType.Location = new System.Drawing.Point(47, 342);
             this.labelMemberType.Name = "labelMemberType";
             this.labelMemberType.Size = new System.Drawing.Size(247, 48);
             this.labelMemberType.TabIndex = 13;
@@ -79,7 +83,7 @@
             // 
             this.labelFacultyName.AutoSize = true;
             this.labelFacultyName.BackColor = System.Drawing.Color.Transparent;
-            this.labelFacultyName.Location = new System.Drawing.Point(65, 535);
+            this.labelFacultyName.Location = new System.Drawing.Point(51, 431);
             this.labelFacultyName.Name = "labelFacultyName";
             this.labelFacultyName.Size = new System.Drawing.Size(243, 48);
             this.labelFacultyName.TabIndex = 14;
@@ -89,7 +93,7 @@
             // 
             this.labelContactNumber.AutoSize = true;
             this.labelContactNumber.BackColor = System.Drawing.Color.Transparent;
-            this.labelContactNumber.Location = new System.Drawing.Point(75, 641);
+            this.labelContactNumber.Location = new System.Drawing.Point(26, 509);
             this.labelContactNumber.Name = "labelContactNumber";
             this.labelContactNumber.Size = new System.Drawing.Size(301, 48);
             this.labelContactNumber.TabIndex = 15;
@@ -99,7 +103,7 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
-            this.labelEmail.Location = new System.Drawing.Point(152, 710);
+            this.labelEmail.Location = new System.Drawing.Point(171, 631);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(123, 48);
             this.labelEmail.TabIndex = 16;
@@ -107,7 +111,7 @@
             // 
             // maskedTextBoxSchoolID
             // 
-            this.maskedTextBoxSchoolID.Location = new System.Drawing.Point(425, 255);
+            this.maskedTextBoxSchoolID.Location = new System.Drawing.Point(351, 193);
             this.maskedTextBoxSchoolID.Mask = "A00000000";
             this.maskedTextBoxSchoolID.Name = "maskedTextBoxSchoolID";
             this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(387, 55);
@@ -115,7 +119,7 @@
             // 
             // buttonFind
             // 
-            this.buttonFind.Location = new System.Drawing.Point(819, 251);
+            this.buttonFind.Location = new System.Drawing.Point(757, 190);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(75, 58);
             this.buttonFind.TabIndex = 18;
@@ -125,7 +129,7 @@
             // 
             // textBoxMemberName
             // 
-            this.textBoxMemberName.Location = new System.Drawing.Point(384, 344);
+            this.textBoxMemberName.Location = new System.Drawing.Point(351, 269);
             this.textBoxMemberName.Name = "textBoxMemberName";
             this.textBoxMemberName.Size = new System.Drawing.Size(386, 55);
             this.textBoxMemberName.TabIndex = 18;
@@ -134,12 +138,7 @@
             // 
             this.comboBoxMemberType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMemberType.FormattingEnabled = true;
-            this.comboBoxMemberType.Items.AddRange(new object[] {
-            "Undergraduate Student",
-            "Graduate Student",
-            "Academic Staff",
-            "Admin Staff"});
-            this.comboBoxMemberType.Location = new System.Drawing.Point(384, 432);
+            this.comboBoxMemberType.Location = new System.Drawing.Point(353, 342);
             this.comboBoxMemberType.Name = "comboBoxMemberType";
             this.comboBoxMemberType.Size = new System.Drawing.Size(386, 56);
             this.comboBoxMemberType.TabIndex = 19;
@@ -148,7 +147,7 @@
             // 
             this.buttonSaveChanges.BackColor = System.Drawing.Color.White;
             this.buttonSaveChanges.Enabled = false;
-            this.buttonSaveChanges.Location = new System.Drawing.Point(937, 622);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(353, 756);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(262, 91);
             this.buttonSaveChanges.TabIndex = 23;
@@ -158,7 +157,7 @@
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(1217, 620);
+            this.buttonCancel.Location = new System.Drawing.Point(642, 756);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 91);
             this.buttonCancel.TabIndex = 23;
@@ -178,31 +177,31 @@
             "Medicine",
             "Science",
             "Systems Science"});
-            this.comboBoxFacultyName.Location = new System.Drawing.Point(366, 535);
+            this.comboBoxFacultyName.Location = new System.Drawing.Point(354, 423);
             this.comboBoxFacultyName.Name = "comboBoxFacultyName";
             this.comboBoxFacultyName.Size = new System.Drawing.Size(386, 56);
             this.comboBoxFacultyName.TabIndex = 20;
             // 
-            // textBox2
+            // textBoxContactNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(425, 634);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(399, 55);
-            this.textBox2.TabIndex = 21;
+            this.textBoxContactNumber.Location = new System.Drawing.Point(354, 531);
+            this.textBoxContactNumber.Name = "textBoxContactNumber";
+            this.textBoxContactNumber.Size = new System.Drawing.Size(399, 55);
+            this.textBoxContactNumber.TabIndex = 21;
             // 
-            // textBox3
+            // textBoxEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(320, 710);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(386, 55);
-            this.textBox3.TabIndex = 22;
+            this.textBoxEmail.Location = new System.Drawing.Point(353, 631);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(519, 55);
+            this.textBoxEmail.TabIndex = 22;
             // 
             // ModifyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
-            this.ClientSize = new System.Drawing.Size(1506, 823);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1506, 978);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxContactNumber);
             this.Controls.Add(this.comboBoxFacultyName);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSaveChanges);
@@ -233,8 +232,8 @@
             this.Controls.SetChildIndex(this.buttonSaveChanges, 0);
             this.Controls.SetChildIndex(this.buttonCancel, 0);
             this.Controls.SetChildIndex(this.comboBoxFacultyName, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.textBoxContactNumber, 0);
+            this.Controls.SetChildIndex(this.textBoxEmail, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +253,7 @@
         private System.Windows.Forms.Button buttonSaveChanges;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ComboBox comboBoxFacultyName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxContactNumber;
+        private System.Windows.Forms.TextBox textBoxEmail;
     }
 }

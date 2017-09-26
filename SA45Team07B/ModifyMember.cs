@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace SA45Team07B
 {
@@ -28,10 +29,23 @@ namespace SA45Team07B
                 if (mps.ShowDialog() == DialogResult.OK)
                 {
                     mem = mps.Member;
-                    //textBoxMemberName.Text = m.MemberName;
-                    //maskedTextBoxSchoolID.Text = m.SchoolID;
-                    //comboBoxMemberType.DataSource = ;
+                    textBoxMemberName.Text = mem.MemberName;
+                    maskedTextBoxSchoolID.Text = mem.SchoolID;
+                    SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+                    var query = from x in context.MemberCategories
+                                select x.CategoryName;              
+                    comboBoxMemberType.DataSource = query.ToList();
+                    comboBoxMemberType.SelectedItem = mem.MemberCategories.CategoryName.ToString();
 
+
+                    var query2 = from y in context.Faculties
+                                 select y.FacultyName;
+                    comboBoxFacultyName.DataSource = query2.ToList();
+                    comboBoxFacultyName.SelectedItem = mem.Faculties.FacultyName.ToString();
+                    textBoxContactNumber.Text = mem.ContactNumber;
+                    textBoxEmail.Text = mem.Email;
+                   
+                    //var query2 = from x in context.
                 }
             }
          
