@@ -39,7 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberPopUpSearch));
             this.lblSelectMember = new System.Windows.Forms.Label();
             this.dataGridViewMemberList = new System.Windows.Forms.DataGridView();
             this.MemberIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +120,7 @@
             this.dataGridViewMemberList.EnableHeadersVisualStyles = false;
             this.dataGridViewMemberList.GridColor = System.Drawing.Color.White;
             this.dataGridViewMemberList.Location = new System.Drawing.Point(27, 210);
-            this.dataGridViewMemberList.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.dataGridViewMemberList.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridViewMemberList.MultiSelect = false;
             this.dataGridViewMemberList.Name = "dataGridViewMemberList";
             this.dataGridViewMemberList.ReadOnly = true;
@@ -232,7 +231,7 @@
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
             this.btnOK.Location = new System.Drawing.Point(287, 643);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(10);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(92, 40);
             this.btnOK.TabIndex = 6;
@@ -252,7 +251,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(398, 643);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 40);
             this.btnCancel.TabIndex = 7;
@@ -266,7 +265,7 @@
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(36, 34);
-            this.lblName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblName.Margin = new System.Windows.Forms.Padding(6);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(118, 21);
             this.lblName.TabIndex = 15;
@@ -278,7 +277,7 @@
             this.lblSchoolID.BackColor = System.Drawing.Color.Transparent;
             this.lblSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSchoolID.Location = new System.Drawing.Point(36, 74);
-            this.lblSchoolID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblSchoolID.Margin = new System.Windows.Forms.Padding(6);
             this.lblSchoolID.Name = "lblSchoolID";
             this.lblSchoolID.Size = new System.Drawing.Size(79, 21);
             this.lblSchoolID.TabIndex = 16;
@@ -290,7 +289,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(36, 114);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(6);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 21);
             this.lblEmail.TabIndex = 17;
@@ -300,7 +299,7 @@
             // 
             this.txtbMemberName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbMemberName.Location = new System.Drawing.Point(166, 32);
-            this.txtbMemberName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbMemberName.Margin = new System.Windows.Forms.Padding(6);
             this.txtbMemberName.Name = "txtbMemberName";
             this.txtbMemberName.Size = new System.Drawing.Size(326, 29);
             this.txtbMemberName.TabIndex = 1;
@@ -309,7 +308,7 @@
             // 
             this.txtbSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbSchoolID.Location = new System.Drawing.Point(166, 72);
-            this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(6);
             this.txtbSchoolID.Name = "txtbSchoolID";
             this.txtbSchoolID.Size = new System.Drawing.Size(326, 29);
             this.txtbSchoolID.TabIndex = 2;
@@ -318,7 +317,7 @@
             // 
             this.txtbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbEmail.Location = new System.Drawing.Point(166, 112);
-            this.txtbEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtbEmail.Name = "txtbEmail";
             this.txtbEmail.Size = new System.Drawing.Size(326, 29);
             this.txtbEmail.TabIndex = 3;
@@ -333,7 +332,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Location = new System.Drawing.Point(550, 38);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 40);
             this.btnSearch.TabIndex = 4;
@@ -351,7 +350,7 @@
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(550, 91);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(92, 40);
             this.btnClear.TabIndex = 5;
@@ -372,9 +371,9 @@
             this.groupBox1.Controls.Add(this.txtbSchoolID);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(28, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(698, 157);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
@@ -405,7 +404,7 @@
             this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SA45Team07B.Properties.Resources.greybackground3_modi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(754, 730);
