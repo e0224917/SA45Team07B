@@ -239,6 +239,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberTrans.resx">
       <DependentUpon>MemberTrans.cs</DependentUpon>
+	</EmbeddedResource>
 	<EmbeddedResource Include="ModifyBook.resx">
       <DependentUpon>ModifyBook.cs</DependentUpon>
     </EmbeddedResource>
