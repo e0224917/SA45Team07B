@@ -215,6 +215,9 @@
     <EmbeddedResource Include="AddNewBook.resx">
       <DependentUpon>AddNewBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddNewMember.resx">
+      <DependentUpon>AddNewMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdjustStock.resx">
       <DependentUpon>AdjustStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,7 +242,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberTrans.resx">
       <DependentUpon>MemberTrans.cs</DependentUpon>
-	<EmbeddedResource Include="ModifyBook.resx">
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyBook.resx">
       <DependentUpon>ModifyBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
