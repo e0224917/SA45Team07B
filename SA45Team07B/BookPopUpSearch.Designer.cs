@@ -91,7 +91,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(421, 690);
+            this.btnCancel.Location = new System.Drawing.Point(421, 705);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 40);
@@ -109,7 +109,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(306, 690);
+            this.btnOK.Location = new System.Drawing.Point(306, 705);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(92, 40);
@@ -150,9 +150,9 @@
             this.groupBox1.Controls.Add(this.txtbISBN);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(772, 241);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -196,7 +196,7 @@
             this.rbtnAll.AutoSize = true;
             this.rbtnAll.Checked = true;
             this.rbtnAll.Location = new System.Drawing.Point(170, 196);
-            this.rbtnAll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbtnAll.Margin = new System.Windows.Forms.Padding(6);
             this.rbtnAll.Name = "rbtnAll";
             this.rbtnAll.Size = new System.Drawing.Size(46, 25);
             this.rbtnAll.TabIndex = 5;
@@ -212,7 +212,7 @@
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.IntegralHeight = false;
             this.cbSubject.Location = new System.Drawing.Point(166, 154);
-            this.cbSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbSubject.Margin = new System.Windows.Forms.Padding(6);
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(403, 29);
             this.cbSubject.TabIndex = 4;
@@ -223,7 +223,7 @@
             this.lblAvailibility.BackColor = System.Drawing.Color.Transparent;
             this.lblAvailibility.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvailibility.Location = new System.Drawing.Point(36, 196);
-            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(6);
             this.lblAvailibility.Name = "lblAvailibility";
             this.lblAvailibility.Size = new System.Drawing.Size(89, 21);
             this.lblAvailibility.TabIndex = 25;
@@ -235,7 +235,7 @@
             this.lblSubject.BackColor = System.Drawing.Color.Transparent;
             this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubject.Location = new System.Drawing.Point(36, 156);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(6);
             this.lblSubject.Name = "lblSubject";
             this.lblSubject.Size = new System.Drawing.Size(64, 21);
             this.lblSubject.TabIndex = 23;
@@ -247,7 +247,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(36, 34);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(6);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(81, 21);
             this.lblTitle.TabIndex = 15;
@@ -263,7 +263,7 @@
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(623, 105);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(92, 40);
             this.btnClear.TabIndex = 10;
@@ -277,7 +277,7 @@
             this.lblISBN.BackColor = System.Drawing.Color.Transparent;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblISBN.Location = new System.Drawing.Point(36, 74);
-            this.lblISBN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblISBN.Margin = new System.Windows.Forms.Padding(6);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(47, 21);
             this.lblISBN.TabIndex = 16;
@@ -293,7 +293,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Location = new System.Drawing.Point(623, 52);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(92, 40);
             this.btnSearch.TabIndex = 9;
@@ -307,7 +307,7 @@
             this.lblAuthor.BackColor = System.Drawing.Color.Transparent;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAuthor.Location = new System.Drawing.Point(36, 114);
-            this.lblAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblAuthor.Margin = new System.Windows.Forms.Padding(6);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(61, 21);
             this.lblAuthor.TabIndex = 17;
@@ -317,7 +317,7 @@
             // 
             this.txtbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbAuthor.Location = new System.Drawing.Point(166, 112);
-            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(6);
             this.txtbAuthor.Name = "txtbAuthor";
             this.txtbAuthor.Size = new System.Drawing.Size(403, 29);
             this.txtbAuthor.TabIndex = 3;
@@ -326,7 +326,7 @@
             // 
             this.txtbBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbBookTitle.Location = new System.Drawing.Point(166, 32);
-            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(6);
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.Size = new System.Drawing.Size(403, 29);
             this.txtbBookTitle.TabIndex = 1;
@@ -335,7 +335,7 @@
             // 
             this.txtbISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbISBN.Location = new System.Drawing.Point(166, 72);
-            this.txtbISBN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtbISBN.Margin = new System.Windows.Forms.Padding(6);
             this.txtbISBN.Name = "txtbISBN";
             this.txtbISBN.Size = new System.Drawing.Size(403, 29);
             this.txtbISBN.TabIndex = 2;
@@ -405,7 +405,7 @@
             this.dataGridViewBookList.EnableHeadersVisualStyles = false;
             this.dataGridViewBookList.GridColor = System.Drawing.Color.White;
             this.dataGridViewBookList.Location = new System.Drawing.Point(14, 296);
-            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridViewBookList.MultiSelect = false;
             this.dataGridViewBookList.Name = "dataGridViewBookList";
             this.dataGridViewBookList.ReadOnly = true;
@@ -421,7 +421,7 @@
             this.dataGridViewBookList.RowHeadersWidth = 5;
             this.dataGridViewBookList.RowTemplate.Height = 24;
             this.dataGridViewBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBookList.Size = new System.Drawing.Size(773, 364);
+            this.dataGridViewBookList.Size = new System.Drawing.Size(773, 392);
             this.dataGridViewBookList.TabIndex = 13;
             this.dataGridViewBookList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
             this.dataGridViewBookList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);

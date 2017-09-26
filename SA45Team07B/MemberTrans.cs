@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SA45Team07B
@@ -13,6 +14,7 @@ namespace SA45Team07B
         private Member memberFound;
         private MemberCategories memberTypeOfMemberFound;
         private Faculty facultyOfMemberFound;
+        private List<IssueTran> transactionRecords;
 
         public MemberTrans()
         {
@@ -30,6 +32,7 @@ namespace SA45Team07B
                     memberTypeOfMemberFound = mps.MemberTypeOfMemberFound;
 
                     DisplayTextBoxData();
+                    DisplayDGVData();
                 }
             }
         }
@@ -43,7 +46,6 @@ namespace SA45Team07B
                     txtbMemberID.Text = memberFound.MemberID.ToString();
                     txtbMemberName.Text = memberFound.MemberName;
                     txtbSchoolID.Text = memberFound.SchoolID;
-
                     txtbFacultyName.Text = facultyOfMemberFound.FacultyName;
                     txtbMemberType.Text = memberTypeOfMemberFound.CategoryName;
                     txtbLoanEntitlement.Text = memberTypeOfMemberFound.LoanEntitlement.ToString();
@@ -52,6 +54,31 @@ namespace SA45Team07B
                 }
 
             }
+        }
+
+        private void DisplayDGVData()
+        {
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                if (memberFound != null)
+                {
+                    if (rbtnOnLoan.Checked == true)
+                    {
+                        transactionRecords = (from x in context.IssueTrans
+                                              where x.MemberID == memberFound.MemberID && x.Status == "out"
+                                              select x).ToList();
+                    }
+                    else if (rbtnReturned.Checked == true)
+                    {
+                        transactionRecords = (from x in context.IssueTrans
+                                              where x.MemberID == memberFound.MemberID && x.Status == "in"
+                                              select x).ToList();
+                    }
+                }
+
+                dataGridViewTransactionRecords.DataSource = transactionRecords;
+            }
+
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
@@ -64,5 +91,20 @@ namespace SA45Team07B
             this.Close();
         }
 
+        private void rbtnOnLoan_CheckedChanged(object sender, EventArgs e)
+        {
+            DisplayDGVData();
+        }
+
+        private void rbtnReturned_CheckedChanged(object sender, EventArgs e)
+        {
+            DisplayDGVData();
+        }
+
+        private void dataGridViewTransactionRecords_SelectionChanged(object sender, EventArgs e)
+        {
+            txtbRemarksOfSelectedTransaction.Text = dataGridViewTransactionRecords.CurrentRow.Cells[0].Value.ToString();
+            
+        }
     }
 }

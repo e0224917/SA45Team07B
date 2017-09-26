@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbMemberInfo = new System.Windows.Forms.GroupBox();
             this.txtbFinePerDay = new System.Windows.Forms.TextBox();
             this.lblFinePerDay = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.txtbOverdueQty = new System.Windows.Forms.TextBox();
             this.lblUnpaidFine = new System.Windows.Forms.Label();
             this.txtbUnpaidFine = new System.Windows.Forms.TextBox();
-            this.dataGridViewTransactionRecord = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTransactionRecords = new System.Windows.Forms.DataGridView();
             this.gbTransactionRecord = new System.Windows.Forms.GroupBox();
             this.rbtnReturned = new System.Windows.Forms.RadioButton();
             this.rbtnOnLoan = new System.Windows.Forms.RadioButton();
@@ -67,7 +67,7 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbMemberInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRecords)).BeginInit();
             this.gbTransactionRecord.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -368,56 +368,57 @@
             this.txtbUnpaidFine.Size = new System.Drawing.Size(106, 29);
             this.txtbUnpaidFine.TabIndex = 34;
             // 
-            // dataGridViewTransactionRecord
+            // dataGridViewTransactionRecords
             // 
-            this.dataGridViewTransactionRecord.AllowUserToAddRows = false;
-            this.dataGridViewTransactionRecord.AllowUserToDeleteRows = false;
-            this.dataGridViewTransactionRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewTransactionRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTransactionRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridViewTransactionRecord.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewTransactionRecord.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewTransactionRecord.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransactionRecord.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTransactionRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTransactionRecord.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTransactionRecord.EnableHeadersVisualStyles = false;
-            this.dataGridViewTransactionRecord.GridColor = System.Drawing.Color.White;
-            this.dataGridViewTransactionRecord.Location = new System.Drawing.Point(32, 59);
-            this.dataGridViewTransactionRecord.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
-            this.dataGridViewTransactionRecord.MultiSelect = false;
-            this.dataGridViewTransactionRecord.Name = "dataGridViewTransactionRecord";
-            this.dataGridViewTransactionRecord.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransactionRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTransactionRecord.RowHeadersVisible = false;
-            this.dataGridViewTransactionRecord.RowHeadersWidth = 5;
-            this.dataGridViewTransactionRecord.RowTemplate.Height = 24;
-            this.dataGridViewTransactionRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTransactionRecord.Size = new System.Drawing.Size(773, 278);
-            this.dataGridViewTransactionRecord.TabIndex = 35;
+            this.dataGridViewTransactionRecords.AllowUserToAddRows = false;
+            this.dataGridViewTransactionRecords.AllowUserToDeleteRows = false;
+            this.dataGridViewTransactionRecords.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewTransactionRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTransactionRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewTransactionRecords.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewTransactionRecords.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewTransactionRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransactionRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTransactionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTransactionRecords.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTransactionRecords.EnableHeadersVisualStyles = false;
+            this.dataGridViewTransactionRecords.GridColor = System.Drawing.Color.White;
+            this.dataGridViewTransactionRecords.Location = new System.Drawing.Point(32, 59);
+            this.dataGridViewTransactionRecords.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
+            this.dataGridViewTransactionRecords.MultiSelect = false;
+            this.dataGridViewTransactionRecords.Name = "dataGridViewTransactionRecords";
+            this.dataGridViewTransactionRecords.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransactionRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTransactionRecords.RowHeadersVisible = false;
+            this.dataGridViewTransactionRecords.RowHeadersWidth = 5;
+            this.dataGridViewTransactionRecords.RowTemplate.Height = 24;
+            this.dataGridViewTransactionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTransactionRecords.Size = new System.Drawing.Size(773, 278);
+            this.dataGridViewTransactionRecords.TabIndex = 35;
+            this.dataGridViewTransactionRecords.SelectionChanged += new System.EventHandler(this.dataGridViewTransactionRecords_SelectionChanged);
             // 
             // gbTransactionRecord
             // 
@@ -425,7 +426,7 @@
             this.gbTransactionRecord.Controls.Add(this.rbtnReturned);
             this.gbTransactionRecord.Controls.Add(this.lblUnpaidFine);
             this.gbTransactionRecord.Controls.Add(this.txtbUnpaidFine);
-            this.gbTransactionRecord.Controls.Add(this.dataGridViewTransactionRecord);
+            this.gbTransactionRecord.Controls.Add(this.dataGridViewTransactionRecords);
             this.gbTransactionRecord.Controls.Add(this.rbtnOnLoan);
             this.gbTransactionRecord.Controls.Add(this.txtbOverdueQty);
             this.gbTransactionRecord.Controls.Add(this.lblOverdueQty);
@@ -450,6 +451,7 @@
             this.rbtnReturned.TabIndex = 4;
             this.rbtnReturned.Text = "Returned";
             this.rbtnReturned.UseVisualStyleBackColor = true;
+            this.rbtnReturned.CheckedChanged += new System.EventHandler(this.rbtnReturned_CheckedChanged);
             // 
             // rbtnOnLoan
             // 
@@ -462,6 +464,7 @@
             this.rbtnOnLoan.TabStop = true;
             this.rbtnOnLoan.Text = "On Loan";
             this.rbtnOnLoan.UseVisualStyleBackColor = true;
+            this.rbtnOnLoan.CheckedChanged += new System.EventHandler(this.rbtnOnLoan_CheckedChanged);
             // 
             // statusStrip1
             // 
@@ -564,7 +567,7 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.gbMemberInfo.ResumeLayout(false);
             this.gbMemberInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRecords)).EndInit();
             this.gbTransactionRecord.ResumeLayout(false);
             this.gbTransactionRecord.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -602,7 +605,7 @@
         private System.Windows.Forms.TextBox txtbOverdueQty;
         private System.Windows.Forms.Label lblUnpaidFine;
         private System.Windows.Forms.TextBox txtbUnpaidFine;
-        private System.Windows.Forms.DataGridView dataGridViewTransactionRecord;
+        private System.Windows.Forms.DataGridView dataGridViewTransactionRecords;
         private System.Windows.Forms.GroupBox gbTransactionRecord;
         private System.Windows.Forms.RadioButton rbtnReturned;
         private System.Windows.Forms.RadioButton rbtnOnLoan;

@@ -17,6 +17,8 @@ namespace SA45Team07B
         private Faculty facultyofMemberFound;
         private MemberCategories memberTypeOfMemberFound;
 
+        private bool isFirstLoad;
+
         public Member MemberFound
         {
             get
@@ -44,8 +46,32 @@ namespace SA45Team07B
         public MemberPopUpSearch()
         {
             InitializeComponent();
-            SearchAndDisplayMember();
         }
+
+        private void MemberPopUpSearch_Load(object sender, EventArgs e)
+        {
+            // Lazy loading - load the first 25 rows first
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                var displayList = (from m in context.Members
+                                   select new
+                                   {
+                                       m.MemberID,
+                                       m.MemberName,
+                                       m.MemberType,
+                                       m.FacultyCode,
+                                       m.SchoolID,
+                                       m.ContactNumber,
+                                       m.Email,
+                                       m.LoanedQty
+                                   }).Take(25).ToList();
+
+                dataGridViewMemberList.DataSource = displayList.ToList();
+
+                isFirstLoad = true;
+            }
+        }
+
 
         /// <summary>
         /// Apply criteria search and display the value to datagridview.
@@ -139,6 +165,7 @@ namespace SA45Team07B
             {
                 btnOK.Enabled = false;
                 btnOK.BackColor = Color.LightGray;
+
                 toolStripStatusLblSelectedMember.Text = "No record is found.";
             }
             else
@@ -147,35 +174,20 @@ namespace SA45Team07B
                 btnOK.BackColor = Color.White;
 
                 string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberNameColumn"].Value.ToString();
-
                 toolStripStatusLblSelectedMember.Text = $"{selectedName} is selected.";
             }
         }
 
-        private void MemberPopUpSearch_Load(object sender, EventArgs e)
-        {
-            // Lazy loading - load the first 25 rows first
-            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-            {
-                var displayList = (from m in context.Members
-                                   select new { m.MemberID, m.MemberName, m.MemberType, m.FacultyCode, m.SchoolID, m.ContactNumber, m.Email, m.LoanedQty }).Take(25).ToList();
-
-                dataGridViewMemberList.DataSource = displayList.ToList();
-            }
-        }
 
         private void dataGridViewMemberList_Scroll(object sender, ScrollEventArgs e)
         {
             if(e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                if(dataGridViewMemberList.RowCount == 25)
+                if(isFirstLoad)
                 {
-                    if (e.NewValue > 9)
-                    {
-                        SearchAndDisplayMember();
-                        // remove event handler
-                        this.dataGridViewMemberList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewMemberList_Scroll);
-                    }
+                    SearchAndDisplayMember();
+                    // remove event handler
+                    this.dataGridViewMemberList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewMemberList_Scroll);                 
                 }
             }
         }
