@@ -95,7 +95,7 @@ namespace SA45Team07B
 
         private void btnMoreBook_Click(object sender, EventArgs e)
         {
-            BookPopUpSearch bookPopup = new BookPopUpSearch();
+            BookPopUpSearch bookPopup = new BookPopUpSearch("available");
             bookPopup.ShowDialog();
             if (bookPopup.DialogResult == DialogResult.OK)
             {

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace SA45Team07B
 {
+
+
     public partial class MemberTrans : SA45Team07B.BaseForm
     {
         private Member memberFound;
@@ -17,6 +19,8 @@ namespace SA45Team07B
         private Faculty facultyOfMemberFound;
         private List<IssueTran> onLoanTransactionRecords;
         private List<IssueTran> returnedTransactionRecords;
+
+        private bool? submitsuccessful;
 
         public MemberTrans()
         {
@@ -29,17 +33,20 @@ namespace SA45Team07B
             {
                 if (mps.ShowDialog() == DialogResult.OK)
                 {
-                    memberFound = mps.MemberFound;
-                    facultyOfMemberFound = mps.FacultyofMemberFound;
-                    memberTypeOfMemberFound = mps.MemberTypeOfMemberFound;
+                    txtbMemberID.Text = mps.MemberFound.MemberID.ToString();
 
-                    DisplayTextBoxData();
+                    ValidatetxtbMemberID();
+                    DisplayTextboxData();
                     DisplayDGVData();
+                }
+                else
+                {
+                    memberFound = null;
                 }
             }
         }
 
-        private void DisplayTextBoxData()
+        private void DisplayTextboxData()
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
@@ -49,19 +56,79 @@ namespace SA45Team07B
                     txtbMemberName.Text = memberFound.MemberName;
                     txtbSchoolID.Text = memberFound.SchoolID;
                     txtbFacultyName.Text = facultyOfMemberFound.FacultyName;
+                    txtbEmail.Text = memberFound.Email.ToString();
                     txtbMemberType.Text = memberTypeOfMemberFound.CategoryName;
                     txtbLoanEntitlement.Text = memberTypeOfMemberFound.LoanEntitlement.ToString();
                     txtbLoanPeriod.Text = memberTypeOfMemberFound.LoanPeriod.ToString();
                     txtbFinePerDay.Text = memberTypeOfMemberFound.FinePerDay.ToString();
+                    txtbContactNumber.Text = memberFound.ContactNumber.ToString();
                 }
-
             }
+        }
+
+
+        private void ValidatetxtbMemberID()
+        {
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                string inputID = txtbMemberID.Text.ToString();
+
+                this.memberFound = (from x in context.Members
+                                    where x.MemberID.ToString() == inputID
+                                    select x).FirstOrDefault();
+
+                if (memberFound != null)
+                {
+                    facultyOfMemberFound = memberFound.Faculties;
+                    memberTypeOfMemberFound = memberFound.MemberCategories;
+
+                    DisplayTextboxData();
+                    DisplayDGVData();
+
+                    errorProviderForMemberID.SetError(txtbMemberID, "");
+
+                }
+                else
+                {
+                    errorProviderForMemberID.SetError(txtbMemberID, "Invalid Member ID");
+
+                    toolStripStatusLabel1.Text = "Invalid Member ID";
+
+                    ClearTextboxData();
+                    DisplayDGVData();
+
+                    btnSaveChanges.BackColor = Color.LightGray;
+                    btnSaveChanges.Enabled = false;
+                }
+            }
+        }
+
+        private void ClearTextboxData()
+        {
+            txtbMemberID.Text = string.Empty;
+            txtbMemberName.Text = string.Empty;
+            txtbSchoolID.Text = string.Empty;
+            txtbFacultyName.Text = string.Empty;
+            txtbEmail.Text = string.Empty;
+            txtbMemberType.Text = string.Empty;
+            txtbLoanEntitlement.Text = string.Empty;
+            txtbLoanPeriod.Text = string.Empty;
+            txtbFinePerDay.Text = string.Empty;
+            txtbContactNumber.Text = string.Empty;
+
+            txtbLoanedQty.Text = string.Empty;
+            txtbOverdueQty.Text = string.Empty;
+            txtbUnpaidFine.Text = string.Empty;
+
+            txtbRemarksOfSelectedTransaction.Text = string.Empty;
         }
 
         private void DisplayDGVData()
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
+                List<InformationToDisplay> displayList = new List<InformationToDisplay>();
+
                 if (memberFound != null)
                 {
                     if (rbtnOnLoan.Checked == true)
@@ -70,24 +137,23 @@ namespace SA45Team07B
                                                     where x.MemberID == memberFound.MemberID && x.Status == "out"
                                                     select x).ToList();
 
-                        var displayList = (from x in onLoanTransactionRecords
-                                           orderby x.DateIssued ascending
-                                           select new
-                                           {
-                                               x.DateIssued,
-                                               x.DateDue,
-                                               x.DateActualReturned,
-                                               x.RFIDs.BookID,
-                                               x.RFIDs.Books.BookTitle,
-                                               x.RFIDs.RFID,
-                                               x.TransactionID,
-                                               x.Status,
-                                               x.Remarks
-                                           }).ToList();
+                        displayList = (from x in onLoanTransactionRecords
+                                       orderby x.DateIssued ascending
+                                       select new InformationToDisplay
+                                       {
+                                           DateIssued = x.DateIssued,
+                                           DateDue = x.DateDue,
+                                           DateActualReturned = x.DateActualReturned,
+                                           BookID = x.RFIDs.BookID,
+                                           BookTitle = x.RFIDs.Books.BookTitle,
+                                           RFID = x.RFIDs.RFID,
+                                           TransactionID = x.TransactionID,
+                                           Status = x.Status,
+                                           Remarks = x.Remarks
+                                       }).ToList();
 
                         dataGridViewTransactionRecords.DataSource = displayList;
 
-                        CalculateFine();
 
                     }
                     else if (rbtnReturned.Checked == true)
@@ -97,28 +163,35 @@ namespace SA45Team07B
                                                       select x).ToList();
 
 
-                        var displayList = (from x in returnedTransactionRecords
-                                           orderby x.DateIssued ascending
-                                           select new
-                                           {
-                                               x.DateIssued,
-                                               x.DateDue,
-                                               x.DateActualReturned,
-                                               x.RFIDs.BookID,
-                                               x.RFIDs.Books.BookTitle,
-                                               x.RFIDs.RFID,
-                                               x.TransactionID,
-                                               x.Status,
-                                               x.Remarks
-                                           }).ToList();
+                        displayList = (from x in returnedTransactionRecords
+                                       orderby x.DateIssued ascending
+                                       select new InformationToDisplay
+                                       {
+                                           DateIssued = x.DateIssued,
+                                           DateDue = x.DateDue,
+                                           DateActualReturned = x.DateActualReturned,
+                                           BookID = x.RFIDs.BookID,
+                                           BookTitle = x.RFIDs.Books.BookTitle,
+                                           RFID = x.RFIDs.RFID,
+                                           TransactionID = x.TransactionID,
+                                           Status = x.Status,
+                                           Remarks = x.Remarks
+                                       }).ToList();
 
                         dataGridViewTransactionRecords.DataSource = displayList;
 
                         txtbLoanedQty.Text = string.Empty;
                         txtbOverdueQty.Text = string.Empty;
                         txtbUnpaidFine.Text = string.Empty;
-
                     }
+
+                    CalculateFine();
+
+                }
+                else
+                {
+                    displayList.Clear();
+                    dataGridViewTransactionRecords.DataSource = displayList;
                 }
             }
         }
@@ -142,14 +215,25 @@ namespace SA45Team07B
                     {
                         using (TransactionScope ts = new TransactionScope())
                         {
-                            selectedTransaction.Remarks = txtbRemarksOfSelectedTransaction.Text.ToString();
-                            int i = context.SaveChanges();                        
-                            ts.Complete();
-
-                            if (i > 0)
+                            if (txtbRemarksOfSelectedTransaction.Text.Length > 255)
                             {
-                                toolStripStatusLblRecordFound.Text = "Remarks has been submited.";
+                                // should no happen as the textbox max length is 255
+                                MessageBox.Show("Remarks exceed maximum length.");
+                            }
+                            else
+                            {
+                                selectedTransaction.Remarks = txtbRemarksOfSelectedTransaction.Text.ToString();
+                                int i = context.SaveChanges();
+                                ts.Complete();
 
+                                if (i > 0)
+                                {
+                                    submitsuccessful = true;
+                                }
+                                else
+                                {
+                                    submitsuccessful = false;
+                                }
                             }
                         }
                     }
@@ -197,6 +281,7 @@ namespace SA45Team07B
 
         private void dataGridViewTransactionRecords_DataSourceChanged(object sender, EventArgs e)
         {
+
             int numberOfRecords = dataGridViewTransactionRecords.RowCount;
 
             if (numberOfRecords > 0)
@@ -210,34 +295,29 @@ namespace SA45Team07B
                     txtbRemarksOfSelectedTransaction.Text = string.Empty;
                 }
 
-                toolStripStatusLblRecordFound.Text = $"{numberOfRecords} record(s) is found";
+                if (submitsuccessful == true)
+                {
+                    toolStripStatusLabel1.Text = "Remarks has been submitted.";
+                    submitsuccessful = null;
+                }
+                else if(submitsuccessful == false)
+                {
+                    toolStripStatusLabel1.Text = "No change.";
+                    submitsuccessful = null;
+                }
+                else
+                {
+                    toolStripStatusLabel1.Text = $"{numberOfRecords} record(s) is found";
+                }
             }
             else
             {
-                toolStripStatusLblRecordFound.Text = "No record is found.";
+                toolStripStatusLabel1.Text = "No record is found.";
 
                 txtbRemarksOfSelectedTransaction.Text = string.Empty;
             }
         }
 
-        private IssueTran FindSelectedTransaction()
-        {
-            IssueTran selectedTransaction = null;
-
-            if (dataGridViewTransactionRecords.RowCount != 0)
-            {
-                long transactionID = Int64.Parse(dataGridViewTransactionRecords.CurrentRow.Cells["TransactionIDColumn"].Value.ToString());
-
-                using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-                {
-                    selectedTransaction = (from x in context.IssueTrans
-                                           where x.TransactionID == transactionID
-                                           select x).First();
-                }
-            }
-
-            return selectedTransaction;
-        }
 
         private void CalculateFine()
         {
@@ -283,9 +363,53 @@ namespace SA45Team07B
                     txtbUnpaidFine.BackColor = SystemColors.Control;
                     txtbUnpaidFine.ForeColor = SystemColors.WindowText;
                 }
-
-
+            }
+            else
+            {
+                txtbLoanedQty.Text = string.Empty;
+                txtbOverdueQty.Text = string.Empty;
+                txtbUnpaidFine.Text = string.Empty;
             }
         }
+
+        private void txtbMemberID_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatetxtbMemberID();
+        }
+
+        private void txtbMemberID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidatetxtbMemberID();
+            }
+        }
+
+        private void txtbRemarksOfSelectedTransaction_TextChanged(object sender, EventArgs e)
+        {
+            btnSaveChanges.BackColor = Color.White;
+            btnSaveChanges.Enabled = true;
+        }
+
+        private void txtbMemberID_TextChanged(object sender, EventArgs e)
+        {
+            ValidatetxtbMemberID();
+        }
     }
+
+
+
+    public class InformationToDisplay
+    {
+        public DateTime DateIssued { get; set; }
+        public DateTime DateDue { get; set; }
+        public DateTime? DateActualReturned { get; set; }
+        public long BookID { get; set; }
+        public string BookTitle { get; set; }
+        public string RFID { get; set; }
+        public long TransactionID { get; set; }
+        public string Status { get; set; }
+        public string Remarks { get; set; }
+    }
+
 }
