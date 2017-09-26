@@ -13,13 +13,20 @@ namespace SA45Team07B
         Member borrower;
         RFIDTag borrowRFIDTag;
 
-        int loanedQy;
+        int loanedQty;
         int maxBorrowed;
         bool isBookAvailable;
 
         public BorrowForm()
         {
             InitializeComponent();
+
+        }
+
+        private void BorrowForm_Load(object sender, EventArgs e)
+        {
+            dpDateIssued.Value = DateTime.Today;
+            dpDateDue.Value = DateTime.Today;
             borrower = null;
             borrowRFIDTag = null;
         }
@@ -28,23 +35,36 @@ namespace SA45Team07B
         {
             if (borrower.Discontinued == "y")
             {
-                MessageBox.Show("Error", "This member is not allowed to borrow");
+                MessageBox.Show("This member is not allowed to borrow", "Error");
                 return;
             }
 
-            if (loanedQy == maxBorrowed)
+            if (loanedQty == maxBorrowed)
             {
-                MessageBox.Show("Error", "This member has reached the loan limit");
+                MessageBox.Show("This member has reached the loan limit", "Error");
                 return;
             }
 
             if (!isBookAvailable)
             {
-                MessageBox.Show("Error", "This RFID is not available");
+                MessageBox.Show("This RFID is not available", "Error");
                 return;
             }
 
-            bool success = DataService.CreateBorrowTransaction(borrowRFIDTag.RFID, borrower.MemberID);
+            if (dpDateDue.Value.CompareTo(dpDateIssued.Value) < 1)
+            {
+                MessageBox.Show("Due date must be later than borrow date", "Error");
+                return;
+            }
+
+            Dictionary<string, string> queries = new Dictionary<string, string>();
+            queries.Add("RFID", borrowRFIDTag.RFID);
+            queries.Add("MemberID", borrower.MemberID.ToString());
+            queries.Add("DateIssued", dpDateIssued.Value.ToString());
+            queries.Add("DateDue", dpDateDue.Value.ToString());
+
+            bool success = DataService.CreateBorrowTransaction(queries);
+
             if (success)
             {
                 MessageBox.Show("Transaction successed!");
@@ -53,8 +73,8 @@ namespace SA45Team07B
                 txtbBookStatus.Clear();
                 btnSubmit.Enabled = false;
 
-                loanedQy += 1;
-                txtbTotalBorrowed.Text = loanedQy.ToString();
+                loanedQty += 1;
+                txtbTotalBorrowed.Text = loanedQty.ToString();
             }
             else
             {
@@ -83,71 +103,43 @@ namespace SA45Team07B
             }
         }
 
-        private bool ValidateMemberID()
-        {
-            if (txtbMemberID.Text == "")
-            {
-                errorProvider.SetError(txtbMemberID, "Empty field");
-                return false;
-            }
 
-            borrower = DataService.GetMember(long.Parse(txtbMemberID.Text));
-            if (borrower == null)
-            {
-                errorProvider.SetError(txtbMemberID, "No record found");
-                return false;
-            }
-            return true;
-        }
-
-        private bool ValidateRFID()
-        {
-            if (txtbRFID.Text == "")
-            {
-                errorProvider.SetError(txtbRFID, "Empty field");
-                return false;
-            }
-
-            if (txtbRFID.Text.Length < 9)
-            {
-                errorProvider.SetError(txtbRFID, "Wrong RFID format");
-                return false;
-            }
-
-            borrowRFIDTag = DataService.GetRFIDTag(txtbRFID.Text);
-
-            if (borrowRFIDTag == null)
-            {
-                errorProvider.SetError(txtbRFID, "No record found");
-                return false;
-            }
-
-            return true;
-
-        }
 
         private void txtbMemberID_TextChanged(object sender, EventArgs e)
         {
             if (ValidateMemberID())
             {
-                loanedQy = borrower.LoanedQty;
+                loanedQty = borrower.LoanedQty;
                 maxBorrowed = borrower.MemberCategories.LoanEntitlement;
 
                 txtbName.Text = borrower.MemberName;
                 txtbFaculty.Text = borrower.Faculties.FacultyName;
-                txtbTotalBorrowed.Text = loanedQy.ToString();
+
+                txtbTotalBorrowed.Text = loanedQty.ToString();
                 txtbMaxBorrowed.Text = maxBorrowed.ToString();
-                txtbTotalBorrowed.ForeColor = loanedQy == maxBorrowed ? Color.Red : Color.Black;
+                txtbTotalBorrowed.ForeColor = loanedQty == maxBorrowed ? Color.Red : Color.Black;
                 txtbStatus.Text = borrower.Discontinued == "N" ? "Activated" : "Deactivated";
+                txtbEntitlement.Value = borrower.MemberCategories.LoanPeriod;
+
+                dpDateDue.Value = dpDateIssued.Value.AddDays(borrower.MemberCategories.LoanPeriod);
+                txtbPeriod.Value = borrower.MemberCategories.LoanPeriod;
+
                 btnEdit.Enabled = true;
             }
             else
             {
                 txtbName.Clear();
                 txtbFaculty.Clear();
+
                 txtbTotalBorrowed.Clear();
                 txtbMaxBorrowed.Clear();
                 txtbStatus.Clear();
+                txtbEntitlement.ResetText();
+
+                dpDateIssued.ResetText();
+                dpDateDue.ResetText();
+                txtbPeriod.ResetText();
+
                 btnEdit.Enabled = false;
             }
         }
@@ -178,5 +170,76 @@ namespace SA45Team07B
             }
         }
 
+        private void DateValueChanged(object sender, EventArgs e)
+        {
+            if (ValidateDate())
+            {
+                txtbPeriod.Value = (dpDateDue.Value - dpDateIssued.Value).Days;
+            }
+        }
+
+        private void txtbPeriod_ValueChanged(object sender, EventArgs e)
+        {
+            dpDateDue.Value = dpDateIssued.Value.AddDays((double)txtbPeriod.Value);
+        }
+
+        private bool ValidateMemberID()
+        {
+            if (txtbMemberID.Text == "")
+            {
+                errorProvider.SetError(txtbMemberID, "Empty field");
+                return false;
+            }
+
+            borrower = DataService.GetMember(long.Parse(txtbMemberID.Text));
+
+            if (borrower == null)
+            {
+                errorProvider.SetError(txtbMemberID, "No record found");
+                return false;
+            }
+
+            errorProvider.SetError(txtbMemberID, "");
+            return true;
+        }
+
+        private bool ValidateRFID()
+        {
+            if (txtbRFID.Text == "")
+            {
+                errorProvider.SetError(txtbRFID, "Empty field");
+                return false;
+            }
+
+            if (txtbRFID.Text.Length < 9)
+            {
+                errorProvider.SetError(txtbRFID, "Wrong RFID format");
+                return false;
+            }
+
+            borrowRFIDTag = DataService.GetRFIDTag(txtbRFID.Text);
+
+            if (borrowRFIDTag == null)
+            {
+                errorProvider.SetError(txtbRFID, "No record found");
+                return false;
+            }
+
+            errorProvider.SetError(txtbRFID, "");
+            return true;
+
+        }
+
+        private bool ValidateDate()
+        {
+            if (dpDateDue.Value.CompareTo(dpDateIssued.Value) < 1)
+            {
+                errorProvider.SetError(dpDateDue, "Must be later than borrow date");
+                return false;
+            }
+
+            errorProvider.SetError(dpDateDue, "");
+            return true;
+        }
     }
 }
