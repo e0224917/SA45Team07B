@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbMemberInfo = new System.Windows.Forms.GroupBox();
             this.txtbFinePerDay = new System.Windows.Forms.TextBox();
             this.lblFinePerDay = new System.Windows.Forms.Label();
@@ -57,11 +58,20 @@
             this.lblUnpaidFine = new System.Windows.Forms.Label();
             this.txtbUnpaidFine = new System.Windows.Forms.TextBox();
             this.dataGridViewTransactionRecords = new System.Windows.Forms.DataGridView();
+            this.DateIssuedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateDueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateActualReturnedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookTitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RFIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransactionIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemarksColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTransactionRecord = new System.Windows.Forms.GroupBox();
             this.rbtnReturned = new System.Windows.Forms.RadioButton();
             this.rbtnOnLoan = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLblRecordFound = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtbRemarksOfSelectedTransaction = new System.Windows.Forms.TextBox();
             this.btnSaveChanges = new System.Windows.Forms.Button();
@@ -111,11 +121,11 @@
             // 
             // txtbFinePerDay
             // 
-            this.txtbFinePerDay.Enabled = false;
             this.txtbFinePerDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbFinePerDay.Location = new System.Drawing.Point(610, 149);
             this.txtbFinePerDay.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbFinePerDay.Name = "txtbFinePerDay";
+            this.txtbFinePerDay.ReadOnly = true;
             this.txtbFinePerDay.Size = new System.Drawing.Size(195, 29);
             this.txtbFinePerDay.TabIndex = 36;
             // 
@@ -133,11 +143,11 @@
             // 
             // txtbLoanPeriod
             // 
-            this.txtbLoanPeriod.Enabled = false;
             this.txtbLoanPeriod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbLoanPeriod.Location = new System.Drawing.Point(610, 112);
             this.txtbLoanPeriod.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbLoanPeriod.Name = "txtbLoanPeriod";
+            this.txtbLoanPeriod.ReadOnly = true;
             this.txtbLoanPeriod.Size = new System.Drawing.Size(195, 29);
             this.txtbLoanPeriod.TabIndex = 34;
             // 
@@ -155,11 +165,11 @@
             // 
             // txtbLoanEntitlement
             // 
-            this.txtbLoanEntitlement.Enabled = false;
             this.txtbLoanEntitlement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbLoanEntitlement.Location = new System.Drawing.Point(610, 74);
             this.txtbLoanEntitlement.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbLoanEntitlement.Name = "txtbLoanEntitlement";
+            this.txtbLoanEntitlement.ReadOnly = true;
             this.txtbLoanEntitlement.Size = new System.Drawing.Size(195, 29);
             this.txtbLoanEntitlement.TabIndex = 32;
             // 
@@ -195,21 +205,21 @@
             // 
             // txtbFacultyName
             // 
-            this.txtbFacultyName.Enabled = false;
             this.txtbFacultyName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbFacultyName.Location = new System.Drawing.Point(163, 145);
             this.txtbFacultyName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbFacultyName.Name = "txtbFacultyName";
+            this.txtbFacultyName.ReadOnly = true;
             this.txtbFacultyName.Size = new System.Drawing.Size(275, 29);
             this.txtbFacultyName.TabIndex = 29;
             // 
             // txtbMemberType
             // 
-            this.txtbMemberType.Enabled = false;
             this.txtbMemberType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbMemberType.Location = new System.Drawing.Point(610, 32);
             this.txtbMemberType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberType.Name = "txtbMemberType";
+            this.txtbMemberType.ReadOnly = true;
             this.txtbMemberType.Size = new System.Drawing.Size(195, 29);
             this.txtbMemberType.TabIndex = 28;
             // 
@@ -275,11 +285,11 @@
             // 
             // txtbSchoolID
             // 
-            this.txtbSchoolID.Enabled = false;
             this.txtbSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbSchoolID.Location = new System.Drawing.Point(163, 107);
             this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbSchoolID.Name = "txtbSchoolID";
+            this.txtbSchoolID.ReadOnly = true;
             this.txtbSchoolID.Size = new System.Drawing.Size(275, 29);
             this.txtbSchoolID.TabIndex = 3;
             // 
@@ -294,11 +304,11 @@
             // 
             // txtbMemberName
             // 
-            this.txtbMemberName.Enabled = false;
             this.txtbMemberName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbMemberName.Location = new System.Drawing.Point(163, 70);
             this.txtbMemberName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberName.Name = "txtbMemberName";
+            this.txtbMemberName.ReadOnly = true;
             this.txtbMemberName.Size = new System.Drawing.Size(275, 29);
             this.txtbMemberName.TabIndex = 2;
             // 
@@ -316,11 +326,11 @@
             // 
             // txtbLoanedQty
             // 
-            this.txtbLoanedQty.Enabled = false;
             this.txtbLoanedQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbLoanedQty.Location = new System.Drawing.Point(178, 355);
             this.txtbLoanedQty.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbLoanedQty.Name = "txtbLoanedQty";
+            this.txtbLoanedQty.ReadOnly = true;
             this.txtbLoanedQty.Size = new System.Drawing.Size(106, 29);
             this.txtbLoanedQty.TabIndex = 30;
             // 
@@ -338,11 +348,11 @@
             // 
             // txtbOverdueQty
             // 
-            this.txtbOverdueQty.Enabled = false;
             this.txtbOverdueQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbOverdueQty.Location = new System.Drawing.Point(462, 355);
             this.txtbOverdueQty.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbOverdueQty.Name = "txtbOverdueQty";
+            this.txtbOverdueQty.ReadOnly = true;
             this.txtbOverdueQty.Size = new System.Drawing.Size(106, 29);
             this.txtbOverdueQty.TabIndex = 32;
             // 
@@ -360,11 +370,11 @@
             // 
             // txtbUnpaidFine
             // 
-            this.txtbUnpaidFine.Enabled = false;
             this.txtbUnpaidFine.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbUnpaidFine.Location = new System.Drawing.Point(699, 355);
             this.txtbUnpaidFine.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbUnpaidFine.Name = "txtbUnpaidFine";
+            this.txtbUnpaidFine.ReadOnly = true;
             this.txtbUnpaidFine.Size = new System.Drawing.Size(106, 29);
             this.txtbUnpaidFine.TabIndex = 34;
             // 
@@ -389,14 +399,24 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTransactionRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTransactionRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTransactionRecords.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTransactionRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DateIssuedColumn,
+            this.DateDueColumn,
+            this.DateActualReturnedColumn,
+            this.BookIDColumn,
+            this.BookTitleColumn,
+            this.RFIDColumn,
+            this.TransactionIDColumn,
+            this.StatusColumn,
+            this.RemarksColumn});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTransactionRecords.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTransactionRecords.EnableHeadersVisualStyles = false;
             this.dataGridViewTransactionRecords.GridColor = System.Drawing.Color.White;
             this.dataGridViewTransactionRecords.Location = new System.Drawing.Point(32, 59);
@@ -404,21 +424,96 @@
             this.dataGridViewTransactionRecords.MultiSelect = false;
             this.dataGridViewTransactionRecords.Name = "dataGridViewTransactionRecords";
             this.dataGridViewTransactionRecords.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransactionRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransactionRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTransactionRecords.RowHeadersVisible = false;
             this.dataGridViewTransactionRecords.RowHeadersWidth = 5;
             this.dataGridViewTransactionRecords.RowTemplate.Height = 24;
             this.dataGridViewTransactionRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTransactionRecords.Size = new System.Drawing.Size(773, 278);
             this.dataGridViewTransactionRecords.TabIndex = 35;
+            this.dataGridViewTransactionRecords.DataSourceChanged += new System.EventHandler(this.dataGridViewTransactionRecords_DataSourceChanged);
             this.dataGridViewTransactionRecords.SelectionChanged += new System.EventHandler(this.dataGridViewTransactionRecords_SelectionChanged);
+            // 
+            // DateIssuedColumn
+            // 
+            this.DateIssuedColumn.DataPropertyName = "DateIssued";
+            this.DateIssuedColumn.HeaderText = "Issue Date";
+            this.DateIssuedColumn.Name = "DateIssuedColumn";
+            this.DateIssuedColumn.ReadOnly = true;
+            this.DateIssuedColumn.Width = 116;
+            // 
+            // DateDueColumn
+            // 
+            this.DateDueColumn.DataPropertyName = "DateDue";
+            this.DateDueColumn.HeaderText = "Due Date";
+            this.DateDueColumn.Name = "DateDueColumn";
+            this.DateDueColumn.ReadOnly = true;
+            this.DateDueColumn.Width = 110;
+            // 
+            // DateActualReturnedColumn
+            // 
+            this.DateActualReturnedColumn.DataPropertyName = "DateActualReturned";
+            this.DateActualReturnedColumn.HeaderText = "Actual Returned Date";
+            this.DateActualReturnedColumn.Name = "DateActualReturnedColumn";
+            this.DateActualReturnedColumn.ReadOnly = true;
+            this.DateActualReturnedColumn.Width = 156;
+            // 
+            // BookIDColumn
+            // 
+            this.BookIDColumn.DataPropertyName = "BookID";
+            this.BookIDColumn.HeaderText = "Book ID";
+            this.BookIDColumn.Name = "BookIDColumn";
+            this.BookIDColumn.ReadOnly = true;
+            this.BookIDColumn.Width = 101;
+            // 
+            // BookTitleColumn
+            // 
+            this.BookTitleColumn.DataPropertyName = "BookTitle";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.BookTitleColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.BookTitleColumn.HeaderText = "Book Title";
+            this.BookTitleColumn.Name = "BookTitleColumn";
+            this.BookTitleColumn.ReadOnly = true;
+            this.BookTitleColumn.Width = 114;
+            // 
+            // RFIDColumn
+            // 
+            this.RFIDColumn.DataPropertyName = "RFID";
+            this.RFIDColumn.HeaderText = "RFID";
+            this.RFIDColumn.Name = "RFIDColumn";
+            this.RFIDColumn.ReadOnly = true;
+            this.RFIDColumn.Width = 87;
+            // 
+            // TransactionIDColumn
+            // 
+            this.TransactionIDColumn.DataPropertyName = "TransactionID";
+            this.TransactionIDColumn.HeaderText = "Transaction ID";
+            this.TransactionIDColumn.Name = "TransactionIDColumn";
+            this.TransactionIDColumn.ReadOnly = true;
+            this.TransactionIDColumn.Width = 141;
+            // 
+            // StatusColumn
+            // 
+            this.StatusColumn.DataPropertyName = "Status";
+            this.StatusColumn.HeaderText = "Status";
+            this.StatusColumn.Name = "StatusColumn";
+            this.StatusColumn.ReadOnly = true;
+            this.StatusColumn.Width = 96;
+            // 
+            // RemarksColumn
+            // 
+            this.RemarksColumn.DataPropertyName = "Remarks";
+            this.RemarksColumn.HeaderText = "Remarks";
+            this.RemarksColumn.Name = "RemarksColumn";
+            this.RemarksColumn.ReadOnly = true;
+            this.RemarksColumn.Width = 115;
             // 
             // gbTransactionRecord
             // 
@@ -469,20 +564,20 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLblRecordFound});
             this.statusStrip1.Location = new System.Drawing.Point(0, 895);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(884, 26);
             this.statusStrip1.TabIndex = 37;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLblRecordFound
             // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(127, 21);
-            this.toolStripStatusLabel1.Text = "Press ESC to exit.";
+            this.toolStripStatusLblRecordFound.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLblRecordFound.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLblRecordFound.Name = "toolStripStatusLblRecordFound";
+            this.toolStripStatusLblRecordFound.Size = new System.Drawing.Size(127, 21);
+            this.toolStripStatusLblRecordFound.Text = "Press ESC to exit.";
             // 
             // groupBox1
             // 
@@ -610,10 +705,19 @@
         private System.Windows.Forms.RadioButton rbtnReturned;
         private System.Windows.Forms.RadioButton rbtnOnLoan;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblRecordFound;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.TextBox txtbRemarksOfSelectedTransaction;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateIssuedColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateDueColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateActualReturnedColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookTitleColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RFIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransactionIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RemarksColumn;
     }
 }

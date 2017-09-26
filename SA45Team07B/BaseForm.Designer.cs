@@ -98,12 +98,12 @@
             this.manageToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1506, 38);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip1";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(1506, 38);
+            this.menuStrip.TabIndex = 2;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // managementToolStripMenuItem
             // 
@@ -351,11 +351,11 @@
             this.toolStripButtonBorrow,
             this.toolStripButtonReturn,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 47);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1506, 35);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 47);
+            this.toolStrip.Name = "toolStrip1";
+            this.toolStrip.Size = new System.Drawing.Size(1506, 35);
+            this.toolStrip.TabIndex = 8;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // toolStripButtonBorrow
             // 

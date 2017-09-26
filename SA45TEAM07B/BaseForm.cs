@@ -34,15 +34,6 @@ namespace SA45Team07B
 
         private void addNewToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if(this is AddNewBook)
-            {
-                AddNewPublisher form = new AddNewPublisher();
-                form.ShowDialog();
-                if (DialogResult == DialogResult.OK)
-                {
-                    ((AddNewBook)this).LoadPublisherList();
-                }
-            }
             
         }
     }
