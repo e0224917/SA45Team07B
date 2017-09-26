@@ -17,13 +17,13 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
+        //On Loading
         private void AddNewPublisher_Load(object sender, EventArgs e)
         {
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
             var query = from x in context.Publishers select new { x.PublisherID, x.PublisherName, x.Country };
             dataGridViewPublishers.DataSource = query.ToList();
         }
-
 
         private void textBoxes_KeyDown(object sender, KeyEventArgs e)
         {
@@ -33,14 +33,21 @@ namespace SA45Team07B
             }
         }
 
-        #region Validation
+        #region Validation of Add Publisher
         private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validate();
         }
+
         private void textBoxPublisherID_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxPublisherID.Text == "" || Regex.IsMatch(textBoxPublisherID.Text, @"\s"))
+            SA45Team07B_LibraryEntities context1 = new SA45Team07B_LibraryEntities();
+            var matchingRecord = context1.Publishers.Where(x => x.PublisherID == textBoxPublisherID.Text.Trim()).FirstOrDefault();
+            if (matchingRecord != null)
+            {
+                errorProviderPublisherID.SetError(textBoxPublisherID, "Member already exists.");
+            }
+            else if (textBoxPublisherID.Text.Trim() == "")
             {
                 errorProviderPublisherID.SetError(textBoxPublisherID, "Please enter Publisher ID. Field cannot be empty. Ignore if not adding new.");
 
@@ -49,6 +56,7 @@ namespace SA45Team07B
             {
                 errorProviderPublisherID.SetError(textBoxPublisherID, "Too many characters. Maximum number of characters = 25.");
             }
+
             else
             {
                 errorProviderPublisherID.SetError(textBoxPublisherID, "");
@@ -57,10 +65,10 @@ namespace SA45Team07B
 
         private void textBoxPublisherName_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxPublisherName.Text == "" || Regex.IsMatch(textBoxPublisherID.Text, @"\s"))
+            if (textBoxPublisherName.Text.Trim() == "")
             {
-                errorProviderPublisherName.SetError(textBoxPublisherName, "Please enter Publisher's Name. Field cannot be empty.");
-
+                errorProviderPublisherName.SetError(textBoxPublisherName, "Please enter Publisher Name. Field cannot be empty.");
+ 
             }
             else if (textBoxPublisherName.Text.Length > 255)
             {
@@ -74,78 +82,104 @@ namespace SA45Team07B
 
         private void textBoxes_Validated(object sender, EventArgs e)
         {
-            if (
+            buttonAdd.Enabled = false;
 
-                (errorProviderPublisherID.GetError(textBoxPublisherID).Length == 0)
-               && (errorProviderPublisherName.GetError(textBoxPublisherName).Length == 0)
-
-               )
-            {
-                buttonAdd.Enabled = true;
+            if (textBoxPublisherName.Text.Trim() == "")
+            { 
+                buttonAdd.Enabled = false;
             }
             else
             {
-                buttonAdd.Enabled = false;
+                buttonAdd.Enabled = true;
             }
         }
         #endregion
 
+        //Add for Add Publisher
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             SA45Team07B_LibraryEntities context2 = new SA45Team07B_LibraryEntities();
-
             Publisher pb = new Publisher();
-            pb.PublisherID = textBoxPublisherID.Text;
-            pb.PublisherName = textBoxPublisherName.Text;
-            pb.Country = comboBoxCountry.SelectedItem.ToString();
-
-
-            DialogResult dr = MessageBox.Show("Confirm add new publisher?", "Confirmation", MessageBoxButtons.YesNoCancel);
-            if (dr == DialogResult.Yes)
+            var matchingRecord = context2.Publishers.Where(x => x.PublisherID == textBoxPublisherID.Text.Trim()).FirstOrDefault();
+            if (matchingRecord != null)
             {
-                context2.Publishers.Add(pb);
-                context2.SaveChanges();
-                MessageBox.Show("Successfully added.");
-                SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-                var query = from x in context.Publishers select new { x.PublisherID, x.PublisherName, x.Country };
-                dataGridViewPublishers.DataSource = query.ToList();
-
-            }
-            else if (dr == DialogResult.No)
-            {
-                DialogResult = 0;
-            }
-            else if (dr == DialogResult.Cancel)
-            {
-                DialogResult = 0;
+                errorProviderPublisherID.SetError(textBoxPublisherID, "Member already exists.");
             }
             else
             {
+                pb.PublisherID = textBoxPublisherID.Text.Trim();
 
+                pb.PublisherName = textBoxPublisherName.Text.Trim();
+                if (comboBoxCountry.SelectedItem != null && (comboBoxCountry.SelectedItem.ToString() != "Not Applicable"))
+                {
+                    pb.Country = comboBoxCountry.SelectedItem.ToString();
+                }
+                else
+                {
+                    pb.Country = "";
+                }
+
+                DialogResult dr = MessageBox.Show("Confirm add new publisher?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (dr == DialogResult.Yes)
+                {
+                    context2.Publishers.Add(pb);
+                    context2.SaveChanges();
+                    MessageBox.Show(string.Format("Successfully added Publisher <<{0}>>.", pb.PublisherName)); 
+                    SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+                    var query = from x in context.Publishers select new { x.PublisherID, x.PublisherName, x.Country };
+                    dataGridViewPublishers.DataSource = query.ToList();
+
+                }
+                else if (dr == DialogResult.No)
+                {
+                    DialogResult = 0;
+                }
+                else if (dr == DialogResult.Cancel)
+                {
+                    DialogResult = 0;
+                }
             }
         }
 
+        //Cancel for Add Publisher
         void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
             MemberPopUpSearch mpus = new MemberPopUpSearch();
             mpus.Show();
         }
-
+ 
+        //Click to send data to Modify Publisher fields
         private void dataGridViewPublishers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxModPublisherID.Text = dataGridViewPublishers.CurrentRow.Cells[0].Value.ToString();
             textBoxModPublisherName.Text = dataGridViewPublishers.CurrentRow.Cells[1].Value.ToString();
             comboBoxModCountry.SelectedItem = dataGridViewPublishers.CurrentRow.Cells[2].Value.ToString();
+            buttonSaveChanges.Enabled = true;
+            errorProviderModPublisherID.SetError(textBoxModPublisherID, "");
+            toolStripStatusLabel1.Text = string.Format("Publisher <<{0}>> is selected.", textBoxModPublisherName.Text);
         }
 
-        #region Validation
+        #region Validation of Modifying Publisher
+        private void textBoxModPublisherID_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxModPublisherID.Text.Trim() == "")
+            {
+                errorProviderModPublisherID.SetError(textBoxModPublisherID, "Please select Publisher ID. Field cannot be empty.");
+            }
+          
+            else
+            {
+                errorProviderModPublisherID.SetError(textBoxModPublisherID, "");
+            }
+
+        }
         private void textBoxModPublisherName_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxModPublisherName.Text == "" || Regex.IsMatch(textBoxModPublisherName.Text, @"\s"))
+            if (textBoxModPublisherName.Text.Trim() == "")
             {
                 errorProviderModPublisherName.SetError(textBoxModPublisherName, "Please enter Publisher's Name. Field cannot be empty.");
-
+                buttonSaveChanges.Enabled = false;
             }
             else if (textBoxModPublisherName.Text.Length > 255)
             {
@@ -164,29 +198,31 @@ namespace SA45Team07B
             {
                 buttonSaveChanges.Enabled = true;
             }
-            else
-            {
-                buttonSaveChanges.Enabled = false;
-            }
         }
         #endregion
-
+        
+        //Save Changes for Modify Publisher
         private void buttonSaveChanges_Click(object sender, EventArgs e)
         {
             SA45Team07B_LibraryEntities context2 = new SA45Team07B_LibraryEntities();
-
             Publisher pb = new Publisher();
-            pb.PublisherID = textBoxModPublisherID.Text;
-            pb.PublisherName = textBoxModPublisherName.Text;
-            pb.Country = comboBoxModCountry.SelectedItem.ToString();
-
+            pb = context2.Publishers.Where(x => x.PublisherID == textBoxModPublisherID.Text).First();
+            pb.PublisherName = textBoxModPublisherName.Text.Trim();
+            if(comboBoxModCountry.SelectedItem !=null && (comboBoxModCountry.SelectedItem.ToString() != "Not Applicable"))
+            {
+                pb.Country = comboBoxModCountry.SelectedItem.ToString();
+            }
+            else
+            {
+                pb.Country = "";
+            }
 
             DialogResult dr = MessageBox.Show("Confirm update?", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (dr == DialogResult.Yes)
             {
-                context2.Publishers.Add(pb);
                 context2.SaveChanges();
-                MessageBox.Show("Successfully updated.");
+                MessageBox.Show(string.Format("Successfully updated <<{0}>>.", pb.PublisherName));
+                toolStripStatusLabel1.Text = "Publisher list updated.";
                 SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
                 var query = from x in context.Publishers select new { x.PublisherID, x.PublisherName, x.Country };
                 dataGridViewPublishers.DataSource = query.ToList();
@@ -200,12 +236,9 @@ namespace SA45Team07B
             {
                 DialogResult = 0;
             }
-            else
-            {
-
-            }
         }
 
+        //Cancel for Modify Publisher
         private void buttonModCancel_Click(object sender, EventArgs e)
         {
             Close();

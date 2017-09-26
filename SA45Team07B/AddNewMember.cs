@@ -32,11 +32,12 @@ namespace SA45Team07B
             }
         }
 
-        #region Validation
+        #region Validation of Add Member
         private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validate();
         }
+
         private void maskedTextBoxSchoolID_Validating(object sender, CancelEventArgs e)
         {
             SA45Team07B_LibraryEntities context1 = new SA45Team07B_LibraryEntities();
@@ -49,7 +50,6 @@ namespace SA45Team07B
             {
                 errorProviderSchoolID.SetError(maskedTextBoxSchoolID, "Number of characters should be 9.");
             }
-
             else
             {
                 errorProviderSchoolID.SetError(maskedTextBoxSchoolID, "");
@@ -58,7 +58,7 @@ namespace SA45Team07B
 
         private void textBoxMemberName_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxMemberName.Text == "" || Regex.IsMatch(textBoxMemberName.Text, @"\s"))
+            if (textBoxMemberName.Text.Trim() == "")
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
 
@@ -70,6 +70,33 @@ namespace SA45Team07B
             else
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "");
+            }
+        }
+
+        private void comboBoxMemberType_Validating(object sender, CancelEventArgs e)
+
+        {
+            if (comboBoxMemberType.SelectedItem == null)
+            {
+                errorProviderMemberType.SetError(comboBoxMemberType, "Please select a Member Type.");
+
+            }
+            else
+            {
+                errorProviderMemberType.SetError(comboBoxMemberType, "");
+            }
+        }
+
+        private void comboBoxFacultyName_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxFacultyName.SelectedItem == null)
+            {
+                errorProviderFacultyName.SetError(comboBoxFacultyName, "Please select a Faculty Name.");
+
+            }
+            else
+            {
+                errorProviderFacultyName.SetError(comboBoxFacultyName, "");
             }
         }
 
@@ -94,14 +121,14 @@ namespace SA45Team07B
         private void textBoxEmail_Validating(object sender, CancelEventArgs e)
         {
             SA45Team07B_LibraryEntities context2 = new SA45Team07B_LibraryEntities();
-            var matchingRecord = context2.Members.Where(x => x.Email == textBoxEmail.Text).FirstOrDefault();
+            var matchingRecord = context2.Members.Where(x => x.Email == textBoxEmail.Text.Trim()).FirstOrDefault();
             if (matchingRecord != null)
             {
                 errorProviderEmail.SetError(textBoxEmail, "Email already exists.");
             }
-            else if (textBoxEmail.Text == "" || Regex.IsMatch(textBoxEmail.Text, @"\s"))
+            else if (textBoxEmail.Text.Trim() == "")
             {
-                errorProviderEmail.SetError(textBoxEmail, "Please enter email. Field cannot have empty spaces.");
+                errorProviderEmail.SetError(textBoxEmail, "Please enter email. Field cannot be empty.");
             }
 
             else if (textBoxEmail.Text.Length > 50)
@@ -113,6 +140,7 @@ namespace SA45Team07B
                 errorProviderEmail.SetError(textBoxEmail, "");
             }
         }
+
         private void textBoxes_Validated(object sender, EventArgs e)
         {
             if (
@@ -133,13 +161,14 @@ namespace SA45Team07B
         }
         #endregion
 
+        //Add for Add Member
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             SA45Team07B_LibraryEntities context2 = new SA45Team07B_LibraryEntities();
 
             Member newMember = new Member();
             newMember.SchoolID = maskedTextBoxSchoolID.Text.ToUpper();
-            newMember.MemberName = textBoxMemberName.Text;
+            newMember.MemberName = textBoxMemberName.Text.Trim();
 
             MemberCategories cat = new MemberCategories();
             cat = context2.MemberCategories.Where(x => x.CategoryName == comboBoxMemberType.SelectedItem.ToString()).FirstOrDefault();
@@ -149,8 +178,8 @@ namespace SA45Team07B
             fac = context2.Faculties.Where(x => x.FacultyName == comboBoxFacultyName.SelectedItem.ToString()).FirstOrDefault();
             newMember.Faculties = fac;
 
-            newMember.ContactNumber = textBoxContactNumber.Text;
-            newMember.Email = textBoxEmail.Text.ToLower();
+            newMember.ContactNumber = textBoxContactNumber.Text.Trim();
+            newMember.Email = textBoxEmail.Text.ToLower().Trim();
             newMember.Discontinued = "N";
             newMember.LoanedQty = 0;
 
@@ -159,11 +188,10 @@ namespace SA45Team07B
             {
                 context2.Members.Add(newMember);
                 context2.SaveChanges();
-                MessageBox.Show("Successfully added.");
+                MessageBox.Show(string.Format("Successfully added <<{0}>>.", newMember.MemberName));
                 Close();
                 MemberPopUpSearch mps = new MemberPopUpSearch();
                 mps.Show();
-
             }
             else if (dr == DialogResult.No)
             {
@@ -173,12 +201,9 @@ namespace SA45Team07B
             {
                 DialogResult = 0;
             }
-            else
-            {
-
-            }
         }
 
+        //Cancel for Add Member
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
