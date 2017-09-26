@@ -46,6 +46,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +112,7 @@
     <Compile Include="BookSubject.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookValidation.cs" />
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,8 +212,8 @@
     <Compile Include="StockAdjustment.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNewMember.resx">
-      <DependentUpon>AddNewMember.cs</DependentUpon>
+    <EmbeddedResource Include="AddNewBook.resx">
+      <DependentUpon>AddNewBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdjustStock.resx">
       <DependentUpon>AdjustStock.cs</DependentUpon>
@@ -234,6 +236,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberPopUpSearchcs.resx">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberTrans.resx">
+      <DependentUpon>MemberTrans.cs</DependentUpon>
+	<EmbeddedResource Include="ModifyBook.resx">
+      <DependentUpon>ModifyBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -282,6 +289,7 @@
       <DependentUpon>LibraryManagement.edmx</DependentUpon>
       <LastGenOutput>LibraryManagement.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\garbage-bin-png-8.png" />
     <None Include="Resources\BackgroundImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
