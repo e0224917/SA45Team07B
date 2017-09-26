@@ -126,9 +126,9 @@
             // 
             // txtbBookStatus
             // 
-            this.txtbBookStatus.Enabled = false;
             this.txtbBookStatus.Location = new System.Drawing.Point(83, 170);
             this.txtbBookStatus.Name = "txtbBookStatus";
+            this.txtbBookStatus.ReadOnly = true;
             this.txtbBookStatus.Size = new System.Drawing.Size(90, 29);
             this.txtbBookStatus.TabIndex = 18;
             this.txtbBookStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -144,9 +144,9 @@
             // 
             // txtbBookTitle
             // 
-            this.txtbBookTitle.Enabled = false;
             this.txtbBookTitle.Location = new System.Drawing.Point(6, 129);
             this.txtbBookTitle.Name = "txtbBookTitle";
+            this.txtbBookTitle.ReadOnly = true;
             this.txtbBookTitle.Size = new System.Drawing.Size(230, 29);
             this.txtbBookTitle.TabIndex = 16;
             // 
@@ -218,11 +218,12 @@
             // 
             // txtbEntitlement
             // 
-            this.txtbEntitlement.Enabled = false;
             this.txtbEntitlement.Location = new System.Drawing.Point(122, 103);
             this.txtbEntitlement.Name = "txtbEntitlement";
+            this.txtbEntitlement.ReadOnly = true;
             this.txtbEntitlement.Size = new System.Drawing.Size(42, 29);
             this.txtbEntitlement.TabIndex = 8;
+            this.txtbEntitlement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblEntitlement
             // 
@@ -244,9 +245,9 @@
             // 
             // txtbStatus
             // 
-            this.txtbStatus.Enabled = false;
             this.txtbStatus.Location = new System.Drawing.Point(122, 63);
             this.txtbStatus.Name = "txtbStatus";
+            this.txtbStatus.ReadOnly = true;
             this.txtbStatus.Size = new System.Drawing.Size(90, 29);
             this.txtbStatus.TabIndex = 4;
             // 
@@ -261,19 +262,21 @@
             // 
             // txtbMaxBorrowed
             // 
-            this.txtbMaxBorrowed.Enabled = false;
             this.txtbMaxBorrowed.Location = new System.Drawing.Point(183, 22);
             this.txtbMaxBorrowed.Name = "txtbMaxBorrowed";
+            this.txtbMaxBorrowed.ReadOnly = true;
             this.txtbMaxBorrowed.Size = new System.Drawing.Size(29, 29);
             this.txtbMaxBorrowed.TabIndex = 2;
+            this.txtbMaxBorrowed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtbTotalBorrowed
             // 
-            this.txtbTotalBorrowed.Enabled = false;
-            this.txtbTotalBorrowed.Location = new System.Drawing.Point(126, 22);
+            this.txtbTotalBorrowed.Location = new System.Drawing.Point(122, 22);
             this.txtbTotalBorrowed.Name = "txtbTotalBorrowed";
+            this.txtbTotalBorrowed.ReadOnly = true;
             this.txtbTotalBorrowed.Size = new System.Drawing.Size(29, 29);
             this.txtbTotalBorrowed.TabIndex = 1;
+            this.txtbTotalBorrowed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -295,9 +298,9 @@
             // 
             // txtbName
             // 
-            this.txtbName.Enabled = false;
             this.txtbName.Location = new System.Drawing.Point(6, 129);
             this.txtbName.Name = "txtbName";
+            this.txtbName.ReadOnly = true;
             this.txtbName.Size = new System.Drawing.Size(230, 29);
             this.txtbName.TabIndex = 1;
             // 
@@ -342,9 +345,9 @@
             // 
             // txtbFaculty
             // 
-            this.txtbFaculty.Enabled = false;
             this.txtbFaculty.Location = new System.Drawing.Point(6, 189);
             this.txtbFaculty.Name = "txtbFaculty";
+            this.txtbFaculty.ReadOnly = true;
             this.txtbFaculty.Size = new System.Drawing.Size(230, 29);
             this.txtbFaculty.TabIndex = 3;
             // 
@@ -398,6 +401,7 @@
             this.txtbPeriod.Name = "txtbPeriod";
             this.txtbPeriod.Size = new System.Drawing.Size(44, 29);
             this.txtbPeriod.TabIndex = 5;
+            this.txtbPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtbPeriod.ValueChanged += new System.EventHandler(this.txtbPeriod_ValueChanged);
             // 
             // lblPeriod

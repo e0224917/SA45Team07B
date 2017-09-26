@@ -117,7 +117,7 @@ namespace SA45Team07B
 
                 txtbTotalBorrowed.Text = loanedQty.ToString();
                 txtbMaxBorrowed.Text = maxBorrowed.ToString();
-                txtbTotalBorrowed.ForeColor = loanedQty == maxBorrowed ? Color.Red : Color.Black;
+                txtbTotalBorrowed.BackColor = loanedQty == maxBorrowed ? Color.Red : Color.Black;
                 txtbStatus.Text = borrower.Discontinued == "N" ? "Activated" : "Deactivated";
                 txtbEntitlement.Value = borrower.MemberCategories.LoanPeriod;
 
@@ -133,6 +133,7 @@ namespace SA45Team07B
 
                 txtbTotalBorrowed.Clear();
                 txtbMaxBorrowed.Clear();
+                txtbTotalBorrowed.BackColor = SystemColors.Control; 
                 txtbStatus.Clear();
                 txtbEntitlement.ResetText();
 
