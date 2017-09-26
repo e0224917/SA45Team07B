@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAddBk = new System.Windows.Forms.Label();
             this.mtbISBN = new System.Windows.Forms.MaskedTextBox();
             this.mtbYear = new System.Windows.Forms.MaskedTextBox();
@@ -58,7 +58,6 @@
             this.btnFindBk = new System.Windows.Forms.Button();
             this.txtbPublisher = new System.Windows.Forms.TextBox();
             this.txtbSubjectName = new System.Windows.Forms.TextBox();
-            this.lblAvail = new System.Windows.Forms.Label();
             this.dgvAvail = new System.Windows.Forms.DataGridView();
             this.RFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +65,11 @@
             this.DueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BorrowedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
+            this.gbxBasicInfo = new System.Windows.Forms.GroupBox();
+            this.gbxAvail = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvail)).BeginInit();
+            this.gbxBasicInfo.SuspendLayout();
+            this.gbxAvail.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAddBk
@@ -74,7 +77,7 @@
             this.lblAddBk.AutoSize = true;
             this.lblAddBk.BackColor = System.Drawing.Color.Transparent;
             this.lblAddBk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBk.Location = new System.Drawing.Point(518, 98);
+            this.lblAddBk.Location = new System.Drawing.Point(514, 101);
             this.lblAddBk.Name = "lblAddBk";
             this.lblAddBk.Size = new System.Drawing.Size(163, 25);
             this.lblAddBk.TabIndex = 85;
@@ -82,17 +85,17 @@
             // 
             // mtbISBN
             // 
-            this.mtbISBN.Location = new System.Drawing.Point(257, 183);
+            this.mtbISBN.Location = new System.Drawing.Point(653, 51);
             this.mtbISBN.Mask = "0000000000000";
             this.mtbISBN.Name = "mtbISBN";
             this.mtbISBN.ReadOnly = true;
             this.mtbISBN.RejectInputOnFirstFailure = true;
-            this.mtbISBN.Size = new System.Drawing.Size(182, 29);
+            this.mtbISBN.Size = new System.Drawing.Size(304, 29);
             this.mtbISBN.TabIndex = 84;
             // 
             // mtbYear
             // 
-            this.mtbYear.Location = new System.Drawing.Point(750, 426);
+            this.mtbYear.Location = new System.Drawing.Point(653, 284);
             this.mtbYear.Mask = "0000";
             this.mtbYear.Name = "mtbYear";
             this.mtbYear.ReadOnly = true;
@@ -103,7 +106,7 @@
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.BackColor = System.Drawing.Color.Transparent;
-            this.lblYear.Location = new System.Drawing.Point(613, 431);
+            this.lblYear.Location = new System.Drawing.Point(525, 287);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(115, 21);
             this.lblYear.TabIndex = 81;
@@ -113,7 +116,7 @@
             // 
             this.lblEd.AutoSize = true;
             this.lblEd.BackColor = System.Drawing.Color.Transparent;
-            this.lblEd.Location = new System.Drawing.Point(667, 385);
+            this.lblEd.Location = new System.Drawing.Point(525, 239);
             this.lblEd.Name = "lblEd";
             this.lblEd.Size = new System.Drawing.Size(61, 21);
             this.lblEd.TabIndex = 72;
@@ -121,17 +124,17 @@
             // 
             // txtbEd
             // 
-            this.txtbEd.Location = new System.Drawing.Point(750, 379);
+            this.txtbEd.Location = new System.Drawing.Point(653, 236);
             this.txtbEd.Name = "txtbEd";
             this.txtbEd.ReadOnly = true;
-            this.txtbEd.Size = new System.Drawing.Size(176, 29);
+            this.txtbEd.Size = new System.Drawing.Size(304, 29);
             this.txtbEd.TabIndex = 71;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrice.Location = new System.Drawing.Point(187, 431);
+            this.lblPrice.Location = new System.Drawing.Point(39, 287);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(47, 21);
             this.lblPrice.TabIndex = 70;
@@ -139,17 +142,17 @@
             // 
             // txtbPrice
             // 
-            this.txtbPrice.Location = new System.Drawing.Point(258, 431);
+            this.txtbPrice.Location = new System.Drawing.Point(166, 284);
             this.txtbPrice.Name = "txtbPrice";
             this.txtbPrice.ReadOnly = true;
-            this.txtbPrice.Size = new System.Drawing.Size(66, 29);
+            this.txtbPrice.Size = new System.Drawing.Size(82, 29);
             this.txtbPrice.TabIndex = 69;
             // 
             // lblPublisher
             // 
             this.lblPublisher.AutoSize = true;
             this.lblPublisher.BackColor = System.Drawing.Color.Transparent;
-            this.lblPublisher.Location = new System.Drawing.Point(156, 333);
+            this.lblPublisher.Location = new System.Drawing.Point(39, 194);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(78, 21);
             this.lblPublisher.TabIndex = 68;
@@ -159,7 +162,7 @@
             // 
             this.lblSubjectName.AutoSize = true;
             this.lblSubjectName.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubjectName.Location = new System.Drawing.Point(615, 334);
+            this.lblSubjectName.Location = new System.Drawing.Point(525, 194);
             this.lblSubjectName.Name = "lblSubjectName";
             this.lblSubjectName.Size = new System.Drawing.Size(110, 21);
             this.lblSubjectName.TabIndex = 67;
@@ -169,7 +172,7 @@
             // 
             this.lblCallNum.AutoSize = true;
             this.lblCallNum.BackColor = System.Drawing.Color.Transparent;
-            this.lblCallNum.Location = new System.Drawing.Point(133, 385);
+            this.lblCallNum.Location = new System.Drawing.Point(39, 239);
             this.lblCallNum.Name = "lblCallNum";
             this.lblCallNum.Size = new System.Drawing.Size(101, 21);
             this.lblCallNum.TabIndex = 66;
@@ -177,17 +180,17 @@
             // 
             // txtbCallNum
             // 
-            this.txtbCallNum.Location = new System.Drawing.Point(258, 382);
+            this.txtbCallNum.Location = new System.Drawing.Point(166, 236);
             this.txtbCallNum.Name = "txtbCallNum";
             this.txtbCallNum.ReadOnly = true;
-            this.txtbCallNum.Size = new System.Drawing.Size(215, 29);
+            this.txtbCallNum.Size = new System.Drawing.Size(302, 29);
             this.txtbCallNum.TabIndex = 65;
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.BackColor = System.Drawing.Color.Transparent;
-            this.lblAuthor.Location = new System.Drawing.Point(173, 285);
+            this.lblAuthor.Location = new System.Drawing.Point(39, 148);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(61, 21);
             this.lblAuthor.TabIndex = 64;
@@ -195,7 +198,7 @@
             // 
             // txtbAuthor
             // 
-            this.txtbAuthor.Location = new System.Drawing.Point(257, 282);
+            this.txtbAuthor.Location = new System.Drawing.Point(166, 145);
             this.txtbAuthor.Name = "txtbAuthor";
             this.txtbAuthor.ReadOnly = true;
             this.txtbAuthor.Size = new System.Drawing.Size(853, 29);
@@ -205,7 +208,7 @@
             // 
             this.lblBkTitle.AutoSize = true;
             this.lblBkTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblBkTitle.Location = new System.Drawing.Point(153, 233);
+            this.lblBkTitle.Location = new System.Drawing.Point(39, 101);
             this.lblBkTitle.Name = "lblBkTitle";
             this.lblBkTitle.Size = new System.Drawing.Size(81, 21);
             this.lblBkTitle.TabIndex = 62;
@@ -213,7 +216,7 @@
             // 
             // txtbBkTitle
             // 
-            this.txtbBkTitle.Location = new System.Drawing.Point(257, 230);
+            this.txtbBkTitle.Location = new System.Drawing.Point(166, 98);
             this.txtbBkTitle.Name = "txtbBkTitle";
             this.txtbBkTitle.ReadOnly = true;
             this.txtbBkTitle.Size = new System.Drawing.Size(853, 29);
@@ -223,7 +226,7 @@
             // 
             this.lblISBN.AutoSize = true;
             this.lblISBN.BackColor = System.Drawing.Color.Transparent;
-            this.lblISBN.Location = new System.Drawing.Point(184, 188);
+            this.lblISBN.Location = new System.Drawing.Point(522, 54);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(47, 21);
             this.lblISBN.TabIndex = 60;
@@ -233,7 +236,7 @@
             // 
             this.lblBkId.AutoSize = true;
             this.lblBkId.BackColor = System.Drawing.Color.Transparent;
-            this.lblBkId.Location = new System.Drawing.Point(171, 143);
+            this.lblBkId.Location = new System.Drawing.Point(39, 54);
             this.lblBkId.Name = "lblBkId";
             this.lblBkId.Size = new System.Drawing.Size(63, 21);
             this.lblBkId.TabIndex = 59;
@@ -241,17 +244,17 @@
             // 
             // txtbBkId
             // 
-            this.txtbBkId.Location = new System.Drawing.Point(258, 139);
+            this.txtbBkId.Location = new System.Drawing.Point(166, 49);
             this.txtbBkId.Name = "txtbBkId";
             this.txtbBkId.ReadOnly = true;
-            this.txtbBkId.Size = new System.Drawing.Size(112, 29);
+            this.txtbBkId.Size = new System.Drawing.Size(188, 29);
             this.txtbBkId.TabIndex = 58;
             // 
             // btnFindBk
             // 
             this.btnFindBk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnFindBk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindBk.Location = new System.Drawing.Point(392, 140);
+            this.btnFindBk.Location = new System.Drawing.Point(375, 49);
             this.btnFindBk.Name = "btnFindBk";
             this.btnFindBk.Size = new System.Drawing.Size(31, 27);
             this.btnFindBk.TabIndex = 94;
@@ -261,45 +264,35 @@
             // 
             // txtbPublisher
             // 
-            this.txtbPublisher.Location = new System.Drawing.Point(258, 331);
+            this.txtbPublisher.Location = new System.Drawing.Point(166, 191);
             this.txtbPublisher.Name = "txtbPublisher";
             this.txtbPublisher.ReadOnly = true;
-            this.txtbPublisher.Size = new System.Drawing.Size(215, 29);
+            this.txtbPublisher.Size = new System.Drawing.Size(302, 29);
             this.txtbPublisher.TabIndex = 95;
             // 
             // txtbSubjectName
             // 
-            this.txtbSubjectName.Location = new System.Drawing.Point(750, 330);
+            this.txtbSubjectName.Location = new System.Drawing.Point(653, 191);
             this.txtbSubjectName.Name = "txtbSubjectName";
             this.txtbSubjectName.ReadOnly = true;
-            this.txtbSubjectName.Size = new System.Drawing.Size(215, 29);
+            this.txtbSubjectName.Size = new System.Drawing.Size(304, 29);
             this.txtbSubjectName.TabIndex = 96;
-            // 
-            // lblAvail
-            // 
-            this.lblAvail.AutoSize = true;
-            this.lblAvail.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvail.Location = new System.Drawing.Point(145, 498);
-            this.lblAvail.Name = "lblAvail";
-            this.lblAvail.Size = new System.Drawing.Size(89, 21);
-            this.lblAvail.TabIndex = 97;
-            this.lblAvail.Text = "Availability:";
             // 
             // dgvAvail
             // 
             this.dgvAvail.AllowUserToAddRows = false;
             this.dgvAvail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvAvail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvAvail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
             this.dgvAvail.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle82.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle82.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
             this.dgvAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RFID,
@@ -307,16 +300,16 @@
             this.DateBorrowed,
             this.DueDate,
             this.BorrowedBy});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAvail.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvail.DefaultCellStyle = dataGridViewCellStyle88;
             this.dgvAvail.GridColor = System.Drawing.Color.White;
-            this.dgvAvail.Location = new System.Drawing.Point(260, 485);
+            this.dgvAvail.Location = new System.Drawing.Point(166, 23);
             this.dgvAvail.Name = "dgvAvail";
             this.dgvAvail.ReadOnly = true;
             this.dgvAvail.RowHeadersWidth = 5;
@@ -327,8 +320,8 @@
             // RFID
             // 
             this.RFID.DataPropertyName = "RFID";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RFID.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RFID.DefaultCellStyle = dataGridViewCellStyle83;
             this.RFID.HeaderText = "RFID";
             this.RFID.Name = "RFID";
             this.RFID.ReadOnly = true;
@@ -337,8 +330,8 @@
             // Availability
             // 
             this.Availability.DataPropertyName = "Availability";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Availability.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Availability.DefaultCellStyle = dataGridViewCellStyle84;
             this.Availability.HeaderText = "Availability";
             this.Availability.Name = "Availability";
             this.Availability.ReadOnly = true;
@@ -347,8 +340,8 @@
             // DateBorrowed
             // 
             this.DateBorrowed.DataPropertyName = "DateBorrowed";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DateBorrowed.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DateBorrowed.DefaultCellStyle = dataGridViewCellStyle85;
             this.DateBorrowed.HeaderText = "Date Borrowed";
             this.DateBorrowed.Name = "DateBorrowed";
             this.DateBorrowed.ReadOnly = true;
@@ -357,8 +350,8 @@
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDate";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DueDate.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DueDate.DefaultCellStyle = dataGridViewCellStyle86;
             this.DueDate.HeaderText = "Due Date";
             this.DueDate.Name = "DueDate";
             this.DueDate.ReadOnly = true;
@@ -367,8 +360,8 @@
             // BorrowedBy
             // 
             this.BorrowedBy.DataPropertyName = "BorrowedBy";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BorrowedBy.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BorrowedBy.DefaultCellStyle = dataGridViewCellStyle87;
             this.BorrowedBy.HeaderText = "Last Borrowed by";
             this.BorrowedBy.Name = "BorrowedBy";
             this.BorrowedBy.ReadOnly = true;
@@ -376,7 +369,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(532, 702);
+            this.btnClose.Location = new System.Drawing.Point(561, 713);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(82, 39);
             this.btnClose.TabIndex = 99;
@@ -384,64 +377,67 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // gbxBasicInfo
+            // 
+            this.gbxBasicInfo.BackColor = System.Drawing.Color.Transparent;
+            this.gbxBasicInfo.Controls.Add(this.mtbISBN);
+            this.gbxBasicInfo.Controls.Add(this.txtbSubjectName);
+            this.gbxBasicInfo.Controls.Add(this.mtbYear);
+            this.gbxBasicInfo.Controls.Add(this.lblISBN);
+            this.gbxBasicInfo.Controls.Add(this.txtbEd);
+            this.gbxBasicInfo.Controls.Add(this.txtbPublisher);
+            this.gbxBasicInfo.Controls.Add(this.txtbBkId);
+            this.gbxBasicInfo.Controls.Add(this.lblYear);
+            this.gbxBasicInfo.Controls.Add(this.btnFindBk);
+            this.gbxBasicInfo.Controls.Add(this.lblEd);
+            this.gbxBasicInfo.Controls.Add(this.lblSubjectName);
+            this.gbxBasicInfo.Controls.Add(this.lblPrice);
+            this.gbxBasicInfo.Controls.Add(this.lblBkId);
+            this.gbxBasicInfo.Controls.Add(this.txtbPrice);
+            this.gbxBasicInfo.Controls.Add(this.lblBkTitle);
+            this.gbxBasicInfo.Controls.Add(this.lblAuthor);
+            this.gbxBasicInfo.Controls.Add(this.txtbCallNum);
+            this.gbxBasicInfo.Controls.Add(this.lblCallNum);
+            this.gbxBasicInfo.Controls.Add(this.lblPublisher);
+            this.gbxBasicInfo.Controls.Add(this.txtbBkTitle);
+            this.gbxBasicInfo.Controls.Add(this.txtbAuthor);
+            this.gbxBasicInfo.Location = new System.Drawing.Point(91, 129);
+            this.gbxBasicInfo.Name = "gbxBasicInfo";
+            this.gbxBasicInfo.Size = new System.Drawing.Size(1045, 343);
+            this.gbxBasicInfo.TabIndex = 100;
+            this.gbxBasicInfo.TabStop = false;
+            this.gbxBasicInfo.Text = "Basic Information";
+            // 
+            // gbxAvail
+            // 
+            this.gbxAvail.BackColor = System.Drawing.Color.Transparent;
+            this.gbxAvail.Controls.Add(this.dgvAvail);
+            this.gbxAvail.Location = new System.Drawing.Point(92, 485);
+            this.gbxAvail.Name = "gbxAvail";
+            this.gbxAvail.Size = new System.Drawing.Size(1044, 211);
+            this.gbxAvail.TabIndex = 97;
+            this.gbxAvail.TabStop = false;
+            this.gbxAvail.Text = "Availability Detail";
+            // 
             // BookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.ClientSize = new System.Drawing.Size(1276, 773);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dgvAvail);
-            this.Controls.Add(this.lblAvail);
-            this.Controls.Add(this.txtbSubjectName);
-            this.Controls.Add(this.txtbPublisher);
-            this.Controls.Add(this.btnFindBk);
             this.Controls.Add(this.lblAddBk);
-            this.Controls.Add(this.mtbISBN);
-            this.Controls.Add(this.mtbYear);
-            this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.lblEd);
-            this.Controls.Add(this.txtbEd);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.txtbPrice);
-            this.Controls.Add(this.lblPublisher);
-            this.Controls.Add(this.lblSubjectName);
-            this.Controls.Add(this.lblCallNum);
-            this.Controls.Add(this.txtbCallNum);
-            this.Controls.Add(this.lblAuthor);
-            this.Controls.Add(this.txtbAuthor);
-            this.Controls.Add(this.lblBkTitle);
-            this.Controls.Add(this.txtbBkTitle);
-            this.Controls.Add(this.lblISBN);
-            this.Controls.Add(this.lblBkId);
-            this.Controls.Add(this.txtbBkId);
+            this.Controls.Add(this.gbxBasicInfo);
+            this.Controls.Add(this.gbxAvail);
             this.Name = "BookInfo";
             this.Text = "View Book Detail - Library Management System SA45Team07B";
+            this.Controls.SetChildIndex(this.gbxAvail, 0);
+            this.Controls.SetChildIndex(this.gbxBasicInfo, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.txtbBkId, 0);
-            this.Controls.SetChildIndex(this.lblBkId, 0);
-            this.Controls.SetChildIndex(this.lblISBN, 0);
-            this.Controls.SetChildIndex(this.txtbBkTitle, 0);
-            this.Controls.SetChildIndex(this.lblBkTitle, 0);
-            this.Controls.SetChildIndex(this.txtbAuthor, 0);
-            this.Controls.SetChildIndex(this.lblAuthor, 0);
-            this.Controls.SetChildIndex(this.txtbCallNum, 0);
-            this.Controls.SetChildIndex(this.lblCallNum, 0);
-            this.Controls.SetChildIndex(this.lblSubjectName, 0);
-            this.Controls.SetChildIndex(this.lblPublisher, 0);
-            this.Controls.SetChildIndex(this.txtbPrice, 0);
-            this.Controls.SetChildIndex(this.lblPrice, 0);
-            this.Controls.SetChildIndex(this.txtbEd, 0);
-            this.Controls.SetChildIndex(this.lblEd, 0);
-            this.Controls.SetChildIndex(this.lblYear, 0);
-            this.Controls.SetChildIndex(this.mtbYear, 0);
-            this.Controls.SetChildIndex(this.mtbISBN, 0);
             this.Controls.SetChildIndex(this.lblAddBk, 0);
-            this.Controls.SetChildIndex(this.btnFindBk, 0);
-            this.Controls.SetChildIndex(this.txtbPublisher, 0);
-            this.Controls.SetChildIndex(this.txtbSubjectName, 0);
-            this.Controls.SetChildIndex(this.lblAvail, 0);
-            this.Controls.SetChildIndex(this.dgvAvail, 0);
             this.Controls.SetChildIndex(this.btnClose, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvail)).EndInit();
+            this.gbxBasicInfo.ResumeLayout(false);
+            this.gbxBasicInfo.PerformLayout();
+            this.gbxAvail.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,7 +467,6 @@
         private System.Windows.Forms.Button btnFindBk;
         private System.Windows.Forms.TextBox txtbPublisher;
         private System.Windows.Forms.TextBox txtbSubjectName;
-        private System.Windows.Forms.Label lblAvail;
         private System.Windows.Forms.DataGridView dgvAvail;
         private System.Windows.Forms.DataGridViewTextBoxColumn RFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Availability;
@@ -479,5 +474,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn BorrowedBy;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox gbxBasicInfo;
+        private System.Windows.Forms.GroupBox gbxAvail;
     }
 }
