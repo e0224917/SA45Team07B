@@ -407,6 +407,8 @@
             // 
             // btnFindBk
             // 
+            this.btnFindBk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFindBk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindBk.Location = new System.Drawing.Point(414, 149);
             this.btnFindBk.Name = "btnFindBk";
             this.btnFindBk.Size = new System.Drawing.Size(31, 27);
