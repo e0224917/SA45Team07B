@@ -365,7 +365,6 @@
             this.toolStripButtonBorrow.Name = "toolStripButtonBorrow";
             this.toolStripButtonBorrow.Size = new System.Drawing.Size(85, 25);
             this.toolStripButtonBorrow.Text = "Borrow";
-            this.toolStripButtonBorrow.Click += new System.EventHandler(this.toolStripButtonBorrow_Click);
             // 
             // toolStripButtonReturn
             // 
@@ -415,7 +414,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main - Library Management System SA45Team07B";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BaseForm_FormClosed);
-            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
