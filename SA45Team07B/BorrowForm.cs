@@ -15,5 +15,11 @@ namespace SA45Team07B
             InitializeComponent();
 
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string[] list = new string[] { "101B0ACB45" };
+            DataService.CreateBorrowTransaction(list, 10);
+        }
     }
 }

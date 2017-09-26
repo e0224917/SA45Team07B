@@ -289,7 +289,7 @@
           <Property Name="DateIssued" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateDue" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateActualReturned" Type="DateTime" Precision="0" />
-          <Property Name="Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" DefaultValue="out" />
           <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Members" Relationship="Self.FK_IssueTrans_Members" FromRole="IssueTrans" ToRole="Members" />
           <NavigationProperty Name="RFIDs" Relationship="Self.FK_IssueTrans_RFIDs" FromRole="IssueTrans" ToRole="RFIDs" />

@@ -27,7 +27,7 @@ namespace SA45Team07B
             {
                 if (mps.ShowDialog() == DialogResult.OK)
                 {
-                    mem = mps.Member;
+                    //mem = mps.Member;
                     //textBoxMemberName.Text = m.MemberName;
                     //maskedTextBoxSchoolID.Text = m.SchoolID;
                     //comboBoxMemberType.DataSource = ;
