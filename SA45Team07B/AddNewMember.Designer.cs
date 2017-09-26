@@ -209,6 +209,8 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.White;
             this.buttonAdd.Enabled = false;
+            this.buttonAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Location = new System.Drawing.Point(400, 734);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
@@ -222,6 +224,8 @@
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.White;
             this.buttonCancel.CausesValidation = false;
+            this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Location = new System.Drawing.Point(700, 734);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
