@@ -218,6 +218,9 @@
     <EmbeddedResource Include="AddNewMember.resx">
       <DependentUpon>AddNewMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddNewPublisher.resx">
+      <DependentUpon>AddNewPublisher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdjustStock.resx">
       <DependentUpon>AdjustStock.cs</DependentUpon>
     </EmbeddedResource>
