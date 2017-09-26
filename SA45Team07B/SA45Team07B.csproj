@@ -231,6 +231,9 @@
     <EmbeddedResource Include="BaseModalForm.resx">
       <DependentUpon>BaseModalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookInfo.resx">
+      <DependentUpon>BookInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookPopUpSearch.resx">
       <DependentUpon>BookPopUpSearch.cs</DependentUpon>
     </EmbeddedResource>

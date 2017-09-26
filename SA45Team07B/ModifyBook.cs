@@ -49,7 +49,7 @@ namespace SA45Team07B
                     bookFound.RFIDs = popsearch.RFIDsOfBookFound;
                     foreach (RFIDTag rfid in bookFound.RFIDs)
                     {
-                        lbxRFID.Items.Add(rfid.RFID.ToString());
+                        lbxRFID.Items.Add(rfid.RFID.ToString().ToUpper());
                     }
                 }
             }
