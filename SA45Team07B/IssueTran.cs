@@ -14,11 +14,6 @@ namespace SA45Team07B
     
     public partial class IssueTran
     {
-        public IssueTran()
-        {
-            this.Status = "out";
-        }
-    
         public long TransactionID { get; set; }
         public string RFID { get; set; }
         public long MemberID { get; set; }
