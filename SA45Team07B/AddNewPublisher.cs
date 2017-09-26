@@ -145,8 +145,6 @@ namespace SA45Team07B
         void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
-            MemberPopUpSearch mpus = new MemberPopUpSearch();
-            mpus.Show();
         }
  
         //Click to send data to Modify Publisher fields
@@ -236,14 +234,6 @@ namespace SA45Team07B
             {
                 DialogResult = 0;
             }
-        }
-
-        //Cancel for Modify Publisher
-        private void buttonModCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-            MemberPopUpSearch mpus = new MemberPopUpSearch();
-            mpus.Show();
         }
     }
 }

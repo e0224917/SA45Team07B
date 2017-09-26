@@ -336,6 +336,7 @@
             this.buttonCancel.TabIndex = 49;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelCountry
             // 
@@ -740,6 +741,7 @@
             this.buttonModCancel.TabIndex = 49;
             this.buttonModCancel.Text = "Cancel";
             this.buttonModCancel.UseVisualStyleBackColor = false;
+            this.buttonModCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // textBoxModPublisherName
             // 

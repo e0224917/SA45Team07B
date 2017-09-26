@@ -185,6 +185,7 @@
             // 
             // groupBox
             // 
+            this.groupBox.BackColor = System.Drawing.Color.Transparent;
             this.groupBox.Controls.Add(this.lblAction);
             this.groupBox.Controls.Add(this.lblRFID);
             this.groupBox.Controls.Add(this.cboxReason);
