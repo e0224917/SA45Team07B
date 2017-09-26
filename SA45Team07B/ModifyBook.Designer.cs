@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyBook));
+            this.components = new System.ComponentModel.Container();
             this.lblOnSubmit = new System.Windows.Forms.Label();
             this.btnDeleteRFID = new System.Windows.Forms.Button();
             this.btnAddRFID = new System.Windows.Forms.Button();
@@ -67,6 +67,8 @@
             this.txtbBkId = new System.Windows.Forms.TextBox();
             this.btnFindBk = new System.Windows.Forms.Button();
             this.lblAddBk = new System.Windows.Forms.Label();
+            this.epModifyBk = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epModifyBk)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOnSubmit
@@ -80,13 +82,14 @@
             // 
             // btnDeleteRFID
             // 
-            this.btnDeleteRFID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteRFID.BackgroundImage")));
+            this.btnDeleteRFID.BackgroundImage = global::SA45Team07B.Properties.Resources.garbage_bin_png_8;
             this.btnDeleteRFID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteRFID.Location = new System.Drawing.Point(970, 512);
             this.btnDeleteRFID.Name = "btnDeleteRFID";
             this.btnDeleteRFID.Size = new System.Drawing.Size(31, 32);
             this.btnDeleteRFID.TabIndex = 91;
             this.btnDeleteRFID.UseVisualStyleBackColor = true;
+            this.btnDeleteRFID.Click += new System.EventHandler(this.btnDeleteRFID_Click);
             // 
             // btnAddRFID
             // 
@@ -96,6 +99,7 @@
             this.btnAddRFID.TabIndex = 90;
             this.btnAddRFID.Text = "Add >>";
             this.btnAddRFID.UseVisualStyleBackColor = true;
+            this.btnAddRFID.Click += new System.EventHandler(this.btnAddRFID_Click);
             // 
             // txtbRFID
             // 
@@ -121,6 +125,7 @@
             this.mtbISBN.RejectInputOnFirstFailure = true;
             this.mtbISBN.Size = new System.Drawing.Size(242, 29);
             this.mtbISBN.TabIndex = 87;
+            this.mtbISBN.Validating += new System.ComponentModel.CancelEventHandler(this.mtbISBN_Validating);
             // 
             // mtbYear
             // 
@@ -129,6 +134,7 @@
             this.mtbYear.Name = "mtbYear";
             this.mtbYear.Size = new System.Drawing.Size(100, 29);
             this.mtbYear.TabIndex = 86;
+            this.mtbYear.Validating += new System.ComponentModel.CancelEventHandler(this.mtbYear_Validating);
             // 
             // btnCancel
             // 
@@ -263,6 +269,7 @@
             this.cbxPublisher.Name = "cbxPublisher";
             this.cbxPublisher.Size = new System.Drawing.Size(267, 29);
             this.cbxPublisher.TabIndex = 74;
+            //this.cbxPublisher.SelectionChangeCommitted += new System.EventHandler(this.cbxPublisher_SelectionChangeCommitted);
             // 
             // cbxSubjectName
             // 
@@ -273,6 +280,7 @@
             this.cbxSubjectName.Name = "cbxSubjectName";
             this.cbxSubjectName.Size = new System.Drawing.Size(227, 29);
             this.cbxSubjectName.TabIndex = 73;
+            //this.cbxSubjectName.SelectionChangeCommitted += new System.EventHandler(this.cbxSubjectName_SelectionChangeCommitted);
             // 
             // lblEd
             // 
@@ -317,6 +325,7 @@
             this.txtbPrice.Name = "txtbPrice";
             this.txtbPrice.Size = new System.Drawing.Size(66, 29);
             this.txtbPrice.TabIndex = 68;
+            this.txtbPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtbPrice_Validating);
             // 
             // lblPublisher
             // 
@@ -354,6 +363,7 @@
             this.txtbCallNum.Name = "txtbCallNum";
             this.txtbCallNum.Size = new System.Drawing.Size(215, 29);
             this.txtbCallNum.TabIndex = 64;
+            this.txtbCallNum.Validating += new System.ComponentModel.CancelEventHandler(this.txtbCallNum_Validating);
             // 
             // lblAuthor
             // 
@@ -439,6 +449,10 @@
             this.lblAddBk.TabIndex = 94;
             this.lblAddBk.Text = "Modify Book";
             // 
+            // epModifyBk
+            // 
+            this.epModifyBk.ContainerControl = this;
+            // 
             // ModifyBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -522,6 +536,7 @@
             this.Controls.SetChildIndex(this.lblOnSubmit, 0);
             this.Controls.SetChildIndex(this.btnFindBk, 0);
             this.Controls.SetChildIndex(this.lblAddBk, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.epModifyBk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,5 +582,6 @@
         private System.Windows.Forms.TextBox txtbBkId;
         private System.Windows.Forms.Button btnFindBk;
         private System.Windows.Forms.Label lblAddBk;
+        private System.Windows.Forms.ErrorProvider epModifyBk;
     }
 }

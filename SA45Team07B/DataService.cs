@@ -11,7 +11,7 @@ namespace SA45Team07B
     {
         private DataService() { }
 
-        public static Book GetBookFromRFID(string RFID)
+        public static Book GetBook(string RFID)
         {
 
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
@@ -26,6 +26,36 @@ namespace SA45Team07B
                 return null;
             }
 
+        }
+
+        public static RFIDTag GetRFIDTag(string RFID)
+        {
+            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+
+            try
+            {
+                RFIDTag tag = context.RFIDs.Where(x => x.RFID == RFID).First();
+                return tag;
+            }
+            catch (InvalidOperationException e)
+            {
+                return null;
+            }
+        }
+
+        public static Member GetMember(long memberID)
+        {
+            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+
+            try
+            {
+                Member member = context.Members.Where(x => x.MemberID == memberID).First();
+                return member;
+            }
+            catch (InvalidOperationException e)
+            {
+                return null;
+            }
         }
 
         public static bool GetRFIDDiscontinueStatus(string RFID)
@@ -56,28 +86,34 @@ namespace SA45Team07B
             context.SaveChanges();
         }
 
-        public static bool CreateBorrowTransaction(string[] RFIDList, long memberID)
+        public static bool CreateBorrowTransaction(string RFID, long memberID)
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
-            Member member = context.Members.Where(x => x.MemberID == memberID).First();
-
-            MemberCategories category = context.MemberCategories.Where(x => x.MemberType == member.MemberType).First();
-
-            short loanPeriod = category.LoanPeriod;
-
-            foreach (string RFIDTag in RFIDList)
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
+                Member member = context.Members.Where(x => x.MemberID == memberID).First();
+                short loanPeriod = member.MemberCategories.LoanPeriod;
+
                 IssueTran tran = new IssueTran();
-                tran.RFID = RFIDTag;
+                tran.RFID = RFID;
                 tran.MemberID = memberID;
                 tran.DateIssued = DateTime.Today;
                 tran.DateDue = DateTime.Today.AddDays(loanPeriod);
                 context.IssueTrans.Add(tran);
+
+                member.LoanedQty += 1;
+
+                try
+                {
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+
             }
 
-            context.SaveChanges();
-            return true;
         }
     }
 }
