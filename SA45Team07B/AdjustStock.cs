@@ -9,10 +9,16 @@ using System.Windows.Forms;
 
 namespace SA45Team07B
 {
-    public partial class AdjustStock : SA45Team07B.BaseForm
+    public partial class AdjustStock : SA45Team07B.BaseModalForm
     {
         Book mBook;
         bool discontinued;
+        string mRFID;
+
+        public string RFID
+        {
+            get { return mRFID; }
+        }
 
         public AdjustStock()
         {
@@ -22,18 +28,15 @@ namespace SA45Team07B
 
         private void txtRFID_TextChanged(object sender, EventArgs e)
         {
-            if (txtRFID.Text.Length == 10)
+            if (ValidateRFID())
             {
-
-                mBook = DataService.GetBookFromRFID(txtRFID.Text);
-
-                if (ValidateRFID())
-                {
-                    txtbBookTitle.Text = mBook.BookTitle;
-                    discontinued = DataService.GetRFIDStatus(txtRFID.Text);
-                    rbYes.Checked = discontinued;
-                    rbNo.Checked = !discontinued;
-                }
+                txtbBookTitle.Text = mBook.BookTitle;
+                discontinued = DataService.GetRFIDDiscontinueStatus(txtRFID.Text);
+                AllowEdit(true);
+            }
+            else
+            {
+                AllowEdit(false);
             }
 
         }
@@ -50,7 +53,9 @@ namespace SA45Team07B
             }
             else
             {
-                DataService.MakeRFIDAdjusment(txtRFID.Text, discontinued, txtbRemarks.Text);
+                mRFID = txtRFID.Text;
+                string reason = cboxReason.SelectedIndex == 2 ? txtbRemarks.Text : cboxReason.Text;
+                DataService.MakeRFIDAdjusment(mRFID, discontinued, reason);
                 MessageBox.Show("Update Success!");
                 DialogResult = DialogResult.OK;
             }
@@ -63,26 +68,74 @@ namespace SA45Team07B
             ValidateRFID();
         }
 
-        private bool ValidateRFID()
-        {
-            if (txtRFID.Text.Length < 10)
-            {
-                epRFID.SetError(txtRFID, "Wrong RFID");
-                return false;
-            }
-            else if (mBook == null)
-            {
-                epRFID.SetError(txtRFID, "No record");
-                return false;
-            }
-            epRFID.SetError(txtRFID, "");
-            return true;
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void cboxReason_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxReason.SelectedIndex == 2)
+            {
+                txtbRemarks.Enabled = true;
+            }
+            else
+            {
+                txtbRemarks.Enabled = false;
+            }
+        }
+
+        private void btnMoreRFID_Click(object sender, EventArgs e)
+        {
+            BookPopUpSearch popup = new BookPopUpSearch();
+            popup.ShowDialog();
+            if (popup.DialogResult == DialogResult.OK)
+            {
+                txtRFID.Text = popup.RFIDFound.RFID;
+            }
+        }
+
+        private bool ValidateRFID()
+        {
+            if (txtRFID.Text.Length < 9)
+            {
+                epRFID.SetError(txtRFID, "Wrong RFID");
+                return false;
+            }
+
+            mBook = DataService.GetBookFromRFID(txtRFID.Text);
+
+            if (mBook == null)
+            {
+                epRFID.SetError(txtRFID, "No record");
+                return false;
+            }
+
+            epRFID.SetError(txtRFID, "");
+            return true;
+        }
+
+        private void AllowEdit(Boolean allowed)
+        {
+            if (allowed)
+            {
+                rbYes.Enabled = true;
+                rbNo.Enabled = true;
+                cboxReason.Enabled = true;
+                rbYes.Checked = discontinued;
+                rbNo.Checked = !discontinued;
+                btnSubmit.Enabled = true;
+            }
+            else
+            {
+                txtbBookTitle.Text = "";
+                rbYes.Enabled = false;
+                rbNo.Enabled = false;
+                cboxReason.Enabled = false;
+                txtbRemarks.Enabled = false;
+                btnSubmit.Enabled = false;
+            }
         }
     }
 }

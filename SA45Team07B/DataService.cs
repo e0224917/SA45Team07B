@@ -13,10 +13,7 @@ namespace SA45Team07B
 
         public static Book GetBookFromRFID(string RFID)
         {
-            if (RFID.Length < 10)
-            {
-                return null;
-            }
+
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
 
             try
@@ -31,12 +28,8 @@ namespace SA45Team07B
 
         }
 
-        public static bool GetRFIDStatus(string RFID)
+        public static bool GetRFIDDiscontinueStatus(string RFID)
         {
-            if (RFID.Length < 10)
-            {
-                throw new FormatException();
-            }
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
 
             RFIDTag tag = context.RFIDs.Where(x => x.RFID == RFID).First();
@@ -61,6 +54,30 @@ namespace SA45Team07B
             context.StockAdjustments.Add(adj);
 
             context.SaveChanges();
+        }
+
+        public static bool CreateBorrowTransaction(string[] RFIDList, long memberID)
+        {
+            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+
+            Member member = context.Members.Where(x => x.MemberID == memberID).First();
+
+            MemberCategories category = context.MemberCategories.Where(x => x.MemberType == member.MemberType).First();
+
+            short loanPeriod = category.LoanPeriod;
+
+            foreach (string RFIDTag in RFIDList)
+            {
+                IssueTran tran = new IssueTran();
+                tran.RFID = RFIDTag;
+                tran.MemberID = memberID;
+                tran.DateIssued = DateTime.Today;
+                tran.DateDue = DateTime.Today.AddDays(loanPeriod);
+                context.IssueTrans.Add(tran);
+            }
+
+            context.SaveChanges();
+            return true;
         }
     }
 }

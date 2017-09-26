@@ -16,6 +16,10 @@ namespace SA45Team07B
 
         private Book bookFound;
         private RFIDTag tagFound;
+        private List<RFIDTag> tagsOfBookFound;
+        private BookSubject subjectOfBookFound;
+        private Publisher publisherOfBookFound;
+        private bool isFirstLoad;
         
         public Book BookFound
         {
@@ -30,6 +34,30 @@ namespace SA45Team07B
             get
             {
                 return tagFound;
+            }
+        }
+
+        public List<RFIDTag> RFIDsOfBookFound
+        {
+            get
+            {
+                return tagsOfBookFound;
+            }
+        }
+
+        public BookSubject SubjectOfBookFound
+        {
+            get
+            {
+                return subjectOfBookFound;
+            }
+        }
+
+        public Publisher PublisherOfBookFound
+        {
+            get
+            {
+                return publisherOfBookFound;
             }
         }
 
@@ -49,7 +77,7 @@ namespace SA45Team07B
 
                 cbSubject.DataSource = subjectNameList;
 
-                // Lazy loading - load the first 25 rows to datagridview
+                // Lazy loading - load the first 25 rows to datagridview during first load
                 var displayList = (from x in context.RFIDs
                                   orderby x.Books.BookID, x.Availability descending
                                   select new
@@ -70,6 +98,8 @@ namespace SA45Team07B
                                   }).Take(25);
 
                 dataGridViewBookList.DataSource = displayList.ToList();
+
+                isFirstLoad = true;
             }
         }
 
@@ -83,12 +113,12 @@ namespace SA45Team07B
                             select x).ToList();
 
 
-                if (rbtnAll.Checked == true)
-                {
-                    RFIDList = (from x in RFIDList
-                                select x).ToList();
-                }
-                else if(rbtnAvailable.Checked == true)
+                //if (rbtnAll.Checked == true)
+                //{
+                //    // do nothing
+                //}
+
+                if(rbtnAvailable.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "y" && x.Discontinued == "n")
@@ -143,6 +173,8 @@ namespace SA45Team07B
                                   };
 
                 dataGridViewBookList.DataSource = displayList.ToList();
+
+                isFirstLoad = false;
             }
         }
 
@@ -184,7 +216,10 @@ namespace SA45Team07B
                             where x.RFID == selectedRFID
                             select x).First();
 
-                this.bookFound = tagFound.Books;
+                this.bookFound = RFIDFound.Books;
+                this.tagsOfBookFound = BookFound.RFIDs.ToList();
+                this.subjectOfBookFound = BookFound.BookSubjects;
+                this.publisherOfBookFound = BookFound.Publishers;
             }
            
             this.DialogResult = DialogResult.OK;
@@ -219,14 +254,11 @@ namespace SA45Team07B
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                if (dataGridViewBookList.RowCount == 25)
+                if (isFirstLoad)
                 {
-                    if(e.NewValue > 9)
-                    {
-                        SearchAndDisplayBook();
-                        // remove this event handler
-                        this.dataGridViewBookList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
-                    }
+                    SearchAndDisplayBook();
+                    // remove this event handler
+                    this.dataGridViewBookList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
                 }
             }
         }

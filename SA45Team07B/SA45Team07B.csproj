@@ -88,6 +88,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseModalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseModalForm.Designer.cs">
+      <DependentUpon>BaseModalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs">
       <DependentUpon>LibraryManagement.tt</DependentUpon>
     </Compile>
@@ -209,9 +215,15 @@
     <EmbeddedResource Include="AddNewBook.resx">
       <DependentUpon>AddNewBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdjustStock.resx">
+      <DependentUpon>AdjustStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseModalForm.resx">
+      <DependentUpon>BaseModalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookPopUpSearch.resx">
       <DependentUpon>BookPopUpSearch.cs</DependentUpon>
@@ -224,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MemberPopUpSearchcs.resx">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModifyBook.resx">
-      <DependentUpon>ModifyBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -275,6 +284,7 @@
       <DependentUpon>LibraryManagement.edmx</DependentUpon>
       <LastGenOutput>LibraryManagement.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\BackgroundImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

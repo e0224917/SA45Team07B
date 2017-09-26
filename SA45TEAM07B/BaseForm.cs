@@ -20,25 +20,16 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
-
-
-
-
-        private void toolStripButtonBorrow_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void BaseForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);
-            this.notifyIconForClose.Icon = null;
+            this.notifyIconLibraryManagement.ShowBalloonTip(100, "", "Library Management has been closed.", ToolTipIcon.None);
+            this.notifyIconLibraryManagement.Visible = false;
+            this.notifyIconLibraryManagement.Dispose();
+        }
+
+        private void notifyIconLibraryManagement_DoubleClick(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void addNewToolStripMenuItem2_Click(object sender, EventArgs e)
