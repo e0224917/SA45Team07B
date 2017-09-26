@@ -16,6 +16,9 @@ namespace SA45Team07B
         private Book returnBook;
         private IssueTran lastTransaction;
         private Member borrower;
+        private MemberCategories borrowerMemberType;
+        private Faculty borrowerFaculty;
+
 
         public ReturnForm()
         {
@@ -26,14 +29,21 @@ namespace SA45Team07B
         {
             using (BookPopUpSearch bps = new BookPopUpSearch("onloan"))
             {
-               if(bps.ShowDialog() == DialogResult.OK)
+                if (bps.ShowDialog() == DialogResult.OK)
                 {
-                    this.RFIDofReturnBook = bps.RFIDFound;
-                    this.returnBook = bps.BookFound;
+                    this.txtbRFID.Text = bps.RFIDFound.RFID.ToString();
+                    ValidatetxtbRFID();
+                }
+                else
+                {
+                    return;
                 }
             }
+        }
 
-            using(SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+        private void FindTransactionAndBorrower()
+        {
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
                 lastTransaction = (from x in context.IssueTrans
                                    where x.TransactionID == RFIDofReturnBook.LastTransactionID
@@ -42,17 +52,17 @@ namespace SA45Team07B
 
                 if (lastTransaction == null)
                 {
+                    ClearTextboxData();
                     MessageBox.Show("No last transaction record.");
                 }
                 else
                 {
                     borrower = lastTransaction.Members;
-                    DisplayTextboxData();
+                    borrowerMemberType = borrower.MemberCategories;
+                    borrowerFaculty = borrower.Faculties;
                 }
             }
-
         }
-
 
         private void DisplayTextboxData()
         {
@@ -66,14 +76,38 @@ namespace SA45Team07B
             txtbMemberID.Text = borrower.MemberID.ToString();
             txtbMemberName.Text = borrower.MemberName.ToString();
             txtbSchoolID.Text = borrower.SchoolID.ToString();
-            txtbMemberType.Text = borrower.MemberCategories.CategoryName.ToString();
-            txtbFaculty.Text = borrower.Faculties.FacultyName.ToString();
+
+            txtbMemberType.Text = borrowerMemberType.CategoryName.ToString();
+            txtbFaculty.Text = borrowerFaculty.FacultyName.ToString();
 
             dtpReturnDate.Value = DateTime.Today;
             dtpReturnDate.MinDate = dtpIssueDate.Value;
 
             txtbFine.Text = string.Format("{0:c}", CalculateFine());
         }
+
+
+        private void ClearTextboxData()
+        {
+            txtbRFID.Text = string.Empty;
+            txtbBookTitle.Text = string.Empty;
+            txtbBookID.Text = string.Empty;
+
+            dtpIssueDate.Value = DateTime.Today;
+            dtpDueDate.Value = DateTime.Today;
+
+            txtbMemberID.Text = string.Empty;
+            txtbMemberName.Text = string.Empty;
+            txtbSchoolID.Text = string.Empty;
+
+            txtbMemberType.Text = string.Empty;
+            txtbFaculty.Text = string.Empty;
+
+            dtpReturnDate.Value = DateTime.Today;
+
+            txtbFine.Text = string.Empty;
+        }
+
 
         private decimal CalculateFine()
         {
@@ -84,6 +118,14 @@ namespace SA45Team07B
             if (dtpReturnDate.Value > dtpDueDate.Value)
             {
                 fine = (decimal) (dtpReturnDate.Value - dtpDueDate.Value).TotalDays * fineperday;
+
+                this.txtbFine.BackColor = SystemColors.Control;
+                this.txtbFine.ForeColor = Color.Red;
+            }
+            else
+            {
+                this.txtbFine.BackColor = SystemColors.Control;
+                this.txtbFine.ForeColor = SystemColors.WindowText;
             }
 
             return fine;
@@ -91,12 +133,127 @@ namespace SA45Team07B
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // TODO :  to check with return date is earlier than issuedate
+            if (this.dtpReturnDate.Value >= this.dtpIssueDate.Value)
+            {
+                using(TransactionScope ts = new TransactionScope())
+                {
+                    if (txtbRemarks.Text.Length > 255)
+                    {
+                        // should no happen as the textbox max length is 255
+                        MessageBox.Show("Remarks exceed maximum length.");
+                    }
+                    else
+                    {
+                        using(SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+                        {
+
+                            RFIDofReturnBook = (from x in context.RFIDs
+                                                where x.RFID == RFIDofReturnBook.RFID
+                                                select x).First();
+
+                            lastTransaction = (from x in context.IssueTrans
+                                               where (x.TransactionID == lastTransaction.TransactionID)
+                                               select x).First();
+
+                            borrower = (from x in context.Members
+                                        where x.MemberID == lastTransaction.MemberID
+                                        select x).First();
+
+                            lastTransaction.DateActualReturned = this.dtpReturnDate.Value;
+                            lastTransaction.Status = "in";
+                            lastTransaction.Remarks = txtbRemarks.Text.ToString();
+
+                            RFIDofReturnBook.Availability = "y";
+
+                            borrower.LoanedQty -= 1;
+
+                            int i = context.SaveChanges();
+                            ts.Complete();
+
+                            if(i > 0)
+                            {
+                                toolStripStatusLabel1.Text = "Return was successful.";
+                                txtbRemarks.Text = string.Empty;
+                                ClearTextboxData();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Return was not successful. Please try again.");
+                            }
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                // cannot happen
+                MessageBox.Show("Invalid Return Date.");
+            }
         }
 
         private void ReturnForm_Load(object sender, EventArgs e)
         {
+            this.btnSubmit.Enabled = false;
+        }
 
+        private void txtbRFID_Validating(object sender, CancelEventArgs e)
+        {
+            ValidatetxtbRFID();
+        }
+
+        private void ValidatetxtbRFID()
+        {
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                string inputRFID = txtbRFID.Text.ToString();
+
+                this.RFIDofReturnBook = (from x in context.RFIDs
+                                         where x.RFID == inputRFID
+                                         select x).FirstOrDefault();
+
+                if (RFIDofReturnBook != null)
+                {
+                    this.returnBook = RFIDofReturnBook.Books;
+                    FindTransactionAndBorrower();
+                    DisplayTextboxData();
+
+                    errorProviderForRFID.SetError(txtbRFID, "");
+                    toolStripStatusLabel1.Text = "1 record is found.";
+                    btnSubmit.BackColor = Color.White;
+                    btnSubmit.Enabled = true;
+                }
+                else
+                {
+                    errorProviderForRFID.SetError(txtbRFID, "Invalid RFID");
+                    toolStripStatusLabel1.Text = "Invalid RFID";
+                    ClearTextboxData();
+                    btnSubmit.BackColor = Color.LightGray;
+                    btnSubmit.Enabled = false;
+                }
+            }
+        }
+
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtbRFID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidatetxtbRFID();
+            }
+        }
+
+        private void dtpReturnDate_ValueChanged(object sender, EventArgs e)
+        {
+            if(lastTransaction != null)
+            {
+                txtbFine.Text = string.Format("{0:c}", CalculateFine());
+            }
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbReturnTransaction = new System.Windows.Forms.GroupBox();
+            this.Cancel = new System.Windows.Forms.Button();
             this.lblFine = new System.Windows.Forms.Label();
             this.txtbFine = new System.Windows.Forms.TextBox();
             this.dtpReturnDate = new System.Windows.Forms.DateTimePicker();
@@ -60,16 +61,20 @@
             this.lblMemberName = new System.Windows.Forms.Label();
             this.txtbMemberID = new System.Windows.Forms.TextBox();
             this.txtbMemberName = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderForRFID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbReturnTransaction.SuspendLayout();
             this.gbBookInfo.SuspendLayout();
             this.gpBorrowerInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderForRFID)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbReturnTransaction
             // 
             this.gbReturnTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.gbReturnTransaction.Controls.Add(this.Cancel);
             this.gbReturnTransaction.Controls.Add(this.lblFine);
             this.gbReturnTransaction.Controls.Add(this.txtbFine);
             this.gbReturnTransaction.Controls.Add(this.dtpReturnDate);
@@ -86,6 +91,25 @@
             this.gbReturnTransaction.TabIndex = 25;
             this.gbReturnTransaction.TabStop = false;
             this.gbReturnTransaction.Text = "Return Transaction Detail";
+            // 
+            // Cancel
+            // 
+            this.Cancel.BackColor = System.Drawing.Color.White;
+            this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cancel.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel.ForeColor = System.Drawing.Color.Black;
+            this.Cancel.Location = new System.Drawing.Point(188, 358);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(6);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(92, 40);
+            this.Cancel.TabIndex = 5;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // lblFine
             // 
@@ -107,7 +131,7 @@
             this.txtbFine.Name = "txtbFine";
             this.txtbFine.ReadOnly = true;
             this.txtbFine.Size = new System.Drawing.Size(275, 29);
-            this.txtbFine.TabIndex = 36;
+            this.txtbFine.TabIndex = 14;
             // 
             // dtpReturnDate
             // 
@@ -116,7 +140,8 @@
             this.dtpReturnDate.Location = new System.Drawing.Point(40, 60);
             this.dtpReturnDate.Name = "dtpReturnDate";
             this.dtpReturnDate.Size = new System.Drawing.Size(275, 29);
-            this.dtpReturnDate.TabIndex = 17;
+            this.dtpReturnDate.TabIndex = 2;
+            this.dtpReturnDate.ValueChanged += new System.EventHandler(this.dtpReturnDate_ValueChanged);
             // 
             // lblReturnDate
             // 
@@ -151,11 +176,11 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Black;
-            this.btnSubmit.Location = new System.Drawing.Point(126, 356);
+            this.btnSubmit.Location = new System.Drawing.Point(78, 358);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(6);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(92, 40);
-            this.btnSubmit.TabIndex = 9;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -165,11 +190,12 @@
             this.txtbRemarks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbRemarks.Location = new System.Drawing.Point(40, 210);
             this.txtbRemarks.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbRemarks.MaxLength = 255;
             this.txtbRemarks.Multiline = true;
             this.txtbRemarks.Name = "txtbRemarks";
             this.txtbRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtbRemarks.Size = new System.Drawing.Size(275, 128);
-            this.txtbRemarks.TabIndex = 2;
+            this.txtbRemarks.TabIndex = 3;
             // 
             // gbBookInfo
             // 
@@ -259,7 +285,7 @@
             this.txtbBookID.Name = "txtbBookID";
             this.txtbBookID.ReadOnly = true;
             this.txtbBookID.Size = new System.Drawing.Size(275, 29);
-            this.txtbBookID.TabIndex = 17;
+            this.txtbBookID.TabIndex = 8;
             // 
             // btnSearchRFID
             // 
@@ -274,7 +300,7 @@
             this.btnSearchRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSearchRFID.Name = "btnSearchRFID";
             this.btnSearchRFID.Size = new System.Drawing.Size(28, 26);
-            this.btnSearchRFID.TabIndex = 2;
+            this.btnSearchRFID.TabIndex = 6;
             this.btnSearchRFID.Text = "...";
             this.btnSearchRFID.UseVisualStyleBackColor = false;
             this.btnSearchRFID.Click += new System.EventHandler(this.btnSearchRFID_Click);
@@ -311,7 +337,8 @@
             this.txtbRFID.Name = "txtbRFID";
             this.txtbRFID.Size = new System.Drawing.Size(230, 29);
             this.txtbRFID.TabIndex = 1;
-            this.txtbRFID.Validated += new System.EventHandler(this.btnSearchRFID_Click);
+            this.txtbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbRFID_KeyDown);
+            this.txtbRFID.Validating += new System.ComponentModel.CancelEventHandler(this.txtbRFID_Validating);
             // 
             // txtbBookTitle
             // 
@@ -321,7 +348,7 @@
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.ReadOnly = true;
             this.txtbBookTitle.Size = new System.Drawing.Size(275, 29);
-            this.txtbBookTitle.TabIndex = 2;
+            this.txtbBookTitle.TabIndex = 7;
             // 
             // gpBorrowerInfo
             // 
@@ -354,7 +381,7 @@
             this.txtbFaculty.Name = "txtbFaculty";
             this.txtbFaculty.ReadOnly = true;
             this.txtbFaculty.Size = new System.Drawing.Size(275, 29);
-            this.txtbFaculty.TabIndex = 23;
+            this.txtbFaculty.TabIndex = 13;
             // 
             // txtbMemberType
             // 
@@ -364,7 +391,7 @@
             this.txtbMemberType.Name = "txtbMemberType";
             this.txtbMemberType.ReadOnly = true;
             this.txtbMemberType.Size = new System.Drawing.Size(275, 29);
-            this.txtbMemberType.TabIndex = 22;
+            this.txtbMemberType.TabIndex = 12;
             // 
             // lblFacultyName
             // 
@@ -410,7 +437,7 @@
             this.txtbSchoolID.Name = "txtbSchoolID";
             this.txtbSchoolID.ReadOnly = true;
             this.txtbSchoolID.Size = new System.Drawing.Size(275, 29);
-            this.txtbSchoolID.TabIndex = 17;
+            this.txtbSchoolID.TabIndex = 11;
             // 
             // lblMemberID
             // 
@@ -444,7 +471,7 @@
             this.txtbMemberID.Name = "txtbMemberID";
             this.txtbMemberID.ReadOnly = true;
             this.txtbMemberID.Size = new System.Drawing.Size(275, 29);
-            this.txtbMemberID.TabIndex = 1;
+            this.txtbMemberID.TabIndex = 9;
             // 
             // txtbMemberName
             // 
@@ -454,16 +481,39 @@
             this.txtbMemberName.Name = "txtbMemberName";
             this.txtbMemberName.ReadOnly = true;
             this.txtbMemberName.Size = new System.Drawing.Size(275, 29);
-            this.txtbMemberName.TabIndex = 2;
+            this.txtbMemberName.TabIndex = 10;
             // 
-            // errorProvider1
+            // errorProviderForRFID
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderForRFID.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderForRFID.ContainerControl = this;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1145, 26);
+            this.statusStrip1.TabIndex = 28;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(242, 21);
+            this.toolStripStatusLabel1.Text = "Input a RFID or Press ESC to extis.";
             // 
             // ReturnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.ClientSize = new System.Drawing.Size(1145, 535);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.Cancel;
+            this.ClientSize = new System.Drawing.Size(1145, 548);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gpBorrowerInfo);
             this.Controls.Add(this.gbBookInfo);
             this.Controls.Add(this.gbReturnTransaction);
@@ -474,13 +524,16 @@
             this.Controls.SetChildIndex(this.gbReturnTransaction, 0);
             this.Controls.SetChildIndex(this.gbBookInfo, 0);
             this.Controls.SetChildIndex(this.gpBorrowerInfo, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.gbReturnTransaction.ResumeLayout(false);
             this.gbReturnTransaction.PerformLayout();
             this.gbBookInfo.ResumeLayout(false);
             this.gbBookInfo.PerformLayout();
             this.gpBorrowerInfo.ResumeLayout(false);
             this.gpBorrowerInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderForRFID)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,6 +572,9 @@
         private System.Windows.Forms.TextBox txtbMemberName;
         private System.Windows.Forms.Label lblFine;
         private System.Windows.Forms.TextBox txtbFine;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderForRFID;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

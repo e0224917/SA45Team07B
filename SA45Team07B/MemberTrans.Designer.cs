@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbMemberInfo = new System.Windows.Forms.GroupBox();
+            this.txtbContactNumber = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtbEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtbFinePerDay = new System.Windows.Forms.TextBox();
             this.lblFinePerDay = new System.Windows.Forms.Label();
             this.txtbLoanPeriod = new System.Windows.Forms.TextBox();
@@ -71,16 +76,18 @@
             this.rbtnReturned = new System.Windows.Forms.RadioButton();
             this.rbtnOnLoan = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLblRecordFound = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtbRemarksOfSelectedTransaction = new System.Windows.Forms.TextBox();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.errorProviderForMemberID = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbMemberInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactionRecords)).BeginInit();
             this.gbTransactionRecord.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderForMemberID)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,6 +99,10 @@
             // gbMemberInfo
             // 
             this.gbMemberInfo.BackColor = System.Drawing.Color.Transparent;
+            this.gbMemberInfo.Controls.Add(this.txtbContactNumber);
+            this.gbMemberInfo.Controls.Add(this.label2);
+            this.gbMemberInfo.Controls.Add(this.txtbEmail);
+            this.gbMemberInfo.Controls.Add(this.lblEmail);
             this.gbMemberInfo.Controls.Add(this.txtbFinePerDay);
             this.gbMemberInfo.Controls.Add(this.lblFinePerDay);
             this.gbMemberInfo.Controls.Add(this.txtbLoanPeriod);
@@ -114,27 +125,71 @@
             this.gbMemberInfo.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
             this.gbMemberInfo.Name = "gbMemberInfo";
             this.gbMemberInfo.Padding = new System.Windows.Forms.Padding(2);
-            this.gbMemberInfo.Size = new System.Drawing.Size(842, 196);
+            this.gbMemberInfo.Size = new System.Drawing.Size(842, 235);
             this.gbMemberInfo.TabIndex = 25;
             this.gbMemberInfo.TabStop = false;
             this.gbMemberInfo.Text = "Member Information";
             // 
+            // txtbContactNumber
+            // 
+            this.txtbContactNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbContactNumber.Location = new System.Drawing.Point(614, 183);
+            this.txtbContactNumber.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtbContactNumber.Name = "txtbContactNumber";
+            this.txtbContactNumber.ReadOnly = true;
+            this.txtbContactNumber.Size = new System.Drawing.Size(195, 29);
+            this.txtbContactNumber.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(471, 186);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 21);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Contact Number:";
+            // 
+            // txtbEmail
+            // 
+            this.txtbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbEmail.Location = new System.Drawing.Point(163, 183);
+            this.txtbEmail.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtbEmail.Name = "txtbEmail";
+            this.txtbEmail.ReadOnly = true;
+            this.txtbEmail.Size = new System.Drawing.Size(275, 29);
+            this.txtbEmail.TabIndex = 6;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(30, 186);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(51, 21);
+            this.lblEmail.TabIndex = 37;
+            this.lblEmail.Text = "Email:";
+            // 
             // txtbFinePerDay
             // 
             this.txtbFinePerDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbFinePerDay.Location = new System.Drawing.Point(610, 149);
+            this.txtbFinePerDay.Location = new System.Drawing.Point(614, 145);
             this.txtbFinePerDay.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbFinePerDay.Name = "txtbFinePerDay";
             this.txtbFinePerDay.ReadOnly = true;
             this.txtbFinePerDay.Size = new System.Drawing.Size(195, 29);
-            this.txtbFinePerDay.TabIndex = 36;
+            this.txtbFinePerDay.TabIndex = 10;
             // 
             // lblFinePerDay
             // 
             this.lblFinePerDay.AutoSize = true;
             this.lblFinePerDay.BackColor = System.Drawing.Color.Transparent;
             this.lblFinePerDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinePerDay.Location = new System.Drawing.Point(471, 149);
+            this.lblFinePerDay.Location = new System.Drawing.Point(471, 147);
             this.lblFinePerDay.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblFinePerDay.Name = "lblFinePerDay";
             this.lblFinePerDay.Size = new System.Drawing.Size(98, 21);
@@ -144,19 +199,19 @@
             // txtbLoanPeriod
             // 
             this.txtbLoanPeriod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbLoanPeriod.Location = new System.Drawing.Point(610, 112);
+            this.txtbLoanPeriod.Location = new System.Drawing.Point(614, 107);
             this.txtbLoanPeriod.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbLoanPeriod.Name = "txtbLoanPeriod";
             this.txtbLoanPeriod.ReadOnly = true;
             this.txtbLoanPeriod.Size = new System.Drawing.Size(195, 29);
-            this.txtbLoanPeriod.TabIndex = 34;
+            this.txtbLoanPeriod.TabIndex = 9;
             // 
             // lblLoanPeriod
             // 
             this.lblLoanPeriod.AutoSize = true;
             this.lblLoanPeriod.BackColor = System.Drawing.Color.Transparent;
             this.lblLoanPeriod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoanPeriod.Location = new System.Drawing.Point(471, 112);
+            this.lblLoanPeriod.Location = new System.Drawing.Point(471, 110);
             this.lblLoanPeriod.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblLoanPeriod.Name = "lblLoanPeriod";
             this.lblLoanPeriod.Size = new System.Drawing.Size(95, 21);
@@ -166,19 +221,19 @@
             // txtbLoanEntitlement
             // 
             this.txtbLoanEntitlement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbLoanEntitlement.Location = new System.Drawing.Point(610, 74);
+            this.txtbLoanEntitlement.Location = new System.Drawing.Point(614, 70);
             this.txtbLoanEntitlement.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbLoanEntitlement.Name = "txtbLoanEntitlement";
             this.txtbLoanEntitlement.ReadOnly = true;
             this.txtbLoanEntitlement.Size = new System.Drawing.Size(195, 29);
-            this.txtbLoanEntitlement.TabIndex = 32;
+            this.txtbLoanEntitlement.TabIndex = 8;
             // 
             // lblLoanEntitlement
             // 
             this.lblLoanEntitlement.AutoSize = true;
             this.lblLoanEntitlement.BackColor = System.Drawing.Color.Transparent;
             this.lblLoanEntitlement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoanEntitlement.Location = new System.Drawing.Point(471, 74);
+            this.lblLoanEntitlement.Location = new System.Drawing.Point(471, 72);
             this.lblLoanEntitlement.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblLoanEntitlement.Name = "lblLoanEntitlement";
             this.lblLoanEntitlement.Size = new System.Drawing.Size(130, 21);
@@ -211,17 +266,17 @@
             this.txtbFacultyName.Name = "txtbFacultyName";
             this.txtbFacultyName.ReadOnly = true;
             this.txtbFacultyName.Size = new System.Drawing.Size(275, 29);
-            this.txtbFacultyName.TabIndex = 29;
+            this.txtbFacultyName.TabIndex = 5;
             // 
             // txtbMemberType
             // 
             this.txtbMemberType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbMemberType.Location = new System.Drawing.Point(610, 32);
+            this.txtbMemberType.Location = new System.Drawing.Point(614, 32);
             this.txtbMemberType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberType.Name = "txtbMemberType";
             this.txtbMemberType.ReadOnly = true;
             this.txtbMemberType.Size = new System.Drawing.Size(195, 29);
-            this.txtbMemberType.TabIndex = 28;
+            this.txtbMemberType.TabIndex = 7;
             // 
             // lblFaculty
             // 
@@ -291,7 +346,7 @@
             this.txtbSchoolID.Name = "txtbSchoolID";
             this.txtbSchoolID.ReadOnly = true;
             this.txtbSchoolID.Size = new System.Drawing.Size(275, 29);
-            this.txtbSchoolID.TabIndex = 3;
+            this.txtbSchoolID.TabIndex = 4;
             // 
             // txtbMemberID
             // 
@@ -301,6 +356,8 @@
             this.txtbMemberID.Name = "txtbMemberID";
             this.txtbMemberID.Size = new System.Drawing.Size(230, 29);
             this.txtbMemberID.TabIndex = 1;
+            this.txtbMemberID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbMemberID_KeyDown);
+            this.txtbMemberID.Validating += new System.ComponentModel.CancelEventHandler(this.txtbMemberID_Validating);
             // 
             // txtbMemberName
             // 
@@ -310,7 +367,7 @@
             this.txtbMemberName.Name = "txtbMemberName";
             this.txtbMemberName.ReadOnly = true;
             this.txtbMemberName.Size = new System.Drawing.Size(275, 29);
-            this.txtbMemberName.TabIndex = 2;
+            this.txtbMemberName.TabIndex = 3;
             // 
             // lblLoanedQty
             // 
@@ -332,7 +389,7 @@
             this.txtbLoanedQty.Name = "txtbLoanedQty";
             this.txtbLoanedQty.ReadOnly = true;
             this.txtbLoanedQty.Size = new System.Drawing.Size(106, 29);
-            this.txtbLoanedQty.TabIndex = 30;
+            this.txtbLoanedQty.TabIndex = 14;
             // 
             // lblOverdueQty
             // 
@@ -354,7 +411,7 @@
             this.txtbOverdueQty.Name = "txtbOverdueQty";
             this.txtbOverdueQty.ReadOnly = true;
             this.txtbOverdueQty.Size = new System.Drawing.Size(106, 29);
-            this.txtbOverdueQty.TabIndex = 32;
+            this.txtbOverdueQty.TabIndex = 15;
             // 
             // lblUnpaidFine
             // 
@@ -376,7 +433,7 @@
             this.txtbUnpaidFine.Name = "txtbUnpaidFine";
             this.txtbUnpaidFine.ReadOnly = true;
             this.txtbUnpaidFine.Size = new System.Drawing.Size(106, 29);
-            this.txtbUnpaidFine.TabIndex = 34;
+            this.txtbUnpaidFine.TabIndex = 16;
             // 
             // dataGridViewTransactionRecords
             // 
@@ -528,7 +585,7 @@
             this.gbTransactionRecord.Controls.Add(this.lblOverdueQty);
             this.gbTransactionRecord.Controls.Add(this.lblLoanedQty);
             this.gbTransactionRecord.Controls.Add(this.txtbLoanedQty);
-            this.gbTransactionRecord.Location = new System.Drawing.Point(22, 275);
+            this.gbTransactionRecord.Location = new System.Drawing.Point(22, 322);
             this.gbTransactionRecord.Margin = new System.Windows.Forms.Padding(2);
             this.gbTransactionRecord.Name = "gbTransactionRecord";
             this.gbTransactionRecord.Padding = new System.Windows.Forms.Padding(2);
@@ -544,7 +601,7 @@
             this.rbtnReturned.Margin = new System.Windows.Forms.Padding(8);
             this.rbtnReturned.Name = "rbtnReturned";
             this.rbtnReturned.Size = new System.Drawing.Size(92, 25);
-            this.rbtnReturned.TabIndex = 4;
+            this.rbtnReturned.TabIndex = 13;
             this.rbtnReturned.Text = "Returned";
             this.rbtnReturned.UseVisualStyleBackColor = true;
             this.rbtnReturned.CheckedChanged += new System.EventHandler(this.rbtnReturned_CheckedChanged);
@@ -556,7 +613,7 @@
             this.rbtnOnLoan.Location = new System.Drawing.Point(163, 24);
             this.rbtnOnLoan.Name = "rbtnOnLoan";
             this.rbtnOnLoan.Size = new System.Drawing.Size(87, 25);
-            this.rbtnOnLoan.TabIndex = 3;
+            this.rbtnOnLoan.TabIndex = 12;
             this.rbtnOnLoan.TabStop = true;
             this.rbtnOnLoan.Text = "On Loan";
             this.rbtnOnLoan.UseVisualStyleBackColor = true;
@@ -565,26 +622,26 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLblRecordFound});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 895);
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 936);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(884, 26);
             this.statusStrip1.TabIndex = 37;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLblRecordFound
+            // toolStripStatusLabel1
             // 
-            this.toolStripStatusLblRecordFound.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLblRecordFound.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLblRecordFound.Name = "toolStripStatusLblRecordFound";
-            this.toolStripStatusLblRecordFound.Size = new System.Drawing.Size(127, 21);
-            this.toolStripStatusLblRecordFound.Text = "Press ESC to exit.";
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(280, 21);
+            this.toolStripStatusLabel1.Text = "Input a Member ID or Press ESC to exit.";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtbRemarksOfSelectedTransaction);
-            this.groupBox1.Location = new System.Drawing.Point(22, 694);
+            this.groupBox1.Location = new System.Drawing.Point(22, 738);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(674, 182);
             this.groupBox1.TabIndex = 38;
@@ -596,10 +653,11 @@
             this.txtbRemarksOfSelectedTransaction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbRemarksOfSelectedTransaction.Location = new System.Drawing.Point(32, 32);
             this.txtbRemarksOfSelectedTransaction.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtbRemarksOfSelectedTransaction.MaxLength = 255;
             this.txtbRemarksOfSelectedTransaction.Multiline = true;
             this.txtbRemarksOfSelectedTransaction.Name = "txtbRemarksOfSelectedTransaction";
             this.txtbRemarksOfSelectedTransaction.Size = new System.Drawing.Size(613, 135);
-            this.txtbRemarksOfSelectedTransaction.TabIndex = 5;
+            this.txtbRemarksOfSelectedTransaction.TabIndex = 17;
             // 
             // btnSaveChanges
             // 
@@ -611,12 +669,12 @@
             this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveChanges.Location = new System.Drawing.Point(733, 728);
+            this.btnSaveChanges.Location = new System.Drawing.Point(733, 772);
             this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(94, 76);
-            this.btnSaveChanges.TabIndex = 6;
-            this.btnSaveChanges.Text = "Submit Remarks";
+            this.btnSaveChanges.TabIndex = 18;
+            this.btnSaveChanges.Text = "Submit Changes";
             this.btnSaveChanges.UseVisualStyleBackColor = false;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
@@ -630,21 +688,26 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(733, 816);
+            this.btnClose.Location = new System.Drawing.Point(733, 860);
             this.btnClose.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 41);
-            this.btnClose.TabIndex = 7;
+            this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // errorProviderForMemberID
+            // 
+            this.errorProviderForMemberID.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderForMemberID.ContainerControl = this;
             // 
             // MemberTrans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(884, 921);
+            this.ClientSize = new System.Drawing.Size(884, 962);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.statusStrip1);
@@ -670,6 +733,7 @@
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderForMemberID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,7 +770,7 @@
         private System.Windows.Forms.RadioButton rbtnReturned;
         private System.Windows.Forms.RadioButton rbtnOnLoan;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblRecordFound;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.TextBox txtbRemarksOfSelectedTransaction;
@@ -720,5 +784,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TransactionIDColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RemarksColumn;
+        private System.Windows.Forms.TextBox txtbContactNumber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtbEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.ErrorProvider errorProviderForMemberID;
     }
 }
