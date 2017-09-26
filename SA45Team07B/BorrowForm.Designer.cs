@@ -108,6 +108,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtbBookStatus);
             this.groupBox1.Controls.Add(this.lblBookStatus);
             this.groupBox1.Controls.Add(this.txtbBookTitle);
@@ -189,6 +190,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.lblEntitlementDay);
             this.groupBox2.Controls.Add(this.txtbEntitlement);
             this.groupBox2.Controls.Add(this.lblEntitlement);
@@ -301,6 +303,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.txtbMemberID);
             this.groupBox3.Controls.Add(this.btnEdit);
             this.groupBox3.Controls.Add(this.txtbFaculty);
@@ -359,6 +362,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.lblPeriodDay);
             this.groupBox4.Controls.Add(this.txtbPeriod);
             this.groupBox4.Controls.Add(this.lblPeriod);
