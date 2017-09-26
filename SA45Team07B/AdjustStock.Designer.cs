@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblRFID = new System.Windows.Forms.Label();
-            this.txtRFID = new System.Windows.Forms.TextBox();
+            this.txtbRFID = new System.Windows.Forms.TextBox();
             this.lblBookTitle = new System.Windows.Forms.Label();
             this.txtbBookTitle = new System.Windows.Forms.TextBox();
             this.txtbRemarks = new System.Windows.Forms.TextBox();
@@ -58,15 +58,15 @@
             this.lblRFID.TabIndex = 10;
             this.lblRFID.Text = "RFID";
             // 
-            // txtRFID
+            // txtbRFID
             // 
-            this.txtRFID.Location = new System.Drawing.Point(104, 56);
-            this.txtRFID.MaxLength = 10;
-            this.txtRFID.Name = "txtRFID";
-            this.txtRFID.Size = new System.Drawing.Size(100, 29);
-            this.txtRFID.TabIndex = 11;
-            this.txtRFID.TextChanged += new System.EventHandler(this.txtRFID_TextChanged);
-            this.txtRFID.Validating += new System.ComponentModel.CancelEventHandler(this.txtRFID_Validating);
+            this.txtbRFID.Location = new System.Drawing.Point(104, 56);
+            this.txtbRFID.MaxLength = 10;
+            this.txtbRFID.Name = "txtbRFID";
+            this.txtbRFID.Size = new System.Drawing.Size(100, 29);
+            this.txtbRFID.TabIndex = 11;
+            this.txtbRFID.TextChanged += new System.EventHandler(this.txtRFID_TextChanged);
+            this.txtbRFID.Validating += new System.ComponentModel.CancelEventHandler(this.txtRFID_Validating);
             // 
             // lblBookTitle
             // 
@@ -190,7 +190,7 @@
             this.groupBox.Controls.Add(this.cboxReason);
             this.groupBox.Controls.Add(this.btnMoreRFID);
             this.groupBox.Controls.Add(this.txtbRemarks);
-            this.groupBox.Controls.Add(this.txtRFID);
+            this.groupBox.Controls.Add(this.txtbRFID);
             this.groupBox.Controls.Add(this.lblBookTitle);
             this.groupBox.Controls.Add(this.lblNotes);
             this.groupBox.Controls.Add(this.rbRestore);
@@ -233,7 +233,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblRFID;
-        private System.Windows.Forms.TextBox txtRFID;
+        private System.Windows.Forms.TextBox txtbRFID;
         private System.Windows.Forms.Label lblBookTitle;
         private System.Windows.Forms.TextBox txtbBookTitle;
         private System.Windows.Forms.TextBox txtbRemarks;
