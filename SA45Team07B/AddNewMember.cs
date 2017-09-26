@@ -24,6 +24,14 @@ namespace SA45Team07B
             textBoxMemberID.Text = Convert.ToString(k);
         }
 
+        private void textBoxes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                SendKeys.Send("{TAB}");
+            }
+        }
+
         #region Validation
         private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -93,7 +101,7 @@ namespace SA45Team07B
             }
             else if (textBoxEmail.Text == "" || Regex.IsMatch(textBoxEmail.Text, @"\s"))
             {
-                errorProviderEmail.SetError(textBoxEmail, "Please enter email. Field cannot be empty.");
+                errorProviderEmail.SetError(textBoxEmail, "Please enter email. Field cannot have empty spaces.");
             }
 
             else if (textBoxEmail.Text.Length > 50)
@@ -151,6 +159,7 @@ namespace SA45Team07B
             {
                 context2.Members.Add(newMember);
                 context2.SaveChanges();
+                MessageBox.Show("Successfully added.");
                 Close();
                 MemberPopUpSearch mps = new MemberPopUpSearch();
                 mps.Show();
@@ -173,8 +182,9 @@ namespace SA45Team07B
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
-            MemberPopUpSearch mpus = new MemberPopUpSearch();
-            mpus.Show();
+            MemberInfo mbinfo = new MemberInfo();
+            mbinfo.Show();
         }
+
     }
 }

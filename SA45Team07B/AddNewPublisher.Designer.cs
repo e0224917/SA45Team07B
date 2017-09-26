@@ -38,13 +38,11 @@
             this.textBoxPublisherName = new System.Windows.Forms.TextBox();
             this.errorProviderPublisherID = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderPublisherName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderCountry = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPublisherID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPublisherName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,9 +113,10 @@
             this.textBoxPublisherID.Name = "textBoxPublisherID";
             this.textBoxPublisherID.Size = new System.Drawing.Size(380, 55);
             this.textBoxPublisherID.TabIndex = 35;
+            this.textBoxPublisherID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxPublisherID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxPublisherID.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPublisherID_Validating);
-            this.textBoxPublisherID.Validated += new System.EventHandler(this.textBoexes_Validated);
+            this.textBoxPublisherID.Validated += new System.EventHandler(this.textBoxes_Validated);
             // 
             // textBoxPublisherName
             // 
@@ -125,6 +124,8 @@
             this.textBoxPublisherName.Name = "textBoxPublisherName";
             this.textBoxPublisherName.Size = new System.Drawing.Size(500, 55);
             this.textBoxPublisherName.TabIndex = 36;
+            this.textBoxPublisherName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
+            this.textBoxPublisherName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxPublisherName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPublisherName_Validating);
             // 
             // errorProviderPublisherID
@@ -134,12 +135,8 @@
             // 
             // errorProviderPublisherName
             // 
+            this.errorProviderPublisherName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderPublisherName.ContainerControl = this;
-            // 
-            // errorProviderCountry
-            // 
-            this.errorProviderCountry.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProviderCountry.ContainerControl = this;
             // 
             // buttonCancel
             // 
@@ -164,12 +161,13 @@
             this.buttonAdd.TabIndex = 38;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // comboBox1
+            // comboBoxCountry
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCountry.FormattingEnabled = true;
+            this.comboBoxCountry.Items.AddRange(new object[] {
             "Afghanistan",
             "Albania",
             "Algeria",
@@ -366,16 +364,16 @@
             "Yemen",
             "Zambia",
             "Zimbabwe"});
-            this.comboBox1.Location = new System.Drawing.Point(424, 342);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(400, 56);
-            this.comboBox1.TabIndex = 40;
+            this.comboBoxCountry.Location = new System.Drawing.Point(424, 342);
+            this.comboBoxCountry.Name = "comboBoxCountry";
+            this.comboBoxCountry.Size = new System.Drawing.Size(400, 56);
+            this.comboBoxCountry.TabIndex = 37;
             // 
             // AddNewPublisher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.ClientSize = new System.Drawing.Size(1472, 1121);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxCountry);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxPublisherName);
@@ -397,10 +395,9 @@
             this.Controls.SetChildIndex(this.textBoxPublisherName, 0);
             this.Controls.SetChildIndex(this.buttonAdd, 0);
             this.Controls.SetChildIndex(this.buttonCancel, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.comboBoxCountry, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPublisherID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPublisherName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCountry)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,9 +413,8 @@
         private System.Windows.Forms.TextBox textBoxPublisherName;
         private System.Windows.Forms.ErrorProvider errorProviderPublisherID;
         private System.Windows.Forms.ErrorProvider errorProviderPublisherName;
-        private System.Windows.Forms.ErrorProvider errorProviderCountry;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCountry;
     }
 }
