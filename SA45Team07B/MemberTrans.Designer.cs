@@ -110,7 +110,7 @@
             this.gbMemberInfo.Controls.Add(this.txtbMemberID);
             this.gbMemberInfo.Controls.Add(this.txtbMemberName);
             this.gbMemberInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMemberInfo.Location = new System.Drawing.Point(22, 73);
+            this.gbMemberInfo.Location = new System.Drawing.Point(22, 76);
             this.gbMemberInfo.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
             this.gbMemberInfo.Name = "gbMemberInfo";
             this.gbMemberInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -586,7 +586,7 @@
             this.groupBox1.Controls.Add(this.txtbRemarksOfSelectedTransaction);
             this.groupBox1.Location = new System.Drawing.Point(22, 694);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(725, 182);
+            this.groupBox1.Size = new System.Drawing.Size(674, 182);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Remarks of selected transaction";
@@ -598,7 +598,7 @@
             this.txtbRemarksOfSelectedTransaction.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbRemarksOfSelectedTransaction.Multiline = true;
             this.txtbRemarksOfSelectedTransaction.Name = "txtbRemarksOfSelectedTransaction";
-            this.txtbRemarksOfSelectedTransaction.Size = new System.Drawing.Size(667, 135);
+            this.txtbRemarksOfSelectedTransaction.Size = new System.Drawing.Size(613, 135);
             this.txtbRemarksOfSelectedTransaction.TabIndex = 5;
             // 
             // btnSaveChanges
@@ -611,7 +611,7 @@
             this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChanges.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveChanges.Location = new System.Drawing.Point(770, 729);
+            this.btnSaveChanges.Location = new System.Drawing.Point(733, 728);
             this.btnSaveChanges.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(94, 76);
@@ -630,7 +630,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(770, 817);
+            this.btnClose.Location = new System.Drawing.Point(733, 816);
             this.btnClose.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 41);

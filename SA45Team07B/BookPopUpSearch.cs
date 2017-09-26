@@ -64,6 +64,33 @@ namespace SA45Team07B
         public BookPopUpSearch()
         {
             InitializeComponent();
+            this.rbtnAll.Checked = true;
+        }
+
+        /// <summary>
+        /// "all" "available" "onloan" "discontinued" to activate desired radiobutton.
+        /// </summary>
+        /// <param name="radioButton"></param>
+        public BookPopUpSearch(string radioButton)
+        {
+            InitializeComponent();
+
+            if (radioButton.ToLower() == "all")
+            {
+                this.rbtnAll.Checked = true;
+            }
+            else if (radioButton.ToLower() == "available")
+            {
+                this.rbtnAvailable.Checked = true;
+            }
+            else if (radioButton.ToLower() == "onloan")
+            {
+                this.rbtnOnLoan.Checked = true;
+            }
+            else if(radioButton.ToLower() == "discontinued")
+            {
+                this.rbtnDiscontinued.Checked = true;
+            }
         }
 
         private void BookPopUpSearch_Load(object sender, EventArgs e)
@@ -78,26 +105,33 @@ namespace SA45Team07B
                 cbSubject.DataSource = subjectNameList;
 
                 // Lazy loading - load the first 25 rows to datagridview during first load
-                var displayList = (from x in context.RFIDs
-                                  orderby x.Books.BookID, x.Availability descending
-                                  select new
-                                  {
-                                      x.Books.BookID,
-                                      x.Books.BookTitle,
-                                      x.Availability,
-                                      x.Books.Edition,
-                                      x.Books.Author,
-                                      x.Books.ISBN,
-                                      x.Books.CallNumber,
-                                      x.RFID,
-                                      x.Books.BookSubjects.SubjectName,
-                                      x.Books.Publishers.PublisherName,
-                                      x.Books.PublishedYear,
-                                      x.Books.Price,
-                                      x.Discontinued,
-                                  }).Take(25);
+                if(this.rbtnAll.Checked == true)
+                {
+                    var displayList = (from x in context.RFIDs
+                                       orderby x.Books.BookID, x.Availability descending
+                                       select new
+                                       {
+                                           x.Books.BookID,
+                                           x.Books.BookTitle,
+                                           x.Availability,
+                                           x.Books.Edition,
+                                           x.Books.Author,
+                                           x.Books.ISBN,
+                                           x.Books.CallNumber,
+                                           x.RFID,
+                                           x.Books.BookSubjects.SubjectName,
+                                           x.Books.Publishers.PublisherName,
+                                           x.Books.PublishedYear,
+                                           x.Books.Price,
+                                           x.Discontinued,
+                                       }).Take(25);
 
-                dataGridViewBookList.DataSource = displayList.ToList();
+                    dataGridViewBookList.DataSource = displayList.ToList();
+                }
+                else
+                {
+                    SearchAndDisplayBook();
+                }
 
                 isFirstLoad = true;
             }
@@ -112,13 +146,12 @@ namespace SA45Team07B
                 RFIDList = (from x in context.RFIDs
                             select x).ToList();
 
-
-                //if (rbtnAll.Checked == true)
-                //{
-                //    // do nothing
-                //}
-
-                if(rbtnAvailable.Checked == true)
+                if (rbtnAll.Checked == true)
+                {
+                    RFIDList = (from x in RFIDList
+                                select x).ToList();
+                }
+                else if(rbtnAvailable.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "y" && x.Discontinued == "n")
