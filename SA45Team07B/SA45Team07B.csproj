@@ -296,6 +296,7 @@
       <DependentUpon>LibraryManagement.edmx</DependentUpon>
       <LastGenOutput>LibraryManagement.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\greybackground3-modi.jpg" />
     <None Include="Resources\garbage-bin-png-8.png" />
     <None Include="Resources\BackgroundImage.jpg" />
   </ItemGroup>

@@ -79,5 +79,15 @@ namespace SA45Team07B.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap greybackground3_modi {
+            get {
+                object obj = ResourceManager.GetObject("greybackground3-modi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
