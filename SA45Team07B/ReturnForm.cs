@@ -175,6 +175,7 @@ namespace SA45Team07B
                                 toolStripStatusLabel1.Text = "Return was successful.";
                                 txtbRemarks.Text = string.Empty;
                                 ClearTextboxData();
+                                this.ActiveControl = txtbRFID;
                             }
                             else
                             {
@@ -195,6 +196,8 @@ namespace SA45Team07B
         private void ReturnForm_Load(object sender, EventArgs e)
         {
             this.btnSubmit.Enabled = false;
+            this.dtpReturnDate.MaxDate = DateTime.Today;
+            this.ActiveControl = txtbRFID;
         }
 
         private void txtbRFID_Validating(object sender, CancelEventArgs e)
