@@ -66,7 +66,6 @@
             this.txtbRFID = new System.Windows.Forms.TextBox();
             this.btnAddRFID = new System.Windows.Forms.Button();
             this.btnDeleteRFID = new System.Windows.Forms.Button();
-            this.lblOnSubmit = new System.Windows.Forms.Label();
             this.lblAddBk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).BeginInit();
             this.SuspendLayout();
@@ -363,7 +362,7 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // errorProviderAddBk
+            // epAddBk
             // 
             this.epAddBk.ContainerControl = this;
             // 
@@ -423,15 +422,6 @@
             this.btnDeleteRFID.UseVisualStyleBackColor = true;
             this.btnDeleteRFID.Click += new System.EventHandler(this.btnDeleteRFID_Click);
             // 
-            // lblOnSubmit
-            // 
-            this.lblOnSubmit.AutoSize = true;
-            this.lblOnSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.lblOnSubmit.Location = new System.Drawing.Point(349, 681);
-            this.lblOnSubmit.Name = "lblOnSubmit";
-            this.lblOnSubmit.Size = new System.Drawing.Size(0, 21);
-            this.lblOnSubmit.TabIndex = 56;
-            // 
             // lblAddBk
             // 
             this.lblAddBk.AutoSize = true;
@@ -449,7 +439,6 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1276, 773);
             this.Controls.Add(this.lblAddBk);
-            this.Controls.Add(this.lblOnSubmit);
             this.Controls.Add(this.btnDeleteRFID);
             this.Controls.Add(this.btnAddRFID);
             this.Controls.Add(this.txtbRFID);
@@ -525,7 +514,6 @@
             this.Controls.SetChildIndex(this.txtbRFID, 0);
             this.Controls.SetChildIndex(this.btnAddRFID, 0);
             this.Controls.SetChildIndex(this.btnDeleteRFID, 0);
-            this.Controls.SetChildIndex(this.lblOnSubmit, 0);
             this.Controls.SetChildIndex(this.lblAddBk, 0);
             ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).EndInit();
             this.ResumeLayout(false);
@@ -571,7 +559,6 @@
         private System.Windows.Forms.Button btnAddRFID;
         private System.Windows.Forms.TextBox txtbRFID;
         private System.Windows.Forms.Button btnDeleteRFID;
-        private System.Windows.Forms.Label lblOnSubmit;
         private System.Windows.Forms.Label lblAddBk;
     }
 }

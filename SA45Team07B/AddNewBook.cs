@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
-using System.Transactions;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace SA45Team07B
 {
     public partial class AddNewBook : SA45Team07B.BaseForm
     {
+        Book newbook;
         public AddNewBook()
         {
             InitializeComponent();
@@ -19,107 +20,103 @@ namespace SA45Team07B
 
         private void AddNewBook_Load(object sender, EventArgs e)
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
-            //display store generated BookID in txtbox
-            txtbBkId.Text = (context.Books.OrderByDescending(x => x.BookID).First().BookID + 1).ToString();
-            //load combobox
-            LoadPublisherList();
-            LoadSubjectNameList();
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                //display store generated BookID in txtbox
+                txtbBkId.Text = (context.Books.OrderByDescending(x => x.BookID).First().BookID + 1).ToString();
+                //load combobox
+                LoadPublisherList();
+                LoadSubjectNameList();
+            }
         }
 
         public void LoadSubjectNameList()
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-            cbxSubjectName.DataSource = context.BookSubjects.Select(x => x.SubjectName).ToList();
-            cbxSubjectName.SelectedIndex = -1;
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                cbxSubjectName.DataSource = context.BookSubjects.Select(x => x.SubjectName).ToList();
+                cbxSubjectName.SelectedIndex = -1;
+            }
         }
 
         public void LoadPublisherList()
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-            cbxPublisher.DataSource = context.Publishers.Select(x => x.PublisherName).ToList();
-            cbxPublisher.SelectedIndex = -1;
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
+            {
+                cbxPublisher.DataSource = context.Publishers.Select(x => x.PublisherName).ToList();
+                cbxPublisher.SelectedIndex = -1;
+                newbook = new SA45Team07B.Book();
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
-            Book newbook = new Book()
+            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
+
                 //assign value for fields not require validation
-                BookTitle = txtbBkTitle.Text,
-                Author = txtbAuthor.Text,
-                
-            };
-            if (ValidatePublisher() && ValidateSubjectName())
-            {
-                newbook.PublisherID = context.Publishers.Where(x => x.PublisherName == cbxPublisher.Text).First().PublisherID.ToString();
-                newbook.SubjectCode = context.BookSubjects.Where(x => x.SubjectName == cbxSubjectName.Text).First().SubjectCode.ToString();
-            }
-
-            //assign value for fields require validation
-            if (ValidateISBN(mtbISBN.Text) && ValidateCallNum(txtbCallNum.Text) && ValidatePrice(txtbPrice.Text))
-            {
-                newbook.ISBN = mtbISBN.Text;
-                newbook.CallNumber = txtbCallNum.Text;
-                newbook.Price = decimal.Parse(txtbPrice.Text);
-            }
-
-            //assign value for fields allow null value
-            if (txtbEd.Text != string.Empty)
-            {
-                newbook.Edition = txtbEd.Text;
-            }
-            if (mtbYear.Text != string.Empty)
-            {
-                if (ValidateYear(mtbYear.Text))
+                newbook.BookTitle = txtbBkTitle.Text;
+                newbook.Author = txtbAuthor.Text;
+                if (newbook.PublisherValidation(cbxPublisher, epAddBk) && newbook.SubjectNameValidation(cbxSubjectName, epAddBk))
                 {
-                    newbook.PublishedYear = mtbYear.Text;
+                    newbook.PublisherID = context.Publishers.Where(x => x.PublisherName == cbxPublisher.Text).First().PublisherID.ToString();
+                    newbook.SubjectCode = context.BookSubjects.Where(x => x.SubjectName == cbxSubjectName.Text).First().SubjectCode.ToString();
+                }
+
+                if (newbook.ISBNValidation(mtbISBN, epAddBk) 
+                    && newbook.CallNumValidation(txtbPrice, epAddBk) 
+                    && newbook.PriceValidation(txtbPrice, epAddBk))
+                {
+                    newbook.ISBN = mtbISBN.Text;
+                    newbook.CallNumber = txtbCallNum.Text;
+                    newbook.Price = decimal.Parse(txtbPrice.Text);
+                }
+
+                //assign value for fields allow null value
+                if (txtbEd.Text != string.Empty)
+                {
+                    newbook.Edition = txtbEd.Text;
+                }
+                if (mtbYear.Text != string.Empty)
+                {
+                    if (newbook.YearValidation(mtbYear, epAddBk))
+                    {
+                        newbook.PublishedYear = mtbYear.Text;
+                    }
+                }
+                long bookid = (long)context.Books.OrderByDescending(x => x.BookID).First().BookID + 1;
+
+                //add RFID for single or multiple copies of the book
+
+                newbook.AddRFID(lbxRFID, newbook);
+                newbook.TotalCopy = (Int16)newbook.RFIDs.Count();
+
+                //Submission validation
+                if (!this.ValidateChildren() || lbxRFID.Items.Count == 0)
+                {
+                    MessageBox.Show("Not able to add this book. Please refer to individual error message");
+                }
+                else
+                {
+                    context.Books.Add(newbook);
+                    context.SaveChanges();
+                    MessageBox.Show("Book Added");
+                    Close();
                 }
             }
-            long bookid = (long)context.Books.OrderByDescending(x => x.BookID).First().BookID + 1;
-
-            
-            //add RFID for single or multiple copies of the book
-            foreach (var item in lbxRFID.Items)
-            {
-                RFIDTag newrfid = new RFIDTag()
-                {
-                    RFID = item.ToString(),
-                    BookID = bookid,
-                    Discontinued = "n",
-                    Availability = "y"
-                };
-                newbook.RFIDs.Add(newrfid);
-            }
-            newbook.TotalCopy = (Int16)newbook.RFIDs.Count();
-
-            //Final validation
-            if (ValidateChildren(ValidationConstraints.Enabled)) //|| ValidateRFID(lbxRFID.Items.ToString[0])) //is rfid field empty
-            {
-                MessageBox.Show("Not able to add this book. Please refer to individual error message");
-            }
-
-            else
-            {
-                context.Books.Add(newbook);
-                context.SaveChanges();
-                lblOnSubmit.ForeColor = Color.Red;
-                lblOnSubmit.Text = "Book added!";
-                Close();
-            }
-
         }
-
 
         //add RFID into listbox--------------------------------------------------------------------------
         private void btnAddRFID_Click(object sender, EventArgs e)
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B.SA45Team07B_LibraryEntities();
-            ValidateRFID(txtbRFID.Text);
-            txtbRFID.Clear();
+            using(SA45Team07B_LibraryEntities context = new SA45Team07B.SA45Team07B_LibraryEntities())
+            {
+                if (newbook.RFIDValidation(txtbRFID, lbxRFID, epAddBk))
+                {
+                    lbxRFID.Items.Add(txtbRFID.Text);
+                    txtbRFID.Clear();
+                }
+            }
         }
 
         private void btnDeleteRFID_Click(object sender, EventArgs e)
@@ -131,174 +128,38 @@ namespace SA45Team07B
 
         private void mtbISBN_Validating(object sender, CancelEventArgs e)
         {
-            ValidateISBN(mtbISBN.Text);
+            newbook.ISBNValidation(mtbISBN, epAddBk);
         }
         private void txtbBkTitle_Validating(object sender, CancelEventArgs e)
         {
-            ValidateTitle(txtbBkTitle.Text);
+            newbook.TitleValidation(txtbBkTitle, epAddBk);
         }
         private void txtbPrice_Validating(object sender, CancelEventArgs e)
         {
-            ValidatePrice(txtbPrice.Text);
+            newbook.PriceValidation(txtbPrice, epAddBk);
         }
         private void txtbCallNum_Validating(object sender, CancelEventArgs e)
         {
-            ValidateCallNum(txtbCallNum.Text);
+            newbook.CallNumValidation(txtbCallNum, epAddBk);
         }
         private void mtbYear_Validating(object sender, CancelEventArgs e)
         {
-            ValidateYear(mtbYear.Text);
+            newbook.YearValidation(mtbYear, epAddBk);
         }
         private void cbxPublisher_Validating(object sender, CancelEventArgs e)
         {
-            ValidatePublisher();
+            newbook.PublisherValidation(cbxPublisher, epAddBk);
         }
         private void cbxSubjectName_Validating(object sender, CancelEventArgs e)
         {
-            ValidateSubjectName();
+            newbook.SubjectNameValidation(cbxSubjectName, epAddBk);
         }
 
-        //validation methods for each field------------------------------------------------------------------
-
-        public bool ValidateISBN(string s)
-        {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
-            //validate length of isbn
-            if (s.Length != 13)
-            {
-                epAddBk.SetError(mtbISBN, "Please enter a valid ISBN consists of 13 digits");
-                return false;
-            }
-            //validate if an existing isbn
-            else if (context.Books.Where(x => x.ISBN == s).FirstOrDefault() != null)
-            {
-                epAddBk.SetError(mtbISBN, "ISBN already exists");
-                return false;
-            }
-            else
-            {
-                epAddBk.SetError(mtbISBN, "");
-                return true;
-            }
-        }
-        public bool ValidatePrice(string s)
-        {
-            decimal price;
-            if (!decimal.TryParse(s, out price))
-            {
-                epAddBk.SetError(txtbPrice, "Please enter a valid number");
-                return false;
-            }
-            else
-            {
-                epAddBk.SetError(txtbPrice, "");
-                return true;
-            }
-        }
-        public bool ValidateCallNum(string s)
-        {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
-            //check for existing call number
-            if (context.Books.Where(x => x.CallNumber == s).FirstOrDefault() != null)
-            {
-                epAddBk.SetError(txtbCallNum, "Book with the same Call Number already exists");
-                return false;
-            }
-            else if (s.Length == 0)
-            {
-                epAddBk.SetError(txtbCallNum, "Please enter a call number");
-                return false;
-            }
-            else
-            {
-                epAddBk.SetError(txtbCallNum, "");
-                return true;
-            }
-        }
-        public bool ValidateYear(string s)
-        {
-            if (s.Length == 4 || s.Length == 0 )
-            {
-                epAddBk.SetError(mtbYear, "");
-                return true;
-            }
-            else 
-            {
-                epAddBk.SetError(mtbYear, "Please enter year in the format of yyyy");
-                return false;
-            }
-            
-        }
-        public bool ValidatePublisher()
-        {
-            if (cbxPublisher.SelectedItem == null)
-            {
-                epAddBk.SetError(cbxPublisher, "Please select publisher");
-                return false;
-            }
-            else
-            {
-                epAddBk.SetError(cbxPublisher, "");
-                return true;
-            }
-        }
-        public bool ValidateSubjectName()
-        {
-            if (cbxSubjectName.SelectedItem == null)
-            {
-                epAddBk.SetError(cbxSubjectName, "Please select subject");
-                return false;
-            }
-            else
-            {
-                epAddBk.SetError(cbxSubjectName, "");
-                return true;
-            }
-        }
-        public bool ValidateTitle(string s)
-        {
-            if ( s == string.Empty)
-            {
-                epAddBk.SetError(txtbBkTitle, "Please enter a title");
-                return false;
-            }
-            epAddBk.SetError(txtbBkTitle, "");
-            return true;
-        }
-        
-        private bool ValidateRFID(string s)
-        {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-            if (s.Length < 10)
-            {
-                epAddBk.SetError(txtbRFID, "Invalid RFID");
-                return false;
-            }
-            else if (context.RFIDs.Where(x => x.RFID == txtbRFID.Text).FirstOrDefault() != null)
-            {
-                epAddBk.SetError(txtbRFID, "RFID already exists");
-                return false;
-            }
-            else
-            {
-                foreach (var rfid in lbxRFID.Items)
-                {
-                    if (rfid.ToString() == txtbRFID.Text)
-                    {
-                        epAddBk.SetError(txtbRFID, "Already added");
-                        return false;
-                    }
-                }
-                epAddBk.SetError(txtbRFID, "");
-                lbxRFID.Items.Add(txtbRFID.Text);
-                return true;
-            }
+                
         }
 
     }
-}
+
 
    
 
