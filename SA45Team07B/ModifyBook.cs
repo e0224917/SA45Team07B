@@ -56,9 +56,15 @@ namespace SA45Team07B
             bookModified = new SA45Team07B.Book();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel modification?", "Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            bookModified.BookID = bookFound.BookID;
             //modification on selectioned item
             bookModified.Author = txtbAuthor.Text; //Author not require validation
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
@@ -79,8 +85,16 @@ namespace SA45Team07B
             {
                 using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
                 {
-                    context.Books.Remove(context.Books.Where(x=>x.BookID == bookFound.BookID).First());
-                    context.Books.Add(bookModified);
+                    Book bookToBeModified = context.Books.Where(x => x.BookID == bookFound.BookID).First();
+                    bookToBeModified.ISBN = bookModified.ISBN;
+                    bookToBeModified.BookTitle = bookModified.BookTitle;
+                    bookToBeModified.BookSubjects = bookModified.BookSubjects;
+                    bookToBeModified.CallNumber = bookModified.CallNumber;
+                    bookToBeModified.Author = bookModified.Author;
+                    bookToBeModified.PublisherID = bookModified.PublisherID;
+                    bookToBeModified.Price = bookModified.Price;
+                    bookToBeModified.Edition = bookModified.Edition;
+                    bookToBeModified.PublishedYear = bookModified.PublishedYear;
                     context.SaveChanges();
                     MessageBox.Show("Book Modified");
                     Close();
@@ -101,22 +115,6 @@ namespace SA45Team07B
             }
         }
 
-        //private void cbxPublisher_SelectionChangeCommitted(object sender, EventArgs e)
-        //{
-        //    using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-        //    {
-        //        bookModified.PublisherID = context.Publishers.Where(x => x.PublisherName == cbxPublisher.Text).First().PublisherID.ToString();
-        //    }
-        //}
-
-        //private void cbxSubjectName_SelectionChangeCommitted(object sender, EventArgs e)
-        //{
-        //    using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-        //    {
-        //        bookModified.SubjectCode = context.BookSubjects.Where(x => x.SubjectName == cbxSubjectName.Text).First().SubjectCode.ToString();
-        //    }
-        //}
-
         private void txtbCallNum_Validating(object sender, CancelEventArgs e)
         {
             bookModified.CallNumber = txtbCallNum.Text;
@@ -133,7 +131,7 @@ namespace SA45Team07B
         private void txtbPrice_Validating(object sender, CancelEventArgs e)
         {
             //if there is modification
-            if (bookFound.Price.ToString() != txtbPrice.Text )
+            if (bookFound.Price.ToString() != txtbPrice.Text)
             {
                 //check if able to assign changed price to bookmodified.price
                 decimal price;
@@ -168,7 +166,7 @@ namespace SA45Team07B
 
         private void btnAddRFID_Click(object sender, EventArgs e)
         {
-            //varify the txtbox
+            //varify the txtbox with book method
             using (SA45Team07B_LibraryEntities context = new SA45Team07B.SA45Team07B_LibraryEntities())
             {
                 if (bookModified.RFIDValidation(txtbRFID, lbxRFID, epModifyBk))
@@ -180,20 +178,12 @@ namespace SA45Team07B
             }
         }
 
-        private void btnDeleteRFID_Click(object sender, EventArgs e)
-        {
-            if (lbxRFID.SelectedItem != null)
-            {
-                lbxRFID.Items.Remove(lbxRFID.SelectedItem);
-            }
-        }
-
         private void txtbBkTitle_Validating(object sender, CancelEventArgs e)
         {
             bookModified.BookTitle = txtbBkTitle.Text;
             if (bookFound.BookTitle != bookModified.BookTitle)
             {
-                if(!bookModified.TitleValidation(txtbBkTitle, epModifyBk))
+                if (!bookModified.TitleValidation(txtbBkTitle, epModifyBk))
                 {
                     txtbBkTitle.Text = bookFound.BookTitle;
                     bookModified.BookTitle = bookFound.BookTitle;
