@@ -26,6 +26,10 @@ namespace SA45Team07B
         public AdjustStock()
         {
             InitializeComponent();
+        }
+
+        private void AdjustStock_Load(object sender, EventArgs e)
+        {
             adjustBook = null;
             cboxReason.DataSource = REMOVE_REASON_LIST;
         }
@@ -150,6 +154,7 @@ namespace SA45Team07B
                 btnSubmit.Enabled = false;
             }
         }
+
 
     }
 }

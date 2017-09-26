@@ -41,6 +41,9 @@
             this.txtbRFID = new System.Windows.Forms.TextBox();
             this.lblRFID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblEntitlementDay = new System.Windows.Forms.Label();
+            this.txtbEntitlement = new System.Windows.Forms.NumericUpDown();
+            this.lblEntitlement = new System.Windows.Forms.Label();
             this.lblSlash = new System.Windows.Forms.Label();
             this.txtbStatus = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -55,10 +58,21 @@
             this.txtbFaculty = new System.Windows.Forms.TextBox();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblPeriodDay = new System.Windows.Forms.Label();
+            this.txtbPeriod = new System.Windows.Forms.NumericUpDown();
+            this.lblPeriod = new System.Windows.Forms.Label();
+            this.lblDateDue = new System.Windows.Forms.Label();
+            this.lblDateIssued = new System.Windows.Forms.Label();
+            this.dpDateDue = new System.Windows.Forms.DateTimePicker();
+            this.dpDateIssued = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtbEntitlement)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtbPeriod)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberID
@@ -73,7 +87,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(83, 236);
+            this.btnSubmit.Location = new System.Drawing.Point(83, 310);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 30);
             this.btnSubmit.TabIndex = 12;
@@ -104,7 +118,7 @@
             this.groupBox1.Controls.Add(this.lblRFID);
             this.groupBox1.Location = new System.Drawing.Point(567, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 287);
+            this.groupBox1.Size = new System.Drawing.Size(242, 359);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Book ID";
@@ -112,15 +126,16 @@
             // txtbBookStatus
             // 
             this.txtbBookStatus.Enabled = false;
-            this.txtbBookStatus.Location = new System.Drawing.Point(83, 162);
+            this.txtbBookStatus.Location = new System.Drawing.Point(83, 170);
             this.txtbBookStatus.Name = "txtbBookStatus";
             this.txtbBookStatus.Size = new System.Drawing.Size(90, 29);
             this.txtbBookStatus.TabIndex = 18;
+            this.txtbBookStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblBookStatus
             // 
             this.lblBookStatus.AutoSize = true;
-            this.lblBookStatus.Location = new System.Drawing.Point(6, 167);
+            this.lblBookStatus.Location = new System.Drawing.Point(6, 173);
             this.lblBookStatus.Name = "lblBookStatus";
             this.lblBookStatus.Size = new System.Drawing.Size(73, 21);
             this.lblBookStatus.TabIndex = 17;
@@ -137,7 +152,7 @@
             // lblBookTitle
             // 
             this.lblBookTitle.AutoSize = true;
-            this.lblBookTitle.Location = new System.Drawing.Point(79, 105);
+            this.lblBookTitle.Location = new System.Drawing.Point(6, 105);
             this.lblBookTitle.Name = "lblBookTitle";
             this.lblBookTitle.Size = new System.Drawing.Size(75, 21);
             this.lblBookTitle.TabIndex = 15;
@@ -174,6 +189,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblEntitlementDay);
+            this.groupBox2.Controls.Add(this.txtbEntitlement);
+            this.groupBox2.Controls.Add(this.lblEntitlement);
             this.groupBox2.Controls.Add(this.lblSlash);
             this.groupBox2.Controls.Add(this.txtbStatus);
             this.groupBox2.Controls.Add(this.lblStatus);
@@ -182,15 +200,41 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(293, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(242, 287);
+            this.groupBox2.Size = new System.Drawing.Size(242, 144);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Borrower Info";
             // 
+            // lblEntitlementDay
+            // 
+            this.lblEntitlementDay.AutoSize = true;
+            this.lblEntitlementDay.Location = new System.Drawing.Point(170, 105);
+            this.lblEntitlementDay.Name = "lblEntitlementDay";
+            this.lblEntitlementDay.Size = new System.Drawing.Size(44, 21);
+            this.lblEntitlementDay.TabIndex = 7;
+            this.lblEntitlementDay.Text = "Days";
+            // 
+            // txtbEntitlement
+            // 
+            this.txtbEntitlement.Enabled = false;
+            this.txtbEntitlement.Location = new System.Drawing.Point(122, 103);
+            this.txtbEntitlement.Name = "txtbEntitlement";
+            this.txtbEntitlement.Size = new System.Drawing.Size(42, 29);
+            this.txtbEntitlement.TabIndex = 8;
+            // 
+            // lblEntitlement
+            // 
+            this.lblEntitlement.AutoSize = true;
+            this.lblEntitlement.Location = new System.Drawing.Point(6, 105);
+            this.lblEntitlement.Name = "lblEntitlement";
+            this.lblEntitlement.Size = new System.Drawing.Size(89, 21);
+            this.lblEntitlement.TabIndex = 7;
+            this.lblEntitlement.Text = "Entitlement";
+            // 
             // lblSlash
             // 
             this.lblSlash.AutoSize = true;
-            this.lblSlash.Location = new System.Drawing.Point(161, 49);
+            this.lblSlash.Location = new System.Drawing.Point(161, 25);
             this.lblSlash.Name = "lblSlash";
             this.lblSlash.Size = new System.Drawing.Size(16, 21);
             this.lblSlash.TabIndex = 6;
@@ -199,7 +243,7 @@
             // txtbStatus
             // 
             this.txtbStatus.Enabled = false;
-            this.txtbStatus.Location = new System.Drawing.Point(122, 87);
+            this.txtbStatus.Location = new System.Drawing.Point(122, 63);
             this.txtbStatus.Name = "txtbStatus";
             this.txtbStatus.Size = new System.Drawing.Size(90, 29);
             this.txtbStatus.TabIndex = 4;
@@ -207,7 +251,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(6, 90);
+            this.lblStatus.Location = new System.Drawing.Point(6, 66);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(52, 21);
             this.lblStatus.TabIndex = 3;
@@ -216,7 +260,7 @@
             // txtbMaxBorrowed
             // 
             this.txtbMaxBorrowed.Enabled = false;
-            this.txtbMaxBorrowed.Location = new System.Drawing.Point(183, 46);
+            this.txtbMaxBorrowed.Location = new System.Drawing.Point(183, 22);
             this.txtbMaxBorrowed.Name = "txtbMaxBorrowed";
             this.txtbMaxBorrowed.Size = new System.Drawing.Size(29, 29);
             this.txtbMaxBorrowed.TabIndex = 2;
@@ -224,7 +268,7 @@
             // txtbTotalBorrowed
             // 
             this.txtbTotalBorrowed.Enabled = false;
-            this.txtbTotalBorrowed.Location = new System.Drawing.Point(126, 46);
+            this.txtbTotalBorrowed.Location = new System.Drawing.Point(126, 22);
             this.txtbTotalBorrowed.Name = "txtbTotalBorrowed";
             this.txtbTotalBorrowed.Size = new System.Drawing.Size(29, 29);
             this.txtbTotalBorrowed.TabIndex = 1;
@@ -232,16 +276,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 49);
+            this.label3.Location = new System.Drawing.Point(6, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 21);
+            this.label3.Size = new System.Drawing.Size(78, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Total borrowed";
+            this.label3.Text = "Borrowed";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 105);
+            this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 0;
@@ -267,7 +311,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(22, 91);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(242, 287);
+            this.groupBox3.Size = new System.Drawing.Size(242, 359);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Borrower ID";
@@ -285,7 +329,7 @@
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(161, 236);
+            this.btnEdit.Location = new System.Drawing.Point(161, 310);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 30);
             this.btnEdit.TabIndex = 5;
@@ -303,7 +347,7 @@
             // lblFaculty
             // 
             this.lblFaculty.AutoSize = true;
-            this.lblFaculty.Location = new System.Drawing.Point(102, 165);
+            this.lblFaculty.Location = new System.Drawing.Point(6, 165);
             this.lblFaculty.Name = "lblFaculty";
             this.lblFaculty.Size = new System.Drawing.Size(58, 21);
             this.lblFaculty.TabIndex = 2;
@@ -313,27 +357,115 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblPeriodDay);
+            this.groupBox4.Controls.Add(this.txtbPeriod);
+            this.groupBox4.Controls.Add(this.lblPeriod);
+            this.groupBox4.Controls.Add(this.lblDateDue);
+            this.groupBox4.Controls.Add(this.lblDateIssued);
+            this.groupBox4.Controls.Add(this.dpDateDue);
+            this.groupBox4.Controls.Add(this.dpDateIssued);
+            this.groupBox4.Location = new System.Drawing.Point(293, 251);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(242, 199);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Date";
+            // 
+            // lblPeriodDay
+            // 
+            this.lblPeriodDay.AutoSize = true;
+            this.lblPeriodDay.Location = new System.Drawing.Point(168, 155);
+            this.lblPeriodDay.Name = "lblPeriodDay";
+            this.lblPeriodDay.Size = new System.Drawing.Size(44, 21);
+            this.lblPeriodDay.TabIndex = 6;
+            this.lblPeriodDay.Text = "Days";
+            // 
+            // txtbPeriod
+            // 
+            this.txtbPeriod.Location = new System.Drawing.Point(120, 153);
+            this.txtbPeriod.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.txtbPeriod.Name = "txtbPeriod";
+            this.txtbPeriod.Size = new System.Drawing.Size(44, 29);
+            this.txtbPeriod.TabIndex = 5;
+            this.txtbPeriod.ValueChanged += new System.EventHandler(this.txtbPeriod_ValueChanged);
+            // 
+            // lblPeriod
+            // 
+            this.lblPeriod.AutoSize = true;
+            this.lblPeriod.Location = new System.Drawing.Point(6, 155);
+            this.lblPeriod.Name = "lblPeriod";
+            this.lblPeriod.Size = new System.Drawing.Size(54, 21);
+            this.lblPeriod.TabIndex = 4;
+            this.lblPeriod.Text = "Period";
+            // 
+            // lblDateDue
+            // 
+            this.lblDateDue.AutoSize = true;
+            this.lblDateDue.Location = new System.Drawing.Point(6, 82);
+            this.lblDateDue.Name = "lblDateDue";
+            this.lblDateDue.Size = new System.Drawing.Size(74, 21);
+            this.lblDateDue.TabIndex = 3;
+            this.lblDateDue.Text = "Due Date";
+            // 
+            // lblDateIssued
+            // 
+            this.lblDateIssued.AutoSize = true;
+            this.lblDateIssued.Location = new System.Drawing.Point(6, 25);
+            this.lblDateIssued.Name = "lblDateIssued";
+            this.lblDateIssued.Size = new System.Drawing.Size(97, 21);
+            this.lblDateIssued.TabIndex = 2;
+            this.lblDateIssued.Text = "Borrow Date";
+            // 
+            // dpDateDue
+            // 
+            this.dpDateDue.Location = new System.Drawing.Point(10, 108);
+            this.dpDateDue.Name = "dpDateDue";
+            this.dpDateDue.Size = new System.Drawing.Size(200, 29);
+            this.dpDateDue.TabIndex = 1;
+            // 
+            // dpDateIssued
+            // 
+            this.dpDateIssued.Location = new System.Drawing.Point(10, 49);
+            this.dpDateIssued.Name = "dpDateIssued";
+            this.dpDateIssued.Size = new System.Drawing.Size(200, 29);
+            this.dpDateIssued.TabIndex = 0;
+            this.dpDateIssued.Value = new System.DateTime(2017, 9, 26, 16, 52, 37, 0);
+            this.dpDateIssued.ValueChanged += new System.EventHandler(this.DateValueChanged);
+            // 
             // BorrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.ClientSize = new System.Drawing.Size(835, 411);
+            this.ClientSize = new System.Drawing.Size(835, 475);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BorrowForm";
             this.Text = "Borrow - Library Management System SA45Team07B";
+            this.Load += new System.EventHandler(this.BorrowForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.groupBox4, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtbEntitlement)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtbPeriod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +499,16 @@
         private System.Windows.Forms.TextBox txtbMemberID;
         private System.Windows.Forms.TextBox txtbBookStatus;
         private System.Windows.Forms.Label lblBookStatus;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblDateDue;
+        private System.Windows.Forms.Label lblDateIssued;
+        private System.Windows.Forms.DateTimePicker dpDateDue;
+        private System.Windows.Forms.DateTimePicker dpDateIssued;
+        private System.Windows.Forms.Label lblEntitlementDay;
+        private System.Windows.Forms.NumericUpDown txtbEntitlement;
+        private System.Windows.Forms.Label lblEntitlement;
+        private System.Windows.Forms.Label lblPeriodDay;
+        private System.Windows.Forms.NumericUpDown txtbPeriod;
+        private System.Windows.Forms.Label lblPeriod;
     }
 }

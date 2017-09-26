@@ -218,6 +218,9 @@
     <EmbeddedResource Include="AddNewMember.resx">
       <DependentUpon>AddNewMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddNewPublisher.resx">
+      <DependentUpon>AddNewPublisher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdjustStock.resx">
       <DependentUpon>AdjustStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +231,9 @@
     <EmbeddedResource Include="BaseModalForm.resx">
       <DependentUpon>BaseModalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookInfo.resx">
+      <DependentUpon>BookInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookPopUpSearch.resx">
       <DependentUpon>BookPopUpSearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberInfo.resx">
+      <DependentUpon>MemberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberPopUpSearchcs.resx">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
