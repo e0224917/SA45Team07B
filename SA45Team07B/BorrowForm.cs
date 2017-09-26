@@ -241,5 +241,18 @@ namespace SA45Team07B
             errorProvider.SetError(dpDateDue, "");
             return true;
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ModifyMember form = new ModifyMember();
+            form.ModifiedMember = borrower;
+            form.ShowDialog();
+            if(form.DialogResult == DialogResult.OK)
+            {
+                borrower = form.ModifiedMember;
+                txtbName.Text = borrower.MemberName;
+                txtbFaculty.Text = borrower.Faculties.FacultyName;
+            }
+        }
     }
 }
