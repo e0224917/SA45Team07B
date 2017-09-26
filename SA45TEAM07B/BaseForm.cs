@@ -20,16 +20,76 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
-        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void MinimizeButton_Click(object sender, EventArgs e)
         {
-            this.notifyIconLibraryManagement.ShowBalloonTip(100, "", "Library Management has been closed.", ToolTipIcon.None);
-            this.notifyIconLibraryManagement.Visible = false;
-            this.notifyIconLibraryManagement.Dispose();
+            //this.notifyIconForMinimize.ShowBalloonTip(200, "", "Library Management is still running.", ToolTipIcon.None);
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void notifyIconLibraryManagement_DoubleClick(object sender, EventArgs e)
+        private void MaximizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+        }
+
+        //private void CloseButton_Click(object sender, EventArgs e)
+        //{
+        //    this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);
+        //    this.Close();
+        //}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        /*
+        #region DO NOT REMOVE: Drag Borderless Form from Title bar
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
+        */
+
+        private void toolStripButtonBorrow_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+            private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.notifyIconForClose.ShowBalloonTip(200, "", "Library Management has been closed.", ToolTipIcon.None);          
         }
     }
 }
