@@ -8,18 +8,17 @@ namespace SA45Team07B
 {
     public partial class Book
     {
-        public bool BookValidation(Book book)
+        public class ValidationResponse
         {
-            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+            public bool Successful { get; set; }
+            public string Information { get; set; }
+        }
 
-            // check isbn - if its 13 digits or if it is existing isbn
-            if (book.ISBN.Length != 13 || context.Books.Where(x => x.ISBN == book.ISBN).FirstOrDefault() != null)
-            {
-                return false;
-            }
-
-            //check 
-            return true;
+        public ValidationResponse ValidateISBN(Book book)
+        {
+            ValidationResponse outcome = new SA45Team07B.Book.ValidationResponse();
+            
+            return outcome;
         }
     }
 }

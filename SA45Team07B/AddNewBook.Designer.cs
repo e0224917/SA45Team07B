@@ -59,7 +59,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.errorProviderAddBk = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epAddBk = new System.Windows.Forms.ErrorProvider(this.components);
             this.mtbYear = new System.Windows.Forms.MaskedTextBox();
             this.mtbISBN = new System.Windows.Forms.MaskedTextBox();
             this.lbxRFID = new System.Windows.Forms.ListBox();
@@ -67,7 +67,8 @@
             this.btnAddRFID = new System.Windows.Forms.Button();
             this.btnDeleteRFID = new System.Windows.Forms.Button();
             this.lblOnSubmit = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddBk)).BeginInit();
+            this.lblAddBk = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).BeginInit();
             this.SuspendLayout();
             // 
             // txtbBkId
@@ -114,6 +115,7 @@
             this.txtbBkTitle.Name = "txtbBkTitle";
             this.txtbBkTitle.Size = new System.Drawing.Size(853, 29);
             this.txtbBkTitle.TabIndex = 13;
+            this.txtbBkTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtbBkTitle_Validating);
             // 
             // lblAuthor
             // 
@@ -363,7 +365,7 @@
             // 
             // errorProviderAddBk
             // 
-            this.errorProviderAddBk.ContainerControl = this;
+            this.epAddBk.ContainerControl = this;
             // 
             // mtbYear
             // 
@@ -430,11 +432,23 @@
             this.lblOnSubmit.Size = new System.Drawing.Size(0, 21);
             this.lblOnSubmit.TabIndex = 56;
             // 
+            // lblAddBk
+            // 
+            this.lblAddBk.AutoSize = true;
+            this.lblAddBk.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddBk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddBk.Location = new System.Drawing.Point(514, 101);
+            this.lblAddBk.Name = "lblAddBk";
+            this.lblAddBk.Size = new System.Drawing.Size(146, 25);
+            this.lblAddBk.TabIndex = 57;
+            this.lblAddBk.Text = "Add New Book";
+            // 
             // AddNewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1276, 773);
+            this.Controls.Add(this.lblAddBk);
             this.Controls.Add(this.lblOnSubmit);
             this.Controls.Add(this.btnDeleteRFID);
             this.Controls.Add(this.btnAddRFID);
@@ -473,7 +487,9 @@
             this.Controls.Add(this.txtbBkId);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "AddNewBook";
+            this.Text = "Add New Book - Library Management System SA45Team07B";
             this.Load += new System.EventHandler(this.AddNewBook_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.txtbBkId, 0);
             this.Controls.SetChildIndex(this.lblBkId, 0);
             this.Controls.SetChildIndex(this.lblISBN, 0);
@@ -510,7 +526,8 @@
             this.Controls.SetChildIndex(this.btnAddRFID, 0);
             this.Controls.SetChildIndex(this.btnDeleteRFID, 0);
             this.Controls.SetChildIndex(this.lblOnSubmit, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddBk)).EndInit();
+            this.Controls.SetChildIndex(this.lblAddBk, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,7 +564,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ErrorProvider errorProviderAddBk;
+        private System.Windows.Forms.ErrorProvider epAddBk;
         private System.Windows.Forms.MaskedTextBox mtbYear;
         private System.Windows.Forms.MaskedTextBox mtbISBN;
         private System.Windows.Forms.ListBox lbxRFID;
@@ -555,5 +572,6 @@
         private System.Windows.Forms.TextBox txtbRFID;
         private System.Windows.Forms.Button btnDeleteRFID;
         private System.Windows.Forms.Label lblOnSubmit;
+        private System.Windows.Forms.Label lblAddBk;
     }
 }
