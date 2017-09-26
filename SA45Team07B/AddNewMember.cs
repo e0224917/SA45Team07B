@@ -203,12 +203,10 @@ namespace SA45Team07B
             }
         }
 
-        //Cancel for Add Member
+        //Cancel for Add Member and close
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
-            MemberInfo mbinfo = new MemberInfo();
-            mbinfo.Show();
         }
 
     }

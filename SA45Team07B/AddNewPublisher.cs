@@ -141,7 +141,7 @@ namespace SA45Team07B
             }
         }
 
-        //Cancel for Add Publisher
+        //Cancel for Add/Modify Publisher and Close
         void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();

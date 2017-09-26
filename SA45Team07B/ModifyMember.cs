@@ -181,17 +181,18 @@ namespace SA45Team07B
             }
         }
     
-        //Cancel modify Member
+        //Cancel modify Member and close
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Getting data for Member Categories and Faculties
         private void ModifyMember_Load(object sender, EventArgs e)
         {
             
-            comboBoxMemberType.DataSource = DataService.GetMemberCatergories();
-            comboBoxFacultyName.DataSource = DataService.GetFalcutiesList();
+            comboBoxMemberType.DataSource = DataService.GetMemberCategories();
+            comboBoxFacultyName.DataSource = DataService.GetFacultiesList();
 
             if (mem != null)
             {
