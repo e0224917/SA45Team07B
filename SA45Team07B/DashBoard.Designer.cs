@@ -47,10 +47,10 @@
             this.dateTimePicker1.CustomFormat = "dd/MM/yy";
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(248, 493);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(468, 986);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(420, 55);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // dataGridView1
@@ -76,14 +76,14 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(248, 94);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(468, 188);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -98,7 +98,7 @@
             this.dataGridView1.RowHeadersWidth = 5;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(773, 342);
+            this.dataGridView1.Size = new System.Drawing.Size(1460, 685);
             this.dataGridView1.TabIndex = 11;
             // 
             // button1
@@ -110,10 +110,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(37, 94);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(70, 188);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 61);
+            this.button1.Size = new System.Drawing.Size(298, 122);
             this.button1.TabIndex = 10;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
@@ -127,10 +127,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(37, 196);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(70, 391);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 124);
+            this.button2.Size = new System.Drawing.Size(298, 247);
             this.button2.TabIndex = 13;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = false;
@@ -145,10 +145,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(37, 338);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(70, 676);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 124);
+            this.button3.Size = new System.Drawing.Size(298, 247);
             this.button3.TabIndex = 14;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = false;
@@ -156,16 +156,17 @@
             // 
             // DashBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.ClientSize = new System.Drawing.Size(676, 386);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 42F);
+            this.ClientSize = new System.Drawing.Size(2720, 1592);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.Name = "DashBoard";
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.dateTimePicker1, 0);
