@@ -71,7 +71,7 @@ namespace SA45Team07B
                                                     select x).ToList();
 
                         var displayList = (from x in onLoanTransactionRecords
-                                           orderby x.DateIssued descending
+                                           orderby x.DateIssued ascending
                                            select new
                                            {
                                                x.DateIssued,
@@ -98,7 +98,7 @@ namespace SA45Team07B
 
 
                         var displayList = (from x in returnedTransactionRecords
-                                           orderby x.DateIssued descending
+                                           orderby x.DateIssued ascending
                                            select new
                                            {
                                                x.DateIssued,
@@ -240,10 +240,12 @@ namespace SA45Team07B
 
                 if (fine > 0)
                 {
+                    txtbUnpaidFine.BackColor = SystemColors.Control;
                     txtbUnpaidFine.ForeColor = Color.Red;
                 }
                 else
                 {
+                    txtbUnpaidFine.BackColor = SystemColors.Control;
                     txtbUnpaidFine.ForeColor = SystemColors.WindowText;
                 }
 
