@@ -11,18 +11,6 @@ using System.Windows.Forms;
 namespace SA45Team07B
 {
 
-    public class InformationToDisplay
-    {
-        public DateTime DateIssued { get; set; }
-        public DateTime DateDue { get; set; }
-        public DateTime? DateActualReturned { get; set; }
-        public long BookID { get; set; }
-        public string BookTitle { get; set; }
-        public string RFID { get; set; }
-        public long TransactionID { get; set; }
-        public string Status { get; set; }
-        public string Remarks { get; set; }
-    }
 
     public partial class MemberTrans : SA45Team07B.BaseForm
     {
@@ -32,7 +20,7 @@ namespace SA45Team07B
         private List<IssueTran> onLoanTransactionRecords;
         private List<IssueTran> returnedTransactionRecords;
 
-        private bool submitsuccessful;
+        private bool? submitsuccessful;
 
         public MemberTrans()
         {
@@ -99,8 +87,6 @@ namespace SA45Team07B
 
                     errorProviderForMemberID.SetError(txtbMemberID, "");
 
-                    btnSaveChanges.BackColor = Color.White;
-                    btnSaveChanges.Enabled = true;
                 }
                 else
                 {
@@ -111,7 +97,6 @@ namespace SA45Team07B
                     ClearTextboxData();
                     DisplayDGVData();
 
-                    btnSaveChanges.BackColor = Color.LightGray;
                     btnSaveChanges.Enabled = false;
                 }
             }
@@ -141,7 +126,7 @@ namespace SA45Team07B
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
-                List<InformationToDisplay> displayList = new List<InformationToDisplay>();
+                List<TransactionInformationToDisplay> displayList = new List<TransactionInformationToDisplay>();
 
                 if (memberFound != null)
                 {
@@ -153,7 +138,7 @@ namespace SA45Team07B
 
                         displayList = (from x in onLoanTransactionRecords
                                        orderby x.DateIssued ascending
-                                       select new InformationToDisplay
+                                       select new TransactionInformationToDisplay
                                        {
                                            DateIssued = x.DateIssued,
                                            DateDue = x.DateDue,
@@ -168,7 +153,6 @@ namespace SA45Team07B
 
                         dataGridViewTransactionRecords.DataSource = displayList;
 
-                        CalculateFine();
 
                     }
                     else if (rbtnReturned.Checked == true)
@@ -180,7 +164,7 @@ namespace SA45Team07B
 
                         displayList = (from x in returnedTransactionRecords
                                        orderby x.DateIssued ascending
-                                       select new InformationToDisplay
+                                       select new TransactionInformationToDisplay
                                        {
                                            DateIssued = x.DateIssued,
                                            DateDue = x.DateDue,
@@ -199,6 +183,9 @@ namespace SA45Team07B
                         txtbOverdueQty.Text = string.Empty;
                         txtbUnpaidFine.Text = string.Empty;
                     }
+
+                    CalculateFine();
+
                 }
                 else
                 {
@@ -244,7 +231,7 @@ namespace SA45Team07B
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Change was not saved. Please try again.");
+                                    submitsuccessful = false;
                                 }
                             }
                         }
@@ -293,6 +280,7 @@ namespace SA45Team07B
 
         private void dataGridViewTransactionRecords_DataSourceChanged(object sender, EventArgs e)
         {
+
             int numberOfRecords = dataGridViewTransactionRecords.RowCount;
 
             if (numberOfRecords > 0)
@@ -306,10 +294,15 @@ namespace SA45Team07B
                     txtbRemarksOfSelectedTransaction.Text = string.Empty;
                 }
 
-                if (submitsuccessful)
+                if (submitsuccessful == true)
                 {
                     toolStripStatusLabel1.Text = "Remarks has been submitted.";
-                    submitsuccessful = false;
+                    submitsuccessful = null;
+                }
+                else if(submitsuccessful == false)
+                {
+                    toolStripStatusLabel1.Text = "No change.";
+                    submitsuccessful = null;
                 }
                 else
                 {
@@ -370,6 +363,12 @@ namespace SA45Team07B
                     txtbUnpaidFine.ForeColor = SystemColors.WindowText;
                 }
             }
+            else
+            {
+                txtbLoanedQty.Text = string.Empty;
+                txtbOverdueQty.Text = string.Empty;
+                txtbUnpaidFine.Text = string.Empty;
+            }
         }
 
         private void txtbMemberID_Validating(object sender, CancelEventArgs e)
@@ -384,5 +383,31 @@ namespace SA45Team07B
                 ValidatetxtbMemberID();
             }
         }
+
+        private void txtbRemarksOfSelectedTransaction_TextChanged(object sender, EventArgs e)
+        {
+            btnSaveChanges.Enabled = true;
+        }
+
+        private void txtbMemberID_TextChanged(object sender, EventArgs e)
+        {
+            ValidatetxtbMemberID();
+        }
     }
+
+
+
+    public class TransactionInformationToDisplay
+    {
+        public DateTime DateIssued { get; set; }
+        public DateTime DateDue { get; set; }
+        public DateTime? DateActualReturned { get; set; }
+        public long BookID { get; set; }
+        public string BookTitle { get; set; }
+        public string RFID { get; set; }
+        public long TransactionID { get; set; }
+        public string Status { get; set; }
+        public string Remarks { get; set; }
+    }
+
 }

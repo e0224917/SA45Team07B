@@ -296,10 +296,10 @@
             this.btnSearchRFID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchRFID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRFID.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchRFID.Location = new System.Drawing.Point(281, 61);
+            this.btnSearchRFID.Location = new System.Drawing.Point(276, 58);
             this.btnSearchRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSearchRFID.Name = "btnSearchRFID";
-            this.btnSearchRFID.Size = new System.Drawing.Size(28, 26);
+            this.btnSearchRFID.Size = new System.Drawing.Size(55, 35);
             this.btnSearchRFID.TabIndex = 6;
             this.btnSearchRFID.Text = "...";
             this.btnSearchRFID.UseVisualStyleBackColor = false;
@@ -491,11 +491,12 @@
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1145, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1141, 26);
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -504,21 +505,21 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(242, 21);
-            this.toolStripStatusLabel1.Text = "Input a RFID or Press ESC to extis.";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(244, 21);
+            this.toolStripStatusLabel1.Text = "Input an RFID or Press ESC to exit.";
             // 
             // ReturnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel;
-            this.ClientSize = new System.Drawing.Size(1145, 548);
+            this.ClientSize = new System.Drawing.Size(1141, 555);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gpBorrowerInfo);
             this.Controls.Add(this.gbBookInfo);
             this.Controls.Add(this.gbReturnTransaction);
             this.Name = "ReturnForm";
-            this.Text = "Return Book - Library Management System SA45Team07B";
+            this.Text = "Return Book";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.gbReturnTransaction, 0);

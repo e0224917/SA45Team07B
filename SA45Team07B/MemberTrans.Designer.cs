@@ -658,11 +658,13 @@
             this.txtbRemarksOfSelectedTransaction.Name = "txtbRemarksOfSelectedTransaction";
             this.txtbRemarksOfSelectedTransaction.Size = new System.Drawing.Size(613, 135);
             this.txtbRemarksOfSelectedTransaction.TabIndex = 17;
+            this.txtbRemarksOfSelectedTransaction.TextChanged += new System.EventHandler(this.txtbRemarksOfSelectedTransaction_TextChanged);
             // 
             // btnSaveChanges
             // 
             this.btnSaveChanges.BackColor = System.Drawing.Color.White;
             this.btnSaveChanges.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSaveChanges.Enabled = false;
             this.btnSaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.btnSaveChanges.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;

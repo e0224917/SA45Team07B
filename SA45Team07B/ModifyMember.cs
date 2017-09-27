@@ -13,6 +13,13 @@ namespace SA45Team07B
     public partial class ModifyMember : SA45Team07B.BaseForm
     {
         private Member mem;
+
+        public Member ModifiedMember
+        {
+            get { return mem; }
+            set { mem = value; }
+        }
+
         public ModifyMember()
         {
             InitializeComponent();
@@ -26,6 +33,7 @@ namespace SA45Team07B
             }
         }
 
+        //Retrieve member info from another popup search
         private void buttonFind_Click(object sender, EventArgs e)
         {
             using (MemberPopUpSearch mps = new MemberPopUpSearch())
@@ -35,17 +43,7 @@ namespace SA45Team07B
                     mem = mps.MemberFound;
                     textBoxMemberName.Text = mem.MemberName;
                     maskedTextBoxSchoolID.Text = mem.SchoolID;
-                    SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-                    var query = from x in context.MemberCategories
-                                select x.CategoryName;
-                    comboBoxMemberType.DataSource = query.ToList();
                     comboBoxMemberType.SelectedItem = mem.MemberCategories.CategoryName.ToString();
-
-
-
-                    var query2 = from y in context.Faculties
-                                 select y.FacultyName;
-                    comboBoxFacultyName.DataSource = query2.ToList();
                     comboBoxFacultyName.SelectedItem = mem.Faculties.FacultyName.ToString();
                     textBoxContactNumber.Text = mem.ContactNumber;
                     textBoxEmail.Text = mem.Email;
@@ -53,7 +51,7 @@ namespace SA45Team07B
             }
         }
 
-        #region Validation
+        #region Validation of Modify Member
         private void textBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validate();
@@ -73,7 +71,7 @@ namespace SA45Team07B
 
         private void textBoxMemberName_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxMemberName.Text == "" && textBoxMemberName.Focus() /*mem.MemberName.ToString().Length == 0)*/)
+            if (textBoxMemberName.Text == "" && textBoxMemberName.Focus())
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
 
@@ -114,12 +112,12 @@ namespace SA45Team07B
                                         where (x.MemberID != mem.MemberID)
                                         select x).ToList();
 
-            var matchingRecord = memberList2.Where(x => x.Email == textBoxEmail.Text).FirstOrDefault();
+            var matchingRecord = memberList2.Where(x => x.Email == textBoxEmail.Text.Trim()).FirstOrDefault();
             if (matchingRecord != null)
             {
                 errorProviderEmail.SetError(textBoxEmail, "Email already exists.");
             }
-            else if (textBoxEmail.Text == "" || Regex.IsMatch(textBoxEmail.Text, @"\s"))
+            else if (textBoxEmail.Text.Trim() == "")
             {
                 errorProviderEmail.SetError(textBoxEmail, "Please enter email. Field cannot be empty.");
             }
@@ -152,26 +150,26 @@ namespace SA45Team07B
             }
         }
         #endregion
-
+        
+        //Save changes
         private void buttonSaveChanges_Click(object sender, EventArgs e)
         {
             SA45Team07B_LibraryEntities context2 = new SA45Team07B_LibraryEntities();
             Member memb = context2.Members.Where(x => x.SchoolID == maskedTextBoxSchoolID.Text).First();
-            memb.MemberName = textBoxMemberName.Text;
+            memb.MemberName = textBoxMemberName.Text.Trim();
             memb.MemberCategories = context2.MemberCategories.Where(x => x.CategoryName == comboBoxMemberType.SelectedItem.ToString()).FirstOrDefault();
             memb.Faculties = context2.Faculties.Where(x => x.FacultyName == comboBoxFacultyName.SelectedItem.ToString()).FirstOrDefault();
-            memb.ContactNumber = textBoxContactNumber.Text;
+            memb.ContactNumber = textBoxContactNumber.Text.Trim();
             memb.Email = textBoxEmail.Text.ToLower();
 
             DialogResult dr = MessageBox.Show("Confirm update member?", "Confirmation", MessageBoxButtons.YesNoCancel);
             if (dr == DialogResult.Yes)
             {
                 context2.SaveChanges();
-                MessageBox.Show("Successfully updated.");
+                MessageBox.Show(string.Format("Successfully updated Member <<{0}>>.", memb.MemberName));
                 Close();
                 MemberPopUpSearch mps = new MemberPopUpSearch();
                 mps.Show();
-
             }
             else if (dr == DialogResult.No)
             {
@@ -181,17 +179,31 @@ namespace SA45Team07B
             {
                 DialogResult = 0;
             }
-            else
-            {
-
-            }
         }
     
+        //Cancel modify Member and close
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
-            MemberInfo mbinfo = new MemberInfo();
-            mbinfo.Show();
+        }
+
+        //Getting data for Member Categories and Faculties
+        private void ModifyMember_Load(object sender, EventArgs e)
+        {
+            
+            comboBoxMemberType.DataSource = DataService.GetMemberCategories();
+            comboBoxFacultyName.DataSource = DataService.GetFacultiesList();
+
+            if (mem != null)
+            {
+                maskedTextBoxSchoolID.Text = mem.SchoolID;
+                textBoxMemberName.Text = mem.MemberName;
+                comboBoxMemberType.SelectedItem = mem.MemberCategories.CategoryName.ToString();
+
+                comboBoxFacultyName.SelectedItem = mem.Faculties.FacultyName.ToString();
+                textBoxContactNumber.Text = mem.ContactNumber;
+                textBoxEmail.Text = mem.Email;
+            }
         }
     }
 }

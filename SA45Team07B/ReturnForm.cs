@@ -41,28 +41,6 @@ namespace SA45Team07B
             }
         }
 
-        private void FindTransactionAndBorrower()
-        {
-            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-            {
-                lastTransaction = (from x in context.IssueTrans
-                                   where x.TransactionID == RFIDofReturnBook.LastTransactionID
-                                   select x).FirstOrDefault();
-
-
-                if (lastTransaction == null)
-                {
-                    ClearTextboxData();
-                    MessageBox.Show("No last transaction record.");
-                }
-                else
-                {
-                    borrower = lastTransaction.Members;
-                    borrowerMemberType = borrower.MemberCategories;
-                    borrowerFaculty = borrower.Faculties;
-                }
-            }
-        }
 
         private void DisplayTextboxData()
         {
@@ -111,7 +89,6 @@ namespace SA45Team07B
 
         private decimal CalculateFine()
         {
-            // TODO - implement this
             decimal fine = 0.0M;
             decimal fineperday = borrower.MemberCategories.FinePerDay;
 
@@ -175,6 +152,7 @@ namespace SA45Team07B
                                 toolStripStatusLabel1.Text = "Return was successful.";
                                 txtbRemarks.Text = string.Empty;
                                 ClearTextboxData();
+                                this.ActiveControl = txtbRFID;
                             }
                             else
                             {
@@ -195,6 +173,8 @@ namespace SA45Team07B
         private void ReturnForm_Load(object sender, EventArgs e)
         {
             this.btnSubmit.Enabled = false;
+            this.dtpReturnDate.MaxDate = DateTime.Today;
+            this.ActiveControl = txtbRFID;
         }
 
         private void txtbRFID_Validating(object sender, CancelEventArgs e)
@@ -215,20 +195,39 @@ namespace SA45Team07B
                 if (RFIDofReturnBook != null)
                 {
                     this.returnBook = RFIDofReturnBook.Books;
-                    FindTransactionAndBorrower();
-                    DisplayTextboxData();
 
-                    errorProviderForRFID.SetError(txtbRFID, "");
-                    toolStripStatusLabel1.Text = "1 record is found.";
-                    btnSubmit.BackColor = Color.White;
-                    btnSubmit.Enabled = true;
+                    lastTransaction = (from x in context.IssueTrans
+                                       where x.TransactionID == RFIDofReturnBook.LastTransactionID
+                                       select x).FirstOrDefault();
+
+                    if (lastTransaction == null)
+                    {
+                        ClearTextboxData();
+                        MessageBox.Show("No last transaction record.");
+                    }
+                    else if (lastTransaction.Status == "in")
+                    {
+                        ClearTextboxData();
+                        MessageBox.Show("No active transaction record.");
+                    }
+                    else
+                    {
+                        borrower = lastTransaction.Members;
+                        borrowerMemberType = borrower.MemberCategories;
+                        borrowerFaculty = borrower.Faculties;
+
+                        DisplayTextboxData();
+
+                        errorProviderForRFID.SetError(txtbRFID, "");
+                        toolStripStatusLabel1.Text = "1 record is found.";
+                        btnSubmit.Enabled = true;
+                    }
                 }
                 else
                 {
                     errorProviderForRFID.SetError(txtbRFID, "Invalid RFID");
                     toolStripStatusLabel1.Text = "Invalid RFID";
                     ClearTextboxData();
-                    btnSubmit.BackColor = Color.LightGray;
                     btnSubmit.Enabled = false;
                 }
             }
