@@ -53,10 +53,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.errorProviderSchoolID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +72,7 @@
             // 
             this.labelMemberName.AutoSize = true;
             this.labelMemberName.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberName.Location = new System.Drawing.Point(62, 274);
+            this.labelMemberName.Location = new System.Drawing.Point(40, 277);
             this.labelMemberName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMemberName.Name = "labelMemberName";
             this.labelMemberName.Size = new System.Drawing.Size(268, 48);
@@ -80,7 +83,7 @@
             // 
             this.labelSchoolID.AutoSize = true;
             this.labelSchoolID.BackColor = System.Drawing.Color.Transparent;
-            this.labelSchoolID.Location = new System.Drawing.Point(149, 201);
+            this.labelSchoolID.Location = new System.Drawing.Point(40, 199);
             this.labelSchoolID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSchoolID.Name = "labelSchoolID";
             this.labelSchoolID.Size = new System.Drawing.Size(180, 48);
@@ -91,7 +94,7 @@
             // 
             this.labelMemberType.AutoSize = true;
             this.labelMemberType.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberType.Location = new System.Drawing.Point(82, 350);
+            this.labelMemberType.Location = new System.Drawing.Point(40, 351);
             this.labelMemberType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMemberType.Name = "labelMemberType";
             this.labelMemberType.Size = new System.Drawing.Size(247, 48);
@@ -102,7 +105,7 @@
             // 
             this.labelFacultyName.AutoSize = true;
             this.labelFacultyName.BackColor = System.Drawing.Color.Transparent;
-            this.labelFacultyName.Location = new System.Drawing.Point(87, 425);
+            this.labelFacultyName.Location = new System.Drawing.Point(40, 424);
             this.labelFacultyName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFacultyName.Name = "labelFacultyName";
             this.labelFacultyName.Size = new System.Drawing.Size(243, 48);
@@ -124,7 +127,7 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
-            this.labelEmail.Location = new System.Drawing.Point(218, 576);
+            this.labelEmail.Location = new System.Drawing.Point(40, 574);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(113, 48);
@@ -134,7 +137,7 @@
             // maskedTextBoxSchoolID
             // 
             this.maskedTextBoxSchoolID.Location = new System.Drawing.Point(356, 192);
-            this.maskedTextBoxSchoolID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxSchoolID.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxSchoolID.Mask = "A00000000";
             this.maskedTextBoxSchoolID.Name = "maskedTextBoxSchoolID";
             this.maskedTextBoxSchoolID.ReadOnly = true;
@@ -149,8 +152,9 @@
             // 
             this.buttonFind.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.buttonFind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFind.Location = new System.Drawing.Point(775, 192);
-            this.buttonFind.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(7);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(91, 55);
             this.buttonFind.TabIndex = 18;
@@ -163,9 +167,9 @@
             // textBoxMemberName
             // 
             this.textBoxMemberName.Location = new System.Drawing.Point(356, 270);
-            this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMemberName.Name = "textBoxMemberName";
-            this.textBoxMemberName.Size = new System.Drawing.Size(600, 55);
+            this.textBoxMemberName.Size = new System.Drawing.Size(800, 55);
             this.textBoxMemberName.TabIndex = 19;
             this.textBoxMemberName.TextChanged += new System.EventHandler(this.textBoxes_Validated);
             this.textBoxMemberName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
@@ -177,9 +181,9 @@
             this.comboBoxMemberType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMemberType.FormattingEnabled = true;
             this.comboBoxMemberType.Location = new System.Drawing.Point(356, 343);
-            this.comboBoxMemberType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMemberType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMemberType.Name = "comboBoxMemberType";
-            this.comboBoxMemberType.Size = new System.Drawing.Size(500, 56);
+            this.comboBoxMemberType.Size = new System.Drawing.Size(800, 56);
             this.comboBoxMemberType.TabIndex = 20;
             this.comboBoxMemberType.TextChanged += new System.EventHandler(this.textBoxes_Validated);
             this.comboBoxMemberType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
@@ -193,7 +197,7 @@
             this.buttonSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveChanges.Location = new System.Drawing.Point(356, 661);
-            this.buttonSaveChanges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSaveChanges.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(262, 91);
             this.buttonSaveChanges.TabIndex = 24;
@@ -209,7 +213,7 @@
             this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Location = new System.Drawing.Point(656, 661);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 91);
             this.buttonCancel.TabIndex = 25;
@@ -222,9 +226,9 @@
             this.comboBoxFacultyName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFacultyName.FormattingEnabled = true;
             this.comboBoxFacultyName.Location = new System.Drawing.Point(356, 416);
-            this.comboBoxFacultyName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxFacultyName.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFacultyName.Name = "comboBoxFacultyName";
-            this.comboBoxFacultyName.Size = new System.Drawing.Size(600, 56);
+            this.comboBoxFacultyName.Size = new System.Drawing.Size(800, 56);
             this.comboBoxFacultyName.TabIndex = 21;
             this.comboBoxFacultyName.TextChanged += new System.EventHandler(this.textBoxes_Validated);
             this.comboBoxFacultyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
@@ -233,9 +237,9 @@
             // textBoxContactNumber
             // 
             this.textBoxContactNumber.Location = new System.Drawing.Point(356, 494);
-            this.textBoxContactNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxContactNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(500, 55);
+            this.textBoxContactNumber.Size = new System.Drawing.Size(800, 55);
             this.textBoxContactNumber.TabIndex = 22;
             this.textBoxContactNumber.TextChanged += new System.EventHandler(this.textBoxes_Validated);
             this.textBoxContactNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
@@ -245,7 +249,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(356, 567);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(800, 55);
             this.textBoxEmail.TabIndex = 23;
@@ -275,7 +279,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(324, 192);
+            this.label2.Location = new System.Drawing.Point(215, 190);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 32);
@@ -288,7 +292,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(324, 274);
+            this.label3.Location = new System.Drawing.Point(302, 277);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 32);
@@ -301,7 +305,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(324, 350);
+            this.label4.Location = new System.Drawing.Point(282, 351);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 32);
@@ -314,7 +318,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(324, 425);
+            this.label5.Location = new System.Drawing.Point(277, 424);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 32);
@@ -327,7 +331,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(324, 576);
+            this.label6.Location = new System.Drawing.Point(146, 574);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 32);
@@ -339,11 +343,31 @@
             this.errorProviderSchoolID.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderSchoolID.ContainerControl = this;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 843);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1917, 53);
+            this.statusStrip1.TabIndex = 33;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(480, 48);
+            this.toolStripStatusLabel1.Text = "Modify Member Information.";
+            // 
             // ModifyMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1917, 896);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -388,10 +412,13 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +449,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProviderSchoolID;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

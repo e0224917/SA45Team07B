@@ -55,10 +55,11 @@ namespace SA45Team07B
                 ////get rfid liststed 
                 var rfids = from x in context.RFIDs
                             where x.BookID == bookFound.BookID
+                            orderby x.Availability
                             select new
                             {
-                                RFID = x.RFID,
-                                Availability = x.Availability,
+                                RFID = x.RFID.ToUpper(),
+                                Availability = x.Availability.ToUpper(),
                                 DateBorrowed = context.IssueTrans.Where(y => y.RFID == x.RFID).FirstOrDefault().DateIssued.ToString(),
                                 DueDate = context.IssueTrans.Where(y => y.TransactionID == x.LastTransactionID).FirstOrDefault().DateDue.ToString(),
                                 BorrowedBy = context.IssueTrans.Where(y => y.TransactionID == x.LastTransactionID).FirstOrDefault().MemberID.ToString()

@@ -165,7 +165,9 @@
     <Compile Include="MemberPopUpSearchcs.Designer.cs">
       <DependentUpon>MemberPopUpSearchcs.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberTrans.cs" />
+    <Compile Include="MemberTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MemberTrans.Designer.cs">
       <DependentUpon>MemberTrans.cs</DependentUpon>
     </Compile>
