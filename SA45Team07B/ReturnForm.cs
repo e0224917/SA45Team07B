@@ -41,28 +41,6 @@ namespace SA45Team07B
             }
         }
 
-        private void FindTransactionAndBorrower()
-        {
-            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-            {
-                lastTransaction = (from x in context.IssueTrans
-                                   where x.TransactionID == RFIDofReturnBook.LastTransactionID
-                                   select x).FirstOrDefault();
-
-
-                if (lastTransaction == null)
-                {
-                    ClearTextboxData();
-                    MessageBox.Show("No last transaction record.");
-                }
-                else
-                {
-                    borrower = lastTransaction.Members;
-                    borrowerMemberType = borrower.MemberCategories;
-                    borrowerFaculty = borrower.Faculties;
-                }
-            }
-        }
 
         private void DisplayTextboxData()
         {
@@ -111,7 +89,6 @@ namespace SA45Team07B
 
         private decimal CalculateFine()
         {
-            // TODO - implement this
             decimal fine = 0.0M;
             decimal fineperday = borrower.MemberCategories.FinePerDay;
 

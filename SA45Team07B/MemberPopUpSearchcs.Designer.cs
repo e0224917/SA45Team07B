@@ -384,8 +384,8 @@
             this.toolStripStatusLblSelectedMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLblSelectedMember.Name = "toolStripStatusLblSelectedMember";
             this.toolStripStatusLblSelectedMember.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(157, 21);
-            this.toolStripStatusLblSelectedMember.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(266, 21);
+            this.toolStripStatusLblSelectedMember.Text = "Select a member or Press ESC to exit.";
             // 
             // statusStrip1
             // 
