@@ -72,10 +72,10 @@
             this.lblSelectMember.AutoSize = true;
             this.lblSelectMember.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectMember.Location = new System.Drawing.Point(34, 181);
-            this.lblSelectMember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectMember.Location = new System.Drawing.Point(76, 407);
+            this.lblSelectMember.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSelectMember.Name = "lblSelectMember";
-            this.lblSelectMember.Size = new System.Drawing.Size(188, 21);
+            this.lblSelectMember.Size = new System.Drawing.Size(428, 48);
             this.lblSelectMember.TabIndex = 1;
             this.lblSelectMember.Text = "Select a member from list";
             // 
@@ -119,8 +119,8 @@
             this.dataGridViewMemberList.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewMemberList.EnableHeadersVisualStyles = false;
             this.dataGridViewMemberList.GridColor = System.Drawing.Color.White;
-            this.dataGridViewMemberList.Location = new System.Drawing.Point(27, 210);
-            this.dataGridViewMemberList.Margin = new System.Windows.Forms.Padding(20);
+            this.dataGridViewMemberList.Location = new System.Drawing.Point(61, 472);
+            this.dataGridViewMemberList.Margin = new System.Windows.Forms.Padding(45, 45, 45, 45);
             this.dataGridViewMemberList.MultiSelect = false;
             this.dataGridViewMemberList.Name = "dataGridViewMemberList";
             this.dataGridViewMemberList.ReadOnly = true;
@@ -136,7 +136,7 @@
             this.dataGridViewMemberList.RowHeadersWidth = 5;
             this.dataGridViewMemberList.RowTemplate.Height = 24;
             this.dataGridViewMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMemberList.Size = new System.Drawing.Size(699, 412);
+            this.dataGridViewMemberList.Size = new System.Drawing.Size(1573, 927);
             this.dataGridViewMemberList.TabIndex = 8;
             this.dataGridViewMemberList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewMemberList_Scroll);
             this.dataGridViewMemberList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
@@ -148,7 +148,7 @@
             this.MemberIDColumn.HeaderText = "ID";
             this.MemberIDColumn.Name = "MemberIDColumn";
             this.MemberIDColumn.ReadOnly = true;
-            this.MemberIDColumn.Width = 69;
+            this.MemberIDColumn.Width = 123;
             // 
             // MemberNameColumn
             // 
@@ -158,7 +158,7 @@
             this.MemberNameColumn.HeaderText = "Name";
             this.MemberNameColumn.Name = "MemberNameColumn";
             this.MemberNameColumn.ReadOnly = true;
-            this.MemberNameColumn.Width = 96;
+            this.MemberNameColumn.Width = 183;
             // 
             // SchoolIDColumn
             // 
@@ -168,7 +168,7 @@
             this.SchoolIDColumn.HeaderText = "School ID";
             this.SchoolIDColumn.Name = "SchoolIDColumn";
             this.SchoolIDColumn.ReadOnly = true;
-            this.SchoolIDColumn.Width = 120;
+            this.SchoolIDColumn.Width = 240;
             // 
             // MemberTypeColumn
             // 
@@ -178,7 +178,7 @@
             this.MemberTypeColumn.HeaderText = "Category";
             this.MemberTypeColumn.Name = "MemberTypeColumn";
             this.MemberTypeColumn.ReadOnly = true;
-            this.MemberTypeColumn.Width = 117;
+            this.MemberTypeColumn.Width = 231;
             // 
             // FacultyCodeColumn
             // 
@@ -188,7 +188,7 @@
             this.FacultyCodeColumn.HeaderText = "Faculty";
             this.FacultyCodeColumn.Name = "FacultyCodeColumn";
             this.FacultyCodeColumn.ReadOnly = true;
-            this.FacultyCodeColumn.Width = 102;
+            this.FacultyCodeColumn.Width = 198;
             // 
             // ContactNumberColumn
             // 
@@ -198,7 +198,7 @@
             this.ContactNumberColumn.HeaderText = "Contact No.";
             this.ContactNumberColumn.Name = "ContactNumberColumn";
             this.ContactNumberColumn.ReadOnly = true;
-            this.ContactNumberColumn.Width = 135;
+            this.ContactNumberColumn.Width = 276;
             // 
             // EmailAddressColumn
             // 
@@ -208,7 +208,7 @@
             this.EmailAddressColumn.HeaderText = "Email";
             this.EmailAddressColumn.Name = "EmailAddressColumn";
             this.EmailAddressColumn.ReadOnly = true;
-            this.EmailAddressColumn.Width = 92;
+            this.EmailAddressColumn.Width = 173;
             // 
             // LoanedQtyColumn
             // 
@@ -218,7 +218,7 @@
             this.LoanedQtyColumn.HeaderText = "Loaned Quantity";
             this.LoanedQtyColumn.Name = "LoanedQtyColumn";
             this.LoanedQtyColumn.ReadOnly = true;
-            this.LoanedQtyColumn.Width = 169;
+            this.LoanedQtyColumn.Width = 349;
             // 
             // btnOK
             // 
@@ -230,10 +230,10 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(287, 643);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(10);
+            this.btnOK.Location = new System.Drawing.Point(646, 1447);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(22, 22, 22, 22);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(92, 40);
+            this.btnOK.Size = new System.Drawing.Size(207, 90);
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -250,10 +250,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(398, 643);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(10);
+            this.btnCancel.Location = new System.Drawing.Point(896, 1447);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(22, 22, 22, 22);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 40);
+            this.btnCancel.Size = new System.Drawing.Size(207, 90);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -264,10 +264,10 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(36, 34);
-            this.lblName.Margin = new System.Windows.Forms.Padding(6);
+            this.lblName.Location = new System.Drawing.Point(81, 76);
+            this.lblName.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(118, 21);
+            this.lblName.Size = new System.Drawing.Size(268, 48);
             this.lblName.TabIndex = 15;
             this.lblName.Text = "Member Name:";
             // 
@@ -276,10 +276,10 @@
             this.lblSchoolID.AutoSize = true;
             this.lblSchoolID.BackColor = System.Drawing.Color.Transparent;
             this.lblSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchoolID.Location = new System.Drawing.Point(36, 74);
-            this.lblSchoolID.Margin = new System.Windows.Forms.Padding(6);
+            this.lblSchoolID.Location = new System.Drawing.Point(166, 169);
+            this.lblSchoolID.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblSchoolID.Name = "lblSchoolID";
-            this.lblSchoolID.Size = new System.Drawing.Size(79, 21);
+            this.lblSchoolID.Size = new System.Drawing.Size(180, 48);
             this.lblSchoolID.TabIndex = 16;
             this.lblSchoolID.Text = "School ID:";
             // 
@@ -288,38 +288,38 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(36, 114);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(6);
+            this.lblEmail.Location = new System.Drawing.Point(233, 259);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 21);
+            this.lblEmail.Size = new System.Drawing.Size(113, 48);
             this.lblEmail.TabIndex = 17;
             this.lblEmail.Text = "Email:";
             // 
             // txtbMemberName
             // 
             this.txtbMemberName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbMemberName.Location = new System.Drawing.Point(166, 32);
-            this.txtbMemberName.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbMemberName.Location = new System.Drawing.Point(374, 72);
+            this.txtbMemberName.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbMemberName.Name = "txtbMemberName";
-            this.txtbMemberName.Size = new System.Drawing.Size(326, 29);
+            this.txtbMemberName.Size = new System.Drawing.Size(728, 55);
             this.txtbMemberName.TabIndex = 1;
             // 
             // txtbSchoolID
             // 
             this.txtbSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbSchoolID.Location = new System.Drawing.Point(166, 72);
-            this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbSchoolID.Location = new System.Drawing.Point(374, 162);
+            this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbSchoolID.Name = "txtbSchoolID";
-            this.txtbSchoolID.Size = new System.Drawing.Size(326, 29);
+            this.txtbSchoolID.Size = new System.Drawing.Size(728, 55);
             this.txtbSchoolID.TabIndex = 2;
             // 
             // txtbEmail
             // 
             this.txtbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbEmail.Location = new System.Drawing.Point(166, 112);
-            this.txtbEmail.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbEmail.Location = new System.Drawing.Point(374, 252);
+            this.txtbEmail.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbEmail.Name = "txtbEmail";
-            this.txtbEmail.Size = new System.Drawing.Size(326, 29);
+            this.txtbEmail.Size = new System.Drawing.Size(728, 55);
             this.txtbEmail.TabIndex = 3;
             // 
             // btnSearch
@@ -331,10 +331,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(550, 38);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Location = new System.Drawing.Point(1238, 86);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(92, 40);
+            this.btnSearch.Size = new System.Drawing.Size(207, 90);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -349,10 +349,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(550, 91);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(6);
+            this.btnClear.Location = new System.Drawing.Point(1238, 205);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(92, 40);
+            this.btnClear.Size = new System.Drawing.Size(207, 90);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -370,21 +370,21 @@
             this.groupBox1.Controls.Add(this.txtbMemberName);
             this.groupBox1.Controls.Add(this.txtbSchoolID);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(28, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(63, 22);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(698, 157);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1570, 353);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by";
+            this.groupBox1.Text = "Search By";
             // 
             // toolStripStatusLblSelectedMember
             // 
             this.toolStripStatusLblSelectedMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLblSelectedMember.Name = "toolStripStatusLblSelectedMember";
             this.toolStripStatusLblSelectedMember.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(266, 21);
+            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(610, 48);
             this.toolStripStatusLblSelectedMember.Text = "Select a member or Press ESC to exit.";
             // 
             // statusStrip1
@@ -392,22 +392,22 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLblSelectedMember});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 704);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1589);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(754, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 25, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1696, 53);
             this.statusStrip1.TabIndex = 24;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // MemberPopUpSearch
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::SA45Team07B.Properties.Resources.greybackground3_modi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(754, 730);
+            this.ClientSize = new System.Drawing.Size(1696, 1642);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -415,7 +415,7 @@
             this.Controls.Add(this.lblSelectMember);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MemberPopUpSearch";
             this.Text = "Member Search";
             this.Load += new System.EventHandler(this.MemberPopUpSearch_Load);

@@ -66,6 +66,8 @@
             this.lblDateIssued = new System.Windows.Forms.Label();
             this.dpDateDue = new System.Windows.Forms.DateTimePicker();
             this.dpDateIssued = new System.Windows.Forms.DateTimePicker();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbEntitlement)).BeginInit();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbPeriod)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -513,10 +516,30 @@
             this.dpDateIssued.Value = new System.DateTime(2017, 9, 26, 16, 52, 37, 0);
             this.dpDateIssued.ValueChanged += new System.EventHandler(this.DateValueChanged);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1033);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1856, 53);
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(710, 48);
+            this.toolStripStatusLabel1.Text = "Input Member information to borrow book.";
+            // 
             // BorrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.ClientSize = new System.Drawing.Size(1856, 1086);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -529,6 +552,7 @@
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
             this.Controls.SetChildIndex(this.groupBox4, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -540,6 +564,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtbPeriod)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,5 +610,7 @@
         private System.Windows.Forms.Label lblPeriodDay;
         private System.Windows.Forms.NumericUpDown txtbPeriod;
         private System.Windows.Forms.Label lblPeriod;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
