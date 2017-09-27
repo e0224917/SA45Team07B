@@ -280,6 +280,7 @@
             // 
             // buttonFind
             // 
+            this.buttonFind.BackColor = System.Drawing.Color.White;
             this.buttonFind.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.buttonFind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -289,7 +290,7 @@
             this.buttonFind.Size = new System.Drawing.Size(91, 55);
             this.buttonFind.TabIndex = 40;
             this.buttonFind.Text = "...";
-            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.UseVisualStyleBackColor = false;
             // 
             // maskedTextBoxSchoolID
             // 
