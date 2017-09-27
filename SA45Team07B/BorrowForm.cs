@@ -35,25 +35,25 @@ namespace SA45Team07B
         {
             if (borrower.Discontinued == "y")
             {
-                MessageBox.Show("This member is not allowed to borrow", "Error");
+                MessageBox.Show("This member is not allowed to borrow.", "Error");
                 return;
             }
 
             if (loanedQty == maxBorrowed)
             {
-                MessageBox.Show("This member has reached the loan limit", "Error");
+                MessageBox.Show("This member has reached the loan limit.", "Error");
                 return;
             }
 
             if (!isBookAvailable)
             {
-                MessageBox.Show("This RFID is not available", "Error");
+                MessageBox.Show("This RFID is not available.", "Error");
                 return;
             }
 
             if (dpDateDue.Value.CompareTo(dpDateIssued.Value) < 1)
             {
-                MessageBox.Show("Due date must be later than borrow date", "Error");
+                MessageBox.Show("Due date must be later than borrow date.", "Error");
                 return;
             }
 
@@ -67,11 +67,12 @@ namespace SA45Team07B
 
             if (success)
             {
-                MessageBox.Show("Transaction successed!");
+                MessageBox.Show("Transaction successful!");
                 txtbRFID.Clear();
                 txtbBookTitle.Clear();
                 txtbBookStatus.Clear();
                 btnSubmit.Enabled = false;
+                
 
                 loanedQty += 1;
                 txtbTotalBorrowed.Text = loanedQty.ToString();
@@ -117,7 +118,7 @@ namespace SA45Team07B
 
                 txtbTotalBorrowed.Text = loanedQty.ToString();
                 txtbMaxBorrowed.Text = maxBorrowed.ToString();
-                txtbTotalBorrowed.BackColor = loanedQty == maxBorrowed ? Color.Red : Color.Black;
+                txtbTotalBorrowed.BackColor = loanedQty == maxBorrowed ? Color.Red : Color.White;
                 txtbStatus.Text = borrower.Discontinued == "N" ? "Activated" : "Deactivated";
                 txtbEntitlement.Value = borrower.MemberCategories.LoanPeriod;
 
