@@ -77,7 +77,7 @@
             this.textBoxMemberID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMemberID.Name = "textBoxMemberID";
             this.textBoxMemberID.ReadOnly = true;
-            this.textBoxMemberID.Size = new System.Drawing.Size(300, 55);
+            this.textBoxMemberID.Size = new System.Drawing.Size(800, 55);
             this.textBoxMemberID.TabIndex = 10;
             this.textBoxMemberID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             // 
@@ -86,7 +86,7 @@
             this.labelMemberID.AutoSize = true;
             this.labelMemberID.BackColor = System.Drawing.Color.Transparent;
             this.labelMemberID.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMemberID.Location = new System.Drawing.Point(150, 200);
+            this.labelMemberID.Location = new System.Drawing.Point(71, 200);
             this.labelMemberID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMemberID.Name = "labelMemberID";
             this.labelMemberID.Size = new System.Drawing.Size(208, 48);
@@ -97,7 +97,7 @@
             // 
             this.labelMemberName.AutoSize = true;
             this.labelMemberName.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberName.Location = new System.Drawing.Point(90, 350);
+            this.labelMemberName.Location = new System.Drawing.Point(71, 350);
             this.labelMemberName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMemberName.Name = "labelMemberName";
             this.labelMemberName.Size = new System.Drawing.Size(268, 48);
@@ -109,7 +109,7 @@
             this.textBoxMemberName.Location = new System.Drawing.Point(400, 343);
             this.textBoxMemberName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMemberName.Name = "textBoxMemberName";
-            this.textBoxMemberName.Size = new System.Drawing.Size(600, 55);
+            this.textBoxMemberName.Size = new System.Drawing.Size(800, 55);
             this.textBoxMemberName.TabIndex = 12;
             this.textBoxMemberName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxMemberName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
@@ -120,7 +120,7 @@
             // 
             this.labelMemberType.AutoSize = true;
             this.labelMemberType.BackColor = System.Drawing.Color.Transparent;
-            this.labelMemberType.Location = new System.Drawing.Point(111, 425);
+            this.labelMemberType.Location = new System.Drawing.Point(71, 425);
             this.labelMemberType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMemberType.Name = "labelMemberType";
             this.labelMemberType.Size = new System.Drawing.Size(247, 48);
@@ -131,7 +131,7 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
-            this.labelEmail.Location = new System.Drawing.Point(245, 650);
+            this.labelEmail.Location = new System.Drawing.Point(71, 650);
             this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(113, 48);
@@ -152,7 +152,7 @@
             // 
             this.labelContactNumber.AutoSize = true;
             this.labelContactNumber.BackColor = System.Drawing.Color.Transparent;
-            this.labelContactNumber.Location = new System.Drawing.Point(67, 575);
+            this.labelContactNumber.Location = new System.Drawing.Point(71, 575);
             this.labelContactNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelContactNumber.Name = "labelContactNumber";
             this.labelContactNumber.Size = new System.Drawing.Size(291, 48);
@@ -163,7 +163,7 @@
             // 
             this.labelSchoolID.AutoSize = true;
             this.labelSchoolID.BackColor = System.Drawing.Color.Transparent;
-            this.labelSchoolID.Location = new System.Drawing.Point(178, 275);
+            this.labelSchoolID.Location = new System.Drawing.Point(71, 275);
             this.labelSchoolID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSchoolID.Name = "labelSchoolID";
             this.labelSchoolID.Size = new System.Drawing.Size(180, 48);
@@ -174,7 +174,7 @@
             // 
             this.labelFacultyCode.AutoSize = true;
             this.labelFacultyCode.BackColor = System.Drawing.Color.Transparent;
-            this.labelFacultyCode.Location = new System.Drawing.Point(115, 500);
+            this.labelFacultyCode.Location = new System.Drawing.Point(71, 500);
             this.labelFacultyCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFacultyCode.Name = "labelFacultyCode";
             this.labelFacultyCode.Size = new System.Drawing.Size(243, 48);
@@ -186,7 +186,7 @@
             this.textBoxContactNumber.Location = new System.Drawing.Point(400, 568);
             this.textBoxContactNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(500, 55);
+            this.textBoxContactNumber.Size = new System.Drawing.Size(800, 55);
             this.textBoxContactNumber.TabIndex = 15;
             this.textBoxContactNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
@@ -254,7 +254,7 @@
             this.comboBoxMemberType.Location = new System.Drawing.Point(400, 417);
             this.comboBoxMemberType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMemberType.Name = "comboBoxMemberType";
-            this.comboBoxMemberType.Size = new System.Drawing.Size(500, 56);
+            this.comboBoxMemberType.Size = new System.Drawing.Size(800, 56);
             this.comboBoxMemberType.TabIndex = 13;
             this.comboBoxMemberType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.comboBoxMemberType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
@@ -266,7 +266,7 @@
             this.maskedTextBoxSchoolID.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxSchoolID.Mask = "000000000";
             this.maskedTextBoxSchoolID.Name = "maskedTextBoxSchoolID";
-            this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(502, 55);
+            this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(800, 55);
             this.maskedTextBoxSchoolID.TabIndex = 11;
             this.maskedTextBoxSchoolID.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.maskedTextBoxSchoolID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
@@ -290,7 +290,7 @@
             this.comboBoxFacultyName.Location = new System.Drawing.Point(400, 492);
             this.comboBoxFacultyName.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFacultyName.Name = "comboBoxFacultyName";
-            this.comboBoxFacultyName.Size = new System.Drawing.Size(600, 56);
+            this.comboBoxFacultyName.Size = new System.Drawing.Size(800, 56);
             this.comboBoxFacultyName.TabIndex = 14;
             this.comboBoxFacultyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.comboBoxFacultyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
@@ -317,7 +317,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(363, 275);
+            this.label2.Location = new System.Drawing.Point(256, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 32);
             this.label2.TabIndex = 27;
@@ -329,7 +329,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(363, 350);
+            this.label3.Location = new System.Drawing.Point(344, 350);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 32);
             this.label3.TabIndex = 28;
@@ -341,7 +341,7 @@
             this.labelStar.BackColor = System.Drawing.Color.Transparent;
             this.labelStar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStar.ForeColor = System.Drawing.Color.Red;
-            this.labelStar.Location = new System.Drawing.Point(363, 425);
+            this.labelStar.Location = new System.Drawing.Point(323, 425);
             this.labelStar.Name = "labelStar";
             this.labelStar.Size = new System.Drawing.Size(25, 32);
             this.labelStar.TabIndex = 29;
@@ -353,7 +353,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(363, 500);
+            this.label4.Location = new System.Drawing.Point(319, 500);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 32);
             this.label4.TabIndex = 30;
@@ -365,7 +365,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(363, 650);
+            this.label6.Location = new System.Drawing.Point(189, 650);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 32);
             this.label6.TabIndex = 32;
