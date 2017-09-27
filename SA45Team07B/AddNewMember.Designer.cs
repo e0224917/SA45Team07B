@@ -209,6 +209,9 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.White;
             this.buttonAdd.Enabled = false;
+            this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.buttonAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Location = new System.Drawing.Point(400, 734);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
@@ -222,6 +225,9 @@
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.White;
             this.buttonCancel.CausesValidation = false;
+            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Location = new System.Drawing.Point(700, 734);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
@@ -252,12 +258,13 @@
             this.comboBoxMemberType.TabIndex = 13;
             this.comboBoxMemberType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.comboBoxMemberType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
+            this.comboBoxMemberType.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxMemberType_Validating);
             // 
             // maskedTextBoxSchoolID
             // 
             this.maskedTextBoxSchoolID.Location = new System.Drawing.Point(400, 268);
             this.maskedTextBoxSchoolID.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBoxSchoolID.Mask = "A00000000";
+            this.maskedTextBoxSchoolID.Mask = "000000000";
             this.maskedTextBoxSchoolID.Name = "maskedTextBoxSchoolID";
             this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(502, 55);
             this.maskedTextBoxSchoolID.TabIndex = 11;
@@ -286,6 +293,8 @@
             this.comboBoxFacultyName.Size = new System.Drawing.Size(600, 56);
             this.comboBoxFacultyName.TabIndex = 14;
             this.comboBoxFacultyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
+            this.comboBoxFacultyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
+            this.comboBoxFacultyName.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxFacultyName_Validating);
             // 
             // errorProviderEmail
             // 

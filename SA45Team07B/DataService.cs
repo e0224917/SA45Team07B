@@ -68,6 +68,26 @@ namespace SA45Team07B
             return tag.Discontinued == "y" ? true : false;
         }
 
+        public static List<string> GetMemberCategories()
+        {
+            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+
+            var query = from x in context.MemberCategories
+                        select x.CategoryName;
+
+            return query.ToList();
+        }
+
+        public static List<string> GetFacultiesList()
+        {
+            SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
+
+            var query = from y in context.Faculties
+                         select y.FacultyName;
+
+            return query.ToList();
+        }
+
         public static void MakeRFIDAdjusment(string RFID, bool discontinued, string remarks)
         {
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
