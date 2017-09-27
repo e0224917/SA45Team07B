@@ -68,7 +68,7 @@ namespace SA45Team07B
             return tag.Discontinued == "y" ? true : false;
         }
 
-        public static List<string> GetMemberCatergories()
+        public static List<string> GetMemberCategories()
         {
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
 
@@ -78,7 +78,7 @@ namespace SA45Team07B
             return query.ToList();
         }
 
-        public static List<string> GetFalcutiesList()
+        public static List<string> GetFacultiesList()
         {
             SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
 

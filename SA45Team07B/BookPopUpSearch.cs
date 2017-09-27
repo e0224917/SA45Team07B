@@ -12,22 +12,20 @@ namespace SA45Team07B
 {
     public partial class BookPopUpSearch : Form
     {
-        private SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
         private Book bookFound;
         private RFIDTag tagFound;
         private List<RFIDTag> tagsOfBookFound;
         private BookSubject subjectOfBookFound;
         private Publisher publisherOfBookFound;
         private bool isFirstLoad;
-        
+
         public Book BookFound
         {
             get
             {
                 return bookFound;
             }
-        } 
+        }
 
         public RFIDTag RFIDFound
         {
@@ -68,7 +66,7 @@ namespace SA45Team07B
         }
 
         /// <summary>
-        /// "all" "available" "onloan" "discontinued" to activate desired radiobutton.
+        /// "all" "available" "onloan" "discontinued" to activate corresponding radiobutton.
         /// </summary>
         /// <param name="radioButton"></param>
         public BookPopUpSearch(string radioButton)
@@ -87,7 +85,7 @@ namespace SA45Team07B
             {
                 this.rbtnOnLoan.Checked = true;
             }
-            else if(radioButton.ToLower() == "discontinued")
+            else if (radioButton.ToLower() == "discontinued")
             {
                 this.rbtnDiscontinued.Checked = true;
             }
@@ -104,41 +102,17 @@ namespace SA45Team07B
 
                 cbSubject.DataSource = subjectNameList;
 
-                // Lazy loading - load the first 25 rows to datagridview during first load
-                if(this.rbtnAll.Checked == true)
-                {
-                    var displayList = (from x in context.RFIDs
-                                       orderby x.Books.BookID, x.Availability descending
-                                       select new
-                                       {
-                                           x.Books.BookID,
-                                           x.Books.BookTitle,
-                                           x.Availability,
-                                           x.Books.Edition,
-                                           x.Books.Author,
-                                           x.Books.ISBN,
-                                           x.Books.CallNumber,
-                                           x.RFID,
-                                           x.Books.BookSubjects.SubjectName,
-                                           x.Books.Publishers.PublisherName,
-                                           x.Books.PublishedYear,
-                                           x.Books.Price,
-                                           x.Discontinued,
-                                       }).Take(25);
-
-                    dataGridViewBookList.DataSource = displayList.ToList();
-                }
-                else
-                {
-                    SearchAndDisplayBook();
-                }
-
+                SearchAndDisplayBook(false);
                 isFirstLoad = true;
             }
+
         }
 
-
-        private void SearchAndDisplayBook()
+        /// <summary>
+        /// showAll will display all records. If showAll is false, display only the first 25 records.
+        /// </summary>
+        /// <param name="showAll"></param>
+        private void SearchAndDisplayBook(bool showAll = true)
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
@@ -151,19 +125,19 @@ namespace SA45Team07B
                     RFIDList = (from x in RFIDList
                                 select x).ToList();
                 }
-                else if(rbtnAvailable.Checked == true)
+                else if (rbtnAvailable.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "y" && x.Discontinued == "n")
                                 select x).ToList();
                 }
-                else if(rbtnOnLoan.Checked == true)
+                else if (rbtnOnLoan.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "n" && x.Discontinued == "n")
                                 select x).ToList();
                 }
-                else if(rbtnDiscontinued.Checked == true)
+                else if (rbtnDiscontinued.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Discontinued == "y")
@@ -175,8 +149,17 @@ namespace SA45Team07B
                                 select x.Books).ToList();
 
                 searchResult = CriteriaSeach(searchResult, txtbBookTitle, "BookTitle");
-                searchResult = CriteriaSeach(searchResult, txtbAuthor, "Author");
                 searchResult = CriteriaSeach(searchResult, txtbISBN, "ISBN");
+
+                // cannot apply CriteriaSeach for Author as it is allowed null
+                if (txtbAuthor.Text != string.Empty)
+                {
+                    List<Book> searchResultByAuthor = (from x in context.Books
+                                                       where x.Author.ToLower().Contains(txtbAuthor.Text.ToString().ToLower().Trim())
+                                                       select x).ToList();
+
+                    searchResult = searchResult.Intersect(searchResultByAuthor).ToList();
+                }
 
                 if (cbSubject.Text != "")
                 {
@@ -185,29 +168,54 @@ namespace SA45Team07B
                                     select x).ToList();
                 }
 
-                var displayList = from x in RFIDList
-                                  where searchResult.Contains(x.Books)
-                                  orderby x.Books.BookID, x.Availability descending
-                                  select new
-                                  {
-                                      x.Books.BookID,
-                                      x.Books.BookTitle,
-                                      x.Availability,
-                                      x.Books.Edition,
-                                      x.Books.Author,
-                                      x.Books.ISBN,
-                                      x.Books.CallNumber,
-                                      x.RFID,
-                                      x.Books.BookSubjects.SubjectName,
-                                      x.Books.Publishers.PublisherName,
-                                      x.Books.PublishedYear,
-                                      x.Books.Price,
-                                      x.Discontinued,
-                                  };
+                if (showAll)
+                {
+                    var displayList = from x in RFIDList
+                                      where searchResult.Contains(x.Books)
+                                      orderby x.Books.BookID, x.Availability descending
+                                      select new
+                                      {
+                                          x.Books.BookID,
+                                          x.Books.BookTitle,
+                                          x.Availability,
+                                          x.Books.Edition,
+                                          x.Books.Author,
+                                          x.Books.ISBN,
+                                          x.Books.CallNumber,
+                                          x.RFID,
+                                          x.Books.BookSubjects.SubjectName,
+                                          x.Books.Publishers.PublisherName,
+                                          x.Books.PublishedYear,
+                                          x.Books.Price,
+                                          x.Discontinued
+                                      };
 
-                dataGridViewBookList.DataSource = displayList.ToList();
+                    dataGridViewBookList.DataSource = displayList.ToList();
+                }
+                else
+                {
+                    var displayList = (from x in RFIDList
+                                      where searchResult.Contains(x.Books)
+                                      orderby x.Books.BookID, x.Availability descending
+                                      select new
+                                      {
+                                          x.Books.BookID,
+                                          x.Books.BookTitle,
+                                          x.Availability,
+                                          x.Books.Edition,
+                                          x.Books.Author,
+                                          x.Books.ISBN,
+                                          x.Books.CallNumber,
+                                          x.RFID,
+                                          x.Books.BookSubjects.SubjectName,
+                                          x.Books.Publishers.PublisherName,
+                                          x.Books.PublishedYear,
+                                          x.Books.Price,
+                                          x.Discontinued
+                                      }).Take(25);
 
-                isFirstLoad = false;
+                    dataGridViewBookList.DataSource = displayList.ToList();
+                }
             }
         }
 
@@ -246,15 +254,15 @@ namespace SA45Team07B
 
                 // tag can never be null since this button is disable when there is no selected row
                 this.tagFound = (from x in context.RFIDs
-                            where x.RFID == selectedRFID
-                            select x).First();
+                                 where x.RFID == selectedRFID
+                                 select x).First();
 
                 this.bookFound = RFIDFound.Books;
                 this.tagsOfBookFound = BookFound.RFIDs.ToList();
                 this.subjectOfBookFound = BookFound.BookSubjects;
                 this.publisherOfBookFound = BookFound.Publishers;
             }
-           
+
             this.DialogResult = DialogResult.OK;
         }
 
@@ -265,17 +273,15 @@ namespace SA45Team07B
 
         private void dataGridViewMemberList_SelectionChanged(object sender, EventArgs e)
         {
-        
+
             if (dataGridViewBookList.SelectedRows.Count == 0)
             {
                 btnOK.Enabled = false;
-                btnOK.BackColor = Color.LightGray;
                 toolStripStatusLblSelectedBook.Text = "No record is found.";
             }
             else
             {
                 btnOK.Enabled = true;
-                btnOK.BackColor = Color.White;
 
                 string selectedName = dataGridViewBookList.CurrentRow.Cells["BookTitleColumn"].Value.ToString();
 
@@ -287,13 +293,15 @@ namespace SA45Team07B
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                if (isFirstLoad)
+                if (isFirstLoad && e.OldValue > 8)
                 {
                     SearchAndDisplayBook();
+                    isFirstLoad = false;
                     // remove this event handler
                     this.dataGridViewBookList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
                 }
             }
         }
     }
+
 }

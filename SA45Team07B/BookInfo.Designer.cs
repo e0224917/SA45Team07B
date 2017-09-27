@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblAddBk = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mtbISBN = new System.Windows.Forms.MaskedTextBox();
             this.mtbYear = new System.Windows.Forms.MaskedTextBox();
             this.lblYear = new System.Windows.Forms.Label();
@@ -71,17 +71,6 @@
             this.gbxBasicInfo.SuspendLayout();
             this.gbxAvail.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblAddBk
-            // 
-            this.lblAddBk.AutoSize = true;
-            this.lblAddBk.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddBk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBk.Location = new System.Drawing.Point(514, 101);
-            this.lblAddBk.Name = "lblAddBk";
-            this.lblAddBk.Size = new System.Drawing.Size(163, 25);
-            this.lblAddBk.TabIndex = 85;
-            this.lblAddBk.Text = "View Book Detail";
             // 
             // mtbISBN
             // 
@@ -252,6 +241,7 @@
             // 
             // btnFindBk
             // 
+            this.btnFindBk.BackColor = System.Drawing.Color.White;
             this.btnFindBk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnFindBk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindBk.Location = new System.Drawing.Point(375, 49);
@@ -259,7 +249,7 @@
             this.btnFindBk.Size = new System.Drawing.Size(31, 27);
             this.btnFindBk.TabIndex = 94;
             this.btnFindBk.Text = "...";
-            this.btnFindBk.UseVisualStyleBackColor = true;
+            this.btnFindBk.UseVisualStyleBackColor = false;
             this.btnFindBk.Click += new System.EventHandler(this.btnFindBk_Click);
             // 
             // txtbPublisher
@@ -282,17 +272,17 @@
             // 
             this.dgvAvail.AllowUserToAddRows = false;
             this.dgvAvail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvAvail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvAvail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvAvail.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle82.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle82.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RFID,
@@ -300,28 +290,38 @@
             this.DateBorrowed,
             this.DueDate,
             this.BorrowedBy});
-            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle88.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAvail.DefaultCellStyle = dataGridViewCellStyle88;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvail.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvAvail.GridColor = System.Drawing.Color.White;
             this.dgvAvail.Location = new System.Drawing.Point(166, 23);
             this.dgvAvail.Name = "dgvAvail";
             this.dgvAvail.ReadOnly = true;
-            this.dgvAvail.RowHeadersWidth = 5;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvail.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvAvail.RowHeadersWidth = 4;
             this.dgvAvail.RowTemplate.Height = 23;
-            this.dgvAvail.Size = new System.Drawing.Size(714, 174);
+            this.dgvAvail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAvail.Size = new System.Drawing.Size(727, 170);
             this.dgvAvail.TabIndex = 98;
             // 
             // RFID
             // 
             this.RFID.DataPropertyName = "RFID";
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.RFID.DefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.RFID.DefaultCellStyle = dataGridViewCellStyle21;
             this.RFID.HeaderText = "RFID";
             this.RFID.Name = "RFID";
             this.RFID.ReadOnly = true;
@@ -330,8 +330,9 @@
             // Availability
             // 
             this.Availability.DataPropertyName = "Availability";
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Availability.DefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Availability.DefaultCellStyle = dataGridViewCellStyle22;
             this.Availability.HeaderText = "Availability";
             this.Availability.Name = "Availability";
             this.Availability.ReadOnly = true;
@@ -340,8 +341,8 @@
             // DateBorrowed
             // 
             this.DateBorrowed.DataPropertyName = "DateBorrowed";
-            dataGridViewCellStyle85.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DateBorrowed.DefaultCellStyle = dataGridViewCellStyle85;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DateBorrowed.DefaultCellStyle = dataGridViewCellStyle23;
             this.DateBorrowed.HeaderText = "Date Borrowed";
             this.DateBorrowed.Name = "DateBorrowed";
             this.DateBorrowed.ReadOnly = true;
@@ -350,8 +351,8 @@
             // DueDate
             // 
             this.DueDate.DataPropertyName = "DueDate";
-            dataGridViewCellStyle86.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DueDate.DefaultCellStyle = dataGridViewCellStyle86;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.DueDate.DefaultCellStyle = dataGridViewCellStyle24;
             this.DueDate.HeaderText = "Due Date";
             this.DueDate.Name = "DueDate";
             this.DueDate.ReadOnly = true;
@@ -360,18 +361,20 @@
             // BorrowedBy
             // 
             this.BorrowedBy.DataPropertyName = "BorrowedBy";
-            dataGridViewCellStyle87.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BorrowedBy.DefaultCellStyle = dataGridViewCellStyle87;
-            this.BorrowedBy.HeaderText = "Last Borrowed by";
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BorrowedBy.DefaultCellStyle = dataGridViewCellStyle25;
+            this.BorrowedBy.HeaderText = "Last Borrowed Member ID";
             this.BorrowedBy.Name = "BorrowedBy";
             this.BorrowedBy.ReadOnly = true;
-            this.BorrowedBy.Width = 160;
+            this.BorrowedBy.Width = 180;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(561, 713);
+            this.btnClose.Location = new System.Drawing.Point(1247, 1630);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(82, 39);
+            this.btnClose.Size = new System.Drawing.Size(182, 89);
             this.btnClose.TabIndex = 99;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -406,7 +409,7 @@
             this.gbxBasicInfo.Size = new System.Drawing.Size(1045, 343);
             this.gbxBasicInfo.TabIndex = 100;
             this.gbxBasicInfo.TabStop = false;
-            this.gbxBasicInfo.Text = "Basic Information";
+            this.gbxBasicInfo.Text = "Book Details";
             // 
             // gbxAvail
             // 
@@ -417,22 +420,20 @@
             this.gbxAvail.Size = new System.Drawing.Size(1044, 211);
             this.gbxAvail.TabIndex = 97;
             this.gbxAvail.TabStop = false;
-            this.gbxAvail.Text = "Availability Detail";
+            this.gbxAvail.Text = "Availability";
             // 
             // BookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.ClientSize = new System.Drawing.Size(1276, 773);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.lblAddBk);
             this.Controls.Add(this.gbxBasicInfo);
             this.Controls.Add(this.gbxAvail);
             this.Name = "BookInfo";
-            this.Text = "View Book Detail - Library Management System SA45Team07B";
+            this.Text = "View Book Details";
             this.Controls.SetChildIndex(this.gbxAvail, 0);
             this.Controls.SetChildIndex(this.gbxBasicInfo, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.lblAddBk, 0);
             this.Controls.SetChildIndex(this.btnClose, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvail)).EndInit();
             this.gbxBasicInfo.ResumeLayout(false);
@@ -444,8 +445,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAddBk;
         private System.Windows.Forms.MaskedTextBox mtbISBN;
         private System.Windows.Forms.MaskedTextBox mtbYear;
         private System.Windows.Forms.Label lblYear;
@@ -468,13 +467,13 @@
         private System.Windows.Forms.TextBox txtbPublisher;
         private System.Windows.Forms.TextBox txtbSubjectName;
         private System.Windows.Forms.DataGridView dgvAvail;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox gbxBasicInfo;
+        private System.Windows.Forms.GroupBox gbxAvail;
         private System.Windows.Forms.DataGridViewTextBoxColumn RFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Availability;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateBorrowed;
         private System.Windows.Forms.DataGridViewTextBoxColumn DueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn BorrowedBy;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.GroupBox gbxBasicInfo;
-        private System.Windows.Forms.GroupBox gbxAvail;
     }
 }

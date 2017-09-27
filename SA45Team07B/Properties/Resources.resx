@@ -127,4 +127,31 @@
   <data name="greybackground3-modi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greybackground3-modi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1Borrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1Borrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1Borrow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1Borrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2Return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4Addbk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4Addbk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5ModiBk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5ModiBk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="6FdBk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6FdBk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7AddMmbr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7AddMmbr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8ModiMmbr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8ModiMmbr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9FdMmbr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9FdMmbr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

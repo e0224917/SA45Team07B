@@ -222,7 +222,6 @@
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOK.BackColor = System.Drawing.Color.White;
             this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
             this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -230,7 +229,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(287, 643);
+            this.btnOK.Location = new System.Drawing.Point(288, 644);
             this.btnOK.Margin = new System.Windows.Forms.Padding(10);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(92, 40);
@@ -241,7 +240,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
@@ -250,7 +248,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(398, 643);
+            this.btnCancel.Location = new System.Drawing.Point(400, 644);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 40);
@@ -276,7 +274,7 @@
             this.lblSchoolID.AutoSize = true;
             this.lblSchoolID.BackColor = System.Drawing.Color.Transparent;
             this.lblSchoolID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchoolID.Location = new System.Drawing.Point(36, 74);
+            this.lblSchoolID.Location = new System.Drawing.Point(36, 75);
             this.lblSchoolID.Margin = new System.Windows.Forms.Padding(6);
             this.lblSchoolID.Name = "lblSchoolID";
             this.lblSchoolID.Size = new System.Drawing.Size(79, 21);
@@ -288,7 +286,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(36, 114);
+            this.lblEmail.Location = new System.Drawing.Point(36, 115);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(6);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 21);
@@ -377,22 +375,22 @@
             this.groupBox1.Size = new System.Drawing.Size(698, 157);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by";
+            this.groupBox1.Text = "Search By";
             // 
             // toolStripStatusLblSelectedMember
             // 
             this.toolStripStatusLblSelectedMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLblSelectedMember.Name = "toolStripStatusLblSelectedMember";
             this.toolStripStatusLblSelectedMember.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(157, 21);
-            this.toolStripStatusLblSelectedMember.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLblSelectedMember.Size = new System.Drawing.Size(266, 21);
+            this.toolStripStatusLblSelectedMember.Text = "Select a member or Press ESC to exit.";
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLblSelectedMember});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 704);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 705);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
             this.statusStrip1.Size = new System.Drawing.Size(754, 26);
@@ -402,12 +400,12 @@
             // MemberPopUpSearch
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SA45Team07B.Properties.Resources.greybackground3_modi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(754, 730);
+            this.ClientSize = new System.Drawing.Size(754, 731);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);

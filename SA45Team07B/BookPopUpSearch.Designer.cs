@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.lblSelectBook = new System.Windows.Forms.Label();
@@ -90,10 +90,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(421, 705);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnCancel.Location = new System.Drawing.Point(947, 1586);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(7, 11, 7, 11);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 40);
+            this.btnCancel.Size = new System.Drawing.Size(207, 90);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -108,10 +108,10 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(306, 705);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnOK.Location = new System.Drawing.Point(688, 1586);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(7, 11, 7, 11);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(92, 40);
+            this.btnOK.Size = new System.Drawing.Size(207, 90);
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
@@ -122,10 +122,10 @@
             this.lblSelectBook.AutoSize = true;
             this.lblSelectBook.BackColor = System.Drawing.Color.Transparent;
             this.lblSelectBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectBook.Location = new System.Drawing.Point(19, 269);
-            this.lblSelectBook.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectBook.Location = new System.Drawing.Point(43, 605);
+            this.lblSelectBook.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSelectBook.Name = "lblSelectBook";
-            this.lblSelectBook.Size = new System.Drawing.Size(167, 21);
+            this.lblSelectBook.Size = new System.Drawing.Size(383, 48);
             this.lblSelectBook.TabIndex = 15;
             this.lblSelectBook.Text = "Select a book from list:";
             // 
@@ -148,11 +148,11 @@
             this.groupBox1.Controls.Add(this.txtbBookTitle);
             this.groupBox1.Controls.Add(this.txtbISBN);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(20);
+            this.groupBox1.Location = new System.Drawing.Point(34, 34);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(45, 45, 45, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(772, 241);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1737, 542);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
@@ -160,10 +160,10 @@
             // rbtnDiscontinued
             // 
             this.rbtnDiscontinued.AutoSize = true;
-            this.rbtnDiscontinued.Location = new System.Drawing.Point(454, 196);
-            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
+            this.rbtnDiscontinued.Location = new System.Drawing.Point(1022, 441);
+            this.rbtnDiscontinued.Margin = new System.Windows.Forms.Padding(36, 14, 14, 14);
             this.rbtnDiscontinued.Name = "rbtnDiscontinued";
-            this.rbtnDiscontinued.Size = new System.Drawing.Size(119, 25);
+            this.rbtnDiscontinued.Size = new System.Drawing.Size(259, 52);
             this.rbtnDiscontinued.TabIndex = 8;
             this.rbtnDiscontinued.Text = "Discontinued";
             this.rbtnDiscontinued.UseVisualStyleBackColor = true;
@@ -172,10 +172,10 @@
             // rbtnAvailable
             // 
             this.rbtnAvailable.AutoSize = true;
-            this.rbtnAvailable.Location = new System.Drawing.Point(238, 196);
-            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
+            this.rbtnAvailable.Location = new System.Drawing.Point(536, 441);
+            this.rbtnAvailable.Margin = new System.Windows.Forms.Padding(36, 14, 14, 14);
             this.rbtnAvailable.Name = "rbtnAvailable";
-            this.rbtnAvailable.Size = new System.Drawing.Size(91, 25);
+            this.rbtnAvailable.Size = new System.Drawing.Size(193, 52);
             this.rbtnAvailable.TabIndex = 6;
             this.rbtnAvailable.Text = "Available";
             this.rbtnAvailable.UseVisualStyleBackColor = true;
@@ -184,10 +184,10 @@
             // rbtnOnLoan
             // 
             this.rbtnOnLoan.AutoSize = true;
-            this.rbtnOnLoan.Location = new System.Drawing.Point(350, 196);
-            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(16, 6, 6, 6);
+            this.rbtnOnLoan.Location = new System.Drawing.Point(788, 441);
+            this.rbtnOnLoan.Margin = new System.Windows.Forms.Padding(36, 14, 14, 14);
             this.rbtnOnLoan.Name = "rbtnOnLoan";
-            this.rbtnOnLoan.Size = new System.Drawing.Size(83, 25);
+            this.rbtnOnLoan.Size = new System.Drawing.Size(176, 52);
             this.rbtnOnLoan.TabIndex = 7;
             this.rbtnOnLoan.Text = "On loan";
             this.rbtnOnLoan.UseVisualStyleBackColor = true;
@@ -196,10 +196,10 @@
             // rbtnAll
             // 
             this.rbtnAll.AutoSize = true;
-            this.rbtnAll.Location = new System.Drawing.Point(170, 196);
-            this.rbtnAll.Margin = new System.Windows.Forms.Padding(6);
+            this.rbtnAll.Location = new System.Drawing.Point(382, 441);
+            this.rbtnAll.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.rbtnAll.Name = "rbtnAll";
-            this.rbtnAll.Size = new System.Drawing.Size(46, 25);
+            this.rbtnAll.Size = new System.Drawing.Size(92, 52);
             this.rbtnAll.TabIndex = 5;
             this.rbtnAll.Text = "All";
             this.rbtnAll.UseVisualStyleBackColor = true;
@@ -212,10 +212,10 @@
             this.cbSubject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbSubject.FormattingEnabled = true;
             this.cbSubject.IntegralHeight = false;
-            this.cbSubject.Location = new System.Drawing.Point(166, 154);
-            this.cbSubject.Margin = new System.Windows.Forms.Padding(6);
+            this.cbSubject.Location = new System.Drawing.Point(374, 346);
+            this.cbSubject.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.cbSubject.Name = "cbSubject";
-            this.cbSubject.Size = new System.Drawing.Size(403, 29);
+            this.cbSubject.Size = new System.Drawing.Size(902, 56);
             this.cbSubject.TabIndex = 4;
             this.cbSubject.SelectedValueChanged += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -224,10 +224,10 @@
             this.lblAvailibility.AutoSize = true;
             this.lblAvailibility.BackColor = System.Drawing.Color.Transparent;
             this.lblAvailibility.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailibility.Location = new System.Drawing.Point(36, 196);
-            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(6);
+            this.lblAvailibility.Location = new System.Drawing.Point(81, 441);
+            this.lblAvailibility.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblAvailibility.Name = "lblAvailibility";
-            this.lblAvailibility.Size = new System.Drawing.Size(89, 21);
+            this.lblAvailibility.Size = new System.Drawing.Size(198, 48);
             this.lblAvailibility.TabIndex = 25;
             this.lblAvailibility.Text = "Availability:";
             // 
@@ -236,10 +236,10 @@
             this.lblSubject.AutoSize = true;
             this.lblSubject.BackColor = System.Drawing.Color.Transparent;
             this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(36, 156);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(6);
+            this.lblSubject.Location = new System.Drawing.Point(81, 351);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(64, 21);
+            this.lblSubject.Size = new System.Drawing.Size(145, 48);
             this.lblSubject.TabIndex = 23;
             this.lblSubject.Text = "Subject:";
             // 
@@ -248,10 +248,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(36, 34);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(6);
+            this.lblTitle.Location = new System.Drawing.Point(81, 76);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(81, 21);
+            this.lblTitle.Size = new System.Drawing.Size(187, 48);
             this.lblTitle.TabIndex = 15;
             this.lblTitle.Text = "Book Title:";
             // 
@@ -264,10 +264,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(623, 105);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(6);
+            this.btnClear.Location = new System.Drawing.Point(1402, 236);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(92, 40);
+            this.btnClear.Size = new System.Drawing.Size(207, 90);
             this.btnClear.TabIndex = 10;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -278,10 +278,10 @@
             this.lblISBN.AutoSize = true;
             this.lblISBN.BackColor = System.Drawing.Color.Transparent;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(36, 74);
-            this.lblISBN.Margin = new System.Windows.Forms.Padding(6);
+            this.lblISBN.Location = new System.Drawing.Point(81, 166);
+            this.lblISBN.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(47, 21);
+            this.lblISBN.Size = new System.Drawing.Size(105, 48);
             this.lblISBN.TabIndex = 16;
             this.lblISBN.Text = "ISBN:";
             // 
@@ -294,10 +294,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(623, 52);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Location = new System.Drawing.Point(1402, 117);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(92, 40);
+            this.btnSearch.Size = new System.Drawing.Size(207, 90);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -308,38 +308,38 @@
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.BackColor = System.Drawing.Color.Transparent;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(36, 114);
-            this.lblAuthor.Margin = new System.Windows.Forms.Padding(6);
+            this.lblAuthor.Location = new System.Drawing.Point(81, 256);
+            this.lblAuthor.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(61, 21);
+            this.lblAuthor.Size = new System.Drawing.Size(137, 48);
             this.lblAuthor.TabIndex = 17;
             this.lblAuthor.Text = "Author:";
             // 
             // txtbAuthor
             // 
             this.txtbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbAuthor.Location = new System.Drawing.Point(166, 112);
-            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbAuthor.Location = new System.Drawing.Point(374, 252);
+            this.txtbAuthor.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbAuthor.Name = "txtbAuthor";
-            this.txtbAuthor.Size = new System.Drawing.Size(403, 29);
+            this.txtbAuthor.Size = new System.Drawing.Size(902, 55);
             this.txtbAuthor.TabIndex = 3;
             // 
             // txtbBookTitle
             // 
             this.txtbBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbBookTitle.Location = new System.Drawing.Point(166, 32);
-            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbBookTitle.Location = new System.Drawing.Point(374, 72);
+            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbBookTitle.Name = "txtbBookTitle";
-            this.txtbBookTitle.Size = new System.Drawing.Size(403, 29);
+            this.txtbBookTitle.Size = new System.Drawing.Size(902, 55);
             this.txtbBookTitle.TabIndex = 1;
             // 
             // txtbISBN
             // 
             this.txtbISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbISBN.Location = new System.Drawing.Point(166, 72);
-            this.txtbISBN.Margin = new System.Windows.Forms.Padding(6);
+            this.txtbISBN.Location = new System.Drawing.Point(374, 162);
+            this.txtbISBN.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.txtbISBN.Name = "txtbISBN";
-            this.txtbISBN.Size = new System.Drawing.Size(403, 29);
+            this.txtbISBN.Size = new System.Drawing.Size(902, 55);
             this.txtbISBN.TabIndex = 2;
             // 
             // statusStrip1
@@ -347,10 +347,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLblSelectedBook});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 756);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1682);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(805, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 25, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1811, 53);
             this.statusStrip1.TabIndex = 25;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -358,29 +358,29 @@
             // 
             this.toolStripStatusLblSelectedBook.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLblSelectedBook.Name = "toolStripStatusLblSelectedBook";
-            this.toolStripStatusLblSelectedBook.Size = new System.Drawing.Size(157, 21);
-            this.toolStripStatusLblSelectedBook.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLblSelectedBook.Size = new System.Drawing.Size(557, 48);
+            this.toolStripStatusLblSelectedBook.Text = "Select a book or Press ESC to exit.";
             // 
             // dataGridViewBookList
             // 
             this.dataGridViewBookList.AllowUserToAddRows = false;
             this.dataGridViewBookList.AllowUserToDeleteRows = false;
             this.dataGridViewBookList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewBookList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewBookList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBookList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewBookList.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewBookList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewBookList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBookList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBookList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBookList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BookIDColumn,
@@ -396,34 +396,34 @@
             this.PublishedYearColumn,
             this.PriceColumn,
             this.DiscontinuedColumn});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewBookList.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBookList.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewBookList.EnableHeadersVisualStyles = false;
             this.dataGridViewBookList.GridColor = System.Drawing.Color.White;
-            this.dataGridViewBookList.Location = new System.Drawing.Point(14, 296);
-            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(20);
+            this.dataGridViewBookList.Location = new System.Drawing.Point(32, 666);
+            this.dataGridViewBookList.Margin = new System.Windows.Forms.Padding(45, 45, 45, 45);
             this.dataGridViewBookList.MultiSelect = false;
             this.dataGridViewBookList.Name = "dataGridViewBookList";
             this.dataGridViewBookList.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBookList.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBookList.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewBookList.RowHeadersVisible = false;
             this.dataGridViewBookList.RowHeadersWidth = 5;
             this.dataGridViewBookList.RowTemplate.Height = 24;
             this.dataGridViewBookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBookList.Size = new System.Drawing.Size(773, 392);
+            this.dataGridViewBookList.Size = new System.Drawing.Size(1739, 882);
             this.dataGridViewBookList.TabIndex = 13;
             this.dataGridViewBookList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
             this.dataGridViewBookList.SelectionChanged += new System.EventHandler(this.dataGridViewMemberList_SelectionChanged);
@@ -435,17 +435,17 @@
             this.BookIDColumn.HeaderText = "ID";
             this.BookIDColumn.Name = "BookIDColumn";
             this.BookIDColumn.ReadOnly = true;
-            this.BookIDColumn.Width = 69;
+            this.BookIDColumn.Width = 123;
             // 
             // BookTitleColumn
             // 
             this.BookTitleColumn.DataPropertyName = "BookTitle";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.BookTitleColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.BookTitleColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.BookTitleColumn.HeaderText = "Title";
             this.BookTitleColumn.Name = "BookTitleColumn";
             this.BookTitleColumn.ReadOnly = true;
-            this.BookTitleColumn.Width = 83;
+            this.BookTitleColumn.Width = 156;
             // 
             // RFIDColumn
             // 
@@ -453,7 +453,7 @@
             this.RFIDColumn.HeaderText = "RFID";
             this.RFIDColumn.Name = "RFIDColumn";
             this.RFIDColumn.ReadOnly = true;
-            this.RFIDColumn.Width = 87;
+            this.RFIDColumn.Width = 163;
             // 
             // AvailabilityColumn
             // 
@@ -461,7 +461,7 @@
             this.AvailabilityColumn.HeaderText = "Availability";
             this.AvailabilityColumn.Name = "AvailabilityColumn";
             this.AvailabilityColumn.ReadOnly = true;
-            this.AvailabilityColumn.Width = 130;
+            this.AvailabilityColumn.Width = 258;
             // 
             // EditionColumn
             // 
@@ -469,78 +469,78 @@
             this.EditionColumn.HeaderText = "Edition";
             this.EditionColumn.Name = "EditionColumn";
             this.EditionColumn.ReadOnly = true;
-            this.EditionColumn.Width = 102;
+            this.EditionColumn.Width = 198;
             // 
             // AuthorColumn
             // 
             this.AuthorColumn.DataPropertyName = "Author";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.AuthorColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.AuthorColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.AuthorColumn.HeaderText = "Author";
             this.AuthorColumn.Name = "AuthorColumn";
             this.AuthorColumn.ReadOnly = true;
-            this.AuthorColumn.Width = 102;
+            this.AuthorColumn.Width = 197;
             // 
             // ISBNColumn
             // 
             this.ISBNColumn.DataPropertyName = "ISBN";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ISBNColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ISBNColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.ISBNColumn.HeaderText = "ISBN";
             this.ISBNColumn.Name = "ISBNColumn";
             this.ISBNColumn.ReadOnly = true;
-            this.ISBNColumn.Width = 88;
+            this.ISBNColumn.Width = 165;
             // 
             // CallNumberColumn
             // 
             this.CallNumberColumn.DataPropertyName = "CallNumber";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CallNumberColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CallNumberColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.CallNumberColumn.HeaderText = "Call No.";
             this.CallNumberColumn.Name = "CallNumberColumn";
             this.CallNumberColumn.ReadOnly = true;
-            this.CallNumberColumn.Width = 108;
+            this.CallNumberColumn.Width = 212;
             // 
             // SubjectNameColumn
             // 
             this.SubjectNameColumn.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SubjectNameColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SubjectNameColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.SubjectNameColumn.HeaderText = "Subject";
             this.SubjectNameColumn.Name = "SubjectNameColumn";
             this.SubjectNameColumn.ReadOnly = true;
-            this.SubjectNameColumn.Width = 105;
+            this.SubjectNameColumn.Width = 205;
             // 
             // PublisherNameColumn
             // 
             this.PublisherNameColumn.DataPropertyName = "PublisherName";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PublisherNameColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PublisherNameColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.PublisherNameColumn.HeaderText = "Publisher";
             this.PublisherNameColumn.Name = "PublisherNameColumn";
             this.PublisherNameColumn.ReadOnly = true;
-            this.PublisherNameColumn.Width = 119;
+            this.PublisherNameColumn.Width = 234;
             // 
             // PublishedYearColumn
             // 
             this.PublishedYearColumn.DataPropertyName = "PublishedYear";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PublishedYearColumn.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PublishedYearColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.PublishedYearColumn.HeaderText = "Published Year";
             this.PublishedYearColumn.Name = "PublishedYearColumn";
             this.PublishedYearColumn.ReadOnly = true;
-            this.PublishedYearColumn.Width = 156;
+            this.PublishedYearColumn.Width = 319;
             // 
             // PriceColumn
             // 
             this.PriceColumn.DataPropertyName = "Price";
-            dataGridViewCellStyle22.Format = "C2";
-            dataGridViewCellStyle22.NullValue = "0.00";
-            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = "0.00";
+            this.PriceColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.PriceColumn.HeaderText = "Price";
             this.PriceColumn.Name = "PriceColumn";
             this.PriceColumn.ReadOnly = true;
-            this.PriceColumn.Width = 88;
+            this.PriceColumn.Width = 166;
             // 
             // DiscontinuedColumn
             // 
@@ -548,24 +548,25 @@
             this.DiscontinuedColumn.HeaderText = "Discontinued";
             this.DiscontinuedColumn.Name = "DiscontinuedColumn";
             this.DiscontinuedColumn.ReadOnly = true;
-            this.DiscontinuedColumn.Width = 145;
+            this.DiscontinuedColumn.Width = 296;
             // 
             // BookPopUpSearch
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::SA45Team07B.Properties.Resources.greybackground3_modi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(805, 782);
+            this.ClientSize = new System.Drawing.Size(1811, 1735);
             this.Controls.Add(this.dataGridViewBookList);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblSelectBook);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BookPopUpSearch";
             this.Text = "Book Search";
             this.Load += new System.EventHandler(this.BookPopUpSearch_Load);
