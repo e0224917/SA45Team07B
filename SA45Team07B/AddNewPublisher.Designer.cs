@@ -858,17 +858,19 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1198);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1187);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1745, 42);
+            this.statusStrip1.Size = new System.Drawing.Size(1745, 53);
             this.statusStrip1.TabIndex = 54;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(156, 37);
-            this.toolStripStatusLabel1.Text = " Welcome!  ";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(322, 48);
+            this.toolStripStatusLabel1.Text = "Manage Publisher. ";
             // 
             // AddNewPublisher
             // 
