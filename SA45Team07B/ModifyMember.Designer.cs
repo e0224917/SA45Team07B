@@ -132,6 +132,7 @@
             this.maskedTextBoxSchoolID.ReadOnly = true;
             this.maskedTextBoxSchoolID.Size = new System.Drawing.Size(400, 55);
             this.maskedTextBoxSchoolID.TabIndex = 17;
+            this.maskedTextBoxSchoolID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.maskedTextBoxSchoolID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.maskedTextBoxSchoolID.Validating += new System.ComponentModel.CancelEventHandler(this.maskedTextBoxSchoolID_Validating);
             this.maskedTextBoxSchoolID.Validated += new System.EventHandler(this.textBoxes_Validated);
@@ -145,6 +146,8 @@
             this.buttonFind.Text = "...";
             this.buttonFind.UseVisualStyleBackColor = true;
             this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            this.buttonFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
+            this.buttonFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             // 
             // textBoxMemberName
             // 
@@ -152,6 +155,7 @@
             this.textBoxMemberName.Name = "textBoxMemberName";
             this.textBoxMemberName.Size = new System.Drawing.Size(600, 55);
             this.textBoxMemberName.TabIndex = 19;
+            this.textBoxMemberName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxMemberName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxMemberName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxMemberName_Validating);
             this.textBoxMemberName.Validated += new System.EventHandler(this.textBoxes_Validated);
@@ -164,12 +168,15 @@
             this.comboBoxMemberType.Name = "comboBoxMemberType";
             this.comboBoxMemberType.Size = new System.Drawing.Size(500, 56);
             this.comboBoxMemberType.TabIndex = 20;
+            this.comboBoxMemberType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             // 
             // buttonSaveChanges
             // 
             this.buttonSaveChanges.BackColor = System.Drawing.Color.White;
             this.buttonSaveChanges.Enabled = false;
-            this.buttonSaveChanges.Location = new System.Drawing.Point(355, 681);
+            this.buttonSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveChanges.Location = new System.Drawing.Point(355, 661);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(262, 91);
             this.buttonSaveChanges.TabIndex = 24;
@@ -181,7 +188,9 @@
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.White;
             this.buttonCancel.CausesValidation = false;
-            this.buttonCancel.Location = new System.Drawing.Point(655, 681);
+            this.buttonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Location = new System.Drawing.Point(655, 661);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 91);
             this.buttonCancel.TabIndex = 25;
@@ -197,6 +206,7 @@
             this.comboBoxFacultyName.Name = "comboBoxFacultyName";
             this.comboBoxFacultyName.Size = new System.Drawing.Size(600, 56);
             this.comboBoxFacultyName.TabIndex = 21;
+            this.comboBoxFacultyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             // 
             // textBoxContactNumber
             // 
@@ -204,6 +214,7 @@
             this.textBoxContactNumber.Name = "textBoxContactNumber";
             this.textBoxContactNumber.Size = new System.Drawing.Size(500, 55);
             this.textBoxContactNumber.TabIndex = 22;
+            this.textBoxContactNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxContactNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxContactNumber.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxContactNumber_Validating);
             this.textBoxContactNumber.Validated += new System.EventHandler(this.textBoxes_Validated);
@@ -214,6 +225,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(800, 55);
             this.textBoxEmail.TabIndex = 23;
+            this.textBoxEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxes_KeyDown);
             this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxes_KeyPress);
             this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxEmail_Validating);
             this.textBoxEmail.Validated += new System.EventHandler(this.textBoxes_Validated);
@@ -325,7 +337,6 @@
             this.Controls.Add(this.labelMemberName);
             this.Name = "ModifyMember";
             this.Text = "Modify Member Information";
-            this.Load += new System.EventHandler(this.ModifyMember_Load);
             this.Controls.SetChildIndex(this.labelMemberName, 0);
             this.Controls.SetChildIndex(this.labelSchoolID, 0);
             this.Controls.SetChildIndex(this.labelMemberType, 0);

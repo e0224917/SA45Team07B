@@ -18,9 +18,12 @@ namespace SA45Team07B
             InitializeComponent();
         }
 
-        private void ModifyMember_Load(object sender, EventArgs e)
+        private void textBoxes_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void buttonFind_Click(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace SA45Team07B
         }
         private void maskedTextBoxSchoolID_Validating(object sender, CancelEventArgs e)
         {
-            if ((maskedTextBoxSchoolID.Text == ""))
+            if ((maskedTextBoxSchoolID.Text == "") && maskedTextBoxSchoolID.Focus())
             {
                 errorProviderSchoolID.SetError(maskedTextBoxSchoolID, "Please select School ID.");
 
@@ -70,14 +73,10 @@ namespace SA45Team07B
 
         private void textBoxMemberName_Validating(object sender, CancelEventArgs e)
         {
-            if ((textBoxMemberName.Text == "" && mem.MemberName.ToString().Length == 0))
+            if (textBoxMemberName.Text == "" && textBoxMemberName.Focus() /*mem.MemberName.ToString().Length == 0)*/)
             {
                 errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
 
-            }
-            else if (textBoxMemberName.Text == "")
-            {
-                errorProviderMemberName.SetError(textBoxMemberName, "Please enter Member's Name. Field cannot be empty.");
             }
             else if (textBoxMemberName.Text.Length > 50)
             {
@@ -168,6 +167,7 @@ namespace SA45Team07B
             if (dr == DialogResult.Yes)
             {
                 context2.SaveChanges();
+                MessageBox.Show("Successfully updated.");
                 Close();
                 MemberPopUpSearch mps = new MemberPopUpSearch();
                 mps.Show();
@@ -186,13 +186,12 @@ namespace SA45Team07B
 
             }
         }
-        
-
+    
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
-            MemberPopUpSearch mpus = new MemberPopUpSearch();
-            mpus.Show();
+            MemberInfo mbinfo = new MemberInfo();
+            mbinfo.Show();
         }
     }
 }
