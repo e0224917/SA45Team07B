@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LibraryDataSet" targetNamespace="http://tempuri.org/LibraryDataSet.xsd" xmlns:mstns="http://tempuri.org/LibraryDataSet.xsd" xmlns="http://tempuri.org/LibraryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SA45Team07B_LibraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SA45Team07B_LibraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SA45Team07B.Properties.Settings.GlobalReference.Default.SA45Team07B_LibraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MemberDetailListTableAdapter" GeneratorDataComponentClassName="MemberDetailListTableAdapter" Name="MemberDetailList" UserDataComponentName="MemberDetailListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SA45Team07B_LibraryConnectionString (Settings)" DbObjectName="SA45Team07B_Library.dbo.MemberDetailList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Member ID], [Member Name], Type, Faculty, [School ID], Phone, Email FROM dbo.MemberDetailList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Member ID" DataSetColumn="Member ID" />
+              <Mapping SourceColumn="Member Name" DataSetColumn="Member Name" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Faculty" DataSetColumn="Faculty" />
+              <Mapping SourceColumn="School ID" DataSetColumn="School ID" />
+              <Mapping SourceColumn="Phone" DataSetColumn="Phone" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LibraryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LibraryDataSet" msprop:Generator_UserDSName="LibraryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MemberDetailList" msprop:Generator_TableClassName="MemberDetailListDataTable" msprop:Generator_TableVarName="tableMemberDetailList" msprop:Generator_RowChangedName="MemberDetailListRowChanged" msprop:Generator_TablePropName="MemberDetailList" msprop:Generator_RowDeletingName="MemberDetailListRowDeleting" msprop:Generator_RowChangingName="MemberDetailListRowChanging" msprop:Generator_RowEvHandlerName="MemberDetailListRowChangeEventHandler" msprop:Generator_RowDeletedName="MemberDetailListRowDeleted" msprop:Generator_RowClassName="MemberDetailListRow" msprop:Generator_UserTableName="MemberDetailList" msprop:Generator_RowEvArgName="MemberDetailListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Member_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnMember_ID" msprop:Generator_ColumnPropNameInRow="Member_ID" msprop:Generator_ColumnPropNameInTable="Member_IDColumn" msprop:Generator_UserColumnName="Member ID" type="xs:long" />
+              <xs:element name="Member_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnMember_Name" msprop:Generator_ColumnPropNameInRow="Member_Name" msprop:Generator_ColumnPropNameInTable="Member_NameColumn" msprop:Generator_UserColumnName="Member Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Faculty" msprop:Generator_ColumnVarNameInTable="columnFaculty" msprop:Generator_ColumnPropNameInRow="Faculty" msprop:Generator_ColumnPropNameInTable="FacultyColumn" msprop:Generator_UserColumnName="Faculty" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="School_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnSchool_ID" msprop:Generator_ColumnPropNameInRow="School_ID" msprop:Generator_ColumnPropNameInTable="School_IDColumn" msprop:Generator_UserColumnName="School ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MemberDetailList" />
+      <xs:field xpath="mstns:Member_x0020_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

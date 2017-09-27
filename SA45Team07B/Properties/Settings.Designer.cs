@@ -22,5 +22,15 @@ namespace SA45Team07B.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=SA45Team07B_Library;Integrated Security=True")]
+        public string SA45Team07B_LibraryConnectionString {
+            get {
+                return ((string)(this["SA45Team07B_LibraryConnectionString"]));
+            }
+        }
     }
 }
