@@ -172,7 +172,6 @@ namespace SA45Team07B
 
         private void ReturnForm_Load(object sender, EventArgs e)
         {
-            this.btnSubmit.BackColor = Color.LightGray;
             this.btnSubmit.Enabled = false;
             this.dtpReturnDate.MaxDate = DateTime.Today;
             this.ActiveControl = txtbRFID;
@@ -221,7 +220,6 @@ namespace SA45Team07B
 
                         errorProviderForRFID.SetError(txtbRFID, "");
                         toolStripStatusLabel1.Text = "1 record is found.";
-                        btnSubmit.BackColor = Color.White;
                         btnSubmit.Enabled = true;
                     }
                 }
@@ -230,7 +228,6 @@ namespace SA45Team07B
                     errorProviderForRFID.SetError(txtbRFID, "Invalid RFID");
                     toolStripStatusLabel1.Text = "Invalid RFID";
                     ClearTextboxData();
-                    btnSubmit.BackColor = Color.LightGray;
                     btnSubmit.Enabled = false;
                 }
             }
