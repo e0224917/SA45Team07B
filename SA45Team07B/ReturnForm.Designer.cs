@@ -296,10 +296,10 @@
             this.btnSearchRFID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchRFID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRFID.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchRFID.Location = new System.Drawing.Point(281, 61);
+            this.btnSearchRFID.Location = new System.Drawing.Point(276, 58);
             this.btnSearchRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSearchRFID.Name = "btnSearchRFID";
-            this.btnSearchRFID.Size = new System.Drawing.Size(28, 26);
+            this.btnSearchRFID.Size = new System.Drawing.Size(55, 35);
             this.btnSearchRFID.TabIndex = 6;
             this.btnSearchRFID.Text = "...";
             this.btnSearchRFID.UseVisualStyleBackColor = false;
@@ -505,8 +505,8 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(539, 48);
-            this.toolStripStatusLabel1.Text = "Input a RFID or Press ESC to exit.";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(559, 48);
+            this.toolStripStatusLabel1.Text = "Input an RFID or Press ESC to exit.";
             // 
             // ReturnForm
             // 
@@ -519,7 +519,7 @@
             this.Controls.Add(this.gbBookInfo);
             this.Controls.Add(this.gbReturnTransaction);
             this.Name = "ReturnForm";
-            this.Text = "Return Book - Library Management System SA45Team07B";
+            this.Text = "Return Book";
             this.Load += new System.EventHandler(this.ReturnForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.gbReturnTransaction, 0);

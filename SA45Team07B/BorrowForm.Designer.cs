@@ -107,14 +107,18 @@
             // 
             // btnMoreMember
             // 
+            this.btnMoreMember.BackColor = System.Drawing.Color.White;
             this.btnMoreMember.CausesValidation = false;
+            this.btnMoreMember.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btnMoreMember.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnMoreMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoreMember.Location = new System.Drawing.Point(442, 112);
             this.btnMoreMember.Margin = new System.Windows.Forms.Padding(7);
             this.btnMoreMember.Name = "btnMoreMember";
             this.btnMoreMember.Size = new System.Drawing.Size(64, 66);
             this.btnMoreMember.TabIndex = 16;
             this.btnMoreMember.Text = "...";
-            this.btnMoreMember.UseVisualStyleBackColor = true;
+            this.btnMoreMember.UseVisualStyleBackColor = false;
             this.btnMoreMember.Click += new System.EventHandler(this.btnMoreMember_Click);
             // 
             // groupBox1
@@ -178,14 +182,18 @@
             // 
             // btnMoreBook
             // 
+            this.btnMoreBook.BackColor = System.Drawing.Color.White;
             this.btnMoreBook.CausesValidation = false;
+            this.btnMoreBook.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btnMoreBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnMoreBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoreBook.Location = new System.Drawing.Point(460, 112);
             this.btnMoreBook.Margin = new System.Windows.Forms.Padding(7);
             this.btnMoreBook.Name = "btnMoreBook";
             this.btnMoreBook.Size = new System.Drawing.Size(64, 66);
             this.btnMoreBook.TabIndex = 28;
             this.btnMoreBook.Text = "...";
-            this.btnMoreBook.UseVisualStyleBackColor = true;
+            this.btnMoreBook.UseVisualStyleBackColor = false;
             this.btnMoreBook.Click += new System.EventHandler(this.btnMoreBook_Click);
             // 
             // txtbRFID
@@ -514,7 +522,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "BorrowForm";
-            this.Text = "Borrow";
+            this.Text = "Borrow Book";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
