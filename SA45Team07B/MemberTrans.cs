@@ -97,7 +97,6 @@ namespace SA45Team07B
                     ClearTextboxData();
                     DisplayDGVData();
 
-                    btnSaveChanges.BackColor = Color.LightGray;
                     btnSaveChanges.Enabled = false;
                 }
             }
@@ -387,7 +386,6 @@ namespace SA45Team07B
 
         private void txtbRemarksOfSelectedTransaction_TextChanged(object sender, EventArgs e)
         {
-            btnSaveChanges.BackColor = Color.White;
             btnSaveChanges.Enabled = true;
         }
 

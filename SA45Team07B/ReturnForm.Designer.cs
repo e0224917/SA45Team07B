@@ -119,7 +119,7 @@
             this.lblFine.Location = new System.Drawing.Point(36, 106);
             this.lblFine.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblFine.Name = "lblFine";
-            this.lblFine.Size = new System.Drawing.Size(94, 48);
+            this.lblFine.Size = new System.Drawing.Size(42, 21);
             this.lblFine.TabIndex = 35;
             this.lblFine.Text = "Fine:";
             // 
@@ -130,7 +130,7 @@
             this.txtbFine.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbFine.Name = "txtbFine";
             this.txtbFine.ReadOnly = true;
-            this.txtbFine.Size = new System.Drawing.Size(275, 55);
+            this.txtbFine.Size = new System.Drawing.Size(275, 29);
             this.txtbFine.TabIndex = 14;
             // 
             // dtpReturnDate
@@ -139,7 +139,7 @@
             this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpReturnDate.Location = new System.Drawing.Point(40, 60);
             this.dtpReturnDate.Name = "dtpReturnDate";
-            this.dtpReturnDate.Size = new System.Drawing.Size(275, 55);
+            this.dtpReturnDate.Size = new System.Drawing.Size(275, 29);
             this.dtpReturnDate.TabIndex = 2;
             this.dtpReturnDate.ValueChanged += new System.EventHandler(this.dtpReturnDate_ValueChanged);
             // 
@@ -151,7 +151,7 @@
             this.lblReturnDate.Location = new System.Drawing.Point(36, 34);
             this.lblReturnDate.Margin = new System.Windows.Forms.Padding(6);
             this.lblReturnDate.Name = "lblReturnDate";
-            this.lblReturnDate.Size = new System.Drawing.Size(217, 48);
+            this.lblReturnDate.Size = new System.Drawing.Size(96, 21);
             this.lblReturnDate.TabIndex = 15;
             this.lblReturnDate.Text = "Return Date:";
             // 
@@ -163,7 +163,7 @@
             this.lblRemarks.Location = new System.Drawing.Point(36, 182);
             this.lblRemarks.Margin = new System.Windows.Forms.Padding(6);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(163, 48);
+            this.lblRemarks.Size = new System.Drawing.Size(74, 21);
             this.lblRemarks.TabIndex = 16;
             this.lblRemarks.Text = "Remarks:";
             // 
@@ -228,7 +228,7 @@
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(34, 362);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(275, 55);
+            this.dtpDueDate.Size = new System.Drawing.Size(275, 29);
             this.dtpDueDate.TabIndex = 21;
             // 
             // dtpIssueDate
@@ -238,7 +238,7 @@
             this.dtpIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIssueDate.Location = new System.Drawing.Point(34, 285);
             this.dtpIssueDate.Name = "dtpIssueDate";
-            this.dtpIssueDate.Size = new System.Drawing.Size(275, 55);
+            this.dtpIssueDate.Size = new System.Drawing.Size(275, 29);
             this.dtpIssueDate.TabIndex = 18;
             // 
             // lblDateDue
@@ -249,7 +249,7 @@
             this.lblDateDue.Location = new System.Drawing.Point(30, 334);
             this.lblDateDue.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblDateDue.Name = "lblDateDue";
-            this.lblDateDue.Size = new System.Drawing.Size(176, 48);
+            this.lblDateDue.Size = new System.Drawing.Size(77, 21);
             this.lblDateDue.TabIndex = 20;
             this.lblDateDue.Text = "Due Date:";
             // 
@@ -261,7 +261,7 @@
             this.lblDateIssue.Location = new System.Drawing.Point(30, 257);
             this.lblDateIssue.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblDateIssue.Name = "lblDateIssue";
-            this.lblDateIssue.Size = new System.Drawing.Size(191, 48);
+            this.lblDateIssue.Size = new System.Drawing.Size(84, 21);
             this.lblDateIssue.TabIndex = 19;
             this.lblDateIssue.Text = "Issue Date:";
             // 
@@ -273,7 +273,7 @@
             this.lblBookID.Location = new System.Drawing.Point(30, 182);
             this.lblBookID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblBookID.Name = "lblBookID";
-            this.lblBookID.Size = new System.Drawing.Size(154, 48);
+            this.lblBookID.Size = new System.Drawing.Size(67, 21);
             this.lblBookID.TabIndex = 18;
             this.lblBookID.Text = "Book ID:";
             // 
@@ -284,7 +284,7 @@
             this.txtbBookID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbBookID.Name = "txtbBookID";
             this.txtbBookID.ReadOnly = true;
-            this.txtbBookID.Size = new System.Drawing.Size(275, 55);
+            this.txtbBookID.Size = new System.Drawing.Size(275, 29);
             this.txtbBookID.TabIndex = 8;
             // 
             // btnSearchRFID
@@ -313,7 +313,7 @@
             this.lblRFID.Location = new System.Drawing.Point(30, 34);
             this.lblRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblRFID.Name = "lblRFID";
-            this.lblRFID.Size = new System.Drawing.Size(103, 48);
+            this.lblRFID.Size = new System.Drawing.Size(46, 21);
             this.lblRFID.TabIndex = 15;
             this.lblRFID.Text = "RFID:";
             // 
@@ -325,7 +325,7 @@
             this.lblBookTitle.Location = new System.Drawing.Point(30, 106);
             this.lblBookTitle.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblBookTitle.Name = "lblBookTitle";
-            this.lblBookTitle.Size = new System.Drawing.Size(187, 48);
+            this.lblBookTitle.Size = new System.Drawing.Size(81, 21);
             this.lblBookTitle.TabIndex = 16;
             this.lblBookTitle.Text = "Book Title:";
             // 
@@ -335,7 +335,7 @@
             this.txtbRFID.Location = new System.Drawing.Point(34, 60);
             this.txtbRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbRFID.Name = "txtbRFID";
-            this.txtbRFID.Size = new System.Drawing.Size(230, 55);
+            this.txtbRFID.Size = new System.Drawing.Size(230, 29);
             this.txtbRFID.TabIndex = 1;
             this.txtbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbRFID_KeyDown);
             this.txtbRFID.Validating += new System.ComponentModel.CancelEventHandler(this.txtbRFID_Validating);
@@ -347,7 +347,7 @@
             this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.ReadOnly = true;
-            this.txtbBookTitle.Size = new System.Drawing.Size(275, 55);
+            this.txtbBookTitle.Size = new System.Drawing.Size(275, 29);
             this.txtbBookTitle.TabIndex = 7;
             // 
             // gpBorrowerInfo
@@ -380,7 +380,7 @@
             this.txtbFaculty.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbFaculty.Name = "txtbFaculty";
             this.txtbFaculty.ReadOnly = true;
-            this.txtbFaculty.Size = new System.Drawing.Size(275, 55);
+            this.txtbFaculty.Size = new System.Drawing.Size(275, 29);
             this.txtbFaculty.TabIndex = 13;
             // 
             // txtbMemberType
@@ -390,7 +390,7 @@
             this.txtbMemberType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberType.Name = "txtbMemberType";
             this.txtbMemberType.ReadOnly = true;
-            this.txtbMemberType.Size = new System.Drawing.Size(275, 55);
+            this.txtbMemberType.Size = new System.Drawing.Size(275, 29);
             this.txtbMemberType.TabIndex = 12;
             // 
             // lblFacultyName
@@ -401,7 +401,7 @@
             this.lblFacultyName.Location = new System.Drawing.Point(30, 334);
             this.lblFacultyName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblFacultyName.Name = "lblFacultyName";
-            this.lblFacultyName.Size = new System.Drawing.Size(243, 48);
+            this.lblFacultyName.Size = new System.Drawing.Size(107, 21);
             this.lblFacultyName.TabIndex = 20;
             this.lblFacultyName.Text = "Faculty Name:";
             // 
@@ -413,7 +413,7 @@
             this.lblMemberType.Location = new System.Drawing.Point(30, 257);
             this.lblMemberType.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblMemberType.Name = "lblMemberType";
-            this.lblMemberType.Size = new System.Drawing.Size(247, 48);
+            this.lblMemberType.Size = new System.Drawing.Size(108, 21);
             this.lblMemberType.TabIndex = 19;
             this.lblMemberType.Text = "Member Type:";
             // 
@@ -425,7 +425,7 @@
             this.lblSchoolID.Location = new System.Drawing.Point(30, 182);
             this.lblSchoolID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblSchoolID.Name = "lblSchoolID";
-            this.lblSchoolID.Size = new System.Drawing.Size(172, 48);
+            this.lblSchoolID.Size = new System.Drawing.Size(76, 21);
             this.lblSchoolID.TabIndex = 18;
             this.lblSchoolID.Text = "School ID";
             // 
@@ -436,7 +436,7 @@
             this.txtbSchoolID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbSchoolID.Name = "txtbSchoolID";
             this.txtbSchoolID.ReadOnly = true;
-            this.txtbSchoolID.Size = new System.Drawing.Size(275, 55);
+            this.txtbSchoolID.Size = new System.Drawing.Size(275, 29);
             this.txtbSchoolID.TabIndex = 11;
             // 
             // lblMemberID
@@ -447,7 +447,7 @@
             this.lblMemberID.Location = new System.Drawing.Point(30, 34);
             this.lblMemberID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblMemberID.Name = "lblMemberID";
-            this.lblMemberID.Size = new System.Drawing.Size(208, 48);
+            this.lblMemberID.Size = new System.Drawing.Size(91, 21);
             this.lblMemberID.TabIndex = 15;
             this.lblMemberID.Text = "Member ID:";
             // 
@@ -459,7 +459,7 @@
             this.lblMemberName.Location = new System.Drawing.Point(30, 106);
             this.lblMemberName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.lblMemberName.Name = "lblMemberName";
-            this.lblMemberName.Size = new System.Drawing.Size(268, 48);
+            this.lblMemberName.Size = new System.Drawing.Size(118, 21);
             this.lblMemberName.TabIndex = 16;
             this.lblMemberName.Text = "Member Name:";
             // 
@@ -470,7 +470,7 @@
             this.txtbMemberID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberID.Name = "txtbMemberID";
             this.txtbMemberID.ReadOnly = true;
-            this.txtbMemberID.Size = new System.Drawing.Size(275, 55);
+            this.txtbMemberID.Size = new System.Drawing.Size(275, 29);
             this.txtbMemberID.TabIndex = 9;
             // 
             // txtbMemberName
@@ -480,7 +480,7 @@
             this.txtbMemberName.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtbMemberName.Name = "txtbMemberName";
             this.txtbMemberName.ReadOnly = true;
-            this.txtbMemberName.Size = new System.Drawing.Size(275, 55);
+            this.txtbMemberName.Size = new System.Drawing.Size(275, 29);
             this.txtbMemberName.TabIndex = 10;
             // 
             // errorProviderForRFID
@@ -494,9 +494,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1002);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1647, 53);
+            this.statusStrip1.Size = new System.Drawing.Size(1141, 26);
             this.statusStrip1.TabIndex = 28;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -505,15 +505,15 @@
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(559, 48);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(244, 21);
             this.toolStripStatusLabel1.Text = "Input an RFID or Press ESC to exit.";
             // 
             // ReturnForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel;
-            this.ClientSize = new System.Drawing.Size(1647, 1055);
+            this.ClientSize = new System.Drawing.Size(1141, 555);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gpBorrowerInfo);
             this.Controls.Add(this.gbBookInfo);
