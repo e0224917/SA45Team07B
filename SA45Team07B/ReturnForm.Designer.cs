@@ -294,12 +294,12 @@
             this.btnSearchRFID.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSearchRFID.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnSearchRFID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchRFID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchRFID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchRFID.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchRFID.Location = new System.Drawing.Point(276, 58);
+            this.btnSearchRFID.Location = new System.Drawing.Point(281, 60);
             this.btnSearchRFID.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSearchRFID.Name = "btnSearchRFID";
-            this.btnSearchRFID.Size = new System.Drawing.Size(55, 35);
+            this.btnSearchRFID.Size = new System.Drawing.Size(28, 26);
             this.btnSearchRFID.TabIndex = 6;
             this.btnSearchRFID.Text = "...";
             this.btnSearchRFID.UseVisualStyleBackColor = false;

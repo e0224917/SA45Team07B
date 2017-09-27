@@ -247,7 +247,7 @@
             this.btnSearchMember.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSearchMember.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnSearchMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMember.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMember.ForeColor = System.Drawing.Color.Black;
             this.btnSearchMember.Location = new System.Drawing.Point(410, 32);
             this.btnSearchMember.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
@@ -706,8 +706,8 @@
             // 
             // MemberTrans
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(884, 962);
             this.Controls.Add(this.groupBox1);

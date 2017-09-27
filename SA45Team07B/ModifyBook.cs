@@ -65,16 +65,6 @@ namespace SA45Team07B
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //modification on selectioned item
-            bookModified.Author = txtbAuthor.Text; //Author not require validation
-            using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
-            {
-                bookModified.PublisherID = context.Publishers.Where(x => x.PublisherName == cbxPublisher.Text).First().PublisherID.ToString();
-                bookModified.SubjectCode = context.BookSubjects.Where(x => x.SubjectName == cbxSubjectName.Text).First().SubjectCode.ToString();
-            }
-            bookModified.AddRFID(lbxRFID, bookModified);
-
-            bookModified.TotalCopy = (Int16)bookModified.RFIDs.Count();
 
             //Submission validation
             if (!this.ValidateChildren() || lbxRFID.Items.Count == 0)
@@ -83,20 +73,36 @@ namespace SA45Team07B
             }
             else
             {
+                //trim the lbox into list<string> newRFID and add to this book
+
+                List<string> newRFID = new List<string>();
+
+                foreach (var item in lbxRFID.Items)
+                {
+                    newRFID.Add(item.ToString());
+                }
+                newRFID.RemoveRange(0, bookFound.RFIDs.Count());
+                bookModified.AddRFID(newRFID);
+
+
                 using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
                 {
                     Book bookToBeModified = context.Books.Where(x => x.BookID == bookFound.BookID).First();
                     bookToBeModified.ISBN = bookModified.ISBN;
                     bookToBeModified.BookTitle = bookModified.BookTitle;
-                    bookToBeModified.BookSubjects = bookModified.BookSubjects;
+                    bookToBeModified.BookSubjects = context.BookSubjects.Where(x => x.SubjectName == cbxSubjectName.Text).First();
                     bookToBeModified.CallNumber = bookModified.CallNumber;
-                    bookToBeModified.Author = bookModified.Author;
-                    bookToBeModified.PublisherID = bookModified.PublisherID;
+                    bookToBeModified.Author = txtbAuthor.Text; //Author not require validation
+                    bookToBeModified.PublisherID = context.Publishers.Where(x => x.PublisherName == cbxPublisher.Text).First().PublisherID.ToString();
                     bookToBeModified.Price = bookModified.Price;
                     bookToBeModified.Edition = bookModified.Edition;
                     bookToBeModified.PublishedYear = bookModified.PublishedYear;
-                    context.SaveChanges();
-                    MessageBox.Show("Book Modified");
+
+                    bookToBeModified.RFIDs = bookModified.RFIDs;
+
+                    bookToBeModified.TotalCopy = (Int16)bookToBeModified.RFIDs.Count();
+                    int i = context.SaveChanges();
+                    MessageBox.Show(i.ToString());
                     Close();
                 }
             }
@@ -166,6 +172,7 @@ namespace SA45Team07B
 
         private void btnAddRFID_Click(object sender, EventArgs e)
         {
+            
             //varify the txtbox with book method
             using (SA45Team07B_LibraryEntities context = new SA45Team07B.SA45Team07B_LibraryEntities())
             {
@@ -173,8 +180,17 @@ namespace SA45Team07B
                 {
                     bookModified.RFIDs.Select(x => x.RFID).ToList().Add(txtbRFID.Text);
                     lbxRFID.Items.Add(txtbRFID.Text);
+                    MessageBox.Show(lbxRFID.Items.Count.ToString());
                     txtbRFID.Clear();
                 }
+            }
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if (lbxRFID.Items.Count > bookFound.RFIDs.Count)
+            {
+                lbxRFID.Items.RemoveAt(lbxRFID.Items.Count - 1);
             }
         }
 
