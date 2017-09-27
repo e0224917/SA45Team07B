@@ -219,13 +219,34 @@ namespace SA45Team07B
                 if (RFIDofReturnBook != null)
                 {
                     this.returnBook = RFIDofReturnBook.Books;
-                    FindTransactionAndBorrower();
-                    DisplayTextboxData();
 
-                    errorProviderForRFID.SetError(txtbRFID, "");
-                    toolStripStatusLabel1.Text = "1 record is found.";
-                    btnSubmit.BackColor = Color.White;
-                    btnSubmit.Enabled = true;
+                    lastTransaction = (from x in context.IssueTrans
+                                       where x.TransactionID == RFIDofReturnBook.LastTransactionID
+                                       select x).FirstOrDefault();
+
+                    if (lastTransaction == null)
+                    {
+                        ClearTextboxData();
+                        MessageBox.Show("No last transaction record.");
+                    }
+                    else if (lastTransaction.Status == "in")
+                    {
+                        ClearTextboxData();
+                        MessageBox.Show("No active transaction record.");
+                    }
+                    else
+                    {
+                        borrower = lastTransaction.Members;
+                        borrowerMemberType = borrower.MemberCategories;
+                        borrowerFaculty = borrower.Faculties;
+
+                        DisplayTextboxData();
+
+                        errorProviderForRFID.SetError(txtbRFID, "");
+                        toolStripStatusLabel1.Text = "1 record is found.";
+                        btnSubmit.BackColor = Color.White;
+                        btnSubmit.Enabled = true;
+                    }
                 }
                 else
                 {
