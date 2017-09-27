@@ -97,7 +97,7 @@
             this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Location = new System.Drawing.Point(184, 709);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(7);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(167, 69);
             this.btnSubmit.TabIndex = 31;
@@ -109,7 +109,7 @@
             // 
             this.btnMoreMember.CausesValidation = false;
             this.btnMoreMember.Location = new System.Drawing.Point(442, 112);
-            this.btnMoreMember.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnMoreMember.Margin = new System.Windows.Forms.Padding(7);
             this.btnMoreMember.Name = "btnMoreMember";
             this.btnMoreMember.Size = new System.Drawing.Size(64, 66);
             this.btnMoreMember.TabIndex = 16;
@@ -129,9 +129,9 @@
             this.groupBox1.Controls.Add(this.txtbRFID);
             this.groupBox1.Controls.Add(this.lblRFID);
             this.groupBox1.Location = new System.Drawing.Point(1260, 208);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox1.Size = new System.Drawing.Size(538, 821);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -140,7 +140,7 @@
             // txtbBookStatus
             // 
             this.txtbBookStatus.Location = new System.Drawing.Point(13, 450);
-            this.txtbBookStatus.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbBookStatus.Margin = new System.Windows.Forms.Padding(7);
             this.txtbBookStatus.Name = "txtbBookStatus";
             this.txtbBookStatus.ReadOnly = true;
             this.txtbBookStatus.Size = new System.Drawing.Size(195, 55);
@@ -160,7 +160,7 @@
             // txtbBookTitle
             // 
             this.txtbBookTitle.Location = new System.Drawing.Point(13, 295);
-            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbBookTitle.Margin = new System.Windows.Forms.Padding(7);
             this.txtbBookTitle.Name = "txtbBookTitle";
             this.txtbBookTitle.ReadOnly = true;
             this.txtbBookTitle.Size = new System.Drawing.Size(506, 55);
@@ -180,7 +180,7 @@
             // 
             this.btnMoreBook.CausesValidation = false;
             this.btnMoreBook.Location = new System.Drawing.Point(460, 112);
-            this.btnMoreBook.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnMoreBook.Margin = new System.Windows.Forms.Padding(7);
             this.btnMoreBook.Name = "btnMoreBook";
             this.btnMoreBook.Size = new System.Drawing.Size(64, 66);
             this.btnMoreBook.TabIndex = 28;
@@ -191,7 +191,7 @@
             // txtbRFID
             // 
             this.txtbRFID.Location = new System.Drawing.Point(122, 112);
-            this.txtbRFID.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbRFID.Margin = new System.Windows.Forms.Padding(7);
             this.txtbRFID.MaxLength = 10;
             this.txtbRFID.Name = "txtbRFID";
             this.txtbRFID.Size = new System.Drawing.Size(324, 55);
@@ -221,9 +221,9 @@
             this.groupBox2.Controls.Add(this.txtbTotalBorrowed);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(651, 208);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox2.Size = new System.Drawing.Size(538, 329);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
@@ -242,7 +242,7 @@
             // txtbEntitlement
             // 
             this.txtbEntitlement.Location = new System.Drawing.Point(271, 235);
-            this.txtbEntitlement.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbEntitlement.Margin = new System.Windows.Forms.Padding(7);
             this.txtbEntitlement.Name = "txtbEntitlement";
             this.txtbEntitlement.ReadOnly = true;
             this.txtbEntitlement.Size = new System.Drawing.Size(93, 55);
@@ -272,7 +272,7 @@
             // txtbStatus
             // 
             this.txtbStatus.Location = new System.Drawing.Point(271, 144);
-            this.txtbStatus.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbStatus.Margin = new System.Windows.Forms.Padding(7);
             this.txtbStatus.Name = "txtbStatus";
             this.txtbStatus.ReadOnly = true;
             this.txtbStatus.Size = new System.Drawing.Size(195, 55);
@@ -291,7 +291,7 @@
             // txtbMaxBorrowed
             // 
             this.txtbMaxBorrowed.Location = new System.Drawing.Point(407, 50);
-            this.txtbMaxBorrowed.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbMaxBorrowed.Margin = new System.Windows.Forms.Padding(7);
             this.txtbMaxBorrowed.Name = "txtbMaxBorrowed";
             this.txtbMaxBorrowed.ReadOnly = true;
             this.txtbMaxBorrowed.Size = new System.Drawing.Size(60, 55);
@@ -301,7 +301,7 @@
             // txtbTotalBorrowed
             // 
             this.txtbTotalBorrowed.Location = new System.Drawing.Point(271, 50);
-            this.txtbTotalBorrowed.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbTotalBorrowed.Margin = new System.Windows.Forms.Padding(7);
             this.txtbTotalBorrowed.Name = "txtbTotalBorrowed";
             this.txtbTotalBorrowed.ReadOnly = true;
             this.txtbTotalBorrowed.Size = new System.Drawing.Size(60, 55);
@@ -331,7 +331,7 @@
             // txtbName
             // 
             this.txtbName.Location = new System.Drawing.Point(13, 295);
-            this.txtbName.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbName.Margin = new System.Windows.Forms.Padding(7);
             this.txtbName.Name = "txtbName";
             this.txtbName.ReadOnly = true;
             this.txtbName.Size = new System.Drawing.Size(506, 55);
@@ -349,9 +349,9 @@
             this.groupBox3.Controls.Add(this.btnMoreMember);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(49, 208);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox3.Size = new System.Drawing.Size(538, 821);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
@@ -360,7 +360,7 @@
             // txtbMemberID
             // 
             this.txtbMemberID.Location = new System.Drawing.Point(218, 112);
-            this.txtbMemberID.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbMemberID.Margin = new System.Windows.Forms.Padding(7);
             this.txtbMemberID.MaxLength = 5;
             this.txtbMemberID.Name = "txtbMemberID";
             this.txtbMemberID.Size = new System.Drawing.Size(210, 55);
@@ -376,7 +376,7 @@
             this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Location = new System.Drawing.Point(358, 709);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(7);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(167, 69);
             this.btnEdit.TabIndex = 19;
@@ -387,7 +387,7 @@
             // txtbFaculty
             // 
             this.txtbFaculty.Location = new System.Drawing.Point(13, 432);
-            this.txtbFaculty.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbFaculty.Margin = new System.Windows.Forms.Padding(7);
             this.txtbFaculty.Name = "txtbFaculty";
             this.txtbFaculty.ReadOnly = true;
             this.txtbFaculty.Size = new System.Drawing.Size(506, 55);
@@ -419,9 +419,9 @@
             this.groupBox4.Controls.Add(this.dpDateDue);
             this.groupBox4.Controls.Add(this.dpDateIssued);
             this.groupBox4.Location = new System.Drawing.Point(651, 574);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox4.Size = new System.Drawing.Size(538, 455);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
@@ -440,7 +440,7 @@
             // txtbPeriod
             // 
             this.txtbPeriod.Location = new System.Drawing.Point(145, 352);
-            this.txtbPeriod.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtbPeriod.Margin = new System.Windows.Forms.Padding(7);
             this.txtbPeriod.Maximum = new decimal(new int[] {
             99,
             0,
@@ -484,8 +484,10 @@
             // 
             // dpDateDue
             // 
+            this.dpDateDue.CustomFormat = "dd/MM/yyyy";
+            this.dpDateDue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpDateDue.Location = new System.Drawing.Point(22, 247);
-            this.dpDateDue.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dpDateDue.Margin = new System.Windows.Forms.Padding(7);
             this.dpDateDue.Name = "dpDateDue";
             this.dpDateDue.Size = new System.Drawing.Size(440, 55);
             this.dpDateDue.TabIndex = 25;
@@ -493,8 +495,10 @@
             // 
             // dpDateIssued
             // 
+            this.dpDateIssued.CustomFormat = "dd/MM/yyyy";
+            this.dpDateIssued.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpDateIssued.Location = new System.Drawing.Point(22, 112);
-            this.dpDateIssued.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dpDateIssued.Margin = new System.Windows.Forms.Padding(7);
             this.dpDateIssued.Name = "dpDateIssued";
             this.dpDateIssued.Size = new System.Drawing.Size(440, 55);
             this.dpDateIssued.TabIndex = 24;
