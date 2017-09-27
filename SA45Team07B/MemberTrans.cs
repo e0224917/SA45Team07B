@@ -182,9 +182,12 @@ namespace SA45Team07B
                         txtbLoanedQty.Text = string.Empty;
                         txtbOverdueQty.Text = string.Empty;
                         txtbUnpaidFine.Text = string.Empty;
+
                     }
 
-                    CalculateFine();
+
+                CalculateFine();
+
 
                 }
                 else
@@ -324,43 +327,53 @@ namespace SA45Team07B
             int overdueQty = 0;
             decimal fine = 0.0M;
 
-            if (dataGridViewTransactionRecords.RowCount != 0)
+            if (rbtnOnLoan.Checked == true)
             {
-                foreach (DataGridViewRow row in dataGridViewTransactionRecords.Rows)
+                if (dataGridViewTransactionRecords.RowCount != 0)
                 {
-                    onLoanQty++;
-
-                    try
+                    foreach (DataGridViewRow row in dataGridViewTransactionRecords.Rows)
                     {
-                        DateTime dueDate = (DateTime)row.Cells["DateDueColumn"].Value;
-                        double dayDiff = (DateTime.Today - dueDate).TotalDays;
+                        onLoanQty++;
 
-                        if (dayDiff > 0)
+                        try
                         {
-                            overdueQty++;
-                            fine += (decimal)dayDiff * memberTypeOfMemberFound.FinePerDay;
-                            row.DefaultCellStyle.ForeColor = Color.Red;
+                            DateTime dueDate = (DateTime)row.Cells["DateDueColumn"].Value;
+                            double dayDiff = (DateTime.Today - dueDate).TotalDays;
+
+                            if (dayDiff > 0)
+                            {
+                                overdueQty++;
+                                fine += (decimal)dayDiff * memberTypeOfMemberFound.FinePerDay;
+                                row.DefaultCellStyle.ForeColor = Color.Red;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show("Invalid due date format");
                         }
                     }
-                    catch (Exception e)
+
+                    txtbLoanedQty.Text = onLoanQty.ToString();
+                    txtbOverdueQty.Text = overdueQty.ToString();
+                    txtbUnpaidFine.Text = String.Format("{0:c}", fine);
+
+                    if (fine > 0)
                     {
-                        MessageBox.Show("Invalid due date format");
+                        txtbUnpaidFine.BackColor = SystemColors.Control;
+                        txtbUnpaidFine.ForeColor = Color.Red;
                     }
-                }
-
-                txtbLoanedQty.Text = onLoanQty.ToString();
-                txtbOverdueQty.Text = overdueQty.ToString();
-                txtbUnpaidFine.Text = String.Format("{0:c}", fine);
-
-                if (fine > 0)
-                {
-                    txtbUnpaidFine.BackColor = SystemColors.Control;
-                    txtbUnpaidFine.ForeColor = Color.Red;
+                    else
+                    {
+                        txtbUnpaidFine.BackColor = SystemColors.Control;
+                        txtbUnpaidFine.ForeColor = SystemColors.WindowText;
+                    }
                 }
                 else
                 {
-                    txtbUnpaidFine.BackColor = SystemColors.Control;
-                    txtbUnpaidFine.ForeColor = SystemColors.WindowText;
+                    txtbLoanedQty.Text = string.Empty;
+                    txtbOverdueQty.Text = string.Empty;
+                    txtbUnpaidFine.Text = string.Empty;
+
                 }
             }
             else
