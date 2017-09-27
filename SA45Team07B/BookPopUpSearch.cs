@@ -277,13 +277,11 @@ namespace SA45Team07B
             if (dataGridViewBookList.SelectedRows.Count == 0)
             {
                 btnOK.Enabled = false;
-                btnOK.BackColor = Color.LightGray;
                 toolStripStatusLblSelectedBook.Text = "No record is found.";
             }
             else
             {
                 btnOK.Enabled = true;
-                btnOK.BackColor = Color.White;
 
                 string selectedName = dataGridViewBookList.CurrentRow.Cells["BookTitleColumn"].Value.ToString();
 
