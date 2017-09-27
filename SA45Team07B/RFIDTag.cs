@@ -18,6 +18,8 @@ namespace SA45Team07B
         {
             this.IssueTrans = new HashSet<IssueTran>();
             this.StockAdjustments = new HashSet<StockAdjustment>();
+            this.Availability = "y";
+            this.Discontinued = "n";
         }
     
         public string RFID { get; set; }

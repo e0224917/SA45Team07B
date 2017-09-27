@@ -41,7 +41,6 @@
             this.lblYear = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,12 +62,12 @@
             this.lblBkId = new System.Windows.Forms.Label();
             this.txtbBkId = new System.Windows.Forms.TextBox();
             this.btnFindBk = new System.Windows.Forms.Button();
-            this.lblAddBk = new System.Windows.Forms.Label();
             this.epModifyBk = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbxPublisher = new System.Windows.Forms.ComboBox();
             this.cbxSubjectName = new System.Windows.Forms.ComboBox();
             this.gbxBasicInfo = new System.Windows.Forms.GroupBox();
             this.gbxRFID = new System.Windows.Forms.GroupBox();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.btnDeleteRFID = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epModifyBk)).BeginInit();
             this.gbxBasicInfo.SuspendLayout();
@@ -134,9 +133,9 @@
             // 
             this.btnSubmit.Location = new System.Drawing.Point(438, 671);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 31);
+            this.btnSubmit.Size = new System.Drawing.Size(126, 31);
             this.btnSubmit.TabIndex = 16;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Save Changes";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -185,18 +184,6 @@
             this.label16.Size = new System.Drawing.Size(12, 13);
             this.label16.TabIndex = 80;
             this.label16.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(600, 66);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(12, 13);
-            this.label13.TabIndex = 79;
-            this.label13.Text = "*";
             // 
             // label14
             // 
@@ -394,6 +381,7 @@
             // 
             // btnFindBk
             // 
+            this.btnFindBk.BackColor = System.Drawing.Color.White;
             this.btnFindBk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnFindBk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindBk.Location = new System.Drawing.Point(377, 56);
@@ -401,19 +389,8 @@
             this.btnFindBk.Size = new System.Drawing.Size(31, 27);
             this.btnFindBk.TabIndex = 3;
             this.btnFindBk.Text = "...";
-            this.btnFindBk.UseVisualStyleBackColor = true;
+            this.btnFindBk.UseVisualStyleBackColor = false;
             this.btnFindBk.Click += new System.EventHandler(this.btnFindBk_Click);
-            // 
-            // lblAddBk
-            // 
-            this.lblAddBk.AutoSize = true;
-            this.lblAddBk.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddBk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBk.Location = new System.Drawing.Point(514, 101);
-            this.lblAddBk.Name = "lblAddBk";
-            this.lblAddBk.Size = new System.Drawing.Size(128, 25);
-            this.lblAddBk.TabIndex = 94;
-            this.lblAddBk.Text = "Modify Book";
             // 
             // epModifyBk
             // 
@@ -466,39 +443,47 @@
             this.gbxBasicInfo.Size = new System.Drawing.Size(1045, 343);
             this.gbxBasicInfo.TabIndex = 95;
             this.gbxBasicInfo.TabStop = false;
-            this.gbxBasicInfo.Text = "Basic Information";
+            this.gbxBasicInfo.Text = "Book Details";
             // 
             // gbxRFID
             // 
             this.gbxRFID.BackColor = System.Drawing.Color.Transparent;
-            this.gbxRFID.Controls.Add(this.btnDeleteRFID);
+            this.gbxRFID.Controls.Add(this.btnUndo);
             this.gbxRFID.Controls.Add(this.txtbRFID);
             this.gbxRFID.Controls.Add(this.lblRFID);
             this.gbxRFID.Controls.Add(this.lbxRFID);
-            this.gbxRFID.Controls.Add(this.label13);
             this.gbxRFID.Controls.Add(this.btnAddRFID);
             this.gbxRFID.Location = new System.Drawing.Point(92, 499);
             this.gbxRFID.Name = "gbxRFID";
             this.gbxRFID.Size = new System.Drawing.Size(1044, 135);
             this.gbxRFID.TabIndex = 96;
             this.gbxRFID.TabStop = false;
-            this.gbxRFID.Text = "RFID Details";
+            this.gbxRFID.Text = "RFID";
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUndo.BackgroundImage")));
+            this.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUndo.Location = new System.Drawing.Point(973, 54);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(31, 32);
+            this.btnUndo.TabIndex = 70;
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnDeleteRFID
             // 
-            this.btnDeleteRFID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteRFID.BackgroundImage")));
             this.btnDeleteRFID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeleteRFID.Location = new System.Drawing.Point(969, 49);
+            this.btnDeleteRFID.Location = new System.Drawing.Point(973, 54);
             this.btnDeleteRFID.Name = "btnDeleteRFID";
             this.btnDeleteRFID.Size = new System.Drawing.Size(31, 32);
-            this.btnDeleteRFID.TabIndex = 17;
+            this.btnDeleteRFID.TabIndex = 70;
             this.btnDeleteRFID.UseVisualStyleBackColor = true;
             // 
             // ModifyBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.ClientSize = new System.Drawing.Size(1276, 773);
-            this.Controls.Add(this.lblAddBk);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label19);
@@ -509,7 +494,7 @@
             this.Controls.Add(this.gbxBasicInfo);
             this.Controls.Add(this.gbxRFID);
             this.Name = "ModifyBook";
-            this.Text = "Book Modification - Library Management System SA45Team07B";
+            this.Text = "Modify Books";
             this.Controls.SetChildIndex(this.gbxRFID, 0);
             this.Controls.SetChildIndex(this.gbxBasicInfo, 0);
             this.Controls.SetChildIndex(this.lblBkId, 0);
@@ -519,7 +504,6 @@
             this.Controls.SetChildIndex(this.label19, 0);
             this.Controls.SetChildIndex(this.btnSubmit, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.lblAddBk, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.epModifyBk)).EndInit();
             this.gbxBasicInfo.ResumeLayout(false);
@@ -543,7 +527,6 @@
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
@@ -565,12 +548,12 @@
         private System.Windows.Forms.Label lblBkId;
         private System.Windows.Forms.TextBox txtbBkId;
         private System.Windows.Forms.Button btnFindBk;
-        private System.Windows.Forms.Label lblAddBk;
         private System.Windows.Forms.ErrorProvider epModifyBk;
         private System.Windows.Forms.ComboBox cbxSubjectName;
         private System.Windows.Forms.ComboBox cbxPublisher;
         private System.Windows.Forms.GroupBox gbxBasicInfo;
         private System.Windows.Forms.GroupBox gbxRFID;
+        private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnDeleteRFID;
     }
 }
