@@ -12,8 +12,6 @@ namespace SA45Team07B
 {
     public partial class BookPopUpSearch : Form
     {
-        private SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities();
-
         private Book bookFound;
         private RFIDTag tagFound;
         private List<RFIDTag> tagsOfBookFound;
@@ -68,7 +66,7 @@ namespace SA45Team07B
         }
 
         /// <summary>
-        /// "all" "available" "onloan" "discontinued" to activate desired radiobutton.
+        /// "all" "available" "onloan" "discontinued" to activate corresponding radiobutton.
         /// </summary>
         /// <param name="radioButton"></param>
         public BookPopUpSearch(string radioButton)
@@ -104,41 +102,17 @@ namespace SA45Team07B
 
                 cbSubject.DataSource = subjectNameList;
 
-                // Lazy loading - load the first 25 rows to datagridview during first load
-                if (this.rbtnAll.Checked == true)
-                {
-                    var displayList = (from x in context.RFIDs
-                                       orderby x.Books.BookID, x.Availability descending
-                                       select new
-                                       {
-                                           x.Books.BookID,
-                                           x.Books.BookTitle,
-                                           x.Availability,
-                                           x.Books.Edition,
-                                           x.Books.Author,
-                                           x.Books.ISBN,
-                                           x.Books.CallNumber,
-                                           x.RFID,
-                                           x.Books.BookSubjects.SubjectName,
-                                           x.Books.Publishers.PublisherName,
-                                           x.Books.PublishedYear,
-                                           x.Books.Price,
-                                           x.Discontinued,
-                                       }).Take(25);
-
-                    dataGridViewBookList.DataSource = displayList.ToList();
-                }
-                else
-                {
-                    SearchAndDisplayBook();
-                }
-
+                SearchAndDisplayBook(false);
                 isFirstLoad = true;
             }
+
         }
 
-
-        private void SearchAndDisplayBook()
+        /// <summary>
+        /// showAll will display all records. If showAll is false, display only the first 25 records.
+        /// </summary>
+        /// <param name="showAll"></param>
+        private void SearchAndDisplayBook(bool showAll = true)
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
@@ -187,7 +161,6 @@ namespace SA45Team07B
                     searchResult = searchResult.Intersect(searchResultByAuthor).ToList();
                 }
 
-
                 if (cbSubject.Text != "")
                 {
                     searchResult = (from x in searchResult
@@ -195,29 +168,54 @@ namespace SA45Team07B
                                     select x).ToList();
                 }
 
-                var displayList = from x in RFIDList
-                                  where searchResult.Contains(x.Books)
-                                  orderby x.Books.BookID, x.Availability descending
-                                  select new
-                                  {
-                                      x.Books.BookID,
-                                      x.Books.BookTitle,
-                                      x.Availability,
-                                      x.Books.Edition,
-                                      x.Books.Author,
-                                      x.Books.ISBN,
-                                      x.Books.CallNumber,
-                                      x.RFID,
-                                      x.Books.BookSubjects.SubjectName,
-                                      x.Books.Publishers.PublisherName,
-                                      x.Books.PublishedYear,
-                                      x.Books.Price,
-                                      x.Discontinued,
-                                  };
+                if (showAll)
+                {
+                    var displayList = from x in RFIDList
+                                      where searchResult.Contains(x.Books)
+                                      orderby x.Books.BookID, x.Availability descending
+                                      select new
+                                      {
+                                          x.Books.BookID,
+                                          x.Books.BookTitle,
+                                          x.Availability,
+                                          x.Books.Edition,
+                                          x.Books.Author,
+                                          x.Books.ISBN,
+                                          x.Books.CallNumber,
+                                          x.RFID,
+                                          x.Books.BookSubjects.SubjectName,
+                                          x.Books.Publishers.PublisherName,
+                                          x.Books.PublishedYear,
+                                          x.Books.Price,
+                                          x.Discontinued
+                                      };
 
-                dataGridViewBookList.DataSource = displayList.ToList();
+                    dataGridViewBookList.DataSource = displayList.ToList();
+                }
+                else
+                {
+                    var displayList = (from x in RFIDList
+                                      where searchResult.Contains(x.Books)
+                                      orderby x.Books.BookID, x.Availability descending
+                                      select new
+                                      {
+                                          x.Books.BookID,
+                                          x.Books.BookTitle,
+                                          x.Availability,
+                                          x.Books.Edition,
+                                          x.Books.Author,
+                                          x.Books.ISBN,
+                                          x.Books.CallNumber,
+                                          x.RFID,
+                                          x.Books.BookSubjects.SubjectName,
+                                          x.Books.Publishers.PublisherName,
+                                          x.Books.PublishedYear,
+                                          x.Books.Price,
+                                          x.Discontinued
+                                      }).Take(25);
 
-                isFirstLoad = false;
+                    dataGridViewBookList.DataSource = displayList.ToList();
+                }
             }
         }
 
@@ -300,10 +298,12 @@ namespace SA45Team07B
                 if (isFirstLoad && e.OldValue > 8)
                 {
                     SearchAndDisplayBook();
+                    isFirstLoad = false;
                     // remove this event handler
                     this.dataGridViewBookList.Scroll -= new System.Windows.Forms.ScrollEventHandler(this.dataGridViewBookList_Scroll);
                 }
             }
         }
     }
+
 }
