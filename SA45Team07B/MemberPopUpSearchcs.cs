@@ -164,14 +164,11 @@ namespace SA45Team07B
             if (dataGridViewMemberList.SelectedRows.Count == 0)
             {
                 btnOK.Enabled = false;
-                btnOK.BackColor = Color.LightGray;
-
                 toolStripStatusLblSelectedMember.Text = "No record is found.";
             }
             else
             {
                 btnOK.Enabled = true;
-                btnOK.BackColor = Color.White;
 
                 string selectedName = dataGridViewMemberList.CurrentRow.Cells["MemberNameColumn"].Value.ToString();
                 toolStripStatusLblSelectedMember.Text = $"{selectedName} is selected.";

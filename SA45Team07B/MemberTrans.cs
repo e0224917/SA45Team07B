@@ -127,7 +127,7 @@ namespace SA45Team07B
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
             {
-                List<InformationToDisplay> displayList = new List<InformationToDisplay>();
+                List<TransactionInformationToDisplay> displayList = new List<TransactionInformationToDisplay>();
 
                 if (memberFound != null)
                 {
@@ -139,7 +139,7 @@ namespace SA45Team07B
 
                         displayList = (from x in onLoanTransactionRecords
                                        orderby x.DateIssued ascending
-                                       select new InformationToDisplay
+                                       select new TransactionInformationToDisplay
                                        {
                                            DateIssued = x.DateIssued,
                                            DateDue = x.DateDue,
@@ -165,7 +165,7 @@ namespace SA45Team07B
 
                         displayList = (from x in returnedTransactionRecords
                                        orderby x.DateIssued ascending
-                                       select new InformationToDisplay
+                                       select new TransactionInformationToDisplay
                                        {
                                            DateIssued = x.DateIssued,
                                            DateDue = x.DateDue,
@@ -399,7 +399,7 @@ namespace SA45Team07B
 
 
 
-    public class InformationToDisplay
+    public class TransactionInformationToDisplay
     {
         public DateTime DateIssued { get; set; }
         public DateTime DateDue { get; set; }
