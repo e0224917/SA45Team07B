@@ -57,12 +57,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.errorProviderMemberType = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFacultyName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyName)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -381,11 +384,31 @@
             this.errorProviderFacultyName.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderFacultyName.ContainerControl = this;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1068);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1472, 53);
+            this.statusStrip1.TabIndex = 33;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(238, 48);
+            this.toolStripStatusLabel1.Text = "Add Member.";
+            // 
             // AddNewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1472, 1121);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelStar);
@@ -434,12 +457,15 @@
             this.Controls.SetChildIndex(this.labelStar, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.statusStrip1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSchoolID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderContactNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMemberType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyName)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,5 +501,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProviderMemberType;
         private System.Windows.Forms.ErrorProvider errorProviderFacultyName;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
