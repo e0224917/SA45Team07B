@@ -195,6 +195,7 @@ namespace SA45Team07B
 
         private void ReturnForm_Load(object sender, EventArgs e)
         {
+            this.btnSubmit.BackColor = Color.LightGray;
             this.btnSubmit.Enabled = false;
             this.dtpReturnDate.MaxDate = DateTime.Today;
             this.ActiveControl = txtbRFID;

@@ -20,14 +20,14 @@ namespace SA45Team07B
         private BookSubject subjectOfBookFound;
         private Publisher publisherOfBookFound;
         private bool isFirstLoad;
-        
+
         public Book BookFound
         {
             get
             {
                 return bookFound;
             }
-        } 
+        }
 
         public RFIDTag RFIDFound
         {
@@ -87,7 +87,7 @@ namespace SA45Team07B
             {
                 this.rbtnOnLoan.Checked = true;
             }
-            else if(radioButton.ToLower() == "discontinued")
+            else if (radioButton.ToLower() == "discontinued")
             {
                 this.rbtnDiscontinued.Checked = true;
             }
@@ -105,7 +105,7 @@ namespace SA45Team07B
                 cbSubject.DataSource = subjectNameList;
 
                 // Lazy loading - load the first 25 rows to datagridview during first load
-                if(this.rbtnAll.Checked == true)
+                if (this.rbtnAll.Checked == true)
                 {
                     var displayList = (from x in context.RFIDs
                                        orderby x.Books.BookID, x.Availability descending
@@ -151,19 +151,19 @@ namespace SA45Team07B
                     RFIDList = (from x in RFIDList
                                 select x).ToList();
                 }
-                else if(rbtnAvailable.Checked == true)
+                else if (rbtnAvailable.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "y" && x.Discontinued == "n")
                                 select x).ToList();
                 }
-                else if(rbtnOnLoan.Checked == true)
+                else if (rbtnOnLoan.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Availability == "n" && x.Discontinued == "n")
                                 select x).ToList();
                 }
-                else if(rbtnDiscontinued.Checked == true)
+                else if (rbtnDiscontinued.Checked == true)
                 {
                     RFIDList = (from x in RFIDList
                                 where (x.Discontinued == "y")
@@ -175,8 +175,18 @@ namespace SA45Team07B
                                 select x.Books).ToList();
 
                 searchResult = CriteriaSeach(searchResult, txtbBookTitle, "BookTitle");
-                searchResult = CriteriaSeach(searchResult, txtbAuthor, "Author");
                 searchResult = CriteriaSeach(searchResult, txtbISBN, "ISBN");
+
+                // cannot apply CriteriaSeach for Author as it is allowed null
+                if (txtbAuthor.Text != string.Empty)
+                {
+                    List<Book> searchResultByAuthor = (from x in context.Books
+                                                       where x.Author.ToLower().Contains(txtbAuthor.Text.ToString().ToLower().Trim())
+                                                       select x).ToList();
+
+                    searchResult = searchResult.Intersect(searchResultByAuthor).ToList();
+                }
+
 
                 if (cbSubject.Text != "")
                 {
@@ -246,15 +256,15 @@ namespace SA45Team07B
 
                 // tag can never be null since this button is disable when there is no selected row
                 this.tagFound = (from x in context.RFIDs
-                            where x.RFID == selectedRFID
-                            select x).First();
+                                 where x.RFID == selectedRFID
+                                 select x).First();
 
                 this.bookFound = RFIDFound.Books;
                 this.tagsOfBookFound = BookFound.RFIDs.ToList();
                 this.subjectOfBookFound = BookFound.BookSubjects;
                 this.publisherOfBookFound = BookFound.Publishers;
             }
-           
+
             this.DialogResult = DialogResult.OK;
         }
 
@@ -265,7 +275,7 @@ namespace SA45Team07B
 
         private void dataGridViewMemberList_SelectionChanged(object sender, EventArgs e)
         {
-        
+
             if (dataGridViewBookList.SelectedRows.Count == 0)
             {
                 btnOK.Enabled = false;
@@ -287,7 +297,7 @@ namespace SA45Team07B
         {
             if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
             {
-                if (isFirstLoad)
+                if (isFirstLoad && e.OldValue > 8)
                 {
                     SearchAndDisplayBook();
                     // remove this event handler
