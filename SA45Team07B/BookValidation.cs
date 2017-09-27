@@ -36,16 +36,25 @@ namespace SA45Team07B
             }
         }
 
-        public void AddRFID(ListBox lbox, Book thisBook)
+        public void AddRFID(ListBox lbox)
         {
-            RFIDTag newrfid = new RFIDTag();
-            foreach (var rfid in lbox.Items)
+            foreach (var item in lbox.Items)
             {
-                newrfid.RFID = rfid.ToString();
-                newrfid.BookID = thisBook.BookID;
-                newrfid.Discontinued = "n";
-                newrfid.Availability = "y";
-                thisBook.RFIDs.Add(newrfid);
+                RFIDTag newrifd = new RFIDTag();
+                newrifd.RFID = item.ToString();
+                newrifd.BookID = this.BookID;
+                this.RFIDs.Add(newrifd);
+            }
+        }
+
+        public void AddRFID(List<string> rfidList)
+        {
+            foreach (var rfid in rfidList)
+            {
+                RFIDTag newrifd = new RFIDTag();
+                newrifd.RFID = rfid;
+                newrifd.BookID = this.BookID;
+                this.RFIDs.Add(newrifd);
             }
         }
 

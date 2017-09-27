@@ -66,7 +66,6 @@
             this.txtbRFID = new System.Windows.Forms.TextBox();
             this.btnAddRFID = new System.Windows.Forms.Button();
             this.btnDeleteRFID = new System.Windows.Forms.Button();
-            this.lblAddBk = new System.Windows.Forms.Label();
             this.gbxBasicInfo = new System.Windows.Forms.GroupBox();
             this.gbxRFID = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).BeginInit();
@@ -80,7 +79,7 @@
             this.txtbBkId.Name = "txtbBkId";
             this.txtbBkId.ReadOnly = true;
             this.txtbBkId.Size = new System.Drawing.Size(164, 29);
-            this.txtbBkId.TabIndex = 9;
+            this.txtbBkId.TabIndex = 4;
             // 
             // lblBkId
             // 
@@ -365,6 +364,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // epAddBk
             // 
@@ -426,17 +426,6 @@
             this.btnDeleteRFID.UseVisualStyleBackColor = true;
             this.btnDeleteRFID.Click += new System.EventHandler(this.btnDeleteRFID_Click);
             // 
-            // lblAddBk
-            // 
-            this.lblAddBk.AutoSize = true;
-            this.lblAddBk.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddBk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddBk.Location = new System.Drawing.Point(514, 101);
-            this.lblAddBk.Name = "lblAddBk";
-            this.lblAddBk.Size = new System.Drawing.Size(146, 25);
-            this.lblAddBk.TabIndex = 57;
-            this.lblAddBk.Text = "Add New Book";
-            // 
             // gbxBasicInfo
             // 
             this.gbxBasicInfo.BackColor = System.Drawing.Color.Transparent;
@@ -452,7 +441,7 @@
             this.gbxBasicInfo.Size = new System.Drawing.Size(1045, 343);
             this.gbxBasicInfo.TabIndex = 58;
             this.gbxBasicInfo.TabStop = false;
-            this.gbxBasicInfo.Text = "Basic Information";
+            this.gbxBasicInfo.Text = "Add Book";
             // 
             // gbxRFID
             // 
@@ -468,14 +457,13 @@
             this.gbxRFID.Size = new System.Drawing.Size(1044, 135);
             this.gbxRFID.TabIndex = 59;
             this.gbxRFID.TabStop = false;
-            this.gbxRFID.Text = "RFID Details";
+            this.gbxRFID.Text = "Add RFID";
             // 
             // AddNewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1276, 773);
-            this.Controls.Add(this.lblAddBk);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label19);
@@ -502,7 +490,7 @@
             this.Controls.Add(this.gbxRFID);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "AddNewBook";
-            this.Text = "Add New Book - Library Management System SA45Team07B";
+            this.Text = "Add New Book";
             this.Load += new System.EventHandler(this.AddNewBook_Load);
             this.Controls.SetChildIndex(this.gbxRFID, 0);
             this.Controls.SetChildIndex(this.gbxBasicInfo, 0);
@@ -529,7 +517,6 @@
             this.Controls.SetChildIndex(this.label19, 0);
             this.Controls.SetChildIndex(this.btnSubmit, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.lblAddBk, 0);
             ((System.ComponentModel.ISupportInitialize)(this.epAddBk)).EndInit();
             this.gbxBasicInfo.ResumeLayout(false);
             this.gbxBasicInfo.PerformLayout();
@@ -578,7 +565,6 @@
         private System.Windows.Forms.Button btnAddRFID;
         private System.Windows.Forms.TextBox txtbRFID;
         private System.Windows.Forms.Button btnDeleteRFID;
-        private System.Windows.Forms.Label lblAddBk;
         private System.Windows.Forms.GroupBox gbxBasicInfo;
         private System.Windows.Forms.GroupBox gbxRFID;
     }

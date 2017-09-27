@@ -49,6 +49,14 @@ namespace SA45Team07B
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cancel add?", "Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             using (SA45Team07B_LibraryEntities context = new SA45Team07B_LibraryEntities())
@@ -88,8 +96,9 @@ namespace SA45Team07B
 
                 //add RFID for single or multiple copies of the book
 
-                newbook.AddRFID(lbxRFID, newbook);
+                newbook.AddRFID(lbxRFID);
                 newbook.TotalCopy = (Int16)newbook.RFIDs.Count();
+                MessageBox.Show(newbook.TotalCopy.ToString());
 
                 //Submission validation
                 if (!this.ValidateChildren() || lbxRFID.Items.Count == 0)
@@ -155,6 +164,7 @@ namespace SA45Team07B
             newbook.SubjectNameValidation(cbxSubjectName, epAddBk);
         }
 
+        
     }
 
     }
